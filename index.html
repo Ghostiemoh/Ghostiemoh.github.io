@@ -1,65 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Professional portfolio for Muhammad Auwal Abdulaziz – Education Mathematics graduate with a passion for data analytics, blockchain, and cybersecurity.">
-  <title>Muhammad Auwal Abdulaziz | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Auwal | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
-  <header>
-    <div class="container">
-      <h1 class="name">Muhammad Auwal Abdulaziz</h1>
-      <p class="tagline">Education Mathematics Graduate | Data Analytics | Blockchain | Cybersecurity</p>
+<body class="bg-gray-100 text-gray-900">
+  <!-- Header -->
+  <header class="bg-white shadow p-4 flex items-center justify-between">
+    <h1 class="text-2xl font-bold">Muhammad Auwal</h1>
+    <div class="space-x-4">
+      <a href="https://github.com/Ghostiemoh" target="_blank"><i class="fab fa-github text-xl"></i></a>
+      <a href="https://twitter.com/Ghostiemoh" target="_blank"><i class="fab fa-twitter text-xl"></i></a>
+      <a href="https://linkedin.com/in/Ghostiemoh" target="_blank"><i class="fab fa-linkedin text-xl"></i></a>
     </div>
   </header>
-  
-  <main>
-    <section class="about">
-      <div class="container">
-        <h2>About Me</h2>
-        <p>I am an enthusiastic Education Mathematics graduate with a deep passion for data analytics, blockchain, and cybersecurity. My academic background has equipped me with strong analytical skills, and I am eager to apply these in solving real-world challenges.</p>
-      </div>
-    </section>
 
-    <section class="skills">
-      <div class="container">
-        <h2>Skills & Expertise</h2>
-        <ul>
-          <li>Data Analysis & Visualization</li>
-          <li>Blockchain Development & Smart Contracts</li>
-          <li>Cybersecurity & Risk Management</li>
-          <li>Mathematical Modeling & Problem Solving</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="projects">
-      <div class="container">
-        <h2>Projects</h2>
-        <ul>
-          <li><strong>Data Analytics Dashboard</strong> – A project using Python and Pandas to analyze datasets and present insights visually.</li>
-          <li><strong>Blockchain Demo</strong> – A decentralized application built with Solidity and Ethereum.</li>
-          <li><strong>Cybersecurity Research</strong> – Analysis of vulnerabilities in common software systems and suggestions for improvement.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="contact">
-      <div class="container">
-        <h2>Contact</h2>
-        <p>Email: muhammedauwal@email.com</p>
-        <p>GitHub: <a href="https://github.com/muhammedauwal">github.com/muhammedauwal</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Muhammad Auwal Abdulaziz | All Rights Reserved</p>
+  <!-- Profile Section -->
+  <section class="max-w-5xl mx-auto mt-10 p-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="md:col-span-1 flex justify-center">
+      <img src="IMG_4295.JPG" alt="Muhammad Auwal" class="rounded-2xl shadow w-64 h-64 object-cover">
     </div>
+    <div class="md:col-span-2">
+      <h2 class="text-xl font-semibold">About Me</h2>
+      <p class="mt-2 text-gray-700">
+        I'm Muhammad Auwal, a graduate in Education Mathematics, passionate about data analytics, AI, blockchain, and youth empowerment through initiatives like Future Light Initiatives. I have strong experience in IT, data analysis, and environmental advocacy.
+      </p>
+      <a href="resume.pdf" download class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700">Download Resume</a>
+    </div>
+  </section>
+
+  <!-- Details Section -->
+  <section class="max-w-5xl mx-auto p-4">
+    <h2 class="text-xl font-semibold mb-4">Education & Certifications</h2>
+    <ul class="list-disc list-inside space-y-2">
+      <li>Bachelor's Degree in Education Mathematics</li>
+      <li>Data Analytics - Skill Up (Simplilearn, 2023)</li>
+      <li>Digital Literacy - NITDA (2025)</li>
+      <li>Blockchain - Dominium Academy/NITDA (2023)</li>
+      <li>Cyber Security - Academy Halogen (2022)</li>
+    </ul>
+  </section>
+
+  <section class="max-w-5xl mx-auto p-4">
+    <h2 class="text-xl font-semibold mb-4">Research Interests</h2>
+    <ul class="list-disc list-inside space-y-2">
+      <li>AI and Prompt Generation</li>
+      <li>Data Analysis and Machine Learning</li>
+      <li>Web 3.0 Blockchain Engineering</li>
+    </ul>
+  </section>
+
+  <section class="max-w-5xl mx-auto p-4">
+    <h2 class="text-xl font-semibold mb-4">Projects & Initiatives</h2>
+    <ul class="list-disc list-inside space-y-2">
+      <li>Future Light Initiatives – Youth Empowerment</li>
+      <li>Shoemaking Training Proposal – ₦12.5M (Kano State)</li>
+      <li>Sanitation Awareness – ₦12.79M (Nasarawa, Fagge, Dala LGAs)</li>
+    </ul>
+  </section>
+
+  <!-- Blog Section Placeholder -->
+  <section class="max-w-5xl mx-auto p-4">
+    <h2 class="text-xl font-semibold mb-4">Blog</h2>
+    <p class="text-gray-600">Coming soon... Stay tuned for insights on tech, data, and development.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center p-4 mt-10 shadow-inner">
+    <p class="text-sm">&copy; 2025 Muhammad Auwal | Ghostiemoh</p>
   </footer>
 </body>
 </html>
