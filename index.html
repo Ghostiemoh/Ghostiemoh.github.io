@@ -6,27 +6,27 @@
   <meta name="description" content="Muhammad Auwal Abdulaziz Portfolio - Data Analytics, Blockchain, Cybersecurity, and AI Enthusiast">
   <meta name="author" content="Muhammad Auwal Abdulaziz">
   <title>Muhammad Auwal Abdulaziz | Portfolio</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <script>
-    function toggleDarkMode() {
-      document.documentElement.classList.toggle('dark');
-    }
-  </script>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    a:hover, button:hover {
-      transform: scale(1.05);
-      transition: all 0.2s ease-in-out;
-    }
-  </style>
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Muhammad Auwal Abdulaziz | Portfolio">
+  <meta property="og:description" content="Portfolio of Muhammad Auwal Abdulaziz - Data Analytics, Blockchain, Cybersecurity, and AI Enthusiast">
+  <meta property="og:image" content="https://example.com/profile.jpg">
+  <meta property="og:url" content="https://example.com">
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -43,87 +43,372 @@
     "knowsAbout": ["Data Analytics", "Blockchain", "Cybersecurity", "AI"]
   }
   </script>
+  
+  <style>
+    html {
+      scroll-behavior: smooth;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: background-color 0.3s ease;
+    }
+    a:hover, button:hover {
+      transform: scale(1.05);
+      transition: all 0.2s ease-in-out;
+    }
+    .skill-bar {
+      transition: width 1s ease-in-out;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white">
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-300">
 
-  <!-- Header -->
-  <header class="navbar bg-white dark:bg-gray-800 shadow p-4 flex flex-col md:flex-row md:items-center md:justify-between">
+  <!-- Header with Navigation Bar and Social Links -->
+  <header class="navbar bg-white dark:bg-gray-800 shadow p-4 flex flex-col md:flex-row md:items-center md:justify-between transition-colors duration-300">
     <h1 class="text-2xl font-bold">Muhammad Auwal Abdulaziz</h1>
     <nav class="space-x-4 mt-2 md:mt-0 flex items-center">
-      <a href="#about" class="text-lg hover:text-blue-600">About</a>
-      <a href="#education" class="text-lg hover:text-blue-600">Education</a>
-      <a href="#skills" class="text-lg hover:text-blue-600">Skills</a>
-      <a href="#projects" class="text-lg hover:text-blue-600">Projects</a>
-      <a href="#contact" class="text-lg hover:text-blue-600">Contact</a>
-      <button onclick="toggleDarkMode()" class="ml-2 text-sm px-2 py-1 bg-gray-300 rounded dark:bg-gray-700">Dark Mode</button>
+      <a href="#about" class="text-lg hover:text-blue-600 dark:hover:text-blue-400">About</a>
+      <a href="#education" class="text-lg hover:text-blue-600 dark:hover:text-blue-400">Education</a>
+      <a href="#skills" class="text-lg hover:text-blue-600 dark:hover:text-blue-400">Skills</a>
+      <a href="#projects" class="text-lg hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+      <a href="#contact" class="text-lg hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+      <button onclick="toggleDarkMode()" class="ml-2 text-sm px-2 py-1 bg-gray-300 dark:bg-gray-700 rounded transition-colors duration-300">
+        <span class="dark:hidden">🌙 Dark</span>
+        <span class="hidden dark:inline">☀️ Light</span>
+      </button>
     </nav>
     <div class="mt-2 md:mt-0 flex space-x-3">
-      <a href="https://github.com/Ghostiemoh" target="_blank" aria-label="GitHub"><i class="fab fa-github text-xl hover:text-gray-700 dark:hover:text-white"></i></a>
-      <a href="https://twitter.com/Ghostiemoh" target="_blank" aria-label="Twitter"><i class="fab fa-twitter text-xl hover:text-blue-500"></i></a>
-      <a href="https://linkedin.com/in/Ghostiemoh" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin text-xl hover:text-blue-700"></i></a>
+      <a href="https://github.com/Ghostiemoh" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github text-xl hover:text-gray-700 dark:hover:text-white"></i></a>
+      <a href="https://twitter.com/Ghostiemoh" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter text-xl hover:text-blue-500"></i></a>
+      <a href="https://linkedin.com/in/Ghostiemoh" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin text-xl hover:text-blue-700"></i></a>
     </div>
   </header>
 
-  <!-- About Section -->
-  <section id="about" class="max-w-5xl mx-auto mt-10 p-4 grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div class="md:col-span-1 flex justify-center">
-      <img src="profile.JPG" alt="Muhammad Auwal Abdulaziz" class="rounded-2xl shadow w-64 h-64 object-cover">
-    </div>
-    <div class="md:col-span-2">
-      <h2 class="text-2xl font-semibold border-b pb-2">About Me</h2>
-      <p class="mt-2 text-gray-700 dark:text-gray-300">
-        Enthusiastic Education Mathematics graduate with a strong passion for data analytics, blockchain, and cybersecurity. I bring a solid foundation in mathematical theory and analytical thinking, developed through my academic journey, and apply these skills to explore data-driven insights, secure digital systems, and emerging decentralized technologies.
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <!-- About Section -->
+    <section id="about" class="mb-16 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+      <div class="md:col-span-1 flex justify-center">
+        <img src="profile.webp" alt="Muhammad Auwal Abdulaziz - Tech Enthusiast" 
+             class="rounded-2xl shadow-lg w-64 h-64 object-cover hover:shadow-xl transition-shadow duration-300"
+             loading="lazy">
+      </div>
+      <div class="md:col-span-2">
+        <h2 class="text-3xl font-bold mb-4 border-b pb-2 border-blue-500 dark:border-blue-400">About Me</h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+          Enthusiastic Education Mathematics graduate with a strong passion for data analytics, blockchain, and cybersecurity. 
+          I bring a solid foundation in mathematical theory and analytical thinking, developed through my academic journey, 
+          and apply these skills to explore data-driven insights, secure digital systems, and emerging decentralized technologies.
+        </p>
+        <div class="flex space-x-4">
+          <a href="assets/Muhammad_Auwal_Resume.pdf" download 
+             class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:shadow-md transition-all duration-300">
+            Download Resume
+          </a>
+          <a href="#contact" 
+             class="border border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 px-6 py-3 rounded-lg shadow hover:shadow-md transition-all duration-300">
+            Contact Me
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 border-b pb-2 border-blue-500 dark:border-blue-400">Education</h2>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl">
+        <div class="flex flex-col md:flex-row justify-between">
+          <div>
+            <h3 class="text-xl font-semibold">Yusuf Maitama Sule University Kano</h3>
+            <p class="text-gray-600 dark:text-gray-400">Bachelor of Science in Education Mathematics</p>
+          </div>
+          <div class="mt-2 md:mt-0">
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">2018 - 2022</span>
+          </div>
+        </div>
+        <p class="mt-4 text-gray-700 dark:text-gray-300">
+          Acquired strong analytical and problem-solving skills through rigorous mathematical training. 
+          Developed teaching methodologies that enhance knowledge transfer in technical subjects.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 border-b pb-2 border-blue-500 dark:border-blue-400">Skills</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Technical Skills -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 hover:shadow-lg transition-shadow duration-300">
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fas fa-code mr-2 text-blue-500"></i> Technical Skills
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <div class="flex justify-between mb-1">
+                <span>Data Analysis</span>
+                <span>85%</span>
+              </div>
+              <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                <div class="bg-blue-600 h-2.5 rounded-full skill-bar" style="width: 85%"></div>
+              </div>
+            </li>
+            <li>
+              <div class="flex justify-between mb-1">
+                <span>Blockchain</span>
+                <span>75%</span>
+              </div>
+              <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                <div class="bg-blue-600 h-2.5 rounded-full skill-bar" style="width: 75%"></div>
+              </div>
+            </li>
+            <li>
+              <div class="flex justify-between mb-1">
+                <span>Cybersecurity</span>
+                <span>80%</span>
+              </div>
+              <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                <div class="bg-blue-600 h-2.5 rounded-full skill-bar" style="width: 80%"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Tools & Technologies -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 hover:shadow-lg transition-shadow duration-300">
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fas fa-tools mr-2 text-blue-500"></i> Tools & Technologies
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">Python</span>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">SQL</span>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">Tableau</span>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">Solidity</span>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">Git</span>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">Linux</span>
+          </div>
+        </div>
+        
+        <!-- Soft Skills -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6 hover:shadow-lg transition-shadow duration-300">
+          <h3 class="text-xl font-semibold mb-4 flex items-center">
+            <i class="fas fa-users mr-2 text-blue-500"></i> Soft Skills
+          </h3>
+          <ul class="space-y-2">
+            <li class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-2"></i> Analytical Thinking
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-2"></i> Problem Solving
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-2"></i> Communication
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-2"></i> Team Collaboration
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check-circle text-green-500 mr-2"></i> Continuous Learning
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 border-b pb-2 border-blue-500 dark:border-blue-400">Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project 1 -->
+        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+          <img src="project1.webp" alt="Data Analysis Dashboard" class="w-full h-48 object-cover" loading="lazy">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Data Analysis Dashboard</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Interactive dashboard for visualizing complex datasets</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Python</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Tableau</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Pandas</span>
+            </div>
+            <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+              View Project <i class="fas fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+          <img src="project2.webp" alt="Blockchain Voting System" class="w-full h-48 object-cover" loading="lazy">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Blockchain Voting System</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Secure decentralized voting application</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Solidity</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Ethereum</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Web3.js</span>
+            </div>
+            <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+              View Project <i class="fas fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+          <img src="project3.webp" alt="Cybersecurity Toolkit" class="w-full h-48 object-cover" loading="lazy">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Cybersecurity Toolkit</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Collection of security analysis tools</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Python</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Bash</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Network Security</span>
+            </div>
+            <a href="#" class="text-blue-600 dark:text-blue-400 hover:underline flex items-center">
+              View Project <i class="fas fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 border-b pb-2 border-blue-500 dark:border-blue-400">Contact Me</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-semibold mb-4">Get In Touch</h3>
+          <form class="space-y-4">
+            <div>
+              <label for="name" class="block mb-1 font-medium">Name</label>
+              <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600">
+            </div>
+            <div>
+              <label for="email" class="block mb-1 font-medium">Email</label>
+              <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600">
+            </div>
+            <div>
+              <label for="message" class="block mb-1 font-medium">Message</label>
+              <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600"></textarea>
+            </div>
+            <button type="submit" class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:shadow-md transition-all duration-300 w-full">
+              Send Message
+            </button>
+          </form>
+        </div>
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <i class="fas fa-envelope text-blue-500 mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-medium">Email</h4>
+                <a href="mailto:your.email@example.com" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">your.email@example.com</a>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-phone-alt text-blue-500 mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-medium">Phone</h4>
+                <a href="tel:+1234567890" class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">+123 456 7890</a>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-map-marker-alt text-blue-500 mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-medium">Location</h4>
+                <p class="text-gray-600 dark:text-gray-400">Kano, Nigeria</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6">
+            <h4 class="font-medium mb-3">Connect With Me</h4>
+            <div class="flex space-x-4">
+              <a href="https://github.com/Ghostiemoh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300">
+                <i class="fab fa-github text-xl"></i>
+              </a>
+              <a href="https://twitter.com/Ghostiemoh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300">
+                <i class="fab fa-twitter text-xl text-blue-400"></i>
+              </a>
+              <a href="https://linkedin.com/in/Ghostiemoh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300">
+                <i class="fab fa-linkedin-in text-xl text-blue-600"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-gray-800 shadow-inner py-8">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p class="text-gray-600 dark:text-gray-400 mb-4">
+        © 2023 Muhammad Auwal Abdulaziz. All rights reserved.
       </p>
-      <a href="assets/Muhammad_Auwal_Resume.pdf" download class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700">Download Resume</a>
+      <div class="flex justify-center space-x-6">
+        <a href="#" class="text-gray-500 hover:text-gray-700 dark:hover:text-white transition-colors duration-300">
+          <span class="sr-only">Privacy Policy</span>
+          <i class="fas fa-lock"></i>
+        </a>
+        <a href="#" class="text-gray-500 hover:text-gray-700 dark:hover:text-white transition-colors duration-300">
+          <span class="sr-only">Terms</span>
+          <i class="fas fa-file-alt"></i>
+        </a>
+      </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- Education & Certifications -->
-  <section id="education" class="max-w-5xl mx-auto p-4">
-    <h2 class="text-xl font-semibold mb-4">Education & Certifications</h2>
-    <ul class="list-disc list-inside space-y-2">
-      <li>BSc Ed. Mathematics – Yusuf Maitama Sule University, Kano (Lower Second Class, 2017–2023)</li>
-      <li>Digital Literacy – NITDA (2025)</li>
-      <li>Web3 & Tech Bootcamp – BlockchainLex & CryptoMondays Caribbean & Africa (2025)</li>
-      <li>Blockchain Professional – Dominium Academy/NITDA (2023)</li>
-      <li>Cyber Security – Academy Halogen (2022)</li>
-      <li>Data Analytics – Skill Up by Simplilearn (2023)</li>
-    </ul>
-  </section>
-
-  <!-- Skills / Research Interests -->
-  <section id="skills" class="max-w-5xl mx-auto p-4">
-    <h2 class="text-xl font-semibold mb-4">Research Interests</h2>
-    <ul class="list-disc list-inside space-y-2">
-      <li>AI and Prompt Generation</li>
-      <li>Data Analysis and Machine Learning</li>
-      <li>Web 3.0 Blockchain Engineering</li>
-    </ul>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="max-w-5xl mx-auto p-4">
-    <h2 class="text-xl font-semibold mb-4">Projects & Initiatives</h2>
-    <ul class="list-disc list-inside space-y-2">
-      <li>Sales Data Analysis for Local Retail – Used SQL & Excel for data insight</li>
-      <li>Student Performance Analysis – Identified key academic success indicators</li>
-      <li>School Performance Evaluation – Attendance, performance & teaching data</li>
-      <li>Future Light Initiatives – Youth Empowerment</li>
-      <li>Shoemaking Training Proposal – ₦12.5M (Kano State)</li>
-      <li>Sanitation Awareness – ₦12.79M (Nasarawa, Fagge, Dala LGAs)</li>
-    </ul>
-  </section>
-
-  <!-- Blog Placeholder -->
-  <section class="max-w-5xl mx-auto p-4">
-    <h2 class="text-xl font-semibold mb-4">Blog</h2>
-    <p class="text-gray-600 dark:text-gray-400">Coming soon... Stay tuned for insights on tech, data, and development.</p>
-  </section>
-
-  <!-- Contact / Footer -->
-  <section id="contact" class="bg-white dark:bg-gray-800 text-center p-4 mt-10 shadow-inner">
-    <p class="text-sm">&copy; 2025 Muhammad Auwal Abdulaziz | <a href="mailto:priiincema@gmail.com" class="text-blue-600">priiincema@gmail.com</a></p>
-  </section>
-
+  <script>
+    // Check for saved user preference or use system preference
+    function checkDarkModePreference() {
+      if (localStorage.getItem('darkMode') === 'true' || 
+          (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      }
+    }
+    
+    // Initialize dark mode preference
+    checkDarkModePreference();
+    
+    // Toggle dark mode
+    function toggleDarkMode() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('darkMode', isDark);
+    }
+    
+    // Listen for system preference changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (!localStorage.getItem('darkMode')) {
+        if (e.matches) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      }
+    });
+    
+    // Animate skill bars when they come into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const skillBar = entry.target.querySelector('.skill-bar');
+          skillBar.style.width = skillBar.getAttribute('data-width');
+        }
+      });
+    }, {threshold: 0.1});
+    
+    document.querySelectorAll('.skill-container').forEach(container => {
+      observer.observe(container);
+      const skillBar = container.querySelector('.skill-bar');
+      skillBar.setAttribute('data-width', skillBar.style.width);
+      skillBar.style.width = '0';
+    });
+  </script>
 </body>
 </html>
