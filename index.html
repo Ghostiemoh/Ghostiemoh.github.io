@@ -592,7 +592,7 @@
       </div>
     </section>
 
-   <!-- Contact Section -->
+ <!-- Contact Section -->
 <section id="contact" class="mb-16">
   <h2 class="text-3xl font-bold mb-8 border-b pb-2 border-blue-500 dark:border-blue-400">Contact Me</h2>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -615,6 +615,9 @@
           Send Message
         </button>
       </form>
+      <div id="emailFallback" class="hidden mt-4 p-4 bg-yellow-100 dark:bg-yellow-900 rounded-lg">
+        <p class="text-yellow-800 dark:text-yellow-200">Email client didn't open? <a id="manualEmailLink" href="#" class="text-blue-600 dark:text-blue-400 underline">Click here</a> to copy the email details.</p>
+      </div>
     </div>
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
           <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
@@ -662,6 +665,45 @@
     </section>
   </main>
 
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    const subject = `Message from ${name}`;
+    const body = `${message}\n\nFrom: ${name}\nEmail: ${email}`;
+    
+    // Try to open default email client
+    const mailtoLink = `mailto:Marvmuhd@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open in new tab as fallback for some browsers
+    const mailWindow = window.open(mailtoLink, '_blank');
+    
+    // Check if the window was blocked
+    setTimeout(() => {
+      if (!mailWindow || mailWindow.closed || typeof mailWindow.closed == 'undefined') {
+        // Show fallback option
+        document.getElementById('emailFallback').classList.remove('hidden');
+        
+        // Set up manual copy option
+        document.getElementById('manualEmailLink').addEventListener('click', (e) => {
+          e.preventDefault();
+          const emailText = `To: Marvmuhd@gmail.com\nSubject: ${subject}\n\n${body}`;
+          navigator.clipboard.writeText(emailText).then(() => {
+            alert('Email details copied to clipboard! Please paste them into your email client.');
+          }).catch(() => {
+            prompt('Copy this email information:', emailText);
+          });
+        });
+      }
+    }, 500);
+    
+    // Reset form
+    this.reset();
+  });
+</script>
   <!-- Footer -->
   <footer class="bg-white dark:bg-gray-800 shadow-inner py-8">
     <div class="max-w-6xl mx-auto px-4 text-center">
