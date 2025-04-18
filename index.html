@@ -330,104 +330,164 @@
           </ul>
         </div>
       </div>
-    </section>
-    <!-- Projects Section -->
+    </section>    <!-- Projects Section -->
     <section id="projects" class="mb-16">
       <h2 class="text-3xl font-bold mb-8 border-b pb-2 border-blue-500 dark:border-blue-400">Projects Executed</h2>
       
-      <div class="space-y-8">
-        <!-- Project 1 -->
-        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl">
-          <h3 class="text-2xl font-semibold mb-4 text-blue-600 dark:text-blue-400">1. DATA ANALYSIS</h3>
-          
-          <div class="mb-6">
-            <div class="flex justify-between items-center mb-2">
-              <h4 class="text-xl font-semibold">COVID-19 Data Exploration (SQL Project)</h4>
-              <a href="#" class="text-sm px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300">
-                Click to View
-              </a>
-            </div>
-            <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-2">
-              <li>Analyzed global COVID-19 trends using advanced SQL techniques</li>
-              <li>Skills used: Joins, CTEs, Temp Tables, Window Functions, Aggregate Functions, Views, Data Type Conversion</li>
-              <li>Explored metrics such as death rates, infection rates by country and continent, vaccination progress, and global case statistics</li>
-              <li>Created views and temporary tables to support data visualizations and reporting</li>
-            </ul>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- COVID-19 Data Exploration -->
+        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+          <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+            <i class="fas fa-virus text-5xl text-blue-600 dark:text-blue-400"></i>
           </div>
-          
-          <div class="mb-6">
-            <div class="flex justify-between items-center mb-2">
-              <h4 class="text-xl font-semibold">Nashville Housing Data Cleaning (SQL Project)</h4>
-              <a href="#" class="text-sm px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300">
-                Click to View
-              </a>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">COVID-19 Data Exploration</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">SQL Project analyzing global pandemic trends</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">SQL</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Data Analysis</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">CTEs</span>
             </div>
-            <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-2">
-              <li>Cleaned and standardized housing dataset for analysis using advanced SQL queries</li>
-              <li>Skills used: Data type conversion, handling null values, splitting address fields, transforming categorical values, removing duplicates using CTEs, and deleting irrelevant columns</li>
-              <li>Applied bulk data import methods including OPENROWSET and BULK INSERT for efficient data loading</li>
+            <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
+              <li>Analyzed global COVID-19 trends</li>
+              <li>Used advanced SQL techniques</li>
+              <li>Created views for visualization</li>
             </ul>
+            <a href="#" class="inline-block mt-2">
+              <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
+                Click to View
+              </button>
+            </a>
           </div>
-          
-          <div class="mb-6">
-            <div class="flex justify-between items-center mb-2">
-              <h4 class="text-xl font-semibold">Customer Call List Analysis (Excel Project)</h4>
-              <a href="#" class="text-sm px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300">
-                Click to View
-              </a>
-            </div>
-            <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-2">
-              <li>Analyzed a dataset of customer call logs to track interactions, identify missed opportunities, and optimize response strategies</li>
-              <li>Skills used: Data cleaning, date/time formatting, conditional logic, duplicate removal, call outcome categorization</li>
-              <li>Extracted insights such as call volume trends, missed vs completed calls, and follow-up efficiency using SQL queries and Excel pivot tables</li>
-              <li>Built summary dashboards to visualize key performance indicators and supported recommendations for improved customer engagement</li>
-            </ul>
+        </div>
+
+        <!-- Nashville Housing Data Cleaning -->
+        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+          <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+            <i class="fas fa-home text-5xl text-blue-600 dark:text-blue-400"></i>
           </div>
-          
-          <div class="mb-6">
-            <div class="flex justify-between items-center mb-2">
-              <h4 class="text-xl font-semibold">COVID-19 Vaccination Data Analysis (Excel Project)</h4>
-              <a href="#" class="text-sm px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300">
-                Click to View
-              </a>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Nashville Housing Data</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">SQL data cleaning project</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">SQL</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Data Cleaning</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">BULK INSERT</span>
             </div>
-            <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-2">
-              <li>Analyzed global COVID-19 vaccination data to monitor progress and identify trends</li>
-              <li>Skills used: Data cleaning, percentage calculations, time-based analysis, charting, and dashboard creation</li>
-              <li>Visualized key insights including vaccination rates by country and region, using Excel pivot tables and dynamic charts</li>
-              <li>Presented data-driven recommendations to illustrate population coverage and gaps in vaccination distribution</li>
+            <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
+              <li>Cleaned and standardized housing data</li>
+              <li>Handled null values and duplicates</li>
+              <li>Used efficient data loading methods</li>
             </ul>
+            <a href="#" class="inline-block mt-2">
+              <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
+                Click to View
+              </button>
+            </a>
           </div>
-          
-          <div class="mb-6">
-            <div class="flex justify-between items-center mb-2">
-              <h4 class="text-xl font-semibold">Apocalypse Food Prep Dashboard (Power BI Project)</h4>
-              <a href="#" class="text-sm px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300">
-                Click to View
-              </a>
-            </div>
-            <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-2">
-              <li>Developed an interactive Power BI dashboard to analyze and visualize food inventory and survival preparedness metrics in an apocalyptic scenario</li>
-              <li>Skills used: Data modeling, Power Query, DAX calculations, data transformation, interactive report building</li>
-              <li>Tracked food supply levels, consumption rates, storage capacity, and sustainability projections</li>
-              <li>Delivered insights to support strategic planning for long-term survival scenarios</li>
-            </ul>
+        </div>
+
+        <!-- Customer Call List Analysis -->
+        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+          <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+            <i class="fas fa-phone-alt text-5xl text-blue-600 dark:text-blue-400"></i>
           </div>
-          
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <h4 class="text-xl font-semibold">Blockchain Transaction Analytics Dashboard (Power BI Project)</h4>
-              <a href="#" class="text-sm px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-300">
-                Click to View
-              </a>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Call List Analysis</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Excel customer interaction project</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Excel</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Pivot Tables</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Dashboard</span>
             </div>
-            <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-2">
-              <li>Built a Power BI dashboard to visualize and monitor real-time blockchain transaction data</li>
-              <li>Skills used: Power Query, DAX, data modeling, API integration (CSV/JSON), and interactive report design</li>
-              <li>Tracked metrics such as transaction volume, gas fees, wallet activity, token movements, and block confirmation times</li>
-              <li>Provided insights into network congestion, transaction trends, and user engagement on the blockchain</li>
-              <li>Designed for clarity and usability to support both technical analysts and non-technical stakeholders</li>
+            <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
+              <li>Analyzed customer call logs</li>
+              <li>Identified missed opportunities</li>
+              <li>Built summary dashboards</li>
             </ul>
+            <a href="#" class="inline-block mt-2">
+              <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
+                Click to View
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <!-- COVID-19 Vaccination Data -->
+        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+          <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+            <i class="fas fa-syringe text-5xl text-blue-600 dark:text-blue-400"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Vaccination Analysis</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Excel vaccination tracking project</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Excel</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Data Visualization</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Charts</span>
+            </div>
+            <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
+              <li>Monitored vaccination progress</li>
+              <li>Identified regional trends</li>
+              <li>Created dynamic charts</li>
+            </ul>
+            <a href="#" class="inline-block mt-2">
+              <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
+                Click to View
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <!-- Apocalypse Food Prep Dashboard -->
+        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+          <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+            <i class="fas fa-utensils text-5xl text-blue-600 dark:text-blue-400"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Food Prep Dashboard</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Power BI survival scenario project</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Power BI</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">DAX</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Data Modeling</span>
+            </div>
+            <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
+              <li>Interactive survival dashboard</li>
+              <li>Tracked food supply metrics</li>
+              <li>Long-term planning visuals</li>
+            </ul>
+            <a href="#" class="inline-block mt-2">
+              <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
+                Click to View
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <!-- Blockchain Transaction Analytics -->
+        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+          <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+            <i class="fas fa-link text-5xl text-blue-600 dark:text-blue-400"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Blockchain Analytics</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Power BI transaction monitoring</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Power BI</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">API Integration</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Blockchain</span>
+            </div>
+            <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
+              <li>Real-time transaction monitoring</li>
+              <li>Tracked gas fees & wallet activity</li>
+              <li>Network congestion analysis</li>
+            </ul>
+            <a href="#" class="inline-block mt-2">
+              <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
+                Click to View
+              </button>
+            </a>
           </div>
         </div>
       </div>
