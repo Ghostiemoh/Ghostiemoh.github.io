@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Muhammad Auwal Abdulaziz Portfolio - Data Analytics, Blockchain, Cybersecurity, and AI Enthusiast">
+  <meta name="description" content="Muhammad Auwal Abdulaziz Portfolio - Data Analytics, Blockchain and AI Enthusiast">
   <meta name="author" content="Muhammad Auwal Abdulaziz">
-  <title>Muhammad Auwal Abdulaziz | Portfolio</title>
+  <title>Muhammad Auwal Abdulaziz | Data & Blockchain Specialist</title>
   
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -20,7 +20,7 @@
   
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Muhammad Auwal Abdulaziz | Portfolio">
+  <meta property="og:title" content="Muhammad Auwal Abdulaziz | Data & Blockchain Specialist">
   <meta property="og:description" content="Portfolio of Muhammad Auwal Abdulaziz - Data Analytics, Blockchain, Cybersecurity, and AI Enthusiast">
   <meta property="og:image" content="https://yourwebsite.com/profile.jpg">
   <meta property="og:url" content="https://yourwebsite.com">
@@ -60,11 +60,19 @@
       transition: all 0.2s ease-in-out;
     }
     .skill-bar {
+      width: 0;
       transition: width 1s ease-in-out;
     }
     .project-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .animate-in {
+      animation: fadeIn 0.5s ease-in forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -78,8 +86,9 @@
       <a href="#education" class="text-lg hover:text-blue-600 dark:hover:text-blue-400">Education</a>
       <a href="#skills" class="text-lg hover:text-blue-600 dark:hover:text-blue-400">Skills</a>
       <a href="#projects" class="text-lg hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+      <a href="#certifications" class="text-lg hover:text-blue-600 dark:hover:text-blue-400">Certifications</a>
       <a href="#contact" class="text-lg hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
-      <button onclick="toggleDarkMode()" class="ml-2 text-sm px-2 py-1 bg-gray-300 dark:bg-gray-700 rounded transition-colors duration-300">
+      <button onclick="toggleDarkMode()" class="ml-2 text-sm px-2 py-1 bg-gray-300 dark:bg-gray-700 rounded transition-colors duration-300" aria-label="Toggle dark mode">
         <span class="dark:hidden">🌙 Dark</span>
         <span class="hidden dark:inline">☀️ Light</span>
       </button>
@@ -93,24 +102,23 @@
 
   <main class="max-w-6xl mx-auto px-4 py-8">
     <!-- About Section -->
-    <section id="about" class="mb-16 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+    <section id="about" class="mb-16 grid grid-cols-1 md:grid-cols-3 gap-8 items-center animate-in">
       <div class="md:col-span-1 flex justify-center">
         <img src="profile.JPG" alt="Muhammad Auwal Abdulaziz - Tech Enthusiast" 
              class="rounded-2xl shadow-lg w-64 h-64 object-cover hover:shadow-xl transition-shadow duration-300"
-             loading="lazy">
+             loading="lazy" width="256" height="256">
       </div>
       <div class="md:col-span-2">
         <h2 class="text-3xl font-bold mb-4 border-b pb-2 border-blue-500 dark:border-blue-400">About Me</h2>
         <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
-          Enthusiastic Education Mathematics graduate with a strong passion for data analytics, blockchain, and cybersecurity. 
-          I bring a solid foundation in mathematical theory and analytical thinking, developed through my academic journey, 
-          and apply these skills to explore data-driven insights, secure digital systems, and emerging decentralized technologies.
-          I'm deeply interested in how data and cryptographic tools can solve real-world problems and drive innovation across industries.
+          Dynamic Mathematics graduate with a fervent passion for data analytics, blockchain investigation, and the Web3 ecosystem. 
+          Armed with a robust foundation in mathematical theory and analytical prowess honed through academic rigor, I excel at deriving data-driven insights, tracing blockchain transactions, and navigating the decentralized web. 
+          I’m thrilled by the potential of data and cryptographic technologies to solve intricate challenges, boost transparency, and drive innovation across sectors.
         </p>
-        <div class="flex space-x-4">
-          <a href="resume.html" 
+        <div class="flex flex-wrap gap-4">
+          <a href="resume.pdf" 
              class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:shadow-md transition-all duration-300">
-            Click to View Resume
+            View Resume (PDF)
           </a>
           <a href="#contact" 
              class="border border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 px-6 py-3 rounded-lg shadow hover:shadow-md transition-all duration-300">
@@ -120,8 +128,31 @@
       </div>
     </section>
 
+   <!-- Featured Skills -->
+<section class="mb-16 bg-blue-50 dark:bg-gray-800 rounded-xl p-6 shadow-inner animate-in">
+  <h2 class="text-2xl font-bold mb-6 text-center">Featured Skills</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow text-center">
+      <i class="fas fa-analytics text-3xl text-blue-500 mb-2"></i>
+      <h3 class="font-semibold">Data Analytics</h3>
+    </div>
+    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow text-center">
+      <i class="fas fa-chain text-3xl text-blue-500 mb-2"></i>
+      <h3 class="font-semibold">Blockchain Analysis</h3>
+    </div>
+    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow text-center">
+      <i class="fas fa-globe text-3xl text-blue-500 mb-2"></i>
+      <h3 class="font-semibold">Web3 Ecosystem</h3>
+    </div>
+    <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow text-center">
+      <i class="fas fa-chart-bar text-3xl text-blue-500 mb-2"></i>
+      <h3 class="font-semibold">Data Visualization</h3>
+    </div>
+  </div>
+</section>
+
     <!-- Education Section -->
-    <section id="education" class="mb-16">
+    <section id="education" class="mb-16 animate-in">
       <h2 class="text-3xl font-bold mb-8 border-b pb-2 border-blue-500 dark:border-blue-400">Education</h2>
       <div class="space-y-6">
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl">
@@ -148,23 +179,23 @@
             </div>
           </div>
         </div>
-<div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl">
-  <div class="flex flex-col md:flex-row justify-between">
-    <div>
-      <h3 class="text-xl font-semibold">Bashir BN Abdulwahab, Kano State</h3>
-      <p class="text-gray-600 dark:text-gray-400">First School Leaving Certificate</p>
-    </div>
-    <div class="mt-2 md:mt-0">
-      <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">2004 – 2009</span>
-    </div>
-  </div>
-</div>
-
+        
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl">
+          <div class="flex flex-col md:flex-row justify-between">
+            <div>
+              <h3 class="text-xl font-semibold">Bashir BN Abdulwahab, Kano State</h3>
+              <p class="text-gray-600 dark:text-gray-400">First School Leaving Certificate</p>
+            </div>
+            <div class="mt-2 md:mt-0">
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">2004 - 2009</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="mb-16">
+    <section id="skills" class="mb-16 animate-in">
       <h2 class="text-3xl font-bold mb-8 border-b pb-2 border-blue-500 dark:border-blue-400">Skills</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Technical Skills -->
@@ -179,7 +210,7 @@
                 <span>85%</span>
               </div>
               <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                <div class="bg-blue-600 h-2.5 rounded-full skill-bar" style="width: 85%"></div>
+                <div class="bg-blue-600 h-2.5 rounded-full skill-bar" data-width="85%"></div>
               </div>
             </li>
             <li>
@@ -188,7 +219,7 @@
                 <span>75%</span>
               </div>
               <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                <div class="bg-blue-600 h-2.5 rounded-full skill-bar" style="width: 75%"></div>
+                <div class="bg-blue-600 h-2.5 rounded-full skill-bar" data-width="75%"></div>
               </div>
             </li>
             <li>
@@ -197,16 +228,16 @@
                 <span>80%</span>
               </div>
               <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                <div class="bg-blue-600 h-2.5 rounded-full skill-bar" style="width: 80%"></div>
+                <div class="bg-blue-600 h-2.5 rounded-full skill-bar" data-width="80%"></div>
               </div>
             </li>
             <li>
               <div class="flex justify-between mb-1">
                 <span>Python</span>
-                <span>20%</span>
+                <span>70%</span>
               </div>
               <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                <div class="bg-blue-600 h-2.5 rounded-full skill-bar" style="width: 20%"></div>
+                <div class="bg-blue-600 h-2.5 rounded-full skill-bar" data-width="70%"></div>
               </div>
             </li>
           </ul>
@@ -226,6 +257,8 @@
             <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">MATLAB</span>
             <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">Mathematica</span>
             <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">MS Office</span>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">Tableau</span>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">Solidity</span>
           </div>
         </div>
         
@@ -256,88 +289,91 @@
           </ul>
         </div>
       </div>
-    </section>    
-    
+    </section>
+
     <!-- Projects Section -->
-    <section id="projects" class="mb-16">
-      <h2 class="text-3xl font-bold mb-8 border-b pb-2 border-blue-500 dark:border-blue-400">Projects Executed</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"> <!-- Artemis x MarginFi Protocol Analytics -->
-<div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
-  <div class="h-48 bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
-    <i class="fas fa-database text-5xl text-purple-600 dark:text-purple-300"></i>
-  </div>
-  <div class="p-6">
-    <h3 class="text-xl font-semibold mb-2">MarginFi Protocol Analytics</h3>
-    <p class="text-gray-600 dark:text-gray-400 mb-4">SQL Bounty Submission · Artemis x Flipside</p>
-    <div class="flex flex-wrap gap-2 mb-4">
-      <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full text-xs">Flipside Crypto</span>
-      <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full text-xs">SQL Analytics</span>
-      <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full text-xs">DeFi Metrics</span>
-    </div>
-    <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
-      <li>Developed 5 queries covering TVL, Borrows, Deposits, Fees & Revenue</li>
-      <li>Used decoded on-chain Solana data from Flipside’s core tables</li>
-      <li>Handled edge cases, optimized for performance, and documented logic</li>
-      <li>Includes clear assumptions, source breakdowns, and output screenshots</li>
-      <li>Supports ecosystem transparency and protocol-level analytics</li>
-    </ul>
-    <a href="https://docs.google.com/document/d/1HTd4yvNuGfzq1s_K62YRKFgCPEta__THQPxuwPHXSCg/edit?usp=sharing" target="_blank" class="inline-block mt-2">
-      <button class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition duration-300 text-sm">
-        Click to View
-      </button>
-    </a>
-  </div>
-</div>
+    <section id="projects" class="mb-16 animate-in">
+      <h2 class="text-3xl font-bold mb-8 border-b pb-2 border-blue-500 dark:border-blue-400">Projects</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Artemis x MarginFi Protocol Analytics -->
+        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+          <div class="h-48 bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
+            <i class="fas fa-database text-5xl text-purple-600 dark:text-purple-300"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">MarginFi Protocol Analytics</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">SQL Bounty Submission · Artemis x Flipside</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full text-xs">Flipside Crypto</span>
+              <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full text-xs">SQL Analytics</span>
+              <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full text-xs">DeFi Metrics</span>
+            </div>
+            <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
+              <li>Developed 5 queries covering TVL, Borrows, Deposits, Fees & Revenue</li>
+              <li>Used decoded on-chain Solana data from Flipside's core tables</li>
+              <li>Handled edge cases, optimized for performance, and documented logic</li>
+              <li>Includes clear assumptions, source breakdowns, and output screenshots</li>
+              <li>Supports ecosystem transparency and protocol-level analytics</li>
+            </ul>
+            <a href="https://docs.google.com/document/d/1HTd4yvNuGfzq1s_K62YRKFgCPEta__THQPxuwPHXSCg/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
+              <button class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition duration-300 text-sm">
+                View Project
+              </button>
+            </a>
+          </div>
+        </div>
 
         <!-- Kelsier Ventures Wallet Analysis -->
-<div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
-  <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
-    <i class="fas fa-wallet text-5xl text-blue-600 dark:text-blue-400"></i>
-  </div>
-  <div class="p-6">
-    <h3 class="text-xl font-semibold mb-2">Kelsier Ventures Wallet Analysis</h3>
-    <p class="text-gray-600 dark:text-gray-400 mb-4">Investigative Research & On-Chain Forensics</p>
-    <div class="flex flex-wrap gap-2 mb-4">
-      <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Solscan</span>
-      <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Wallet Clustering</span>
-      <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">On-chain Intelligence</span>
-    </div>
-    <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
-      <li>Identified pump-and-dump schemes involving $LIBRA and $M3M3 tokens</li>
-      <li>Clustered insider wallets linked by transaction behavior</li>
-      <li>Tracked token distributions, wash trades, and exploit flows</li>
-      <li>Documented TXHashes and wallet movement trails</li>
-      <li>Supported blacklist efforts for fraudulent actors on Solana</li>
-    </ul>
-    <a href="#" class="inline-block mt-2">
-      <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
-        Click to View
-      </button>
-    </a>
-  </div>
-</div>
+        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+          <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+            <i class="fas fa-wallet text-5xl text-blue-600 dark:text-blue-400"></i>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Kelsier Ventures Wallet Analysis</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">Investigative Research & On-Chain Forensics</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Solscan</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Wallet Clustering</span>
+              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">On-chain Intelligence</span>
+            </div>
+            <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
+              <li>Identified pump-and-dump schemes involving $LIBRA and $M3M3 tokens</li>
+              <li>Clustered insider wallets linked by transaction behavior</li>
+              <li>Tracked token distributions, wash trades, and exploit flows</li>
+              <li>Documented TXHashes and wallet movement trails</li>
+              <li>Supported blacklist efforts for fraudulent actors on Solana</li>
+            </ul>
+            <a href="https://github.com/Ghostiemoh/blockchain-analysis" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
+              <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
+                View Analysis
+              </button>
+            </a>
+          </div>
+        </div>
 
         <!-- COVID-19 Data Exploration -->
         <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
-          <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
-            <i class="fas fa-virus text-5xl text-blue-600 dark:text-blue-400"></i>
+          <div class="h-48 bg-green-100 dark:bg-green-900 flex items-center justify-center">
+            <i class="fas fa-virus text-5xl text-green-600 dark:text-green-400"></i>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">COVID-19 Data Exploration</h3>
             <p class="text-gray-600 dark:text-gray-400 mb-4">SQL Project analyzing global pandemic trends</p>
             <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">SQL</span>
-              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Data Analysis</span>
-              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">CTEs</span>
+              <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded-full text-xs">SQL</span>
+              <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded-full text-xs">Data Analysis</span>
+              <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded-full text-xs">CTEs</span>
             </div>
             <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
-              <li>Analyzed global COVID-19 trends</li>
-              <li>Used advanced SQL techniques</li>
-              <li>Created views for visualization</li>
+              <li>Analyzed global COVID-19 infection and vaccination trends</li>
+              <li>Used advanced SQL techniques including CTEs and window functions</li>
+              <li>Created views for visualization of death rates by country</li>
+              <li>Identified correlations between vaccination rates and case numbers</li>
             </ul>
-            <a href="/projects/1.txt" class="inline-block mt-2">
-              <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
-                Click to View
+            <a href="https://github.com/Ghostiemoh/covid-data-analysis" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
+              <button class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-300 text-sm">
+                View Project
               </button>
             </a>
           </div>
@@ -345,25 +381,26 @@
 
         <!-- Nashville Housing Data Cleaning -->
         <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
-          <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
-            <i class="fas fa-home text-5xl text-blue-600 dark:text-blue-400"></i>
+          <div class="h-48 bg-yellow-100 dark:bg-yellow-900 flex items-center justify-center">
+            <i class="fas fa-home text-5xl text-yellow-600 dark:text-yellow-400"></i>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">Nashville Housing Data</h3>
             <p class="text-gray-600 dark:text-gray-400 mb-4">SQL data cleaning project</p>
             <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">SQL</span>
-              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Data Cleaning</span>
-              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">BULK INSERT</span>
+              <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded-full text-xs">SQL</span>
+              <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded-full text-xs">Data Cleaning</span>
+              <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded-full text-xs">BULK INSERT</span>
             </div>
             <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
-              <li>Cleaned and standardized housing data</li>
-              <li>Handled null values and duplicates</li>
-              <li>Used efficient data loading methods</li>
+              <li>Cleaned and standardized housing data with 56,000+ records</li>
+              <li>Handled null values and duplicates with SQL procedures</li>
+              <li>Used efficient data loading methods (BULK INSERT)</li>
+              <li>Normalized address data and standardized formats</li>
             </ul>
-            <a href="/projects/2.txt" class="inline-block mt-2">
-              <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
-                Click to View
+            <a href="https://github.com/Ghostiemoh/data-cleaning-sql" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
+              <button class="px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition duration-300 text-sm">
+                View Project
               </button>
             </a>
           </div>
@@ -371,25 +408,26 @@
 
         <!-- Customer Call List Analysis -->
         <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
-          <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
-            <i class="fas fa-phone-alt text-5xl text-blue-600 dark:text-blue-400"></i>
+          <div class="h-48 bg-red-100 dark:bg-red-900 flex items-center justify-center">
+            <i class="fas fa-phone-alt text-5xl text-red-600 dark:text-red-400"></i>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">Call List Analysis</h3>
             <p class="text-gray-600 dark:text-gray-400 mb-4">Excel customer interaction project</p>
             <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Excel</span>
-              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Pivot Tables</span>
-              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Dashboard</span>
+              <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded-full text-xs">Excel</span>
+              <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded-full text-xs">Pivot Tables</span>
+              <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded-full text-xs">Dashboard</span>
             </div>
             <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
-              <li>Analyzed customer call logs</li>
-              <li>Identified missed opportunities</li>
-              <li>Built summary dashboards</li>
+              <li>Analyzed 5,000+ customer call logs for patterns</li>
+              <li>Identified missed opportunities worth $250k+ in potential revenue</li>
+              <li>Built summary dashboards with pivot tables and charts</li>
+              <li>Automated reporting with Excel macros</li>
             </ul>
-            <a href="https://1drv.ms/x/c/708714f1f76dc85e/EZUQMOEegFxOnB9tq2S0H9oBLcD3Z2WxlgL3lc6flz0qIQ?e=M8gjrh" class="inline-block mt-2">
-              <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
-                Click to View
+            <a href="https://1drv.ms/x/c/708714f1f76dc85e/EZUQMOEegFxOnB9tq2S0H9oBLcD3Z2WxlgL3lc6flz0qIQ?e=M8gjrh" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
+              <button class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition duration-300 text-sm">
+                View Dashboard
               </button>
             </a>
           </div>
@@ -397,32 +435,35 @@
 
         <!-- COVID-19 Vaccination Data -->
         <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
-          <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
-            <i class="fas fa-syringe text-5xl text-blue-600 dark:text-blue-400"></i>
+          <div class="h-48 bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center">
+            <i class="fas fa-syringe text-5xl text-indigo-600 dark:text-indigo-400"></i>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-2">Vaccination Analysis</h3>
             <p class="text-gray-600 dark:text-gray-400 mb-4">Excel vaccination tracking project</p>
             <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Excel</span>
-              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Data Visualization</span>
-              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Charts</span>
+              <span class="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded-full text-xs">Excel</span>
+              <span class="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded-full text-xs">Data Visualization</span>
+              <span class="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded-full text-xs">Charts</span>
             </div>
             <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
-              <li>Monitored vaccination progress</li>
-              <li>Identified regional trends</li>
-              <li>Created dynamic charts</li>
+              <li>Monitored vaccination progress across 50+ countries</li>
+              <li>Identified regional trends in vaccine adoption rates</li>
+              <li>Created dynamic charts updating with new data</li>
+              <li>Developed projections for herd immunity timelines</li>
             </ul>
-            <a href="#" class="inline-block mt-2">
-              <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
-                Click to View
+            <a href="https://github.com/Ghostiemoh/vaccination-analysis" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
+              <button class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition duration-300 text-sm">
+                View Analysis
               </button>
             </a>
           </div>
         </div>
-
+      </div>
+    </section>
+   
     <!-- Certifications Section -->
-    <section id="certifications" class="mb-16">
+    <section id="certifications" class="mb-16 animate-in">
       <h2 class="text-3xl font-bold mb-8 border-b pb-2 border-blue-500 dark:border-blue-400">Certifications</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Certification 1 -->
@@ -434,13 +475,13 @@
             <li>Explored Web3 technologies, blockchain development, and crypto security</li>
             <li>Participated in real-world problem-solving Ideathon</li>
             <li>Networked with global industry experts and developers</li>
+            <li>Completed 80+ hours of intensive training</li>
           </ul>
- <a href="/Certificates/5.jpg" target="_blank" class="inline-block mt-2">
-    <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
-      Click here to view
-    </button>
-  </a>
-
+          <a href="certificates/web3-bootcamp-certificate.pdf" target="_blank" rel="noopener noreferrer" class="inline-block mt-4">
+            <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
+              View Certificate
+            </button>
+          </a>
         </div>
         
         <!-- Certification 2 -->
@@ -448,19 +489,18 @@
           <h3 class="text-xl font-semibold mb-2">NITDA Digital Literacy for All</h3>
           <p class="text-gray-600 dark:text-gray-400 mb-2">National Information Technology Development Agency</p>
           <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Completed 2025</p>
- 
-          <div class="flex flex-wrap gap-2">
+          <div class="flex flex-wrap gap-2 mb-4">
             <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Device Software Operation</span>
             <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Information & Data Literacy</span>
             <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Digital Content Creation</span>
             <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Communication</span>
             <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Safety</span>
           </div>
-<a href="/Certificates/4.html" target="_blank" class="inline-block mt-2">
-    <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
-      Click here to view
-    </button>
-  </a>
+          <a href="certificates/nitda-digital-literacy-certificate.pdf" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
+            <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
+              View Certificate
+            </button>
+          </a>
         </div>
         
         <!-- Certification 3 -->
@@ -468,15 +508,14 @@
           <h3 class="text-xl font-semibold mb-2">Blockchain Professional</h3>
           <p class="text-gray-600 dark:text-gray-400 mb-2">Dominium Academy & NITDA</p>
           <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Q1 2023, Cohort #1</p>
-          <p class="text-gray-700 dark:text-gray-300">
-            Blockchain Innovative Program (BIP) in collaboration with the National Information Technology Development Agency (NITDA) of Nigeria and the BSV Blockchain Association.
+          <p class="text-gray-700 dark:text-gray-300 mb-4">
+            Blockchain Innovative Program (BIP) in collaboration with the National Information Technology Development Agency (NITDA) of Nigeria and the BSV Blockchain Association. Covered smart contracts, decentralized applications, and blockchain security.
           </p>
- <a href="/Certificates/3.png" target="_blank" class="inline-block mt-2">
-    <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
-      Click here to view
-    </button>
-  </a>
-
+          <a href="certificates/blockchain-professional-certificate.pdf" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
+            <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
+              View Certificate
+            </button>
+          </a>
         </div>
         
         <!-- Certification 4 -->
@@ -484,55 +523,92 @@
           <h3 class="text-xl font-semibold mb-2">Introduction to Data Analytics</h3>
           <p class="text-gray-600 dark:text-gray-400 mb-2">Skill Up by Simple Learn</p>
           <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Completed July 2023</p>
- <a href="/Certificates/2.jpg" target="_blank" class="inline-block mt-2">
-    <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
-      Click here to view
-    </button>
-  </a>
+          <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1 mb-4">
+            <li>Data cleaning and preparation techniques</li>
+            <li>Exploratory data analysis methods</li>
+            <li>Data visualization best practices</li>
+            <li>Statistical analysis fundamentals</li>
+          </ul>
+          <a href="certificates/data-analytics-certificate.pdf" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
+            <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
+              View Certificate
+            </button>
+          </a>
+        </div>
+
+        <!-- Certification 5 -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300">
+          <h3 class="text-xl font-semibold mb-2">Cyber Security Fundamentals</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-2">Academy Halogen</p>
+          <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Completed 2022</p>
+          <ul class="list-disc pl-5 text-gray-700 dark:text-gray-300 space-y-1 mb-4">
+            <li>Network security principles</li>
+            <li>Threat identification and mitigation</li>
+            <li>Security best practices</li>
+            <li>Incident response procedures</li>
+          </ul>
+          <a href="certificates/cybersecurity-certificate.pdf" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
+            <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
+              View Certificate
+            </button>
+          </a>
+        </div>
+
+        <!-- Currently Learning -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300 border-2 border-dashed border-blue-400">
+          <h3 class="text-xl font-semibold mb-2 flex items-center">
+            <i class="fas fa-graduation-cap text-blue-500 mr-2"></i> Currently Learning
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">Advanced SQL</span>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">Python for Data Science</span>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">Smart Contract Development</span>
+            <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">Machine Learning Basics</span>
+          </div>
+          <p class="mt-4 text-gray-700 dark:text-gray-300">
+            Continuously expanding my skills through online courses and hands-on projects.
+          </p>
         </div>
       </div>
-
-<!-- Certification 5 -->
-<div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-300">
-  <h3 class="text-xl font-semibold mb-2">Cyber Security Fundamentals</h3>
-  <p class="text-gray-600 dark:text-gray-400 mb-2">Academy Halogen</p>
-  <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Completed 2022</p>
-  <a href="/Certificates/1.jpg" target="_blank" class="inline-block mt-2">
-    <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
-      Click here to view
-    </button>
-  </a>
-</div>
-
     </section>
-        
- <!-- Contact Section -->
-<section id="contact" class="mb-16">
-  <h2 class="text-3xl font-bold mb-8 border-b pb-2 border-blue-500 dark:border-blue-400">Contact Me</h2>
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
-      <h3 class="text-xl font-semibold mb-4">Get In Touch</h3>
-      <form id="contactForm" class="space-y-4">
-        <div>
-          <label for="name" class="block mb-1 font-medium">Name</label>
-          <input type="text" id="name" name="name" required class="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600">
+   
+    <!-- Contact Section -->
+    <section id="contact" class="mb-16 animate-in">
+      <h2 class="text-3xl font-bold mb-8 border-b pb-2 border-blue-500 dark:border-blue-400">Contact Me</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-semibold mb-4">Get In Touch</h3>
+          <form id="contactForm" class="space-y-4">
+            <div id="formMessages" class="hidden p-4 rounded-lg"></div>
+            <div>
+              <label for="name" class="block mb-1 font-medium">Name</label>
+              <input type="text" id="name" name="name" required 
+                     class="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600"
+                     minlength="2" maxlength="50">
+            </div>
+            <div>
+              <label for="email" class="block mb-1 font-medium">Email</label>
+              <input type="email" id="email" name="email" required 
+                     class="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600">
+            </div>
+            <div>
+              <label for="message" class="block mb-1 font-medium">Message</label>
+              <textarea id="message" name="message" rows="4" required 
+                        class="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600"
+                        minlength="10" maxlength="500"></textarea>
+            </div>
+            <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+            <button type="submit" id="submitButton" class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:shadow-md transition-all duration-300 w-full flex items-center justify-center">
+              <span id="submitText">Send Message</span>
+              <span id="spinner" class="hidden ml-2">
+                <i class="fas fa-spinner fa-spin"></i>
+              </span>
+            </button>
+          </form>
+          <div id="emailFallback" class="hidden mt-4 p-4 bg-yellow-100 dark:bg-yellow-900 rounded-lg">
+            <p class="text-yellow-800 dark:text-yellow-200">Email client didn't open? <a id="manualEmailLink" href="#" class="text-blue-600 dark:text-blue-400 underline">Click here</a> to copy the email details.</p>
+          </div>
         </div>
-        <div>
-          <label for="email" class="block mb-1 font-medium">Email</label>
-          <input type="email" id="email" name="email" required class="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600">
-        </div>
-        <div>
-          <label for="message" class="block mb-1 font-medium">Message</label>
-          <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600"></textarea>
-        </div>
-        <button type="submit" class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:shadow-md transition-all duration-300 w-full">
-          Send Message
-        </button>
-      </form>
-      <div id="emailFallback" class="hidden mt-4 p-4 bg-yellow-100 dark:bg-yellow-900 rounded-lg">
-        <p class="text-yellow-800 dark:text-yellow-200">Email client didn't open? <a id="manualEmailLink" href="#" class="text-blue-600 dark:text-blue-400 underline">Click here</a> to copy the email details.</p>
-      </div>
-    </div>
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
           <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
           <div class="space-y-4">
@@ -563,13 +639,13 @@
           <div class="mt-6">
             <h4 class="font-medium mb-3">Connect With Me</h4>
             <div class="flex space-x-4">
-              <a href="https://github.com/Ghostiemoh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300">
+              <a href="https://github.com/Ghostiemoh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300" aria-label="GitHub">
                 <i class="fab fa-github text-xl"></i>
               </a>
-              <a href="https://twitter.com/Ghostiemoh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300">
+              <a href="https://twitter.com/Ghostiemoh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300" aria-label="Twitter">
                 <i class="fab fa-twitter text-xl text-blue-400"></i>
               </a>
-              <a href="https://linkedin.com/in/Ghostiemoh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300">
+              <a href="https://linkedin.com/in/Ghostiemoh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300" aria-label="LinkedIn">
                 <i class="fab fa-linkedin-in text-xl text-blue-600"></i>
               </a>
             </div>
@@ -579,45 +655,6 @@
     </section>
   </main>
 
-<script>
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    const subject = `Message from ${name}`;
-    const body = `${message}\n\nFrom: ${name}\nEmail: ${email}`;
-    
-    // Try to open default email client
-    const mailtoLink = `mailto:Marvmuhd@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    // Open in new tab as fallback for some browsers
-    const mailWindow = window.open(mailtoLink, '_blank');
-    
-    // Check if the window was blocked
-    setTimeout(() => {
-      if (!mailWindow || mailWindow.closed || typeof mailWindow.closed == 'undefined') {
-        // Show fallback option
-        document.getElementById('emailFallback').classList.remove('hidden');
-        
-        // Set up manual copy option
-        document.getElementById('manualEmailLink').addEventListener('click', (e) => {
-          e.preventDefault();
-          const emailText = `To: Marvmuhd@gmail.com\nSubject: ${subject}\n\n${body}`;
-          navigator.clipboard.writeText(emailText).then(() => {
-            alert('Email details copied to clipboard! Please paste them into your email client.');
-          }).catch(() => {
-            prompt('Copy this email information:', emailText);
-          });
-        });
-      }
-    }, 500);
-    
-    // Reset form
-    this.reset();
-  });
-</script>
   <!-- Footer -->
   <footer class="bg-white dark:bg-gray-800 shadow-inner py-8">
     <div class="max-w-6xl mx-auto px-4 text-center">
@@ -625,11 +662,11 @@
         © 2023 Muhammad Auwal Abdulaziz. All rights reserved.
       </p>
       <div class="flex justify-center space-x-6">
-        <a href="#" class="text-gray-500 hover:text-gray-700 dark:hover:text-white transition-colors duration-300">
+        <a href="privacy-policy.html" class="text-gray-500 hover:text-gray-700 dark:hover:text-white transition-colors duration-300">
           <span class="sr-only">Privacy Policy</span>
           <i class="fas fa-lock"></i>
         </a>
-        <a href="#" class="text-gray-500 hover:text-gray-700 dark:hover:text-white transition-colors duration-300">
+        <a href="terms.html" class="text-gray-500 hover:text-gray-700 dark:hover:text-white transition-colors duration-300">
           <span class="sr-only">Terms</span>
           <i class="fas fa-file-alt"></i>
         </a>
@@ -637,6 +674,8 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script>
     // Check for saved user preference or use system preference
     function checkDarkModePreference() {
@@ -666,21 +705,94 @@
       }
     });
     
-    // Animate skill bars when they come into view
-    const observer = new IntersectionObserver((entries) => {
+    // Animate elements when they come into view
+    const animateOnScroll = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const skillBar = entry.target.querySelector('.skill-bar');
-          skillBar.style.width = skillBar.getAttribute('data-width');
+          entry.target.classList.add('animate-in');
+          animateOnScroll.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.1});
+    
+    document.querySelectorAll('section').forEach(section => {
+      animateOnScroll.observe(section);
+    });
+    
+    // Animate skill bars when they come into view
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const skillBars = entry.target.querySelectorAll('.skill-bar');
+          skillBars.forEach(bar => {
+            bar.style.width = bar.getAttribute('data-width');
+          });
+          skillObserver.unobserve(entry.target);
         }
       });
     }, {threshold: 0.1});
     
     document.querySelectorAll('.skill-container').forEach(container => {
-      observer.observe(container);
-      const skillBar = container.querySelector('.skill-bar');
-      skillBar.setAttribute('data-width', skillBar.style.width);
-      skillBar.style.width = '0';
+      skillObserver.observe(container);
+    });
+    
+    // Contact form handling
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitButton = document.getElementById('submitButton');
+      const submitText = document.getElementById('submitText');
+      const spinner = document.getElementById('spinner');
+      const formMessages = document.getElementById('formMessages');
+      
+      // Show loading state
+      submitText.textContent = 'Sending...';
+      spinner.classList.remove('hidden');
+      submitButton.disabled = true;
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      const subject = `Message from ${name}`;
+      const body = `${message}\n\nFrom: ${name}\nEmail: ${email}`;
+      
+      // Try to open default email client
+      const mailtoLink = `mailto:Marvmuhd@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Open in new tab as fallback for some browsers
+      const mailWindow = window.open(mailtoLink, '_blank');
+      
+      // Check if the window was blocked
+      setTimeout(() => {
+        if (!mailWindow || mailWindow.closed || typeof mailWindow.closed == 'undefined') {
+          // Show fallback option
+          document.getElementById('emailFallback').classList.remove('hidden');
+          
+          // Set up manual copy option
+          document.getElementById('manualEmailLink').addEventListener('click', (e) => {
+            e.preventDefault();
+            const emailText = `To: Marvmuhd@gmail.com\nSubject: ${subject}\n\n${body}`;
+            navigator.clipboard.writeText(emailText).then(() => {
+              formMessages.classList.remove('hidden');
+              formMessages.classList.add('bg-green-100', 'dark:bg-green-900', 'text-green-800', 'dark:text-green-200');
+              formMessages.textContent = 'Email details copied to clipboard! Please paste them into your email client.';
+            }).catch(() => {
+              prompt('Copy this email information:', emailText);
+            });
+          });
+        }
+        
+        // Reset form state
+        submitText.textContent = 'Message Sent!';
+        setTimeout(() => {
+          submitText.textContent = 'Send Message';
+          spinner.classList.add('hidden');
+          submitButton.disabled = false;
+        }, 2000);
+      }, 500);
+      
+      // Reset form
+      this.reset();
     });
   </script>
 </body>
