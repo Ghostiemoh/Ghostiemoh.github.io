@@ -214,7 +214,7 @@
             <span>85%</span>
           </div>
           <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-            <div class="bg-blue-600 h-2.5 rounded-full skill-bar" data-width="85%"></div>
+            <div class="bg-blue-600 h-2.5 rounded-full skill-bar" style="width: 0" data-width="85%"></div>
           </div>
         </li>
         <li>
@@ -223,7 +223,7 @@
             <span>80%</span>
           </div>
           <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-            <div class="bg-blue-600 h-2.5 rounded-full skill-bar" data-width="80%"></div>
+            <div class="bg-blue-600 h-2.5 rounded-full skill-bar" style="width: 0" data-width="80%"></div>
           </div>
         </li>
         <li>
@@ -232,7 +232,7 @@
             <span>75%</span>
           </div>
           <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-            <div class="bg-blue-600 h-2.5 rounded-full skill-bar" data-width="75%"></div>
+            <div class="bg-blue-600 h-2.5 rounded-full skill-bar" style="width: 0" data-width="75%"></div>
           </div>
         </li>
         <li>
@@ -241,11 +241,39 @@
             <span>70%</span>
           </div>
           <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-            <div class="bg-blue-600 h-2.5 rounded-full skill-bar" data-width="70%"></div>
+            <div class="bg-blue-600 h-2.5 rounded-full skill-bar" style="width: 0" data-width="70%"></div>
           </div>
         </li>
       </ul>
     </div>
+    
+    <!-- Rest of your skills section content remains the same -->
+    
+  </div>
+</section>
+
+<script>
+// Animate skill bars when section comes into view
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const skillBars = entry.target.querySelectorAll('.skill-bar');
+      skillBars.forEach(bar => {
+        const targetWidth = bar.getAttribute('data-width');
+        bar.style.width = targetWidth;
+        bar.style.transition = 'width 1s ease-in-out';
+      });
+      skillObserver.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.1});
+
+// Observe the skills section
+const skillsSection = document.getElementById('skills');
+if (skillsSection) {
+  skillObserver.observe(skillsSection);
+}
+</script>
     
     <!-- Tools & Technologies -->
     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 group">
