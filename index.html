@@ -247,34 +247,6 @@
       </ul>
     </div>
     
-    <!-- Rest of your skills section content remains the same -->
-    
-  </div>
-</section>
-
-<script>
-// Animate skill bars when section comes into view
-const skillObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const skillBars = entry.target.querySelectorAll('.skill-bar');
-      skillBars.forEach(bar => {
-        const targetWidth = bar.getAttribute('data-width');
-        bar.style.width = targetWidth;
-        bar.style.transition = 'width 1s ease-in-out';
-      });
-      skillObserver.unobserve(entry.target);
-    }
-  });
-}, {threshold: 0.1});
-
-// Observe the skills section
-const skillsSection = document.getElementById('skills');
-if (skillsSection) {
-  skillObserver.observe(skillsSection);
-}
-</script>
-    
     <!-- Tools & Technologies -->
     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 group">
       <div class="flex items-center mb-4">
@@ -319,7 +291,7 @@ if (skillsSection) {
       </div>
     </div>
     
-    <!-- Soft Skills -->
+    <!-- Professional Skills -->
     <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 group">
       <div class="flex items-center mb-4">
         <div class="bg-teal-100 dark:bg-teal-900 p-3 rounded-lg mr-3 group-hover:bg-teal-200 dark:group-hover:bg-teal-800 transition-colors">
@@ -374,6 +346,32 @@ if (skillsSection) {
     </div>
   </div>
 </section>
+
+<script>
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Animate skill bars when section comes into view
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const skillBars = entry.target.querySelectorAll('.skill-bar');
+        skillBars.forEach(bar => {
+          const targetWidth = bar.getAttribute('data-width');
+          bar.style.width = targetWidth;
+          bar.style.transition = 'width 1s ease-in-out';
+        });
+        skillObserver.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.1});
+
+  // Observe the skills section
+  const skillsSection = document.getElementById('skills');
+  if (skillsSection) {
+    skillObserver.observe(skillsSection);
+  }
+});
+</script>
 
     <!-- Projects Section -->
     <section id="projects" class="mb-16 animate-in">
