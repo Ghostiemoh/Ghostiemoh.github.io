@@ -373,203 +373,95 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-    <!-- Projects Section -->
-    <section id="projects" class="mb-16 animate-in">
-      <h2 class="text-3xl font-bold mb-8 border-b pb-2 border-blue-500 dark:border-blue-400">Projects</h2>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Artemis x MarginFi Protocol Analytics -->
-        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
-          <div class="h-48 bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
-            <i class="fas fa-database text-5xl text-purple-600 dark:text-purple-300"></i>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">MarginFi Protocol Analytics</h3>
-            <p class="text-gray-600 dark:text-gray-400 mb-4">SQL Bounty Submission · Artemis x Flipside</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full text-xs">Flipside Crypto</span>
-              <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full text-xs">SQL Analytics</span>
-              <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full text-xs">DeFi Metrics</span>
-            </div>
-            <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
-              <li>Developed 5 queries covering TVL, Borrows, Deposits, Fees & Revenue</li>
-              <li>Used decoded on-chain Solana data from Flipside's core tables</li>
-              <li>Handled edge cases, optimized for performance, and documented logic</li>
-              <li>Includes clear assumptions, source breakdowns, and output screenshots</li>
-              <li>Supports ecosystem transparency and protocol-level analytics</li>
-            </ul>
-            <a href="https://docs.google.com/document/d/1HTd4yvNuGfzq1s_K62YRKFgCPEta__THQPxuwPHXSCg/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
-              <button class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition duration-300 text-sm">
-                View Project
-              </button>
-            </a>
-          </div>
+   <!-- Projects Section -->
+<section id="projects" class="mb-16 animate-in">
+  <h2 class="text-3xl font-bold mb-8 border-b pb-2 border-blue-500 dark:border-blue-400">Projects</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    
+    <!-- Blockchain Fraud Detection -->
+    <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+      <div class="h-48 bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
+        <i class="fas fa-shield-alt text-5xl text-purple-600 dark:text-purple-300"></i>
+      </div>
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2">Blockchain Fraud Detection</h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">Solana Network · On-Chain Fraud Detection</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full text-xs">SQL</span>
+          <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full text-xs">On-Chain Analysis</span>
+          <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full text-xs">Fraud Detection</span>
         </div>
-<!-- Solana Fraud Detection Analysis -->
-<div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
-  <div class="h-48 bg-purple-100 dark:bg-purple-900 flex items-center justify-center">
-    <i class="fas fa-search-dollar text-5xl text-purple-600 dark:text-purple-300"></i>
-  </div>
-  <div class="p-6">
-    <h3 class="text-xl font-semibold mb-2">Solana Fraud Detection</h3>
-    <p class="text-gray-600 dark:text-gray-400 mb-4">Blockchain analysis project using on-chain data</p>
-    <div class="flex flex-wrap gap-2 mb-4">
-      <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full text-xs">SQL</span>
-      <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full text-xs">Flipside</span>
-      <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full text-xs">Blockchain</span>
-      <span class="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full text-xs">Data Viz</span>
+        <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
+          <li>Investigated fraudulent activity on the Solana blockchain, utilizing SQL queries and Flipside data to track illicit transactions and identify compromised wallet addresses.</li>
+          <li>Developed SQL scripts for filtering pump-and-dump schemes and suspicious activities related to non-fungible tokens (NFTs) and token airdrops.</li>
+          <li>Analyzed wallet transactions to uncover hidden links between wallets involved in fraudulent activities.</li>
+          <li>Created an investigative dashboard for visualizing suspicious wallet interactions and flagging wallets based on a range of fraud-related criteria.</li>
+        </ul>
+        <a href="https://github.com/Ghostiemoh/blockchain-fraud-detection" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
+          <button class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition duration-300 text-sm">
+            View Project
+          </button>
+        </a>
+      </div>
     </div>
-    <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
-      <li>Detected suspicious self-transfers and wash trading signals</li>
-      <li>Ranked high-frequency wallets by daily on-chain activity</li>
-      <li>Identified wallet pairs involved in looped SOL transfers</li>
-      <li>Traced large inflow/outflow wallets to assess laundering patterns</li>
-    </ul>
-    <a href="https://docs.google.com/document/d/1pxf4EtWhSU6DWerlkD1fG8HMcj1QWlvBH3YYWmuYbec/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
-      <button class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition duration-300 text-sm">
-        View Dashboard
-      </button>
-    </a>
-  </div>
-</div>
 
-        <!-- Kelsier Ventures Wallet Analysis -->
-        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
-          <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
-            <i class="fas fa-wallet text-5xl text-blue-600 dark:text-blue-400"></i>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Kelsier Ventures Wallet Analysis</h3>
-            <p class="text-gray-600 dark:text-gray-400 mb-4">Investigative Research & On-Chain Forensics</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Solscan</span>
-              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Wallet Clustering</span>
-              <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">On-chain Intelligence</span>
-            </div>
-            <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
-              <li>Identified pump-and-dump schemes involving $LIBRA and $M3M3 tokens</li>
-              <li>Clustered insider wallets linked by transaction behavior</li>
-              <li>Tracked token distributions, wash trades, and exploit flows</li>
-              <li>Documented TXHashes and wallet movement trails</li>
-              <li>Supported blacklist efforts for fraudulent actors on Solana</li>
-            </ul>
-            <a href="https://docs.google.com/document/d/1SDxOn-GqTk7od60YsqBVENOSMm_nVDR9oxxDlDWfzKY/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
-              <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
-                View Analysis
-              </button>
-            </a>
-          </div>
+    <!-- Kelsier Ventures Wallet Analysis -->
+    <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+      <div class="h-48 bg-blue-100 dark:bg-blue-900 flex items-center justify-center">
+        <i class="fas fa-wallet text-5xl text-blue-600 dark:text-blue-300"></i>
+      </div>
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2">Kelsier Ventures Wallet Analysis</h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">Solana Pump-and-Dump Scheme Investigation</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">SQL</span>
+          <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">On-Chain Forensics</span>
+          <span class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">Solana Blockchain</span>
         </div>
-
-        <!-- COVID-19 Data Exploration -->
-        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
-          <div class="h-48 bg-green-100 dark:bg-green-900 flex items-center justify-center">
-            <i class="fas fa-virus text-5xl text-green-600 dark:text-green-400"></i>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">COVID-19 Data Exploration</h3>
-            <p class="text-gray-600 dark:text-gray-400 mb-4">SQL Project analyzing global pandemic trends</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded-full text-xs">SQL</span>
-              <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded-full text-xs">Data Analysis</span>
-              <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded-full text-xs">CTEs</span>
-            </div>
-            <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
-              <li>Analyzed global COVID-19 infection and vaccination trends</li>
-              <li>Used advanced SQL techniques including CTEs and window functions</li>
-              <li>Created views for visualization of death rates by country</li>
-              <li>Identified correlations between vaccination rates and case numbers</li>
-            </ul>
-            <a href="/projects/1.txt" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
-              <button class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-300 text-sm">
-                View Project
-              </button>
-            </a>
-          </div>
-        </div>
-
-        <!-- Nashville Housing Data Cleaning -->
-        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
-          <div class="h-48 bg-yellow-100 dark:bg-yellow-900 flex items-center justify-center">
-            <i class="fas fa-home text-5xl text-yellow-600 dark:text-yellow-400"></i>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Nashville Housing Data</h3>
-            <p class="text-gray-600 dark:text-gray-400 mb-4">SQL data cleaning project</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded-full text-xs">SQL</span>
-              <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded-full text-xs">Data Cleaning</span>
-              <span class="bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded-full text-xs">BULK INSERT</span>
-            </div>
-            <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
-              <li>Cleaned and standardized housing data with 56,000+ records</li>
-              <li>Handled null values and duplicates with SQL procedures</li>
-              <li>Used efficient data loading methods (BULK INSERT)</li>
-              <li>Normalized address data and standardized formats</li>
-            </ul>
-            <a href="/projects/2.txt" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
-              <button class="px-4 py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition duration-300 text-sm">
-                View Project
-              </button>
-            </a>
-          </div>
-        </div>
-
-        <!-- Customer Call List Analysis -->
-        <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
-          <div class="h-48 bg-red-100 dark:bg-red-900 flex items-center justify-center">
-            <i class="fas fa-phone-alt text-5xl text-red-600 dark:text-red-400"></i>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2">Call List Analysis</h3>
-            <p class="text-gray-600 dark:text-gray-400 mb-4">Excel customer interaction project</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded-full text-xs">Excel</span>
-              <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded-full text-xs">Pivot Tables</span>
-              <span class="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded-full text-xs">Dashboard</span>
-            </div>
-            <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
-              <li>Analyzed 5,000+ customer call logs for patterns</li>
-              <li>Identified missed opportunities worth $250k+ in potential revenue</li>
-              <li>Built summary dashboards with pivot tables and charts</li>
-              <li>Automated reporting with Excel macros</li>
-            </ul>
-            <a href="https://1drv.ms/x/c/708714f1f76dc85e/EZUQMOEegFxOnB9tq2S0H9oBLcD3Z2WxlgL3lc6flz0qIQ?e=M8gjrh" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
-              <button class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition duration-300 text-sm">
-                View Dashboard
-              </button>
-            </a>
-          </div>
-        </div>
-
-      <!-- Bicycle Sales Performance Analysis -->
-<div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
-  <div class="h-48 bg-green-100 dark:bg-green-900 flex items-center justify-center">
-    <i class="fas fa-bicycle text-5xl text-green-600 dark:text-green-400"></i>
-  </div>
-  <div class="p-6">
-    <h3 class="text-xl font-semibold mb-2">Bicycle Sales Performance Analysis</h3>
-    <p class="text-gray-600 dark:text-gray-400 mb-4">Retail Sales Trends, Customer Demographics, and Profitability Insights</p>
-    <div class="flex flex-wrap gap-2 mb-4">
-      <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded-full text-xs">Excel</span>
-      <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded-full text-xs">Data Analysis</span>
-      <span class="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded-full text-xs">Dashboards</span>
+        <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
+          <li>Investigated wallet addresses linked to a pump-and-dump scheme in the Solana ecosystem, utilizing transaction analysis and Solscan data.</li>
+          <li>Mapped out wallet flows and transaction patterns to track the movement of stolen assets from various fraudulent activities.</li>
+          <li>Utilized on-chain forensics to identify and tag addresses involved in suspicious activities, providing transparency for users and regulators.</li>
+          <li>Documented evidence for submission to Solana validators to enhance the ecosystem's security and mitigate future risks of similar schemes.</li>
+        </ul>
+        <a href="https://github.com/Ghostiemoh/kelsier-ventures-wallet-analysis" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
+          <button class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300 text-sm">
+            View Project
+          </button>
+        </a>
+      </div>
     </div>
-    <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
-      <li>Conducted in-depth analysis of 500+ retail transactions across age groups, genders, and regions to identify high-performing bicycle categories and customer trends.</li>
-      <li>Developed interactive, dynamic dashboards using PivotTables, charts, and heatmaps to track key performance metrics such as revenue, profit margins, and regional sales performance.</li>
-      <li>Provided actionable pricing recommendations for low-margin accessories, resulting in a 12% increase in profitability in Q2 2024.</li>
-      <li>Delivered insights on market trends, customer demographics, and product performance, supporting data-driven decision-making for pricing strategies.</li>
-    </ul>
-    <a href="https://github.com/Ghostiemoh/bicycle-sales-performance-analysis" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
-      <button class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-300 text-sm">
-        View Analysis
-      </button>
-    </a>
-  </div>
-</div>
 
-    </section>
+    <!-- MarginFi Protocol Analytics -->
+    <div class="project-card bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+      <div class="h-48 bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center">
+        <i class="fas fa-database text-5xl text-indigo-600 dark:text-indigo-300"></i>
+      </div>
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2">MarginFi Protocol Analytics</h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-4">SQL Bounty Submission · Artemis x Flipside</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span class="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded-full text-xs">Flipside Crypto</span>
+          <span class="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded-full text-xs">SQL Analytics</span>
+          <span class="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded-full text-xs">Protocol Analytics</span>
+        </div>
+        <ul class="text-sm text-gray-700 dark:text-gray-300 mb-4 space-y-1 list-disc pl-5">
+          <li>Conducted in-depth analysis of the MarginFi Protocol's data set, utilizing SQL to gather insights on liquidity pools, leverage ratios, and margin calls.</li>
+          <li>Created detailed visualizations for data trends and identified potential risks and inefficiencies within the protocol's operation.</li>
+          <li>Collaborated with the Artemis x Flipside community to submit findings and contribute to the improvement of decentralized finance (DeFi) ecosystems.</li>
+        </ul>
+        <a href="https://github.com/Ghostiemoh/marginfi-protocol-analytics" target="_blank" rel="noopener noreferrer" class="inline-block mt-2">
+          <button class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition duration-300 text-sm">
+            View Project
+          </button>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
    
     <!-- Certifications Section -->
     <section id="certifications" class="mb-16 animate-in">
