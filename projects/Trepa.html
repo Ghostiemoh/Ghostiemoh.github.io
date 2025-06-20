@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trepa | Precision Predictions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .animate-pulse-slow {
+            animation: pulse 3s infinite;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #00ff9d, #00b8ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .slide-track {
+            -webkit-appearance: none;
+            height: 8px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            outline: none;
+        }
+        .slide-track::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #00ff9d;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+            transition: all 0.2s ease;
+        }
+        .slide-track::-webkit-slider-thumb:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(0, 255, 157, 0.8);
+        }
+        .prediction-card {
+            transition: all 0.3s ease;
+        }
+        .prediction-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 157, 0.2);
+        }
+        .how-it-works-step {
+            position: relative;
+        }
+        .how-it-works-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 30px;
+            background: linear-gradient(to bottom, #00ff9d, #00b8ff);
+        }
+        .hovered-element:hover {
+            fill: white;
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-100 font-sans">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <svg width="32" height="32" viewBox="0 0 148 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M37 0C26.7827 0 18.5 8.28273 18.5 18.5C8.28273 18.5 0 26.7827 4.85196e-06 37L0 74L18.5 92.5H2.42598e-06L4.4911e-05 111C6.83748e-05 121.217 8.28281 129.5 18.5001 129.5C18.5 139.717 26.7827 148 37 148H74L92.5 129.5V148L111 148C121.217 148 129.5 139.717 129.5 129.5C139.717 129.5 148 121.217 148 111V74L129.5 55.5H148L148 37C148 26.7827 139.717 18.5 129.5 18.5C129.5 8.28273 121.217 0 111 0H74L55.5 18.5V0H37ZM55.5 18.5L27.75 45.9417V55.5H46.25L83.25 18.5H111H129.5L129.5 55.5L102.058 27.75H92.5V46.25L129.5 83.25V111V129.5H92.5L120.25 102.058V92.5H101.75L64.75 129.5H37H18.5001L18.5 92.5L45.9417 120.25L55.5 120.25L55.5 101.75L18.5 64.75L18.5 37L18.5 18.5H55.5ZM18.5 64.75L18.5 92.5L18.5 74L18.5 64.75Z" fill="white"/>
+            </svg>
+            <span class="text-2xl font-bold">TREPA</span>
+        </div>
+        <div id="mobile-menu" class="hidden md:flex space-x-8">
+            <a href="#how-it-works" class="hover:text-green-400 transition">How It Works</a>
+            <a href="#why-trepa" class="hover:text-green-400 transition">Why Trepa</a>
+            <a href="#faq" class="hover:text-green-400 transition">FAQ</a>
+        </div>
+        <button class="bg-green-500 hover:bg-green-600 text-black font-bold px-6 py-2 rounded-full transition">
+            Join Beta
+        </button>
+        <button id="mobile-menu-button" class="md:hidden text-2xl">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <section class="container mx-auto px-6 py-20 md:py-32">
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                    Predict <span class="gradient-text">precisely.</span><br>
+                    Earn <span class="gradient-text">exponentially.</span>
+                </h1>
+                <p class="text-xl text-gray-400 mb-8">
+                    Trepa rewards you based on how close your forecasts are to reality—not just if you're "right." Sharpen your instincts and compete for maximum rewards.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="bg-green-500 hover:bg-green-600 text-black font-bold px-8 py-4 rounded-full text-lg transition animate-pulse-slow">
+                        Join Beta Waitlist
+                    </button>
+                    <a href="#how-it-works" class="border-2 border-green-500 hover:bg-gray-900 text-green-500 font-bold px-8 py-4 rounded-full text-lg transition flex items-center justify-center">
+                        See How It Works
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative md:ml-12">
+                <div class="bg-gray-900 rounded-2xl p-8 shadow-2xl border border-gray-800">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-bold text-lg">Will BTC hit $120K in the Next 30 Days ?</h3>
+                        <span class="text-green-400 text-sm">Live</span>
+                    </div>
+                    <div class="mb-8">
+                        <div class="flex justify-between mb-2">
+                            <span>0%</span>
+                            <span>100%</span>
+                        </div>
+                        <input type="range" min="0" max="100" value="65" id="btcPredictionSlider" class="slide-track w-full">
+                        <div class="flex justify-between mt-2">
+                            <span class="text-xs text-gray-500">No chance</span>
+                            <span class="text-xs text-gray-500">Certain</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mb-6">
+                        <div>
+                            <p class="text-sm text-gray-400">Your stake</p>
+                            <p class="font-bold" id="btcStakeAmount">$50</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm text-gray-400">Potential reward</p>
+                            <p class="font-bold text-green-400" id="btcPotentialReward">$145</p>
+                        </div>
+                    </div>
+                    <button class="w-full bg-green-500 hover:bg-green-600 text-black font-bold py-3 rounded-lg transition">
+                        Confirm Prediction
+                    </button>
+                </div>
+                <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-purple-500 rounded-full mix-blend-overlay opacity-20 blur-xl"></div>
+                <div class="absolute -top-6 -right-6 w-40 h-40 bg-blue-500 rounded-full mix-blend-overlay opacity-20 blur-xl"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-gray-900 py-8">
+        <div class="container mx-auto px-6">
+            <p class="text-center text-gray-400 mb-6">Trusted by forward-thinkers at</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <div class="text-2xl font-bold opacity-70">TechCrunch</div>
+                </div>
+        </div>
+    </div>
+
+    <section id="how-it-works" class="container mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">How Precision Predictions Work</h2>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto">Traditional prediction platforms are binary. Trepa rewards nuance.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-12">
+            <div class="how-it-works-step text-center">
+                <div class="bg-gray-900 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                    <span class="text-2xl">1</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Slide to Predict</h3>
+                <p class="text-gray-400">Adjust the slider to your exact confidence level—no forced 50/50 choices.</p>
+            </div>
+            <div class="how-it-works-step text-center">
+                <div class="bg-gray-900 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                    <span class="text-2xl">2</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Stake Your Claim</h3>
+                <p class="text-gray-400">Commit funds to back your prediction. The more precise, the higher potential reward.</p>
+            </div>
+            <div class="how-it-works-step text-center">
+                <div class="bg-gray-900 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                    <span class="text-2xl">3</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Earn Based on Accuracy</h3>
+                <p class="text-gray-400">When the outcome is known, get paid proportionally to how close you were.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-trepa" class="bg-gray-900 py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Trepa Beats Binary</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">Traditional prediction vs. precision forecasting</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <div class="bg-black p-8 rounded-2xl border border-gray-800 prediction-card">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-red-500 rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Traditional Predictions</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-minus text-gray-500 mt-1 mr-3"></i>
+                            <span>All-or-nothing outcomes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-minus text-gray-500 mt-1 mr-3"></i>
+                            <span>Forced binary choices (yes/no)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-minus text-gray-500 mt-1 mr-3"></i>
+                            <span>No reward for being "close"</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-minus text-gray-500 mt-1 mr-3"></i>
+                            <span>Encourages gambling mentality</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-black p-8 rounded-2xl border border-green-500/30 prediction-card">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-green-500 rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Trepa Precision</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-plus text-green-400 mt-1 mr-3"></i>
+                            <span>Graduated reward scale</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plus text-green-400 mt-1 mr-3"></i>
+                            <span>Express nuanced confidence</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plus text-green-400 mt-1 mr-3"></i>
+                            <span>Earn for being directionally right</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-plus text-green-400 mt-1 mr-3"></i>
+                            <span>Rewards research and insight</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reward-calculator" class="container mx-auto px-6 py-20">
+        <div class="bg-gray-900 rounded-2xl p-8 md:p-12 border border-gray-800">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">See Your Potential Rewards</h2>
+                    <p class="text-gray-400 mb-8">The closer your prediction to the actual outcome, the more you earn. Far-off guesses get pennies, precise forecasts get paid.</p>
+
+                    <div class="mb-6">
+                        <label for="predictionConfidence" class="block text-gray-400 mb-2">Your prediction confidence</label>
+                        <input type="range" min="0" max="100" value="75" id="predictionConfidence" class="slide-track w-full mb-2">
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-500">0%</span>
+                            <span class="text-sm text-gray-500">100%</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="actualOutcome" class="block text-gray-400 mb-2">Actual outcome</label>
+                        <input type="range" min="0" max="100" value="80" id="actualOutcome" class="slide-track w-full mb-2">
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-500">0%</span>
+                            <span class="text-sm text-gray-500">100%</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="stakeAmount" class="block text-gray-400 mb-2">Your stake amount ($)</label>
+                        <input type="number" value="100" id="stakeAmount" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3">
+                    </div>
+                </div>
+                <div class="bg-black rounded-xl p-8 border border-gray-800">
+                    <div class="text-center mb-8">
+                        <p class="text-gray-400">Your reward would be</p>
+                        <p class="text-5xl font-bold text-green-400 my-4" id="calculatedReward">$87.50</p>
+                        <p class="text-gray-500" id="rewardDescription">for being 5% off the actual outcome</p>
+                    </div>
+                    <div class="h-48 relative">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent h-16 z-10"></div>
+                        <div class="absolute bottom-0 left-0 w-full h-full flex items-end space-x-1">
+                            <div class="bg-gray-800 w-1/5 h-20 rounded-t-sm"></div>
+                            <div class="bg-gray-700 w-1/5 h-32 rounded-t-sm"></div>
+                            <div class="bg-gray-600 w-1/5 h-40 rounded-t-sm"></div>
+                            <div class="bg-green-500 w-1/5 h-48 rounded-t-sm"></div>
+                            <div class="bg-gray-500 w-1/5 h-24 rounded-t-sm"></div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full text-center pt-2 text-xs text-gray-400">
+                            Typical reward distribution based on accuracy
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gradient-to-br from-green-900/30 to-blue-900/30 py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Put Your Instincts to the Test?</h2>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-8">Join the beta waitlist and be among the first to experience precision predictions.</p>
+            <button class="bg-green-500 hover:bg-green-600 text-black font-bold px-10 py-4 rounded-full text-lg transition animate-pulse-slow">
+                Secure Beta Access
+            </button>
+        </div>
+    </section>
+
+    <section id="faq" class="container mx-auto px-6 py-20">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+
+            <div class="space-y-4">
+                <div class="border-b border-gray-800 pb-4">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left group">
+                        <h3 class="text-lg font-medium group-hover:text-green-400 transition">How are rewards calculated?</h3>
+                        <i class="fas fa-plus text-gray-500 group-hover:text-green-400 transition"></i>
+                    </button>
+                    <div class="faq-content mt-2 text-gray-400 hidden">
+                        <p>Rewards are calculated using a logarithmic scale that heavily favors precision. Being 10% off might earn you 60% of the potential reward, while being 40% off might only earn you 10%. The exact formula is designed to incentivize thoughtful, accurate predictions.</p>
+                    </div>
+                </div>
+
+                <div class="border-b border-gray-800 pb-4">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left group">
+                        <h3 class="text-lg font-medium group-hover:text-green-400 transition">What happens if I'm exactly right?</h3>
+                        <i class="fas fa-plus text-gray-500 group-hover:text-green-400 transition"></i>
+                    </button>
+                    <div class="faq-content mt-2 text-gray-400 hidden">
+                        <p>Perfect predictions receive a 2x bonus multiplier on top of the maximum reward. We want to celebrate and incentivize those rare moments of perfect foresight.</p>
+                    </div>
+                </div>
+
+                <div class="border-b border-gray-800 pb-4">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left group">
+                        <h3 class="text-lg font-medium group-hover:text-green-400 transition">Is this gambling?</h3>
+                        <i class="fas fa-plus text-gray-500 group-hover:text-green-400 transition"></i>
+                    </button>
+                    <div class="faq-content mt-2 text-gray-400 hidden">
+                        <p>No. Gambling relies on binary outcomes and chance. Trepa rewards skill, research, and nuanced understanding of probabilities. The platform is designed to surface the most informed predictions, not lucky guesses.</p>
+                    </div>
+                </div>
+
+                <div class="border-b border-gray-800 pb-4">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left group">
+                        <h3 class="text-lg font-medium group-hover:text-green-400 transition">When will the beta launch?</h3>
+                        <i class="fas fa-plus text-gray-500 group-hover:text-green-400 transition"></i>
+                    </button>
+                    <div class="faq-content mt-2 text-gray-400 hidden">
+                        <p>We're currently onboarding users in waves to ensure the best possible experience. Join the waitlist to get prioritized access based on your signup date.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black border-t border-gray-900 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <svg width="24" height="24" viewBox="0 0 148 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M37 0C26.7827 0 18.5 8.28273 18.5 18.5C8.28273 18.5 0 26.7827 4.85196e-06 37L0 74L18.5 92.5H2.42598e-06L4.4911e-05 111C6.83748e-05 121.217 8.28281 129.5 18.5001 129.5C18.5 139.717 26.7827 148 37 148H74L92.5 129.5V148L111 148C121.217 148 129.5 139.717 129.5 129.5C139.717 129.5 148 121.217 148 111V74L129.5 55.5H148L148 37C148 26.7827 139.717 18.5 129.5 18.5C129.5 8.28273 121.217 0 111 0H74L55.5 18.5V0H37ZM55.5 18.5L27.75 45.9417V55.5H46.25L83.25 18.5H111H129.5L129.5 55.5L102.058 27.75H92.5V46.25L129.5 83.25V111V129.5H92.5L120.25 102.058V92.5H101.75L64.75 129.5H37H18.5001L18.5 92.5L45.9417 120.25L55.5 120.25L55.5 101.75L18.5 64.75L18.5 37L18.5 18.5H55.5ZM18.5 64.75L18.5 92.5L18.5 74L18.5 64.75Z" fill="white"/>
+                        </svg>
+                        <span class="text-xl font-bold">TREPA</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Precision in every prediction.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#how-it-works" class="hover:text-green-400 transition">How It Works</a></li>
+                        <li><a href="#why-trepa" class="hover:text-green-400 transition">Why Trepa</a></li>
+                        <li><a href="#faq" class="hover:text-green-400 transition">FAQ</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition">Join Beta</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-green-400 transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-green-400 transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Connect</h4>
+                    <div class="flex space-x-4 text-2xl">
+                        <a href="#" class="hover:text-green-400 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-green-400 transition"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="hover:text-green-400 transition"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-gray-600 text-sm mt-12 border-t border-gray-800 pt-8">
+                &copy; 2024 Trepa. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Global Reward Calculation Logic ---
+        // This function calculates a potential reward based on prediction confidence,
+        // actual outcome (for the calculator), and stake amount.
+        // The closer the prediction is to the actual, the higher the multiplier.
+        function calculateReward(predictionConfidence, actualOutcome, stake) {
+            if (isNaN(stake) || stake <= 0) {
+                return { reward: 0, difference: NaN };
+            }
+
+            const difference = Math.abs(predictionConfidence - actualOutcome);
+            let rewardMultiplier;
+
+            if (difference === 0) {
+                rewardMultiplier = 2.5; // Perfect prediction bonus
+            } else if (difference <= 5) {
+                rewardMultiplier = 1.8; // Very close
+            } else if (difference <= 10) {
+                rewardMultiplier = 1.4; // Close
+            } else if (difference <= 20) {
+                rewardMultiplier = 0.9; // Moderate
+            } else if (difference <= 30) {
+                rewardMultiplier = 0.4; // Somewhat off
+            } else {
+                rewardMultiplier = 0.05; // Far off, minimal return
+            }
+
+            const potentialReward = stake * rewardMultiplier;
+            return { reward: potentialReward, difference: difference };
+        }
+
+        // --- FAQ Accordion ---
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+
+                icon.classList.toggle('fa-plus');
+                icon.classList.toggle('fa-minus');
+                content.classList.toggle('hidden');
+            });
+        });
+
+        // --- Reward Calculator (Lower Section) ---
+        const predictionConfidenceInput = document.getElementById('predictionConfidence');
+        const actualOutcomeInput = document.getElementById('actualOutcome');
+        const stakeAmountInput = document.getElementById('stakeAmount');
+        const calculatedRewardDisplay = document.getElementById('calculatedReward');
+        const rewardDescriptionDisplay = document.getElementById('rewardDescription');
+
+        function updateCalculatorReward() {
+            const predictionConfidence = parseInt(predictionConfidenceInput.value);
+            const actualOutcome = parseInt(actualOutcomeInput.value);
+            const stake = parseFloat(stakeAmountInput.value);
+
+            const { reward, difference } = calculateReward(predictionConfidence, actualOutcome, stake);
+
+            calculatedRewardDisplay.textContent = `$${reward.toFixed(2)}`;
+            if (isNaN(difference)) {
+                 rewardDescriptionDisplay.textContent = 'Please enter a valid stake.';
+            } else {
+                rewardDescriptionDisplay.textContent = `for being ${difference}% off the actual outcome`;
+            }
+        }
+
+        // Add event listeners for the reward calculator inputs
+        predictionConfidenceInput.addEventListener('input', updateCalculatorReward);
+        actualOutcomeInput.addEventListener('input', updateCalculatorReward);
+        stakeAmountInput.addEventListener('input', updateCalculatorReward);
+
+        // --- Initial BTC Prediction Card (Hero Section) ---
+        const btcPredictionSlider = document.getElementById('btcPredictionSlider');
+        const btcStakeAmount = document.getElementById('btcStakeAmount');
+        const btcPotentialReward = document.getElementById('btcPotentialReward');
+
+        // We'll assume a default stake for this example card, say $50
+        const initialBtcStake = 50;
+
+        // Define a FIXED hypothetical actual outcome for this specific prediction card
+        // For instance, let's say the 'true' outcome for BTC hitting $120K is 70% confidence
+        const hypotheticalBtcActualOutcome = 70;
+
+        function updateBtcPredictionCard() {
+            const currentPrediction = parseInt(btcPredictionSlider.value);
+
+            // Calculate reward based on user's prediction and the FIXED hypothetical outcome
+            const { reward, difference } = calculateReward(currentPrediction, hypotheticalBtcActualOutcome, initialBtcStake);
+
+            btcStakeAmount.textContent = `$${initialBtcStake}`; // Display the fixed stake
+            btcPotentialReward.textContent = `$${reward.toFixed(2)}`;
+            // You could also add a description here if you wanted, similar to the calculator
+            // e.g., if you had an element for it:
+            // document.getElementById('btcRewardDescription').textContent = `for being ${difference}% off hypothetical outcome`;
+        }
+
+        // Add event listener for the BTC prediction slider
+        btcPredictionSlider.addEventListener('input', updateBtcPredictionCard);
+
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            mobileMenu.classList.toggle('flex-col');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex', 'flex-col');
+                }
+            });
+        });
+
+        // --- Initialize all dynamic elements on page load ---
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCalculatorReward(); // Set initial state for the calculator
+            updateBtcPredictionCard(); // Set initial state for the BTC card
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Ghostiemoh/trepa" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
