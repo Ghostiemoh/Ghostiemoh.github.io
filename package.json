@@ -1,0 +1,7 @@
+{
+  "name": "personal-portfolio",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "python3 projects/Metadao.spec.py"
+  }
+}
