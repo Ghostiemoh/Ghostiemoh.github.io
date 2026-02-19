@@ -409,7 +409,17 @@
         // actual outcome (for the calculator), and stake amount.
         // The closer the prediction is to the actual, the higher the multiplier.
         function calculateReward(predictionConfidence, actualOutcome, stake) {
-            if (isNaN(stake) || stake <= 0) {
+            // Robust input validation
+            if (!Number.isFinite(predictionConfidence) ||
+                !Number.isFinite(actualOutcome) ||
+                !Number.isFinite(stake)) {
+                return { reward: 0, difference: NaN };
+            }
+
+            // Validate range (0-100 for percentages, stake must be positive)
+            if (predictionConfidence < 0 || predictionConfidence > 100 ||
+                actualOutcome < 0 || actualOutcome > 100 ||
+                stake <= 0) {
                 return { reward: 0, difference: NaN };
             }
 
@@ -462,7 +472,7 @@
 
             calculatedRewardDisplay.textContent = `$${reward.toFixed(2)}`;
             if (isNaN(difference)) {
-                 rewardDescriptionDisplay.textContent = 'Please enter a valid stake.';
+                 rewardDescriptionDisplay.textContent = 'Please enter valid prediction and stake.';
             } else {
                 rewardDescriptionDisplay.textContent = `for being ${difference}% off the actual outcome`;
             }
