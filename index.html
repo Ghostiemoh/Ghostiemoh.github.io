@@ -13,6 +13,8 @@
   <!-- Preconnect to external domains -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   
   <!-- CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -938,22 +940,7 @@ document.addEventListener('DOMContentLoaded', function() {
       animateOnScroll.observe(section);
     });
     
-    // Animate skill bars when they come into view
-    const skillObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const skillBars = entry.target.querySelectorAll('.skill-bar');
-          skillBars.forEach(bar => {
-            bar.style.width = bar.getAttribute('data-width');
-          });
-          skillObserver.unobserve(entry.target);
-        }
-      });
-    }, {threshold: 0.1});
     
-    document.querySelectorAll('.skill-container').forEach(container => {
-      skillObserver.observe(container);
-    });
     
     // Contact form handling
     document.getElementById('contactForm').addEventListener('submit', function(e) {
