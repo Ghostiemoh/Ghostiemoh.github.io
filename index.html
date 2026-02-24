@@ -874,6 +874,11 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
   </main>
 
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 z-50">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
   <!-- Footer -->
   <footer class="bg-white dark:bg-gray-800 shadow-inner py-8">
     <div class="max-w-6xl mx-auto px-4 text-center">
@@ -1013,6 +1018,24 @@ document.addEventListener('DOMContentLoaded', function() {
       // Reset form
       this.reset();
     });
+
+    // Back to Top Button Logic
+    const backToTopButton = document.getElementById('back-to-top');
+    if (backToTopButton) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTopButton.classList.remove('opacity-0', 'invisible');
+          backToTopButton.classList.add('opacity-100', 'visible');
+        } else {
+          backToTopButton.classList.add('opacity-0', 'invisible');
+          backToTopButton.classList.remove('opacity-100', 'visible');
+        }
+      });
+
+      backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
   </script>
 </body>
 </html>
