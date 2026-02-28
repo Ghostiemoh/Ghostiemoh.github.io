@@ -1,0 +1,198 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    max-height: 400px;
+}
+
+.chart-container-sana {
+    height: 320px;
+}
+
+@media (min-width: 768px) {
+    .chart-container,
+    .chart-container-sana {
+        height: 350px;
+    }
+}
+
+/* Metadao specific gradients */
+.gradient-text-metadao {
+    background: linear-gradient(to right, #f95d6a, #ff7c43, #ffa600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* sana specific gradients */
+.gradient-text-sana {
+    background: linear-gradient(90deg, #f95d6a, #ff7c43, #ffa600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+/* Trepa specific gradients */
+.gradient-text-trepa {
+    background: linear-gradient(90deg, #00ff9d, #00b8ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Metadao flow arrows */
+.flowchart-arrow {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.flowchart-arrow-right {
+    border-left: 10px solid #665191;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* sana flow lines */
+.flow-line {
+    background-color: #d1d5db;
+}
+.flow-node {
+    border-color: #2f4b7c;
+    color: #2f4b7c;
+    background-color: #ffffff;
+}
+.flow-node.highlight {
+    background-color: #2f4b7c;
+    color: #ffffff;
+    border-color: #2f4b7c;
+}
+.timeline-line {
+    background-color: #a05195;
+}
+.timeline-dot {
+    background-color: #ffffff;
+    border-color: #a05195;
+}
+.timeline-dot.filled {
+    background-color: #a05195;
+}
+
+/* index specific classes */
+.stat-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.stat-number {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #118AB2;
+}
+.stat-label {
+    font-size: 1rem;
+    color: #4A5568;
+    margin-top: 0.5rem;
+}
+.section-title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #073B4C;
+    text-align: center;
+}
+.section-subtitle {
+    font-size: 1.125rem;
+    color: #4A5568;
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 48rem; /* 3xl from Tailwind = 48rem or 768px */
+    margin-left: auto;
+    margin-right: auto;
+}
+.diagram-box {
+    border: 2px solid #06D6A0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.arrow {
+    font-size: 2rem;
+    color: #FFD166;
+    margin: 0 1rem;
+}
+.icon-style {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #118AB2;
+}
+
+/* Trepa specific classes */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+.animate-pulse-slow {
+    animation: pulse 3s infinite;
+}
+.slide-track {
+    -webkit-appearance: none;
+    height: 8px;
+    background: #1a1a1a;
+    border-radius: 10px;
+    outline: none;
+}
+.slide-track::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #00ff9d;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+    transition: all 0.2s ease;
+}
+.slide-track::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 255, 157, 0.8);
+}
+.prediction-card {
+    transition: all 0.3s ease;
+}
+.prediction-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 157, 0.2);
+}
+.how-it-works-step {
+    position: relative;
+}
+.how-it-works-step:not(:last-child):after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 30px;
+    background: linear-gradient(to bottom, #00ff9d, #00b8ff);
+}
+.hovered-element:hover {
+    fill: white;
+}

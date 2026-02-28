@@ -32,64 +32,15 @@
     Color Palette Name: Brilliant Blues
     HEX Codes: #003f5c, #2f4b7c, #665191, #a05195, #d45087, #f95d6a, #ff7c43, #ffa600
     -->
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f1f5f9;
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 320px;
-            max-height: 400px;
-        }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-            }
-        }
-        .gradient-text {
-            background: linear-gradient(90deg, #f95d6a, #ff7c43, #ffa600);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
-        }
-        .flow-line {
-            background-color: #d1d5db;
-        }
-        .flow-node {
-            border-color: #2f4b7c;
-            color: #2f4b7c;
-            background-color: #ffffff;
-        }
-        .flow-node.highlight {
-            background-color: #2f4b7c;
-            color: #ffffff;
-            border-color: #2f4b7c;
-        }
-        .timeline-line {
-            background-color: #a05195;
-        }
-        .timeline-dot {
-            background-color: #ffffff;
-            border-color: #a05195;
-        }
-        .timeline-dot.filled {
-            background-color: #a05195;
-        }
-    </style>
+    <link rel="stylesheet" href="css/shared.css">
 </head>
-<body class="antialiased text-gray-800">
+<body class="antialiased text-gray-800 bg-slate-100">
 
     <div class="container mx-auto p-4 md:p-8 max-w-7xl">
 
         <header class="text-center py-8 md:py-16">
             <h1 class="text-4xl md:text-6xl font-extrabold text-[#003f5c] tracking-tight">Sanafi Onchain</h1>
-            <p class="mt-4 text-xl md:text-2xl font-semibold gradient-text">Pioneering AI-Driven Ethical Finance on the Blockchain</p>
+            <p class="mt-4 text-xl md:text-2xl font-semibold gradient-text-sana">Pioneering AI-Driven Ethical Finance on the Blockchain</p>
             <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
                 Sanafi is building a transparent, fair, and accessible financial system for everyone. We leverage Artificial Intelligence and the power of the Solana blockchain to create products that are 100% onchain, 100% ethical, and free from interest (riba).
             </p>
@@ -207,7 +158,7 @@
                     <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
                          <h3 class="text-2xl font-bold text-[#a05195] text-center">Product Ecosystem Overview</h3>
                          <p class="text-gray-500 mt-1 text-center">Visualizing the features across our development phases.</p>
-                         <div class="chart-container mt-4">
+                         <div class="chart-container chart-container-sana mt-4">
                              <canvas id="productEcosystemChart"></canvas>
                          </div>
                          <p class="text-center text-gray-600 mt-4">Each phase of our roadmap introduces a new layer of utility, from foundational staking and AI-driven insights to a full suite of banking and investment services, creating a holistic ethical platform.</p>
@@ -307,7 +258,7 @@
                      <div class="lg:col-span-2 bg-white rounded-xl shadow-lg p-6 md:p-8">
                          <h3 class="text-2xl font-bold text-[#ffa600] text-center">$SANA Community Token</h3>
                          <p class="text-gray-500 mt-1 text-center">Driving engagement through ethical rewards.</p>
-                        <div class="chart-container mt-2" style="height:280px; max-height: 280px">
+                        <div class="chart-container chart-container-sana mt-2" style="height:280px; max-height: 280px">
                              <canvas id="sanaTokenChart"></canvas>
                         </div>
                         <p class="text-center text-gray-600 mt-4">$SANA is the primary token for community rewards, distributed for ethical spending and engagement. It aligns user incentives with the platform's core mission.</p>

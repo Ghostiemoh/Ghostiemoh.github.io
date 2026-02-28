@@ -46,84 +46,12 @@
 
         Confirmation: NEITHER Mermaid JS NOR SVG were used anywhere in this output. All charts are Chart.js (Canvas) and diagrams are HTML/CSS.
     -->
-    <style>
-        body {
-            font-family: 'Inter', sans-serif; /* Assuming Inter is available or falls back to sans-serif */
-            background-color: #f8fafc; /* Tailwind bg-slate-50 */
-            color: #073B4C; /* Midnight Green Eagle Green */
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px; /* Default max-width, can be overridden by Tailwind */
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px; /* Base height */
-            max-height: 400px; /* Max height */
-        }
-        @media (min-width: 768px) { /* md breakpoint */
-            .chart-container {
-                height: 350px;
-            }
-        }
-        .stat-card {
-            background-color: white;
-            border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-md */
-            padding: 1.5rem; /* p-6 */
-            margin-bottom: 1.5rem; /* mb-6 */
-            text-align: center;
-        }
-        .stat-number {
-            font-size: 2.25rem; /* text-4xl */
-            font-weight: bold;
-            color: #118AB2; /* Blue NCS */
-        }
-        .stat-label {
-            font-size: 1rem; /* text-base */
-            color: #4A5568; /* Tailwind gray-600 */
-            margin-top: 0.5rem; /* mt-2 */
-        }
-        .section-title {
-            font-size: 1.875rem; /* text-3xl */
-            font-weight: bold;
-            margin-bottom: 1rem; /* mb-4 */
-            color: #073B4C;
-            text-align: center;
-        }
-        .section-subtitle {
-            font-size: 1.125rem; /* text-lg */
-            color: #4A5568; /* Tailwind gray-600 */
-            text-align: center;
-            margin-bottom: 2rem; /* mb-8 */
-            max-width: 3xl; /* max-w-3xl */
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .diagram-box {
-            border: 2px solid #06D6A0; /* Caribbean Green */
-            padding: 1rem;
-            border-radius: 0.5rem;
-            text-align: center;
-            background-color: white;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-        }
-        .arrow {
-            font-size: 2rem;
-            color: #FFD166; /* Sunglow */
-            margin: 0 1rem;
-        }
-        .icon-style {
-            font-size: 2rem; /* text-3xl */
-            margin-bottom: 0.5rem; /* mb-2 */
-            color: #118AB2; /* Blue NCS */
-        }
-    </style>
+    <link rel="stylesheet" href="css/shared.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-slate-100">
+<body class="bg-slate-50 text-[#073B4C]">
 
     <header class="bg-gradient-to-r from-[#073B4C] to-[#118AB2] text-white py-16 px-4 text-center">
         <div class="container mx-auto">
