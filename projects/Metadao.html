@@ -51,7 +51,7 @@
 <body class="bg-gray-900 text-white">
 
     <div class="container mx-auto px-4 py-8 md:py-16">
-        
+
         <header class="text-center mb-16">
             <h1 class="text-4xl md:text-6xl font-black mb-4"><span class="gradient-text">The Solana Launchpad Ecosystem</span></h1>
             <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">A deep dive into the platforms fueling the next wave of crypto innovation. We analyze the key players, their mechanisms, and what they offer to founders and investors.</p>
@@ -94,7 +94,7 @@
                     </div>
                 </div>
             </section>
-            
+
             <section id="performance">
                 <h2 class="text-3xl font-bold text-center mb-10">Performance & Activity Metrics</h2>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -162,7 +162,7 @@
                     </div>
                 </div>
             </section>
-            
+
             <section id="founder-guide">
                 <h2 class="text-3xl font-bold text-center mb-10">The Founder's Guide: Which Launchpad Fits Your Vision?</h2>
                 <p class="text-center text-gray-300 max-w-3xl mx-auto mb-12">Choosing a launchpad is a critical strategic decision. Follow this flow to see which platform archetype aligns with your project's goals and stage.</p>
@@ -216,6 +216,13 @@
 
             <section id="gemini-features">
                 <h2 class="text-3xl font-bold text-center mb-10">✨ AI-Powered Insights for Your Launch Journey ✨</h2>
+
+                <div class="max-w-xl mx-auto mb-10 bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700">
+                    <h3 class="text-xl font-bold mb-4 text-center text-white">API Configuration</h3>
+                    <p class="text-sm text-gray-400 mb-4 text-center">To use the AI features, please provide your Google Gemini API key. It is stored securely in your browser and not saved anywhere.</p>
+                    <input type="password" id="geminiApiKey" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600 mb-2" placeholder="Enter your Gemini API Key">
+                </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700">
                         <h3 class="text-xl font-bold mb-4 text-center text-[#f95d6a]">Launchpad Recommender ✨</h3>
@@ -247,7 +254,7 @@
             </section>
 
         </main>
-        
+
         <footer class="text-center mt-20 pt-8 border-t border-gray-700">
             <p class="text-gray-400">Infographic created based on public data and analysis of the crypto launchpad ecosystem. This is not financial advice. Always do your own research.</p>
         </footer>
@@ -279,7 +286,7 @@
                 lines.push(current_line.trim());
                 return lines;
             };
-            
+
             const tooltipTitleCallback = (tooltipItems) => {
                 const item = tooltipItems[0];
                 let label = item.chart.data.labels[item.dataIndex];
@@ -439,10 +446,16 @@
 
             // Gemini API Integration Functions
             const callGeminiAPI = async (prompt) => {
+                const apiKeyInput = document.getElementById('geminiApiKey');
+                const apiKey = apiKeyInput ? apiKeyInput.value.trim() : "";
+
+                if (!apiKey) {
+                    return "Error: Please enter your Gemini API key in the API Configuration section.";
+                }
+
                 let chatHistory = [];
                 chatHistory.push({ role: "user", parts: [{ text: prompt }] });
                 const payload = { contents: chatHistory };
-                const apiKey = "";
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
                 try {
@@ -484,7 +497,7 @@
 
                 const prompt = `Given the following Solana project description, recommend the most suitable Solana token launchpad among Solanium (curated IDO, vetted projects, often requires staking native token like SLIM for allocations), Pump.fun (fair launch bonding curve, instant liquidity, best for meme coins/experimental projects with no prior vetting), and MetaDAO (futarchy, market-based governance, for DAOs where decisions are made by prediction markets). Explain why this launchpad is a good fit and briefly mention the benefits for a founder. Project description: ${description}`;
                 const result = await callGeminiAPI(prompt);
-                
+
                 recommendationLoading.classList.add('hidden');
                 recommendationOutput.textContent = result;
                 recommendationOutput.classList.remove('hidden');
@@ -509,7 +522,7 @@
 
                 const prompt = `Suggest a high-level token launch strategy for a Solana project with the following idea: "${idea}". Consider aspects like potential token allocation percentages (e.g., liquidity, team, community, marketing), a suitable launch mechanism (e.g., IDO, fair launch, specific auction model), initial distribution ideas, and key considerations for success on Solana. Provide a concise, bulleted list or short paragraphs.`;
                 const result = await callGeminiAPI(prompt);
-                
+
                 strategyLoading.classList.add('hidden');
                 strategyOutput.textContent = result;
                 strategyOutput.classList.remove('hidden');
@@ -534,7 +547,7 @@
 
                 const prompt = `Explain the crypto term "${term}" in simple, easy-to-understand language for a beginner. Avoid overly complex jargon yourself.`;
                 const result = await callGeminiAPI(prompt);
-                
+
                 jargonLoading.classList.add('hidden');
                 jargonOutput.textContent = result;
                 jargonOutput.classList.remove('hidden');
