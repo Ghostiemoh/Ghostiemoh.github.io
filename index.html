@@ -94,11 +94,7 @@
         <span class="hidden dark:inline">☀️ Light</span>
       </button>
     </nav>
-    <div class="mt-2 md:mt-0 flex space-x-3">
-      <a href="https://github.com/Ghostiemoh" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github text-xl hover:text-gray-700 dark:hover:text-white"></i></a>
-      <a href="https://twitter.com/Ghostiemoh" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter text-xl hover:text-blue-500"></i></a>
-      <a href="https://linkedin.com/in/Ghostieemoh" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin text-xl hover:text-blue-700"></i></a>
-    </div>
+    <div class="mt-2 md:mt-0 flex space-x-3" id="header-social-links"></div>
   </header>
 
   <main id="main-content" class="max-w-6xl mx-auto px-4 py-8">
@@ -857,17 +853,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           <div class="mt-6">
             <h4 class="font-medium mb-3">Connect With Me</h4>
-            <div class="flex space-x-4">
-              <a href="https://github.com/Ghostiemoh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300" aria-label="GitHub">
-                <i class="fab fa-github text-xl"></i>
-              </a>
-              <a href="https://twitter.com/Ghostiemoh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300" aria-label="Twitter">
-                <i class="fab fa-twitter text-xl text-blue-400"></i>
-              </a>
-              <a href="https://linkedin.com/in/Ghostiemoh" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300" aria-label="LinkedIn">
-                <i class="fab fa-linkedin-in text-xl text-blue-600"></i>
-              </a>
-            </div>
+            <div class="flex space-x-4" id="footer-social-links"></div>
           </div>
         </div>
       </div>
@@ -896,6 +882,57 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Scripts -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script>
+    const socialLinks = [
+      {
+        name: "GitHub",
+        url: "https://github.com/Ghostiemoh",
+        iconClass: "fab fa-github",
+        headerHoverClass: "hover:text-gray-700 dark:hover:text-white",
+        footerIconColorClass: "",
+        ariaLabel: "GitHub"
+      },
+      {
+        name: "Twitter",
+        url: "https://twitter.com/Ghostiemoh",
+        iconClass: "fab fa-twitter",
+        headerHoverClass: "hover:text-blue-500",
+        footerIconColorClass: "text-blue-400",
+        ariaLabel: "Twitter"
+      },
+      {
+        name: "LinkedIn",
+        url: "https://linkedin.com/in/Ghostiemoh",
+        iconClass: "fab fa-linkedin",
+        headerHoverClass: "hover:text-blue-700",
+        footerIconColorClass: "text-blue-600",
+        ariaLabel: "LinkedIn",
+        footerIconClassOverride: "fab fa-linkedin-in"
+      }
+    ];
+
+    function renderSocialLinks() {
+      const headerContainer = document.getElementById('header-social-links');
+      const footerContainer = document.getElementById('footer-social-links');
+
+      if (headerContainer) {
+        headerContainer.innerHTML = socialLinks.map(link => `
+          <a href="${link.url}" target="_blank" rel="noopener noreferrer" aria-label="${link.ariaLabel}">
+            <i class="${link.iconClass} text-xl ${link.headerHoverClass}"></i>
+          </a>
+        `).join('');
+      }
+
+      if (footerContainer) {
+        footerContainer.innerHTML = socialLinks.map(link => `
+          <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300" aria-label="${link.ariaLabel}">
+            <i class="${link.footerIconClassOverride || link.iconClass} text-xl ${link.footerIconColorClass}"></i>
+          </a>
+        `).join('');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', renderSocialLinks);
+
     // Check for saved user preference or use system preference
     function checkDarkModePreference() {
       if (localStorage.getItem('darkMode') === 'true' || 
