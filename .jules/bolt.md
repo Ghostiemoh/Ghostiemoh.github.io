@@ -1,0 +1,3 @@
+## 2024-11-20 - [LCP Anti-Pattern: Lazy Loading Above-The-Fold Images]
+**Learning:** Found a critical performance anti-pattern in `index.html` where the above-the-fold profile picture (`profile.JPG`) was using the `loading="lazy"` attribute. Lazy loading delays the fetch of the image until the browser determines it's near the viewport, which artificially degrades the Largest Contentful Paint (LCP) metric because the image is immediately visible to users.
+**Action:** Always verify that critical, above-the-fold assets use `fetchpriority="high"` and specifically DO NOT use `loading="lazy"` to ensure they are discovered and fetched by the browser as early as possible.
