@@ -7,3 +7,7 @@
 ## 2025-05-16 - Visual Required Form Indicators
 **Learning:** The contact form has HTML `required` attributes, but no visual indication for sighted users.
 **Action:** Always add visual indicators like a red asterisk to explicitly mark required form fields, matching the underlying HTML5 constraints to improve predictability for sighted users.
+
+## 2025-05-17 - Accessible Custom Progress Bars
+**Learning:** Custom UI elements simulating native elements (like `div` elements styled as progress bars) are completely invisible to screen readers without proper ARIA roles.
+**Action:** Always add `role="progressbar"`, `aria-valuenow`, `aria-valuemin`, `aria-valuemax`, and `aria-labelledby` or `aria-label` to custom progress bars to ensure their state and meaning are conveyed to assistive technologies.
