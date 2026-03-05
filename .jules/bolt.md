@@ -1,0 +1,3 @@
+## 2025-03-05 - Optimize LCP Element Loading
+**Learning:** Adding `loading="lazy"` to above-the-fold elements, such as the main profile picture, is a performance anti-pattern. It delays the Largest Contentful Paint (LCP) by preventing the browser from preloading the image as soon as possible.
+**Action:** Remove `loading="lazy"` and add `fetchpriority="high"` to critical above-the-fold images to optimize LCP.
