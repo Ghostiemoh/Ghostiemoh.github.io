@@ -101,9 +101,10 @@
     <!-- About Section -->
     <section id="about" class="mb-16 grid grid-cols-1 md:grid-cols-3 gap-8 items-center animate-in">
       <div class="md:col-span-1 flex justify-center">
+        <!-- ⚡ Bolt Optimization: Removed loading="lazy" and added fetchpriority="high" for the LCP image to improve performance -->
         <img src="profile.JPG" alt="Muhammad Auwal Abdulaziz - Tech Enthusiast"
              class="rounded-2xl shadow-lg w-64 h-64 object-cover hover:shadow-xl transition-shadow duration-300"
-             loading="lazy" width="256" height="256">
+             fetchpriority="high" width="256" height="256">
       </div>
       <div class="md:col-span-2">
         <h2 class="text-3xl font-bold mb-4 border-b pb-2 border-blue-500 dark:border-blue-400">About Me</h2>
