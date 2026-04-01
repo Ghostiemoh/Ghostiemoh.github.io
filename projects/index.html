@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Switchboard.xyz: Oracle Industry Trends & Market Analysis</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <!--
         SPA Infographic Plan: Switchboard.xyz - Industry Trends & Market Research
 
@@ -333,6 +333,9 @@
     </main>
 
     <script>
+        // ⚡ Bolt Optimization: Deferring chart.js script execution until after the HTML document has been fully parsed to prevent render-blocking.
+        // Wrapping inline chart initialization in DOMContentLoaded ensures chart.js is loaded before execution.
+        document.addEventListener('DOMContentLoaded', () => {
         const CHART_COLORS = {
             fieryRose: '#FF6B6B',
             sunglow: '#FFD166',
@@ -445,6 +448,7 @@
                 }
             });
         }
+        });
     </script>
 </body>
 </html>

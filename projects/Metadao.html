@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deep Dive: The Solana Token Launchpad Ecosystem</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
@@ -262,6 +262,8 @@
     </div>
 
     <script>
+        // ⚡ Bolt Optimization: Deferring chart.js script execution until after the HTML document has been fully parsed to prevent render-blocking.
+        // Wrapping inline chart initialization in DOMContentLoaded ensures chart.js is loaded before execution.
         document.addEventListener('DOMContentLoaded', () => {
             const FONT_COLOR = '#E5E7EB';
             const GRID_COLOR = 'rgba(229, 231, 235, 0.1)';
