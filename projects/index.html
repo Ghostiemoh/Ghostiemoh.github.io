@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Switchboard.xyz: Oracle Industry Trends & Market Analysis</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <!--
         SPA Infographic Plan: Switchboard.xyz - Industry Trends & Market Research
 
@@ -333,6 +333,8 @@
     </main>
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
         const CHART_COLORS = {
             fieryRose: '#FF6B6B',
             sunglow: '#FFD166',
@@ -347,20 +349,20 @@
             }
             const words = label.split(' ');
             const lines = [];
-            let currentLine = '';
-            for (const word of words) {
-                if ((currentLine + word).length > maxLength && currentLine.length > 0) {
-                    lines.push(currentLine.trim());
-                    currentLine = '';
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                const word = words[i];
+                if (currentLine.length + 1 + word.length > maxLength) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine += ' ' + word;
                 }
-                currentLine += word + ' ';
             }
-            if (currentLine.trim().length > 0) {
-                lines.push(currentLine.trim());
-            }
+            lines.push(currentLine);
             return lines;
         }
-        
+
         const tooltipTitleCallback = (tooltipItems) => {
             const item = tooltipItems[0];
             let label = item.chart.data.labels[item.dataIndex];
@@ -432,7 +434,7 @@
                     maintainAspectRatio: false,
                     scales: {
                         x: { stacked: true },
-                        y: { 
+                        y: {
                             stacked: true,
                             beginAtZero: true,
                             title: { display: true, text: 'Data Model Support (1=Supported)' },
@@ -445,6 +447,8 @@
                 }
             });
         }
+
+        });
     </script>
 </body>
 </html>

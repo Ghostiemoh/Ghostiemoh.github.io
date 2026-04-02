@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sanafi Onchain: The Future of Ethical Finance</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -186,7 +186,7 @@
                     </div>
                 </div>
             </section>
-            
+
             <section id="products">
                  <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-[#003f5c]">An Ecosystem for Your Ethical Financial Life</h2>
@@ -214,7 +214,7 @@
                     </div>
                 </div>
             </section>
-            
+
             <section id="roadmap">
                 <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 lg:col-span-2">
                     <div class="text-center mb-12">
@@ -224,7 +224,7 @@
                     <div class="relative w-full max-w-4xl mx-auto">
                         <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 timeline-line rounded-full"></div>
                         <div class="space-y-16">
-                            
+
                             <div class="relative flex items-center">
                                 <div class="w-1/2 pr-8 text-right">
                                     <h4 class="text-xl font-bold text-[#2f4b7c]">Current (MVP Launched)</h4>
@@ -252,7 +252,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            
+
                             <div class="relative flex items-center">
                                 <div class="w-1/2 pr-8 text-right">
                                     <h4 class="text-xl font-bold text-[#f95d6a]">Planned (2026 & Beyond)</h4>
@@ -278,7 +278,7 @@
                     <h2 class="text-3xl md:text-4xl font-bold text-[#003f5c]">The Dual-Token Economy</h2>
                     <p class="mt-2 text-lg text-gray-600 max-w-2xl mx-auto">$SanaSOL and $SANA work together to fuel a sustainable and growing ecosystem.</p>
                 </div>
-                
+
                 <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
                      <div class="lg:col-span-3 bg-white rounded-xl shadow-lg p-6 md:p-8">
                         <h3 class="text-2xl font-bold text-[#2f4b7c] text-center">A Synergistic Growth Loop</h3>
@@ -317,7 +317,7 @@
             </section>
 
         </main>
-        
+
         <footer class="text-center mt-16 md:mt-24 py-8 border-t border-gray-300">
              <h2 class="text-2xl font-bold text-[#003f5c]">Join the Future of Ethical Finance</h2>
              <p class="mt-2 text-gray-600 max-w-xl mx-auto">Ready to align your finances with your values? Explore Sanafi and become part of the movement.</p>
@@ -329,22 +329,25 @@
     </div>
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
         const wrapLabel = (label, maxLength = 16) => {
             if (label.length <= maxLength) {
                 return label;
             }
             const words = label.split(' ');
             const lines = [];
-            let currentLine = '';
-            for (const word of words) {
-                if ((currentLine + ' ' + word).trim().length > maxLength) {
-                    if (currentLine) lines.push(currentLine);
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                const word = words[i];
+                if (currentLine.length + 1 + word.length > maxLength) {
+                    lines.push(currentLine);
                     currentLine = word;
                 } else {
-                    currentLine = (currentLine + ' ' + word).trim();
+                    currentLine += ' ' + word;
                 }
             }
-            if (currentLine) lines.push(currentLine);
+            lines.push(currentLine);
             return lines;
         };
 
@@ -357,7 +360,7 @@
               return label;
             }
         };
-        
+
         const chartColors = {
             blue: '#2f4b7c',
             purple: '#665191',
@@ -374,10 +377,10 @@
                 type: 'bar',
                 data: {
                     labels: [
-                        'Ethical Yield & Liquidity', 
+                        'Ethical Yield & Liquidity',
                         'AI-Powered Education',
                         ['AI-Driven Ethical', 'Investments'],
-                        ['Interest-Free', 'Accounts & Cards'], 
+                        ['Interest-Free', 'Accounts & Cards'],
                         ['Integrated "SuperApp"', 'Experience'],
                         ['Tokenized Real-World', 'Assets (RWA)']
                     ].map(l => Array.isArray(l) ? l : wrapLabel(l)),
@@ -474,6 +477,8 @@
                 }
             });
         }
+
+        });
     </script>
 </body>
 </html>
