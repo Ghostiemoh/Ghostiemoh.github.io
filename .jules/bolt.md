@@ -1,0 +1,3 @@
+## 2024-05-24 - Preloading non-critical CSS significantly improves FCP
+**Learning:** External CSS libraries like FontAwesome that are loaded synchronously block the main thread and significantly delay First Contentful Paint (FCP). During benchmarking, I observed FCP drop from 1600ms to 388ms simply by unblocking the FontAwesome stylesheet.
+**Action:** Always load non-critical external stylesheets (like icon fonts) using the `<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">` pattern with a `<noscript>` fallback to prevent render-blocking behavior, drastically improving perceived load time.
