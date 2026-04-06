@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Switchboard.xyz: Oracle Industry Trends & Market Analysis</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!--
         SPA Infographic Plan: Switchboard.xyz - Industry Trends & Market Research
 
@@ -333,6 +333,7 @@
     </main>
 
     <script>
+document.addEventListener("DOMContentLoaded", () => {
         const CHART_COLORS = {
             fieryRose: '#FF6B6B',
             sunglow: '#FFD166',
@@ -445,6 +446,7 @@
                 }
             });
         }
+    });
     </script>
 </body>
 </html>
