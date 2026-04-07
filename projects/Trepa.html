@@ -318,7 +318,7 @@
 
             <div class="space-y-4">
                 <div class="border-b border-gray-800 pb-4">
-                    <button class="faq-toggle flex justify-between items-center w-full text-left group">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left group" aria-expanded="false">
                         <h3 class="text-lg font-medium group-hover:text-green-400 transition">How are rewards calculated?</h3>
                         <i class="fas fa-plus text-gray-500 group-hover:text-green-400 transition"></i>
                     </button>
@@ -328,7 +328,7 @@
                 </div>
 
                 <div class="border-b border-gray-800 pb-4">
-                    <button class="faq-toggle flex justify-between items-center w-full text-left group">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left group" aria-expanded="false">
                         <h3 class="text-lg font-medium group-hover:text-green-400 transition">What happens if I'm exactly right?</h3>
                         <i class="fas fa-plus text-gray-500 group-hover:text-green-400 transition"></i>
                     </button>
@@ -338,7 +338,7 @@
                 </div>
 
                 <div class="border-b border-gray-800 pb-4">
-                    <button class="faq-toggle flex justify-between items-center w-full text-left group">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left group" aria-expanded="false">
                         <h3 class="text-lg font-medium group-hover:text-green-400 transition">Is this gambling?</h3>
                         <i class="fas fa-plus text-gray-500 group-hover:text-green-400 transition"></i>
                     </button>
@@ -348,7 +348,7 @@
                 </div>
 
                 <div class="border-b border-gray-800 pb-4">
-                    <button class="faq-toggle flex justify-between items-center w-full text-left group">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left group" aria-expanded="false">
                         <h3 class="text-lg font-medium group-hover:text-green-400 transition">When will the beta launch?</h3>
                         <i class="fas fa-plus text-gray-500 group-hover:text-green-400 transition"></i>
                     </button>
@@ -413,7 +413,8 @@
 
                 icon.classList.toggle('fa-plus');
                 icon.classList.toggle('fa-minus');
-                content.classList.toggle('hidden');
+                const isHidden = content.classList.toggle('hidden');
+                button.setAttribute('aria-expanded', !isHidden);
             });
         });
 
@@ -499,4 +500,5 @@
             updateBtcPredictionCard(); // Set initial state for the BTC card
         });
     </script> 
+</body>
 </html>
