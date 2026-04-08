@@ -953,22 +953,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Contact form handling
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+    const contactForm = document.getElementById('contactForm');
+    const submitButton = document.getElementById('submitButton');
+    const submitText = document.getElementById('submitText');
+    const spinner = document.getElementById('spinner');
+    const formMessages = document.getElementById('formMessages');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const emailFallback = document.getElementById('emailFallback');
+    const manualEmailLink = document.getElementById('manualEmailLink');
 
-      const submitButton = document.getElementById('submitButton');
-      const submitText = document.getElementById('submitText');
-      const spinner = document.getElementById('spinner');
-      const formMessages = document.getElementById('formMessages');
+    function handleContactFormSubmit(e) {
+      e.preventDefault();
 
       // Show loading state
       submitText.textContent = 'Sending...';
       spinner.classList.remove('hidden');
       submitButton.disabled = true;
 
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
+      const name = nameInput.value;
+      const email = emailInput.value;
+      const message = messageInput.value;
       const subject = `Message from ${name}`;
       const body = `${message}\n\nFrom: ${name}\nEmail: ${email}`;
 
@@ -982,10 +988,10 @@ document.addEventListener('DOMContentLoaded', function() {
       setTimeout(() => {
         if (!mailWindow || mailWindow.closed || typeof mailWindow.closed == 'undefined') {
           // Show fallback option
-          document.getElementById('emailFallback').classList.remove('hidden');
+          emailFallback.classList.remove('hidden');
 
           // Set up manual copy option
-          document.getElementById('manualEmailLink').addEventListener('click', (e) => {
+          manualEmailLink.onclick = (e) => {
             e.preventDefault();
             const emailText = `To: Marvmuhd@gmail.com\nSubject: ${subject}\n\n${body}`;
             navigator.clipboard.writeText(emailText).then(() => {
@@ -995,7 +1001,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }).catch(() => {
               prompt('Copy this email information:', emailText);
             });
-          });
+          };
         }
 
         // Reset form state
@@ -1008,8 +1014,12 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 500);
 
       // Reset form
-      this.reset();
-    });
+      contactForm.reset();
+    }
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', handleContactFormSubmit);
+    }
   </script>
 </body>
 </html>
