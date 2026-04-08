@@ -229,7 +229,7 @@
                         <p class="text-sm text-gray-400 mb-4">Describe your project, and our AI will suggest the most suitable Solana launchpad discussed in this deep dive.</p>
                         <textarea id="projectDescription" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600 mb-4" rows="4" placeholder="e.g., 'A decentralized lending protocol focusing on real-world assets.'"></textarea>
                         <button id="recommendButton" class="w-full bg-[#f95d6a] hover:bg-[#ff7c43] text-white font-bold py-2 px-4 rounded-lg transition-colors">Get Recommendation</button>
-                        <div id="recommendationOutput" class="mt-4 p-3 bg-gray-700 rounded text-gray-200 hidden"></div>
+                        <div id="recommendationOutput" class="mt-4 p-3 bg-gray-700 rounded text-gray-200 hidden" aria-live="polite"></div>
                         <div id="recommendationLoading" class="mt-4 text-center text-gray-400 hidden">Loading...</div>
                     </div>
 
@@ -238,7 +238,7 @@
                         <p class="text-sm text-gray-400 mb-4">Input your project idea, and get high-level token launch strategy concepts from our AI.</p>
                         <textarea id="projectIdea" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600 mb-4" rows="4" placeholder="e.g., 'A play-to-earn game where players breed unique digital pets.'"></textarea>
                         <button id="strategyButton" class="w-full bg-[#ffa600] hover:bg-[#ff7c43] text-white font-bold py-2 px-4 rounded-lg transition-colors">Brainstorm Strategy</button>
-                        <div id="strategyOutput" class="mt-4 p-3 bg-gray-700 rounded text-gray-200 hidden"></div>
+                        <div id="strategyOutput" class="mt-4 p-3 bg-gray-700 rounded text-gray-200 hidden" aria-live="polite"></div>
                         <div id="strategyLoading" class="mt-4 text-center text-gray-400 hidden">Loading...</div>
                     </div>
 
@@ -247,7 +247,7 @@
                         <p class="text-sm text-gray-400 mb-4">Confused by a term? Get a simple explanation from our AI.</p>
                         <input type="text" id="jargonTerm" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600 mb-4" placeholder="e.g., 'DLMM' or 'Vesting Schedule'">
                         <button id="explainJargonButton" class="w-full bg-[#a05195] hover:bg-[#665191] text-white font-bold py-2 px-4 rounded-lg transition-colors">Explain Term</button>
-                        <div id="jargonOutput" class="mt-4 p-3 bg-gray-700 rounded text-gray-200 hidden"></div>
+                        <div id="jargonOutput" class="mt-4 p-3 bg-gray-700 rounded text-gray-200 hidden" aria-live="polite"></div>
                         <div id="jargonLoading" class="mt-4 text-center text-gray-400 hidden">Loading...</div>
                     </div>
                 </div>
