@@ -318,41 +318,41 @@
 
             <div class="space-y-4">
                 <div class="border-b border-gray-800 pb-4">
-                    <button class="faq-toggle flex justify-between items-center w-full text-left group">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left group" aria-expanded="false" aria-controls="faq-content-1">
                         <h3 class="text-lg font-medium group-hover:text-green-400 transition">How are rewards calculated?</h3>
                         <i class="fas fa-plus text-gray-500 group-hover:text-green-400 transition"></i>
                     </button>
-                    <div class="faq-content mt-2 text-gray-400 hidden">
+                    <div id="faq-content-1" class="faq-content mt-2 text-gray-400 hidden">
                         <p>Rewards are calculated using a logarithmic scale that heavily favors precision. Being 10% off might earn you 60% of the potential reward, while being 40% off might only earn you 10%. The exact formula is designed to incentivize thoughtful, accurate predictions.</p>
                     </div>
                 </div>
 
                 <div class="border-b border-gray-800 pb-4">
-                    <button class="faq-toggle flex justify-between items-center w-full text-left group">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left group" aria-expanded="false" aria-controls="faq-content-2">
                         <h3 class="text-lg font-medium group-hover:text-green-400 transition">What happens if I'm exactly right?</h3>
                         <i class="fas fa-plus text-gray-500 group-hover:text-green-400 transition"></i>
                     </button>
-                    <div class="faq-content mt-2 text-gray-400 hidden">
+                    <div id="faq-content-2" class="faq-content mt-2 text-gray-400 hidden">
                         <p>Perfect predictions receive a 2x bonus multiplier on top of the maximum reward. We want to celebrate and incentivize those rare moments of perfect foresight.</p>
                     </div>
                 </div>
 
                 <div class="border-b border-gray-800 pb-4">
-                    <button class="faq-toggle flex justify-between items-center w-full text-left group">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left group" aria-expanded="false" aria-controls="faq-content-3">
                         <h3 class="text-lg font-medium group-hover:text-green-400 transition">Is this gambling?</h3>
                         <i class="fas fa-plus text-gray-500 group-hover:text-green-400 transition"></i>
                     </button>
-                    <div class="faq-content mt-2 text-gray-400 hidden">
+                    <div id="faq-content-3" class="faq-content mt-2 text-gray-400 hidden">
                         <p>No. Gambling relies on binary outcomes and chance. Trepa rewards skill, research, and nuanced understanding of probabilities. The platform is designed to surface the most informed predictions, not lucky guesses.</p>
                     </div>
                 </div>
 
                 <div class="border-b border-gray-800 pb-4">
-                    <button class="faq-toggle flex justify-between items-center w-full text-left group">
+                    <button class="faq-toggle flex justify-between items-center w-full text-left group" aria-expanded="false" aria-controls="faq-content-4">
                         <h3 class="text-lg font-medium group-hover:text-green-400 transition">When will the beta launch?</h3>
                         <i class="fas fa-plus text-gray-500 group-hover:text-green-400 transition"></i>
                     </button>
-                    <div class="faq-content mt-2 text-gray-400 hidden">
+                    <div id="faq-content-4" class="faq-content mt-2 text-gray-400 hidden">
                         <p>We're currently onboarding users in waves to ensure the best possible experience. Join the waitlist to get prioritized access based on your signup date.</p>
                     </div>
                 </div>
@@ -410,7 +410,9 @@
             button.addEventListener('click', () => {
                 const content = button.nextElementSibling;
                 const icon = button.querySelector('i');
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
 
+                button.setAttribute('aria-expanded', !isExpanded);
                 icon.classList.toggle('fa-plus');
                 icon.classList.toggle('fa-minus');
                 content.classList.toggle('hidden');
@@ -499,4 +501,5 @@
             updateBtcPredictionCard(); // Set initial state for the BTC card
         });
     </script> 
+</body>
 </html>
