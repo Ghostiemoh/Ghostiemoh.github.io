@@ -19,11 +19,14 @@ const Layout = ({ children }) => {
   }, []);
 
   const navLinks = [
-    { name: 'About', href: '#about' },
+    { name: 'Narrative', href: '#about' },
     { name: 'Methodology', href: '#methodology' },
     { name: 'Gallery', href: '#projects' },
     { name: 'Credentials', href: '#intel' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Services', href: '#services' },
     { name: 'Directives', href: '#directives' },
+    { name: 'Resume', href: '/legacy/resume.html', external: true },
   ];
 
   const socialLinks = [
@@ -55,9 +58,9 @@ const Layout = ({ children }) => {
             <div className="w-10 h-10 rounded-xl bg-on-surface flex items-center justify-center text-surface group-hover:bg-secondary transition-all duration-500 shadow-xl">
                <Terminal size={18} />
             </div>
-            <div className="flex flex-col">
-               <span className="text-sm font-black tracking-tighter uppercase whitespace-nowrap">M. Auwal Abdulaziz</span>
-               <span className="text-[10px] font-bold opacity-40 uppercase tracking-[0.2em] whitespace-nowrap">Data & Blockchain</span>
+            <div className="flex flex-col max-w-[180px] sm:max-w-none overflow-hidden">
+               <span className="text-[11px] sm:text-sm font-black tracking-tighter uppercase sm:whitespace-nowrap truncate sm:overflow-visible">Muhammad Auwal Abdulaziz</span>
+               <span className="text-[8px] sm:text-[10px] font-bold opacity-40 uppercase tracking-[0.2em] sm:whitespace-nowrap truncate sm:overflow-visible">Data & Blockchain Specialist</span>
             </div>
           </motion.a>
 
@@ -67,6 +70,8 @@ const Layout = ({ children }) => {
               <motion.a
                 key={link.name}
                 href={link.href}
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
@@ -151,8 +156,8 @@ const Layout = ({ children }) => {
       <footer className="py-20 bg-surface border-t border-on-surface/5">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-10">
           <div className="flex flex-col items-center md:items-start gap-3">
-            <span className="text-sm font-black tracking-tighter uppercase whitespace-nowrap">Muhammad Auwal Abdulaziz</span>
-            <span className="text-[10px] font-bold opacity-30 uppercase tracking-[0.4em]">Data & Blockchain Specialist • 2026 Archive</span>
+            <span className="text-xs sm:text-sm font-black tracking-tighter uppercase text-center sm:text-left">Muhammad Auwal Abdulaziz</span>
+            <span className="text-[8px] sm:text-[10px] font-bold opacity-30 uppercase tracking-[0.4em] text-center sm:text-left">Data & Blockchain Specialist • 2026 Archive</span>
           </div>
           <div className="flex gap-10">
             {navLinks.map(link => (

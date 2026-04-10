@@ -5,28 +5,28 @@ import { Database, Filter, PenTool, BarChart3, Binary, ScanSearch } from 'lucide
 const Methodology = () => {
   const steps = [
     {
-      icon: <Binary size={24} />,
-      title: "Extraction",
-      desc: "Harvesting raw transactional shards from decentralized ledgers and distributed networks.",
-      tag: "Step 01"
+      icon: <Database size={24} />,
+      title: "Gathering",
+      desc: "Collecting raw data from diverse sources, including on-chain protocols and distributed databases.",
+      tag: "Process 01"
     },
     {
       icon: <Filter size={24} />,
-      title: "Standardize",
-      desc: "Neutralizing the noise. Cleaning and structuring disparate datasets into a unified analytical lens.",
-      tag: "Step 02"
+      title: "Processing",
+      desc: "Cleaning and refining complex datasets to ensure accuracy and structural integrity for analysis.",
+      tag: "Process 02"
     },
     {
       icon: <ScanSearch size={24} />,
-      title: "Interrogation",
-      desc: "Deep forensic investigation. clustering wallets, tracing flows, and identifying hidden patterns.",
-      tag: "Step 03"
+      title: "Analyzing",
+      desc: "Applying mathematical theory and forensic techniques to uncover hidden trends and actionable insights.",
+      tag: "Process 03"
     },
     {
       icon: <BarChart3 size={24} />,
-      title: "Visual Proof",
-      desc: "Synthesizing the final narrative. Creating high-fidelity visualizations that tell the truth of the data.",
-      tag: "Step 04"
+      title: "Visualizing",
+      desc: "Transforming findings into high-impact narratives that provide clear strategic direction.",
+      tag: "Process 04"
     }
   ];
 

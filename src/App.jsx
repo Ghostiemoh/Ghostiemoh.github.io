@@ -4,6 +4,8 @@ import Hero from './components/Hero';
 import Methodology from './components/Methodology';
 import ProjectGrid from './components/ProjectGrid';
 import IntelHub from './components/IntelHub';
+import Experience from './components/Experience';
+import Services from './components/Services';
 import SecureDirective from './components/SecureDirective';
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
       <Methodology />
       <ProjectGrid />
       <IntelHub />
+      <Experience />
+      <Services />
       <SecureDirective />
     </Layout>
   );
