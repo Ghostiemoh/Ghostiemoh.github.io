@@ -1,8 +1,17 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Briefcase, Calendar, MapPin, ExternalLink } from 'lucide-react';
+import { transitions, variants } from '../utils/motion';
 
 const Experience = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const pathLength = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
+
   const experiences = [
     {
       company: "MetaDao",
@@ -39,26 +48,36 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-32 bg-surface relative overflow-hidden">
+    <section 
+      ref={containerRef}
+      id="experience" 
+      className="py-32 bg-surface relative overflow-hidden"
+    >
       <div className="absolute top-0 left-0 w-full h-px bg-on-surface/5"></div>
       
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
           
-          <div className="lg:col-span-4 space-y-10">
+          <motion.div 
+             variants={variants.staggerContainer}
+             initial="initial"
+             whileInView="whileInView"
+             viewport={{ once: true }}
+             className="lg:col-span-4 space-y-10"
+          >
             <div className="space-y-4">
-              <div className="flex items-center gap-3">
+              <motion.div variants={variants.scanReveal} className="flex items-center gap-3">
                  <span className="text-[10px] font-black uppercase tracking-[0.5em] text-secondary">Chapter VI</span>
                  <div className="w-12 h-px bg-on-surface/10"></div>
                  <span className="text-[10px] font-bold opacity-30 uppercase tracking-[0.3em]">Operational History</span>
-              </div>
-              <h2 className="text-6xl font-black tracking-tighter">Field Experience.</h2>
-              <p className="text-xl font-medium opacity-50 leading-relaxed">
+              </motion.div>
+              <motion.h2 variants={variants.fadeIn} className="text-5xl md:text-6xl font-black tracking-tighter">Field Experience.</motion.h2>
+              <motion.p variants={variants.fadeIn} className="text-xl font-medium opacity-50 leading-relaxed">
                 The deployment history of a specialist. From identifying governance anomalies to forensic research across global protocols.
-              </p>
+              </motion.p>
             </div>
 
-            <div className="p-8 rounded-[2.5rem] bg-on-surface/5 border border-on-surface/5">
+            <motion.div variants={variants.fadeIn} className="p-8 rounded-[2.5rem] bg-on-surface/5 border border-on-surface/5">
                <div className="flex items-center gap-4 mb-4">
                   <div className="p-3 bg-secondary/10 rounded-2xl text-secondary">
                      <Briefcase size={20} />
@@ -67,17 +86,28 @@ const Experience = () => {
                </div>
                <p className="text-4xl font-black tracking-tighter">3+ Years</p>
                <p className="text-sm font-bold opacity-40 mt-2 lowercase">Active in Web3 & Data Analytics</p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <div className="lg:col-span-8 space-y-8">
+          <motion.div 
+            variants={variants.staggerContainer}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true }}
+            className="lg:col-span-8 space-y-12 relative"
+          >
+            {/* Connecting Baseline */}
+            <div className="absolute left-[5%] md:left-[-40px] top-4 bottom-4 w-px bg-on-surface/5 lg:block hidden">
+               <motion.div 
+                 className="w-full bg-secondary origin-top" 
+                 style={{ scaleY: pathLength }}
+               />
+            </div>
+
             {experiences.map((exp, i) => (
               <motion.div 
                 key={exp.company}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                variants={variants.fadeIn}
                 className="group relative"
               >
                 <div className="p-10 rounded-[2.5rem] bg-surface border border-on-surface/5 hover:border-secondary transition-all duration-700 card-low shadow-sm">
@@ -90,14 +120,14 @@ const Experience = () => {
                            <p className="text-lg font-bold text-secondary">{exp.role}</p>
                         </div>
                         <div className="flex flex-wrap gap-4 text-[10px] font-black uppercase tracking-widest opacity-40">
-                          <span className="flex items-center gap-1.5">
-                            <Calendar size={12} strokeWidth={3} />
-                            {exp.period}
-                          </span>
-                          <span className="flex items-center gap-1.5">
-                            <MapPin size={12} strokeWidth={3} />
-                            {exp.location}
-                          </span>
+                           <span className="flex items-center gap-1.5">
+                             <Calendar size={12} strokeWidth={3} />
+                             {exp.period}
+                           </span>
+                           <span className="flex items-center gap-1.5">
+                             <MapPin size={12} strokeWidth={3} />
+                             {exp.location}
+                           </span>
                         </div>
                       </div>
                       
@@ -121,13 +151,9 @@ const Experience = () => {
                     </div>
                   </div>
                 </div>
-                
-                {i !== experiences.length - 1 && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-0.5 h-8 bg-gradient-to-b from-on-surface/10 to-transparent"></div>
-                )}
               </motion.div>
             ))}
-          </div>
+          </motion.div>
 
         </div>
       </div>

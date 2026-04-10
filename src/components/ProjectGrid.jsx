@@ -1,8 +1,16 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ExternalLink, Github, Database, Search, ArrowRight, BarChart4 } from 'lucide-react';
+import { transitions, variants } from '../utils/motion';
 
 const ProjectGrid = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, -150]);
   const caseFiles = [
     {
       id: "SD-01",
@@ -75,44 +83,44 @@ const ProjectGrid = () => {
       github: "https://github.com/Ghostiemoh"
     },
     {
-       id: "ML-08",
-       title: "MetaDao Analysis",
-       category: "Governance Data",
-       description: "Analyzing governance participation and vote weight distribution within MetaDao.",
-       tags: ["DAO", "Governance", "Solana"],
-       icon: <Database size={24} />,
-       link: "/legacy/projects/Metadao.html",
-       github: "https://github.com/Ghostiemoh"
+      id: "ML-08",
+      title: "MetaDao Analysis",
+      category: "Governance Data",
+      description: "Analyzing governance participation and vote weight distribution within MetaDao.",
+      tags: ["DAO", "Governance", "Solana"],
+      icon: <Database size={24} />,
+      link: "/legacy/projects/Metadao.html",
+      github: "https://github.com/Ghostiemoh"
     },
     {
-       id: "SE-09",
-       title: "Sanafi Ethical Infographic",
-       category: "Data Ethics",
-       description: "An ethical exploration into data privacy and infographic systems.",
-       tags: ["Ethics", "Design", "Data"],
-       icon: <Search size={24} />,
-       link: "/legacy/projects/sana.html",
-       github: "https://github.com/Ghostiemoh"
+      id: "SE-09",
+      title: "Sanafi Ethical Infographic",
+      category: "Data Ethics",
+      description: "An ethical exploration into data privacy and infographic systems.",
+      tags: ["Ethics", "Design", "Data"],
+      icon: <Search size={24} />,
+      link: "/legacy/projects/sana.html",
+      github: "https://github.com/Ghostiemoh"
     },
     {
-       id: "SR-10",
-       title: "Switchboard Research",
-       category: "Oracle Intelligence",
-       description: "Deep research into decentralized oracle networks and data feed reliability.",
-       tags: ["Oracles", "Research", "Web3"],
-       icon: <Search size={24} />,
-       link: "/legacy/projects/index.html",
-       github: "https://github.com/Ghostiemoh"
+      id: "SR-10",
+      title: "Switchboard Research",
+      category: "Oracle Intelligence",
+      description: "Deep research into decentralized oracle networks and data feed reliability.",
+      tags: ["Oracles", "Research", "Web3"],
+      icon: <Search size={24} />,
+      link: "/legacy/projects/index.html",
+      github: "https://github.com/Ghostiemoh"
     },
     {
-       id: "CL-11",
-       title: "Call List Analysis",
-       category: "Excel Operations",
-       description: "Advanced Excel operations for managing and analyzing large-scale call list datasets.",
-       tags: ["Excel", "Operations", "Data Management"],
-       icon: <BarChart4 size={24} />,
-       link: "https://1drv.ms/x/c/708714f1f76dc85e/IQO-Ssc_TzW_TIC_xI9-rX8HAQ8kC58E4hA9o1S_u_W8-YQ",
-       github: "https://github.com/Ghostiemoh"
+      id: "CL-11",
+      title: "Call List Analysis",
+      category: "Excel Operations",
+      description: "Advanced Excel operations for managing and analyzing large-scale call list datasets.",
+      tags: ["Excel", "Operations", "Data Management"],
+      icon: <BarChart4 size={24} />,
+      link: "https://1drv.ms/x/c/708714f1f76dc85e/IQO-Ssc_TzW_TIC_xI9-rX8HAQ8kC58E4hA9o1S_u_W8-YQ",
+      github: "https://github.com/Ghostiemoh"
     }
   ];
 
@@ -124,20 +132,35 @@ const ProjectGrid = () => {
     : caseFiles.filter(p => p.category === selectedCategory);
 
   return (
-    <section id="projects" className="py-32 bg-surface">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+    <section 
+      ref={containerRef}
+      id="projects" 
+      className="py-32 bg-surface relative overflow-hidden"
+    >
+      {/* Background Parallax Layer */}
+      <motion.div style={{ y }} className="absolute inset-0 opacity-[0.02] pointer-events-none select-none">
+         <div className="text-[20vw] font-black uppercase text-on-surface leading-none tracking-tighter">DATA EXTRACTION PROTOCOL</div>
+      </motion.div>
+
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col xl:flex-row justify-between items-end gap-10 mb-20">
-           <div className="space-y-4">
-              <div className="flex items-center gap-3">
+           <motion.div 
+             variants={variants.staggerContainer}
+             initial="initial"
+             whileInView="whileInView"
+             viewport={{ once: true }}
+             className="space-y-4"
+           >
+              <motion.div variants={variants.scanReveal} className="flex items-center gap-3">
                  <span className="text-[10px] font-black uppercase tracking-[0.5em] text-secondary">Chapter III</span>
                  <div className="w-12 h-px bg-on-surface/10"></div>
                  <span className="text-[10px] font-bold opacity-30 uppercase tracking-[0.3em]">The Extraction</span>
-              </div>
-              <h2 className="text-5xl md:text-8xl font-black tracking-tighter">Case Files.</h2>
-              <p className="text-xl md:text-2xl font-bold text-on-surface/60 max-w-xl">
+              </motion.div>
+              <motion.h2 variants={variants.fadeIn} className="text-5xl md:text-8xl font-black tracking-tighter">Case Files.</motion.h2>
+              <motion.p variants={variants.fadeIn} className="text-xl md:text-2xl font-bold text-on-surface/60 max-w-xl">
                  Real-world interrogation of data shards. From protocol audits to integrated financial systems.
-              </p>
-           </div>
+              </motion.p>
+           </motion.div>
            
            <div className="flex flex-wrap gap-3 mt-10">
               {categories.map(cat => (
@@ -147,7 +170,7 @@ const ProjectGrid = () => {
                   className={`px-6 py-3 rounded-full text-[9px] font-black uppercase tracking-widest transition-all duration-500 border ${
                     selectedCategory === cat 
                     ? "bg-secondary text-white border-secondary shadow-lg shadow-secondary/20" 
-                    : "bg-surface border-on-surface/10 hover:border-secondary/40 hober:bg-on-surface/5"
+                    : "bg-surface border-on-surface/10 hover:border-secondary/40 hover:bg-on-surface/5"
                   }`}
                 >
                   {cat}
@@ -156,15 +179,20 @@ const ProjectGrid = () => {
            </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          layout
+          variants={variants.staggerContainer}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
            {filteredProjects.length > 0 ? (
              filteredProjects.map((file, i) => (
                <motion.div 
+                  layout
                   key={file.id}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
+                  variants={variants.scanReveal}
                   className="group relative h-[500px] rounded-[3rem] bg-surface border border-on-surface/5 flex flex-col p-10 hover:border-secondary/20 transition-all duration-700 overflow-hidden card-low"
                >
                   {/* ID Tag */}
@@ -193,10 +221,10 @@ const ProjectGrid = () => {
 
                   {/* Hover Actions */}
                   <div className="absolute bottom-10 right-10 flex gap-4 translate-y-20 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700">
-                    <a href={file.github} target="_blank" className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center bg-surface hover:bg-on-surface hover:text-white transition-all">
+                    <a href={file.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center bg-surface hover:bg-on-surface hover:text-white transition-all">
                       <Github size={18} />
                     </a>
-                    <a href={file.link} className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white hover:scale-110 transition-all">
+                    <a href={file.link} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white hover:scale-110 transition-all">
                       <ExternalLink size={18} />
                     </a>
                   </div>
@@ -212,7 +240,7 @@ const ProjectGrid = () => {
                 <p className="text-on-surface/40 mt-2">The extraction for this category has no verified records.</p>
              </div>
            )}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

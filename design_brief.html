@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Brief: The Digital Surgeon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=IBM+Plex+Sans+Condensed:wght@700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --signal-blue: #00A3FF;
+            --surface: #0A0A0A;
+        }
+        body {
+            background-color: var(--surface);
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+        .hud-font {
+            font-family: 'IBM Plex Sans Condensed', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+        .chapter-shard {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem;
+            border-left: 1px solid rgba(0, 163, 255, 0.2);
+            position: relative;
+        }
+        .scanline {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--signal-blue);
+            opacity: 0.3;
+            animation: scan 4s linear infinite;
+        }
+        @keyframes scan {
+            0% { top: 0; }
+            100% { top: 100%; }
+        }
+        .glow-text {
+            text-shadow: 0 0 20px rgba(0, 163, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="p-0 m-0">
+    <div class="fixed top-12 left-12 z-50 hud-font text-[10px] opacity-40">
+        SYSTEM_STATUS: STABLE<br>
+        PROTOCOL: NARRATIVE_SHARD_V2<br>
+        COORD: 6.5244° N, 3.3792° E
+    </div>
+
+    <section class="chapter-shard">
+        <div class="scanline"></div>
+        <div class="mono text-[10px] text-blue-500 mb-4 tracking-[0.4em] opacity-80">CHAPTER III // THE EVIDENCE</div>
+        <h1 class="hud-font text-8xl md:text-9xl glow-text leading-none mb-6">Case<br>Files.</h1>
+        <p class="max-w-xl text-lg opacity-60 leading-relaxed">
+            Standardization of raw on-chain data into actionable forensic intelligence. 
+            Every transaction is a digital fingerprint. We extract the story.
+        </p>
+        
+        <div class="mt-12 flex gap-8 items-center">
+            <div class="h-px w-24 bg-blue-500/30"></div>
+            <div class="hud-font text-[10px] tracking-[0.5em]">EXTRACTION_INTEGRITY: 99.8%</div>
+        </div>
+    </section>
+
+    <section class="p-24 grid grid-cols-2 gap-12">
+        <div>
+            <div class="hud-font text-[10px] text-blue-500 mb-8 tracking-[0.4em]">COLOR_TOKENS</div>
+            <div class="flex gap-4">
+                <div class="w-16 h-16 bg-white border border-white/10 rounded-sm"></div>
+                <div class="w-16 h-16 bg-[#00A3FF] rounded-sm shadow-[0_0_30px_rgba(0,163,255,0.4)]"></div>
+                <div class="w-16 h-16 bg-[#0A0A0A] border border-white/5 rounded-sm"></div>
+            </div>
+        </div>
+        <div>
+            <div class="hud-font text-[10px] text-blue-500 mb-8 tracking-[0.4em]">TYPOGRAPHY_STACK</div>
+            <div class="hud-font text-4xl mb-2 italic">AEROSPACE CONDENSED</div>
+            <div class="mono text-xs opacity-40">Roboto Mono / Forensic Labels</div>
+        </div>
+    </section>
+</body>
+</html>

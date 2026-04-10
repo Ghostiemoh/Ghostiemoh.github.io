@@ -1,10 +1,72 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Send, Terminal, Mail, Paperclip } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Send, Terminal, Mail, Paperclip, CheckCircle2, Loader2 } from 'lucide-react';
+import { transitions, variants } from '../utils/motion';
 
 const SecureDirective = () => {
+  const [status, setStatus] = useState('idle'); // idle | transmitting | success
+  const [attachedFile, setAttachedFile] = useState(null);
+  const fileInputRef = useRef(null);
+  
+  const [formData, setFormData] = useState({
+    subject: '',
+    sector: 'Blockchain / Web3',
+    priority: 'Mission Critical',
+    email: '',
+    message: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setAttachedFile(file);
+    }
+  };
+
+  const handleTransmit = async (e) => {
+    e.preventDefault();
+    if (!formData.email || !formData.message) {
+      alert("Operational Error: Missing required data fields.");
+      return;
+    }
+
+    setStatus('transmitting');
+    
+    // Simulate secure tunnel transmission
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    console.log("INTEL PAYLOAD TRANSMITTED:", { ...formData, attachment: attachedFile?.name });
+    setStatus('success');
+
+    // Reset after showing success
+    setTimeout(() => {
+      setStatus('idle');
+      setFormData({
+        subject: '',
+        sector: 'Blockchain / Web3',
+        priority: 'Mission Critical',
+        email: '',
+        message: ''
+      });
+      setAttachedFile(null);
+    }, 5000);
+  };
+
   return (
     <section id="directives" className="py-40 bg-on-surface text-surface relative overflow-hidden">
+      {/* Hidden File Input */}
+      <input 
+        type="file" 
+        ref={fileInputRef}
+        onChange={handleFileChange}
+        className="hidden"
+      />
+
       {/* Narrative grid background */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="grid grid-cols-12 h-full">
@@ -17,22 +79,28 @@ const SecureDirective = () => {
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
           
-          <div className="lg:col-span-6 space-y-12">
+          <motion.div 
+             variants={variants.staggerContainer}
+             initial="initial"
+             whileInView="whileInView"
+             viewport={{ once: true }}
+             className="lg:col-span-6 space-y-12"
+          >
             <div className="space-y-6">
-              <div className="flex items-center gap-3">
+              <motion.div variants={variants.scanReveal} className="flex items-center gap-3">
                  <span className="text-[10px] font-black uppercase tracking-[0.6em] text-secondary">Final Directive</span>
                  <div className="w-12 h-px bg-surface/20"></div>
-              </div>
-              <h2 className="text-6xl md:text-8xl font-black tracking-tighter leading-none">
+              </motion.div>
+              <motion.h2 variants={variants.fadeIn} className="text-6xl md:text-8xl font-black tracking-tighter leading-none">
                 Initiate <br /> <span className="text-secondary">Connection.</span>
-              </h2>
-              <p className="text-xl md:text-2xl font-bold opacity-60 max-w-lg">
+              </motion.h2>
+              <motion.p variants={variants.fadeIn} className="text-xl md:text-2xl font-bold opacity-60 max-w-lg">
                 The story of your data begins with a single query. Ready to extract the truth?
-              </p>
+              </motion.p>
             </div>
 
-            <div className="space-y-8">
-               <a href="mailto:Marvmuhd@gmail.com" className="flex items-center gap-6 group cursor-pointer">
+            <motion.div variants={variants.staggerContainer} className="space-y-8">
+               <motion.a variants={variants.fadeIn} href="mailto:Marvmuhd@gmail.com" className="flex items-center gap-6 group cursor-pointer">
                   <div className="w-14 h-14 rounded-2xl bg-surface/5 border border-surface/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-surface transition-all duration-500">
                     <Mail size={24} />
                   </div>
@@ -40,117 +108,199 @@ const SecureDirective = () => {
                     <p className="text-[10px] font-black uppercase tracking-widest opacity-40">Direct Mailbox</p>
                     <p className="text-2xl font-black tracking-tight">Marvmuhd@gmail.com</p>
                   </div>
-               </a>
-               <div className="flex items-center gap-6 group">
+               </motion.a>
+               <motion.div variants={variants.fadeIn} className="flex items-center gap-6 group">
                   <div className="w-14 h-14 rounded-2xl bg-surface/5 border border-surface/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-surface transition-all duration-500">
                     <Terminal size={24} />
                   </div>
                   <div>
                     <p className="text-[10px] font-black uppercase tracking-widest opacity-40">Operations Hub</p>
-                    <p className="text-xl font-black tracking-tight leading-tight">Wuye, Abuja, Nigeria</p>
+                    <p className="text-xl font-black tracking-tight leading-tight text-secondary">Remote / Global</p>
                   </div>
-               </div>
-               <div className="flex items-center gap-6 group">
+               </motion.div>
+               <motion.a 
+                  variants={variants.fadeIn} 
+                  href="https://t.me/ghostiemoh" 
+                  target="_blank"
+                  className="flex items-center gap-6 group cursor-pointer"
+               >
                   <div className="w-14 h-14 rounded-2xl bg-surface/5 border border-surface/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-surface transition-all duration-500">
                     <Send size={24} />
                   </div>
                   <div>
-                    <p className="text-[10px] font-black uppercase tracking-widest opacity-40">Direct Link</p>
-                    <p className="text-xl font-black tracking-tight leading-tight">+234 903 075 4145</p>
+                    <p className="text-[10px] font-black uppercase tracking-widest opacity-40">Telegram DM</p>
+                    <p className="text-xl font-black tracking-tight leading-tight">@ghostiemoh</p>
                   </div>
-               </div>
-            </div>
-          </div>
+               </motion.a>
+            </motion.div>
+          </motion.div>
 
           <div className="lg:col-span-6">
              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                variants={variants.springIn}
+                initial="initial"
+                whileInView="whileInView"
                 viewport={{ once: true }}
-                className="bg-surface/5 backdrop-blur-3xl border border-surface/10 rounded-[4rem] p-12 md:p-16 space-y-10"
+                className="bg-surface/5 backdrop-blur-3xl border border-surface/10 rounded-[4rem] p-12 md:p-16 space-y-10 relative overflow-hidden"
              >
-                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-surface">
-                   <div className="space-y-4">
-                      <label className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Directive Subject</label>
-                      <input 
-                        type="text" 
-                        placeholder="Project Narrative" 
-                        className="w-full bg-transparent border-b border-surface/20 py-4 text-xl font-bold placeholder:opacity-20 focus:border-secondary focus:outline-none transition-colors"
-                      />
-                   </div>
-                   <div className="space-y-4">
-                      <label className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Project Sector</label>
-                      <select className="w-full bg-transparent border-b border-surface/20 py-4 text-xl font-bold focus:border-secondary focus:outline-none transition-colors appearance-none cursor-pointer">
-                        <option className="bg-on-surface">Blockchain / Web3</option>
-                        <option className="bg-on-surface">Data Analytics</option>
-                        <option className="bg-on-surface">Forensic Audit</option>
-                        <option className="bg-on-surface">Research & Ed</option>
-                      </select>
-                   </div>
+                  {/* Success Overlay */}
+                  <AnimatePresence>
+                    {status === 'success' && (
+                      <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="absolute inset-0 z-20 bg-on-surface flex flex-col items-center justify-center text-center p-12 space-y-6"
+                      >
+                         <motion.div
+                           initial={{ scale: 0 }}
+                           animate={{ scale: 1 }}
+                           transition={{ type: "spring", damping: 12 }}
+                         >
+                           <CheckCircle2 size={80} className="text-secondary" />
+                         </motion.div>
+                         <div className="space-y-2">
+                           <h3 className="text-3xl font-black tracking-tighter uppercase whitespace-nowrap">Message Received</h3>
+                           <p className="text-sm font-bold opacity-40 uppercase tracking-widest">Directive Received. Analyzing Data.</p>
+                         </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-surface">
+                    <div className="space-y-4">
+                       <label className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Message Subject</label>
+                       <input 
+                         type="text" 
+                         name="subject"
+                         value={formData.subject}
+                         onChange={handleInputChange}
+                         placeholder="Project Name" 
+                         className="w-full bg-transparent border-b border-surface/20 py-4 text-xl font-bold placeholder:opacity-20 focus:border-secondary focus:outline-none transition-colors"
+                       />
+                    </div>
+                    <div className="space-y-4">
+                       <label className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Project Sector</label>
+                       <select 
+                         name="sector"
+                         value={formData.sector}
+                         onChange={handleInputChange}
+                         className="w-full bg-transparent border-b border-surface/20 py-4 text-xl font-bold focus:border-secondary focus:outline-none transition-colors appearance-none cursor-pointer"
+                       >
+                         <option className="bg-on-surface">Blockchain / Web3</option>
+                         <option className="bg-on-surface">Data Analytics</option>
+                         <option className="bg-on-surface">Forensic Audit</option>
+                         <option className="bg-on-surface">Research & Ed</option>
+                       </select>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-surface">
+                    <div className="space-y-4">
+                       <label className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Priority</label>
+                       <select 
+                         name="priority"
+                         value={formData.priority}
+                         onChange={handleInputChange}
+                         className="w-full bg-transparent border-b border-surface/20 py-4 text-xl font-bold focus:border-secondary focus:outline-none transition-colors appearance-none cursor-pointer"
+                       >
+                         <option className="bg-on-surface text-secondary">Mission Critical</option>
+                         <option className="bg-on-surface">Standard Protocol</option>
+                         <option className="bg-on-surface text-secondary/50">Discovery / Planning</option>
+                       </select>
+                    </div>
+                    <div className="space-y-4">
+                       <label className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Your ID (Email)</label>
+                       <input 
+                         type="email" 
+                         name="email"
+                         value={formData.email}
+                         onChange={handleInputChange}
+                         placeholder="yourname@domain.com" 
+                         className="w-full bg-transparent border-b border-surface/20 py-4 text-xl font-bold placeholder:opacity-20 focus:border-secondary focus:outline-none transition-colors"
+                       />
+                    </div>
+                  </div>
+
+                  <div className="space-y-4 text-surface">
+                     <label className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Message Content</label>
+                     <textarea 
+                       name="message"
+                       value={formData.message}
+                       onChange={handleInputChange}
+                       rows={3}
+                       placeholder="How can I help you with your data..." 
+                       className="w-full bg-transparent border-b border-surface/20 py-4 text-xl font-bold placeholder:opacity-20 focus:border-secondary focus:outline-none transition-colors resize-none"
+                     />
+                  </div>
+
+                 <div className="flex flex-col md:flex-row gap-6 pt-4">
+                    <motion.button 
+                       onClick={handleTransmit}
+                       disabled={status === 'transmitting'}
+                       whileHover={{ scale: 1.05 }}
+                       whileTap={{ scale: 0.95 }}
+                       className="flex-1 bg-secondary text-surface py-6 rounded-full font-black text-[11px] uppercase tracking-[0.5em] flex items-center justify-center gap-4 shadow-2xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                       {status === 'transmitting' ? (
+                         <>
+                           Transmitting...
+                           <Loader2 size={16} className="animate-spin" />
+                         </>
+                       ) : (
+                         <>
+                           Send Message
+                           <Send size={16} />
+                         </>
+                       )}
+                    </motion.button>
+                    <motion.button 
+                       onClick={() => fileInputRef.current.click()}
+                       whileHover={{ backgroundColor: "rgba(255,255,255,0.1)" }}
+                       className="px-10 py-6 rounded-full border border-surface/10 font-black text-[11px] uppercase tracking-[0.5em] flex items-center justify-center gap-4 transition-all relative overflow-hidden"
+                    >
+                       {attachedFile ? attachedFile.name : 'Attach File'}
+                       <Paperclip size={16} />
+                       {attachedFile && (
+                          <motion.div 
+                            layoutId="attachment-glow"
+                            className="absolute inset-0 bg-secondary/10"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                          />
+                       )}
+                    </motion.button>
                  </div>
 
-                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-surface">
-                   <div className="space-y-4">
-                      <label className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Technical Priority</label>
-                      <select className="w-full bg-transparent border-b border-surface/20 py-4 text-xl font-bold focus:border-secondary focus:outline-none transition-colors appearance-none cursor-pointer">
-                        <option className="bg-on-surface text-secondary">Mission Critical</option>
-                        <option className="bg-on-surface">Standard Protocol</option>
-                        <option className="bg-on-surface text-secondary/50">Discovery / Planning</option>
-                      </select>
-                   </div>
-                   <div className="space-y-4">
-                      <label className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Operational ID</label>
-                      <input 
-                        type="email" 
-                        placeholder="yourname@domain.com" 
-                        className="w-full bg-transparent border-b border-surface/20 py-4 text-xl font-bold placeholder:opacity-20 focus:border-secondary focus:outline-none transition-colors"
-                      />
-                   </div>
-                 </div>
-
-                 <div className="space-y-4 text-surface">
-                    <label className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">The Intel Payload</label>
-                    <textarea 
-                      rows={3}
-                      placeholder="Describe the data shards you need interrogated..." 
-                      className="w-full bg-transparent border-b border-surface/20 py-4 text-xl font-bold placeholder:opacity-20 focus:border-secondary focus:outline-none transition-colors resize-none"
-                    />
-                 </div>
-
-                <div className="flex flex-col md:flex-row gap-6 pt-4">
-                   <button className="flex-1 bg-secondary text-surface py-6 rounded-full font-black text-[11px] uppercase tracking-[0.5em] flex items-center justify-center gap-4 hover:scale-105 transition-all duration-700 shadow-2xl">
-                      Transmit directive
-                      <Send size={16} />
-                   </button>
-                   <button className="px-10 py-6 rounded-full border border-surface/10 font-black text-[11px] uppercase tracking-[0.5em] flex items-center justify-center gap-4 hover:bg-surface/10 transition-all duration-500">
-                      Attach Shard
-                      <Paperclip size={16} />
-                   </button>
-                </div>
-
-                <p className="text-[9px] font-black uppercase tracking-[0.3em] opacity-20 text-center">
-                   Encrypted via end-to-end analytical tunnel.
-                </p>
+                 <p className="text-[9px] font-black uppercase tracking-[0.3em] opacity-20 text-center">
+                    Encrypted via end-to-end analytical tunnel.
+                 </p>
              </motion.div>
           </div>
 
         </div>
 
         {/* Operational FAQ Section */}
-        <div className="mt-40 pt-20 border-t border-surface/10 grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-               <h4 className="text-secondary font-black text-xs uppercase tracking-widest mb-4">Location Hub</h4>
-               <p className="text-sm font-bold opacity-40">Operating primarily from Wuye, Abuja. Available for global remote synchronization across all time zones.</p>
-            </div>
-            <div>
+        <motion.div 
+          variants={variants.staggerContainer}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true }}
+          className="mt-40 pt-20 border-t border-surface/10 grid grid-cols-1 md:grid-cols-3 gap-12"
+        >
+            <motion.div variants={variants.fadeIn}>
+               <h4 className="text-secondary font-black text-xs uppercase tracking-widest mb-4">Remote Operations</h4>
+               <p className="text-sm font-bold opacity-40">Operating globally. Available for remote synchronization across all time zones with 24/7 digital presence.</p>
+            </motion.div>
+            <motion.div variants={variants.fadeIn}>
                <h4 className="text-secondary font-black text-xs uppercase tracking-widest mb-4">Stack Protocol</h4>
                <p className="text-sm font-bold opacity-40">Python (Pandas/NumPy), SQL (PostgreSQL/BigQuery), Tableau, Power BI, and On-chain analysis (Dune/Flipside).</p>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div variants={variants.fadeIn}>
                <h4 className="text-secondary font-black text-xs uppercase tracking-widest mb-4">Identity Verification</h4>
                <p className="text-sm font-bold opacity-40">Muhammad Auwal Abdulaziz. Verified Data Analyst. MetaDao Governance Contributor.</p>
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
       </div>
     </section>
   );
