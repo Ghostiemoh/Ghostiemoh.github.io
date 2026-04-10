@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Roboto+Mono:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: 0, 0, 0;
+  --secondary-color: 212, 175, 55;
+  --surface-color: 255, 255, 255;
+  --on-surface-color: 0, 0, 0;
+}
+
+.dark {
+  --primary-color: 255, 255, 255;
+  --secondary-color: 212, 175, 55;
+  --surface-color: 10, 10, 10;
+  --on-surface-color: 255, 255, 255;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-sans selection:bg-secondary selection:text-white antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tighter;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-2xl border border-white/10 shadow-2xl;
+  }
+
+  .text-responsive-title {
+    @apply text-4xl md:text-7xl lg:text-9xl font-black leading-[0.9] tracking-[-0.05em];
+  }
+
+  .text-responsive-body {
+    @apply text-base md:text-lg lg:text-xl font-medium leading-relaxed opacity-70;
+  }
+
+  .btn-premium {
+    @apply px-8 py-4 rounded-full font-black text-[11px] uppercase tracking-[0.3em] transition-all duration-500 relative overflow-hidden;
+  }
+
+  .hover-glow {
+    @apply hover:shadow-[0_0_50px_rgba(var(--secondary-color),0.3)] transition-all duration-700;
+  }
+}
+
+/* Jobsian Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-surface;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-on-surface/10 rounded-full hover:bg-on-surface/20 transition-colors;
+}
+
+/* Narrative Scanlines */
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanlines::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.1) 50%
+  ),
+  linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.1;
+}

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanafi Onchain: The Future of Ethical Finance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!--
+    Infographic Narrative & Structure Plan:
+    1.  Header: Introduce Sanafi's vision of AI-driven ethical onchain banking.
+    2.  The Problem: A side-by-side comparison of the core issues in Traditional Finance (TradFi) and Decentralized Finance (DeFi).
+    3.  The Sanafi Solution: A flowchart illustrating how Sanafi's core principles (AI, Solana, Ethics) solve these problems.
+    4.  Product Ecosystem: Visualize the current, upcoming, and future products using large stats, charts, and a timeline.
+    5.  Dual-Token Economy: Explain the synergistic roles of $SanaSOL and $SANA using diagrams and charts.
+    6.  Conclusion: A summary of Sanafi's value proposition as a complete ethical financial lifestyle.
+
+    Visualization Choices:
+    - TradFi vs. DeFi Issues: (Goal: Compare) -> HTML/CSS Cards. Justification: Clear, direct comparison of qualitative points. Library/Method: HTML/CSS with Tailwind. NO SVG.
+    - Sanafi Solution Flow: (Goal: Organize) -> HTML/CSS Flowchart. Justification: Shows process and relationships between components. Library/Method: HTML/CSS with Tailwind. NO SVG, NO MERMAID JS.
+    - $SanaSOL Staking APY: (Goal: Inform) -> Big Number. Justification: Highlights a key quantitative benefit. Library/Method: HTML/CSS. NO SVG.
+    - Product Ecosystem Composition: (Goal: Compare) -> Bar Chart. Justification: Compares key features across multiple product categories. Library/Method: Chart.js (Canvas). NO SVG.
+    - Phased Roadmap: (Goal: Change) -> HTML/CSS Timeline. Justification: Clearly shows progression over time. Library/Method: HTML/CSS with Tailwind. NO SVG, NO MERMAID JS.
+    - $SANA Token Supply: (Goal: Inform) -> Donut Chart. Justification: Shows a simple composition (circulating vs. total). Library/Method: Chart.js (Canvas). NO SVG.
+    - Token Synergy Loop: (Goal: Organize) -> HTML/CSS Diagram. Justification: Illustrates a cyclical relationship. Library/Method: HTML/CSS with Tailwind. NO SVG, NO MERMAID JS.
+
+    Confirmation: NEITHER Mermaid JS NOR SVG were used anywhere in this output. All visuals are either pure HTML/CSS or rendered on <canvas> by Chart.js.
+
+    Color Palette Name: Brilliant Blues
+    HEX Codes: #003f5c, #2f4b7c, #665191, #a05195, #d45087, #f95d6a, #ff7c43, #ffa600
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #f95d6a, #ff7c43, #ffa600);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .flow-line {
+            background-color: #d1d5db;
+        }
+        .flow-node {
+            border-color: #2f4b7c;
+            color: #2f4b7c;
+            background-color: #ffffff;
+        }
+        .flow-node.highlight {
+            background-color: #2f4b7c;
+            color: #ffffff;
+            border-color: #2f4b7c;
+        }
+        .timeline-line {
+            background-color: #a05195;
+        }
+        .timeline-dot {
+            background-color: #ffffff;
+            border-color: #a05195;
+        }
+        .timeline-dot.filled {
+            background-color: #a05195;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <header class="text-center py-8 md:py-16">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-[#003f5c] tracking-tight">Sanafi Onchain</h1>
+            <p class="mt-4 text-xl md:text-2xl font-semibold gradient-text">Pioneering AI-Driven Ethical Finance on the Blockchain</p>
+            <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
+                Sanafi is building a transparent, fair, and accessible financial system for everyone. We leverage Artificial Intelligence and the power of the Solana blockchain to create products that are 100% onchain, 100% ethical, and free from interest (riba).
+            </p>
+        </header>
+
+        <main class="space-y-12 md:space-y-20">
+
+            <section id="problem">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#003f5c]">The Challenge in Modern Finance</h2>
+                    <p class="mt-2 text-lg text-gray-600 max-w-2xl mx-auto">Both traditional systems and the new world of DeFi have critical flaws. Sanafi is engineered to solve them.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-[#d45087]">
+                        <h3 class="text-2xl font-bold text-[#d45087] flex items-center">
+                            <span class="text-3xl mr-3">🏛️</span> Traditional Finance
+                        </h3>
+                        <p class="mt-2 text-gray-500">Systemic issues of inefficiency, bias, and ethical conflicts.</p>
+                        <ul class="mt-4 space-y-3 text-lg text-gray-700">
+                            <li class="flex items-start"><span class="text-[#d45087] mr-3 mt-1">❌</span> <strong>Profit-Over-Ethics:</strong> Investments in harmful industries are common.</li>
+                            <li class="flex items-start"><span class="text-[#d45087] mr-3 mt-1">❌</span> <strong>Inefficient & Costly:</strong> Outdated systems lead to slow, expensive transactions.</li>
+                            <li class="flex items-start"><span class="text-[#d45087] mr-3 mt-1">❌</span> <strong>Lack of Transparency:</strong> Hidden fees and complex products confuse users.</li>
+                            <li class="flex items-start"><span class="text-[#d45087] mr-3 mt-1">❌</span> <strong>Biased Systems:</strong> Human biases can lead to predatory lending and unfair decisions.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-[#ff7c43]">
+                        <h3 class="text-2xl font-bold text-[#ff7c43] flex items-center">
+                            <span class="text-3xl mr-3">🔗</span> Decentralized Finance (DeFi)
+                        </h3>
+                        <p class="mt-2 text-gray-500">Promise and potential held back by risk and complexity.</p>
+                        <ul class="mt-4 space-y-3 text-lg text-gray-700">
+                            <li class="flex items-start"><span class="text-[#ff7c43] mr-3 mt-1">❌</span> <strong>High Accessibility Barrier:</strong> Requires deep technical knowledge to use safely.</li>
+                            <li class="flex items-start"><span class="text-[#ff7c43] mr-3 mt-1">❌</span> <strong>Rampant Scams & Hacks:</strong> Unregulated spaces are rife with fraud and security risks.</li>
+                            <li class="flex items-start"><span class="text-[#ff7c43] mr-3 mt-1">❌</span> <strong>Information Asymmetry:</strong> Complex protocols can be exploited by insiders.</li>
+                             <li class="flex items-start"><span class="text-[#ff7c43] mr-3 mt-1">❌</span> <strong>Ethical Blind Spots:</strong> Focus is on yield, not the source or impact of financial activities.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="solution">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#003f5c]">The Sanafi Solution: An Ethical Architecture</h2>
+                     <p class="mt-2 text-lg text-gray-600 max-w-3xl mx-auto">Sanafi combines foundational principles with cutting-edge technology to create a financial system you can trust.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                     <div class="w-full">
+                        <div class="relative flex flex-col items-center">
+                            <div class="w-full flex justify-around mb-4">
+                               <div class="w-1/3 text-center flow-node border-2 rounded-lg p-2 font-semibold text-sm md:text-base">TradFi & DeFi Problems</div>
+                               <div class="w-1/3 text-center flow-node border-2 rounded-lg p-2 font-semibold text-sm md:text-base">User Needs</div>
+                            </div>
+                            <div class="w-full h-8 md:h-12 relative flex justify-center items-center">
+                               <div class="absolute top-0 h-full w-px flow-line" style="left: 25%;"></div>
+                               <div class="absolute top-0 h-full w-px flow-line" style="left: 75%;"></div>
+                               <div class="absolute top-1/2 left-[25%] h-px w-[50%] flow-line"></div>
+                            </div>
+
+                            <div class="flow-node highlight rounded-full p-4 font-bold text-lg md:text-xl z-10">SANAFI CORE</div>
+
+                            <div class="w-full h-8 md:h-12 relative flex justify-center items-center">
+                               <div class="absolute top-0 h-full w-px flow-line"></div>
+                            </div>
+
+                            <div class="w-full flex justify-around">
+                                <div class="relative flex flex-col items-center w-1/3">
+                                    <div class="flow-node border-2 rounded-lg p-2 font-semibold text-center text-sm md:text-base">⛓️ Solana Blockchain</div>
+                                    <div class="absolute -top-4 h-4 w-px flow-line"></div>
+                                </div>
+                                 <div class="relative flex flex-col items-center w-1/3">
+                                    <div class="flow-node border-2 rounded-lg p-2 font-semibold text-center text-sm md:text-base">🛡️ 100% Ethical Principles</div>
+                                    <div class="absolute -top-4 h-4 w-px flow-line"></div>
+                                </div>
+                                <div class="relative flex flex-col items-center w-1/3">
+                                    <div class="flow-node border-2 rounded-lg p-2 font-semibold text-center text-sm md:text-base">🤖 Artificial Intelligence</div>
+                                    <div class="absolute -top-4 h-4 w-px flow-line"></div>
+                                </div>
+                            </div>
+                             <div class="w-full h-8 md:h-12 relative flex justify-center items-center">
+                               <div class="absolute top-0 h-full w-px flow-line" style="left: 16.66%;"></div>
+                               <div class="absolute top-0 h-full w-px flow-line" style="left: 50%;"></div>
+                               <div class="absolute top-0 h-full w-px flow-line" style="left: 83.33%;"></div>
+                               <div class="absolute top-0 left-[16.66%] h-px w-[66.67%] flow-line"></div>
+                            </div>
+                             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+                                <div class="flow-node highlight rounded-lg p-2 text-center text-xs md:text-sm font-medium">Transparency</div>
+                                <div class="flow-node highlight rounded-lg p-2 text-center text-xs md:text-sm font-medium">Accessibility</div>
+                                <div class="flow-node highlight rounded-lg p-2 text-center text-xs md:text-sm font-medium">Efficiency & Low Cost</div>
+                                <div class="flow-node highlight rounded-lg p-2 text-center text-xs md:text-sm font-medium">Ethical Assurance</div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="products">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#003f5c]">An Ecosystem for Your Ethical Financial Life</h2>
+                    <p class="mt-2 text-lg text-gray-600 max-w-2xl mx-auto">From immediate value to a future of innovation, Sanafi's product suite is designed for comprehensive ethical banking.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+                    <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 flex flex-col justify-center text-center">
+                        <h3 class="text-2xl font-bold text-[#665191]">Current Offering: $SanaSOL Staking</h3>
+                        <p class="text-gray-500 mt-1">Start earning ethically today with liquid staking.</p>
+                        <div class="my-4">
+                            <span class="text-7xl md:text-8xl font-extrabold text-[#665191]">7-10%</span>
+                            <span class="block text-2xl font-bold text-gray-600">Ethical APY</span>
+                        </div>
+                        <p class="text-lg text-gray-700">Stake your SOL for $SanaSOL to earn competitive, liquid, and ethical yields, boosting your wealth while supporting the ecosystem's growth.</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-6 md:p-8">
+                         <h3 class="text-2xl font-bold text-[#a05195] text-center">Product Ecosystem Overview</h3>
+                         <p class="text-gray-500 mt-1 text-center">Visualizing the features across our development phases.</p>
+                         <div class="chart-container mt-4">
+                             <canvas id="productEcosystemChart"></canvas>
+                         </div>
+                         <p class="text-center text-gray-600 mt-4">Each phase of our roadmap introduces a new layer of utility, from foundational staking and AI-driven insights to a full suite of banking and investment services, creating a holistic ethical platform.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="roadmap">
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 lg:col-span-2">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl md:text-4xl font-bold text-[#003f5c]">Roadmap to a New Financial Paradigm</h2>
+                        <p class="mt-2 text-lg text-gray-600 max-w-2xl mx-auto">Our strategic plan for building the future of ethical finance.</p>
+                    </div>
+                    <div class="relative w-full max-w-4xl mx-auto">
+                        <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 timeline-line rounded-full"></div>
+                        <div class="space-y-16">
+                            
+                            <div class="relative flex items-center">
+                                <div class="w-1/2 pr-8 text-right">
+                                    <h4 class="text-xl font-bold text-[#2f4b7c]">Current (MVP Launched)</h4>
+                                    <p class="text-gray-600 mt-1">Foundational products providing immediate value.</p>
+                                    <ul class="mt-2 text-right">
+                                        <li>✅ $SanaSOL Liquid Staking</li>
+                                        <li>✅ AI Chat for Ethical Knowledge</li>
+                                    </ul>
+                                </div>
+                                <div class="absolute left-1/2 -translate-x-1/2 w-6 h-6 rounded-full timeline-dot filled border-4"></div>
+                                <div class="w-1/2 pl-8"></div>
+                            </div>
+
+                            <div class="relative flex items-center">
+                                <div class="w-1/2 pr-8"></div>
+                                <div class="absolute left-1/2 -translate-x-1/2 w-6 h-6 rounded-full timeline-dot border-4"></div>
+                                <div class="w-1/2 pl-8 text-left">
+                                    <h4 class="text-xl font-bold text-[#a05195]">In-Progress (Upcoming)</h4>
+                                    <p class="text-gray-600 mt-1">Expanding into a full lifestyle SuperApp.</p>
+                                     <ul class="mt-2 text-left">
+                                        <li>▶️ AI-Powered Ethical Investments</li>
+                                        <li>▶️ Interest-Free Wallets & Debit Cards</li>
+                                        <li>▶️ Sanafi Mobile "SuperApp"</li>
+                                        <li>▶️ Profit-Sharing Pools</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="relative flex items-center">
+                                <div class="w-1/2 pr-8 text-right">
+                                    <h4 class="text-xl font-bold text-[#f95d6a]">Planned (2026 & Beyond)</h4>
+                                    <p class="text-gray-600 mt-1">Building global financial infrastructure.</p>
+                                     <ul class="mt-2 text-right">
+                                        <li>▶️ Private L2 for Sensitive Transactions</li>
+                                        <li>▶️ Ethical Stablecoin (Gold/Fiat-backed)</li>
+                                        <li>▶️ Real-World Asset Tokenization</li>
+                                        <li>▶️ Microfinance & Global Payments</li>
+                                    </ul>
+                                </div>
+                                <div class="absolute left-1/2 -translate-x-1/2 w-6 h-6 rounded-full timeline-dot border-4"></div>
+                                <div class="w-1/2 pl-8"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tokenomics">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#003f5c]">The Dual-Token Economy</h2>
+                    <p class="mt-2 text-lg text-gray-600 max-w-2xl mx-auto">$SanaSOL and $SANA work together to fuel a sustainable and growing ecosystem.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                     <div class="lg:col-span-3 bg-white rounded-xl shadow-lg p-6 md:p-8">
+                        <h3 class="text-2xl font-bold text-[#2f4b7c] text-center">A Synergistic Growth Loop</h3>
+                        <p class="text-gray-500 mt-1 text-center">Each token plays a distinct role, creating a virtuous cycle.</p>
+                        <div class="mt-6 flex flex-col md:flex-row items-center justify-around space-y-4 md:space-y-0 md:space-x-4">
+                            <div class="text-center p-4 rounded-lg border-2 border-dashed border-[#ff7c43]">
+                                <p class="text-3xl">💵</p>
+                                <h4 class="font-bold text-lg text-[#ff7c43]">$SanaSOL</h4>
+                                <p class="text-gray-600">Attracts Capital &<br/>Boosts TVL</p>
+                            </div>
+                            <div class="text-2xl font-bold text-gray-400 transform md:-rotate-45">➜</div>
+                             <div class="text-center p-4 rounded-lg border-2 border-dashed border-[#665191]">
+                                <p class="text-3xl">🛠️</p>
+                                <h4 class="font-bold text-lg text-[#665191]">Product Dev</h4>
+                                <p class="text-gray-600">Funds New Ethical<br/>Products & Features</p>
+                            </div>
+                            <div class="text-2xl font-bold text-gray-400">➜</div>
+                            <div class="text-center p-4 rounded-lg border-2 border-dashed border-[#d45087]">
+                                <p class="text-3xl">🎁</p>
+                                <h4 class="font-bold text-lg text-[#d45087]">$SANA</h4>
+                                <p class="text-gray-600">Rewards Users &<br/>Grows Community</p>
+                            </div>
+                        </div>
+                         <p class="text-center text-gray-600 mt-6">Capital attracted by $SanaSOL's ethical yield funds the development of new products. These products reward users with $SANA for ethical behavior, which grows the community and attracts more capital—completing the loop.</p>
+                     </div>
+                     <div class="lg:col-span-2 bg-white rounded-xl shadow-lg p-6 md:p-8">
+                         <h3 class="text-2xl font-bold text-[#ffa600] text-center">$SANA Community Token</h3>
+                         <p class="text-gray-500 mt-1 text-center">Driving engagement through ethical rewards.</p>
+                        <div class="chart-container mt-2" style="height:280px; max-height: 280px">
+                             <canvas id="sanaTokenChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4">$SANA is the primary token for community rewards, distributed for ethical spending and engagement. It aligns user incentives with the platform's core mission.</p>
+                     </div>
+                </div>
+
+            </section>
+
+        </main>
+        
+        <footer class="text-center mt-16 md:mt-24 py-8 border-t border-gray-300">
+             <h2 class="text-2xl font-bold text-[#003f5c]">Join the Future of Ethical Finance</h2>
+             <p class="mt-2 text-gray-600 max-w-xl mx-auto">Ready to align your finances with your values? Explore Sanafi and become part of the movement.</p>
+             <a href="https://sanafi.xyz" target="_blank" class="mt-6 inline-block bg-gradient-to-r from-[#f95d6a] to-[#ffa600] text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                Visit Sanafi.xyz
+             </a>
+        </footer>
+
+    </div>
+
+    <script>
+        const wrapLabel = (label, maxLength = 16) => {
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxLength) {
+                    if (currentLine) lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) lines.push(currentLine);
+            return lines;
+        };
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+              return label.join(' ');
+            } else {
+              return label;
+            }
+        };
+        
+        const chartColors = {
+            blue: '#2f4b7c',
+            purple: '#665191',
+            magenta: '#a05195',
+            pink: '#d45087',
+            red: '#f95d6a',
+            orange: '#ff7c43',
+            yellow: '#ffa600'
+        };
+
+        const productEcosystemCtx = document.getElementById('productEcosystemChart');
+        if (productEcosystemCtx) {
+            new Chart(productEcosystemCtx, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        'Ethical Yield & Liquidity', 
+                        'AI-Powered Education',
+                        ['AI-Driven Ethical', 'Investments'],
+                        ['Interest-Free', 'Accounts & Cards'], 
+                        ['Integrated "SuperApp"', 'Experience'],
+                        ['Tokenized Real-World', 'Assets (RWA)']
+                    ].map(l => Array.isArray(l) ? l : wrapLabel(l)),
+                    datasets: [{
+                        label: 'Impact on User Experience',
+                        data: [75, 70, 85, 90, 95, 100],
+                        backgroundColor: [
+                           chartColors.purple,
+                           chartColors.magenta,
+                           chartColors.pink,
+                           chartColors.red,
+                           chartColors.orange,
+                           chartColors.yellow
+                        ],
+                        borderColor: '#ffffff',
+                        borderWidth: 2,
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                display: false
+                            }
+                        },
+                        y: {
+                             grid: {
+                                display: false
+                            },
+                            ticks: {
+                                font: {
+                                    weight: '600'
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        const sanaTokenCtx = document.getElementById('sanaTokenChart');
+        if (sanaTokenCtx) {
+            new Chart(sanaTokenCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Circulating Supply', 'Remaining'],
+                    datasets: [{
+                        label: '$SANA Token Distribution',
+                        data: [999.62, 500.38],
+                        backgroundColor: [
+                            chartColors.yellow,
+                            '#e5e7eb'
+                        ],
+                        borderColor: '#ffffff',
+                        borderWidth: 4,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                             labels: {
+                                padding: 20
+                             }
+                        },
+                         tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
