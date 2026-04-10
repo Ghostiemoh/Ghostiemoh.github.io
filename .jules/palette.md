@@ -1,0 +1,3 @@
+## 2026-04-10 - Add ARIA Labels and Security Attributes to Links/Buttons
+**Learning:** External links with `target="_blank"` throughout the application components (e.g., Layout social links, ProjectGrid external links) were missing the security attribute `rel="noopener noreferrer"`. Additionally, icon-only buttons (mobile menu toggles) and links lacked `aria-label` attributes for screen reader accessibility, and the toggle state was missing `aria-expanded`.
+**Action:** Always ensure all `target="_blank"` links include `rel="noopener noreferrer"`. Add descriptive `aria-label`s to any interactive element that relies solely on icons for visual representation, and implement `aria-expanded` on toggle buttons to reflect their state to assistive technologies.
