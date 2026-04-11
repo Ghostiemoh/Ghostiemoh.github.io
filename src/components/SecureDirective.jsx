@@ -3,11 +3,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Terminal, Mail, Paperclip, CheckCircle2, Loader2 } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
+import emailjs from '@emailjs/browser';
+
 const SecureDirective = () => {
-  const [status, setStatus] = useState('idle'); // idle | transmitting | success
+  const [status, setStatus] = useState('idle'); // idle | transmitting | success | error
   const [attachedFile, setAttachedFile] = useState(null);
   const fileInputRef = useRef(null);
   
+  // EMAILJS CONFIGURATION
+  const SERVICE_ID = 'service_js3zssk';
+  const TEMPLATE_ID = 'template_6vsgqqa';
+  const PUBLIC_KEY = 'hT5pKuO1sKDgTScXv';
+
   const [formData, setFormData] = useState({
     subject: '',
     sector: 'Blockchain / Web3',
@@ -37,24 +44,49 @@ const SecureDirective = () => {
 
     setStatus('transmitting');
     
-    // Simulate secure tunnel transmission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    console.log("INTEL PAYLOAD TRANSMITTED:", { ...formData, attachment: attachedFile?.name });
-    setStatus('success');
+    try {
+      // Prepare template parameters for EmailJS
+      const templateParams = {
+        from_name: formData.email,
+        from_email: formData.email,
+        subject: formData.subject,
+        sector: formData.sector,
+        priority: formData.priority,
+        message: formData.message,
+        attachment_name: attachedFile?.name || 'None'
+      };
 
-    // Reset after showing success
-    setTimeout(() => {
+      // Real-world transmission via EmailJS
+      const result = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        templateParams,
+        PUBLIC_KEY
+      );
+
+      if (result.status === 200) {
+        setStatus('success');
+        
+        // Reset after showing success
+        setTimeout(() => {
+          setStatus('idle');
+          setFormData({
+            subject: '',
+            sector: 'Blockchain / Web3',
+            priority: 'Mission Critical',
+            email: '',
+            message: ''
+          });
+          setAttachedFile(null);
+        }, 5000);
+      } else {
+        throw new Error("Transmission failed");
+      }
+    } catch (error) {
+      console.error("TRANSMISSION ERROR:", error);
+      alert("Critical Error: Secure tunnel collapsed. Please try again or use direct email.");
       setStatus('idle');
-      setFormData({
-        subject: '',
-        sector: 'Blockchain / Web3',
-        priority: 'Mission Critical',
-        email: '',
-        message: ''
-      });
-      setAttachedFile(null);
-    }, 5000);
+    }
   };
 
   return (
