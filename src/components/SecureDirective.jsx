@@ -3,17 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Send, Terminal, Mail, Paperclip, CheckCircle2, Loader2 } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
-import emailjs from '@emailjs/browser';
-
 const SecureDirective = () => {
   const [status, setStatus] = useState('idle'); // idle | transmitting | success | error
   const [attachedFile, setAttachedFile] = useState(null);
   const fileInputRef = useRef(null);
   
-  // EMAILJS CONFIGURATION
-  const SERVICE_ID = 'service_js3zssk';
-  const TEMPLATE_ID = 'template_6vsgqqa';
-  const PUBLIC_KEY = 'hT5pKuO1sKDgTScXv';
+  // SECURE BACKEND ENDPOINT (GOOGLE APPS SCRIPT)
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzWFk93mmn0ofKDYvvbZSj5bFYADSeruajgIu5D9Vkso62pJHh4r2dUL6YXDYeiVgk/exec';
 
   const [formData, setFormData] = useState({
     subject: '',
@@ -35,6 +31,16 @@ const SecureDirective = () => {
     }
   };
 
+  // Helper to convert file to Base64 for Google Apps Script
+  const getBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader.result.split(',')[1]);
+      reader.onerror = error => reject(error);
+    });
+  };
+
   const handleTransmit = async (e) => {
     e.preventDefault();
     if (!formData.email || !formData.message) {
@@ -45,50 +51,60 @@ const SecureDirective = () => {
     setStatus('transmitting');
     
     try {
-      // Prepare template parameters to match user's EmailJS HTML template
-      const templateParams = {
-        name: formData.email, // Mapping email to {{name}} as requested by template UI
-        email: formData.email,
-        subject: formData.subject,
-        sector: formData.sector,
-        priority: formData.priority,
-        message: formData.message,
-        time: new Date().toLocaleString('en-US', { 
-          dateStyle: 'medium', 
-          timeStyle: 'short' 
-        }), // Mapping current time to {{time}}
-        attachment_name: attachedFile?.name || 'None'
+      let fileData = null;
+      let fileName = null;
+      let fileType = null;
+
+      if (attachedFile) {
+        // Enforce size limit for free tier stability (e.g., 5MB)
+        if (attachedFile.size > 5 * 1024 * 1024) {
+          alert("Intel Overflow: File exceeds 5MB threshold. Please optimize.");
+          setStatus('idle');
+          return;
+        }
+        fileData = await getBase64(attachedFile);
+        fileName = attachedFile.name;
+        fileType = attachedFile.type;
+      }
+
+      const payload = {
+        ...formData,
+        fileData,
+        fileName,
+        fileType,
+        timestamp: new Date().toISOString()
       };
 
-      // Real-world transmission via EmailJS
-      const result = await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        templateParams,
-        PUBLIC_KEY
-      );
+      // Transmission via Google Apps Script Web App
+      const response = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Essential for Google Script endpoints
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload)
+      });
 
-      if (result.status === 200) {
-        setStatus('success');
-        
-        // Reset after showing success
-        setTimeout(() => {
-          setStatus('idle');
-          setFormData({
-            subject: '',
-            sector: 'Blockchain / Web3',
-            priority: 'Mission Critical',
-            email: '',
-            message: ''
-          });
-          setAttachedFile(null);
-        }, 5000);
-      } else {
-        throw new Error("Transmission failed");
-      }
+      // Since mode is 'no-cors', we won't get a readable response body, 
+      // but if the fetch doesn't throw, it's generally successful.
+      setStatus('success');
+      
+      // Reset after showing success
+      setTimeout(() => {
+        setStatus('idle');
+        setFormData({
+          subject: '',
+          sector: 'Blockchain / Web3',
+          priority: 'Mission Critical',
+          email: '',
+          message: ''
+        });
+        setAttachedFile(null);
+      }, 5000);
+
     } catch (error) {
-      console.error("TRANSMISSION ERROR:", error);
-      alert("Critical Error: Secure tunnel collapsed. Please try again or use direct email.");
+      console.error("SECURE TUNNEL FAILURE:", error);
+      alert("Critical Error: Transmission intercepted or failed. Please try again.");
       setStatus('idle');
     }
   };
