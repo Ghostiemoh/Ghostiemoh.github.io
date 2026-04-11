@@ -45,14 +45,18 @@ const SecureDirective = () => {
     setStatus('transmitting');
     
     try {
-      // Prepare template parameters for EmailJS
+      // Prepare template parameters to match user's EmailJS HTML template
       const templateParams = {
-        from_name: formData.email,
-        from_email: formData.email,
+        name: formData.email, // Mapping email to {{name}} as requested by template UI
+        email: formData.email,
         subject: formData.subject,
         sector: formData.sector,
         priority: formData.priority,
         message: formData.message,
+        time: new Date().toLocaleString('en-US', { 
+          dateStyle: 'medium', 
+          timeStyle: 'short' 
+        }), // Mapping current time to {{time}}
         attachment_name: attachedFile?.name || 'None'
       };
 
