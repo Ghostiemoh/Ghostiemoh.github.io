@@ -1,6 +1,6 @@
-const test = require('node:test');
-const assert = require('node:assert');
-const { calculateReward } = require('./utils');
+import test from 'node:test';
+import assert from 'node:assert';
+import { calculateReward } from './utils.js';
 
 test('calculateReward correctly calculates potential reward and difference', async (t) => {
 

@@ -35,7 +35,5 @@ function calculateReward(predictionConfidence, actualOutcome, stake) {
     return { reward: potentialReward, difference: difference };
 }
 
-// Export for Node.js testing environment
-if (typeof module !== 'undefined') {
-    module.exports = { calculateReward };
-}
+// Export for ES module testing environment
+export { calculateReward };
