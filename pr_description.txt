@@ -1,0 +1,4 @@
+💡 What: Added semantic `aria-label`s to the icon-only social media links and mobile menu toggle buttons. Added `aria-expanded` to the mobile menu open button. Also added the `rel="noopener noreferrer"` attribute to the external social links for security.
+🎯 Why: Without ARIA labels, screen reader users encounter unlabelled icon links/buttons with no context as to their function. By explicitly setting their functions with `aria-label` and `aria-expanded`, the components become fully accessible.
+📸 Before/After: Refer to `/home/jules/verification/screenshots/verification.png` for a successful UI test pass. No visual changes made.
+♿ Accessibility: ARIA enhancements for screen readers navigating icon-only interactive elements.
