@@ -1,0 +1,3 @@
+## 2024-03-24 - [Optimizing Component Render Loops]
+**Learning:** Found a widespread anti-pattern in the codebase where large static data arrays (e.g., in `ProjectGrid.jsx`, `Services.jsx`, `Experience.jsx`, `IntelHub.jsx`, `Methodology.jsx`) are defined inside React render functions. This triggers unnecessary O(N) array reallocations and derived state recalculations (e.g. `new Set(caseFiles.map(...))`) on every component render.
+**Action:** Extract static data outside of the React component whenever possible to ensure single-time allocation. For derived state that depends on props or component state, use `React.useMemo()` to prevent unnecessary recalculations.
