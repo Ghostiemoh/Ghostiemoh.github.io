@@ -46,9 +46,9 @@ const Layout = ({ children }) => {
   ];
 
   const socialLinks = [
-    { icon: <Github size={18} />, href: 'https://github.com/Ghostiemoh' },
-    { icon: <Twitter size={18} />, href: 'https://twitter.com/Ghostieemoh' },
-    { icon: <Linkedin size={18} />, href: 'https://linkedin.com/in/Ghostieemoh' },
+    { name: 'GitHub', icon: <Github size={18} />, href: 'https://github.com/Ghostiemoh' },
+    { name: 'Twitter', icon: <Twitter size={18} />, href: 'https://twitter.com/Ghostieemoh' },
+    { name: 'LinkedIn', icon: <Linkedin size={18} />, href: 'https://linkedin.com/in/Ghostieemoh' },
   ];
 
   return (
@@ -114,6 +114,8 @@ const Layout = ({ children }) => {
                   key={i}
                   href={social.href}
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${social.name}`}
                   className="text-on-surface/40 hover:text-secondary transition-all duration-500 hover:scale-110"
                 >
                   {social.icon}
@@ -124,6 +126,8 @@ const Layout = ({ children }) => {
 
           {/* Mobile Toggle */}
           <button 
+            aria-label="Open mobile menu"
+            aria-expanded={mobileMenuOpen}
             className="lg:hidden w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center text-on-surface"
             onClick={() => setMobileMenuOpen(true)}
           >
@@ -147,6 +151,7 @@ const Layout = ({ children }) => {
                   <span className="text-[11px] font-black uppercase tracking-[0.4em]">Protocol Menu</span>
                </div>
                <button 
+                 aria-label="Close mobile menu"
                  className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center"
                  onClick={() => setMobileMenuOpen(false)}
                >
@@ -168,7 +173,7 @@ const Layout = ({ children }) => {
             <div className="flex justify-between items-center pb-10">
                <div className="flex gap-8">
                   {socialLinks.map((social, i) => (
-                    <a key={i} href={social.href} className="text-on-surface/40">{social.icon}</a>
+                    <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${social.name}`} className="text-on-surface/40">{social.icon}</a>
                   ))}
                </div>
                <span className="text-[10px] font-bold opacity-30 uppercase tracking-[0.5em]">v1.0.24</span>
