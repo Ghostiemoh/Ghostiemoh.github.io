@@ -1,3 +1,3 @@
-## 2026-04-16 - Add ARIA Labels and Roles in Layout.jsx
-**Learning:** Icon-only social links and mobile menu toggle buttons lacked screen reader context in the existing `Layout.jsx` design.
-**Action:** Always verify that mapped arrays of icon components include an accessible name property to be used as an `aria-label`, and ensure mobile toggles use `aria-expanded` and `aria-controls`.
+## 2024-05-18 - Ensure all interactive form inputs have proper programmatic labels
+**Learning:** React fragments or wrappers around native inputs don't inherently associate visually neighboring labels to the inputs they describe. While users can see the relationship, assistive technologies (like screen readers) require an explicit programmatic link. Furthermore, explicitly linking labels to inputs improves the UX by expanding the clickable area to focus the input.
+**Action:** When creating or modifying forms, always ensure `<label>` elements use the `htmlFor` attribute that exactly matches the unique `id` attribute of the corresponding `<input>`, `<select>`, or `<textarea>`.
