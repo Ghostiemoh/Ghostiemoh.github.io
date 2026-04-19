@@ -1,17 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ExternalLink, Github, Database, Search, ArrowRight, BarChart4 } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
-const ProjectGrid = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [0, -150]);
-  const caseFiles = [
+const caseFiles = [
     {
       id: "SD-01",
       title: "Solana Fraud Detection",
@@ -124,12 +116,27 @@ const ProjectGrid = () => {
     }
   ];
 
+const categories = ["All Cases", ...new Set(caseFiles.map(f => f.category))];
+
+const ProjectGrid = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, -150]);
+
+
   const [selectedCategory, setSelectedCategory] = React.useState("All Cases");
 
-  const categories = ["All Cases", ...new Set(caseFiles.map(f => f.category))];
-  const filteredProjects = selectedCategory === "All Cases" 
-    ? caseFiles 
-    : caseFiles.filter(p => p.category === selectedCategory);
+  // Performance Optimization: Memoize the filtered list to prevent unnecessary recalculations
+  // on every render when the selectedCategory hasn't changed.
+  const filteredProjects = useMemo(() => {
+    return selectedCategory === "All Cases"
+      ? caseFiles
+      : caseFiles.filter(p => p.category === selectedCategory);
+  }, [selectedCategory]);
 
   return (
     <section 
