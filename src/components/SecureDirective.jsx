@@ -221,8 +221,9 @@ const SecureDirective = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-surface">
                     <div className="space-y-4">
-                       <label className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Message Subject</label>
+                       <label htmlFor="subject" className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Message Subject</label>
                        <input 
+                         id="subject"
                          type="text" 
                          name="subject"
                          value={formData.subject}
@@ -232,8 +233,9 @@ const SecureDirective = () => {
                        />
                     </div>
                     <div className="space-y-4">
-                       <label className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Project Sector</label>
+                       <label htmlFor="sector" className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Project Sector</label>
                        <select 
+                         id="sector"
                          name="sector"
                          value={formData.sector}
                          onChange={handleInputChange}
@@ -249,8 +251,9 @@ const SecureDirective = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-surface">
                     <div className="space-y-4">
-                       <label className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Priority</label>
+                       <label htmlFor="priority" className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Priority</label>
                        <select 
+                         id="priority"
                          name="priority"
                          value={formData.priority}
                          onChange={handleInputChange}
@@ -262,8 +265,9 @@ const SecureDirective = () => {
                        </select>
                     </div>
                     <div className="space-y-4">
-                       <label className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Your ID (Email)</label>
+                       <label htmlFor="email" className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Your ID (Email)</label>
                        <input 
+                         id="email"
                          type="email" 
                          name="email"
                          value={formData.email}
@@ -275,8 +279,9 @@ const SecureDirective = () => {
                   </div>
 
                   <div className="space-y-4 text-surface">
-                     <label className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Message Content</label>
+                     <label htmlFor="message" className="text-[10px] font-black uppercase tracking-[0.4em] opacity-40 ml-1">Message Content</label>
                      <textarea 
+                       id="message"
                        name="message"
                        value={formData.message}
                        onChange={handleInputChange}
