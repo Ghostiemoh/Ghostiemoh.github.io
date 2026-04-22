@@ -37,6 +37,33 @@ const StatCounter = ({ value, suffix = "" }) => {
   );
 };
 
+const steps = [
+  {
+    icon: <Database size={24} />,
+    title: "Gathering",
+    desc: "Collecting raw data from diverse sources, including on-chain protocols and distributed databases.",
+    tag: "01"
+  },
+  {
+    icon: <Filter size={24} />,
+    title: "Processing",
+    desc: "Cleaning and refining complex datasets to ensure accuracy and structural integrity for analysis.",
+    tag: "02"
+  },
+  {
+    icon: <ScanSearch size={24} />,
+    title: "Analyzing",
+    desc: "Applying mathematical theory and forensic techniques to uncover hidden trends and actionable insights.",
+    tag: "03"
+  },
+  {
+    icon: <BarChart3 size={24} />,
+    title: "Visualizing",
+    desc: "Transforming findings into high-impact narratives that provide clear strategic direction.",
+    tag: "04"
+  }
+];
+
 const Methodology = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -45,33 +72,6 @@ const Methodology = () => {
   });
 
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
-
-  const steps = [
-    {
-      icon: <Database size={24} />,
-      title: "Gathering",
-      desc: "Collecting raw data from diverse sources, including on-chain protocols and distributed databases.",
-      tag: "01"
-    },
-    {
-      icon: <Filter size={24} />,
-      title: "Processing",
-      desc: "Cleaning and refining complex datasets to ensure accuracy and structural integrity for analysis.",
-      tag: "02"
-    },
-    {
-      icon: <ScanSearch size={24} />,
-      title: "Analyzing",
-      desc: "Applying mathematical theory and forensic techniques to uncover hidden trends and actionable insights.",
-      tag: "03"
-    },
-    {
-      icon: <BarChart3 size={24} />,
-      title: "Visualizing",
-      desc: "Transforming findings into high-impact narratives that provide clear strategic direction.",
-      tag: "04"
-    }
-  ];
 
   return (
     <section 

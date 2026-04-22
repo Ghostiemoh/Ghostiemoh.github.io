@@ -8,6 +8,23 @@ function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
 
+const navLinks = [
+  { name: 'Narrative', href: '#about' },
+  { name: 'Methodology', href: '#methodology' },
+  { name: 'Gallery', href: '#projects' },
+  { name: 'Credentials', href: '#intel' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Services', href: '#services' },
+  { name: 'Directives', href: '#directives' },
+  { name: 'Resume', href: '/legacy/resume.html', external: true },
+];
+
+const socialLinks = [
+  { name: 'GitHub', icon: <Github size={18} />, href: 'https://github.com/Ghostiemoh' },
+  { name: 'Twitter', icon: <Twitter size={18} />, href: 'https://twitter.com/Ghostieemoh' },
+  { name: 'LinkedIn', icon: <Linkedin size={18} />, href: 'https://linkedin.com/in/Ghostieemoh' },
+];
+
 const Layout = ({ children }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -33,23 +50,6 @@ const Layout = ({ children }) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navLinks = [
-    { name: 'Narrative', href: '#about' },
-    { name: 'Methodology', href: '#methodology' },
-    { name: 'Gallery', href: '#projects' },
-    { name: 'Credentials', href: '#intel' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Services', href: '#services' },
-    { name: 'Directives', href: '#directives' },
-    { name: 'Resume', href: '/legacy/resume.html', external: true },
-  ];
-
-  const socialLinks = [
-    { name: 'GitHub', icon: <Github size={18} />, href: 'https://github.com/Ghostiemoh' },
-    { name: 'Twitter', icon: <Twitter size={18} />, href: 'https://twitter.com/Ghostieemoh' },
-    { name: 'LinkedIn', icon: <Linkedin size={18} />, href: 'https://linkedin.com/in/Ghostieemoh' },
-  ];
 
   return (
     <div className="min-h-screen bg-surface selection:bg-secondary/30 selection:text-on-surface">
