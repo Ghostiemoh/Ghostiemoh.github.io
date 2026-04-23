@@ -3,15 +3,9 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ExternalLink, Github, Database, Search, ArrowRight, BarChart4 } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
-const ProjectGrid = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [0, -150]);
-  const caseFiles = [
+// ⚡ Bolt Optimization: Moved static array outside the render function
+// This prevents O(N) reallocation on every render cycle.
+const caseFiles = [
     {
       id: "SD-01",
       title: "Solana Fraud Detection",
@@ -124,12 +118,30 @@ const ProjectGrid = () => {
     }
   ];
 
+// ⚡ Bolt Optimization: Moved expensive Set creation outside the render function
+// This prevents O(N) recalculation on every render cycle.
+const categories = ["All Cases", ...new Set(caseFiles.map(f => f.category))];
+
+const ProjectGrid = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, -150]);
+
+
   const [selectedCategory, setSelectedCategory] = React.useState("All Cases");
 
-  const categories = ["All Cases", ...new Set(caseFiles.map(f => f.category))];
-  const filteredProjects = selectedCategory === "All Cases" 
+
+    // ⚡ Bolt Optimization: Memoized derived state
+  // This ensures filtering only occurs when selectedCategory changes, rather than on every render.
+  const filteredProjects = React.useMemo(() => {
+  return selectedCategory === "All Cases"
     ? caseFiles 
     : caseFiles.filter(p => p.category === selectedCategory);
+}, [selectedCategory]);
 
   return (
     <section 
