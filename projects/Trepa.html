@@ -277,6 +277,16 @@
                         <label for="stakeAmount" class="block text-gray-400 mb-2">Your stake amount ($)</label>
                         <input type="number" value="100" id="stakeAmount" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3">
                     </div>
+
+                    <div class="mb-6">
+                        <label for="difficultyLevel" class="block text-gray-400 mb-2">Prediction Difficulty</label>
+                        <select id="difficultyLevel" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-gray-100">
+                            <option value="0.5">Easy (0.5x Multiplier)</option>
+                            <option value="1.0" selected>Standard (1.0x Multiplier)</option>
+                            <option value="2.0">Hard (2.0x Multiplier)</option>
+                            <option value="5.0">Legendary (5.0x Multiplier)</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="bg-black rounded-xl p-8 border border-gray-800">
                     <div class="text-center mb-8">
@@ -421,6 +431,7 @@
         const predictionConfidenceInput = document.getElementById('predictionConfidence');
         const actualOutcomeInput = document.getElementById('actualOutcome');
         const stakeAmountInput = document.getElementById('stakeAmount');
+        const difficultyLevelInput = document.getElementById('difficultyLevel');
         const calculatedRewardDisplay = document.getElementById('calculatedReward');
         const rewardDescriptionDisplay = document.getElementById('rewardDescription');
 
@@ -428,8 +439,9 @@
             const predictionConfidence = parseInt(predictionConfidenceInput.value);
             const actualOutcome = parseInt(actualOutcomeInput.value);
             const stake = parseFloat(stakeAmountInput.value);
+            const difficulty = parseFloat(difficultyLevelInput.value);
 
-            const { reward, difference } = calculateReward(predictionConfidence, actualOutcome, stake);
+            const { reward, difference } = calculateReward(predictionConfidence, actualOutcome, stake, difficulty);
 
             calculatedRewardDisplay.textContent = `$${reward.toFixed(2)}`;
             if (isNaN(difference)) {
@@ -443,6 +455,7 @@
         predictionConfidenceInput.addEventListener('input', updateCalculatorReward);
         actualOutcomeInput.addEventListener('input', updateCalculatorReward);
         stakeAmountInput.addEventListener('input', updateCalculatorReward);
+        difficultyLevelInput.addEventListener('change', updateCalculatorReward);
 
         // --- Initial BTC Prediction Card (Hero Section) ---
         const btcPredictionSlider = document.getElementById('btcPredictionSlider');

@@ -59,12 +59,24 @@ test('calculateReward correctly calculates potential reward and difference', asy
 
     await t.test('far off prediction - difference > 30 (multiplier 0.05)', () => {
         const result = calculateReward(81, 50, 100);
-        // Using Math.abs to avoid floating point precision issues in test if they occur
-        // However, 100 * 0.05 is exactly 5
         assert.deepStrictEqual(result, { reward: 5, difference: 31 }); // 100 * 0.05
 
         const result2 = calculateReward(100, 0, 100);
         assert.deepStrictEqual(result2, { reward: 5, difference: 100 });
+    });
+
+    await t.test('dynamic difficulty - multiplier adjustment', () => {
+        // Easy difficulty (0.5x)
+        const easyResult = calculateReward(50, 50, 100, 0.5);
+        assert.deepStrictEqual(easyResult, { reward: 125, difference: 0 }); // 100 * (2.5 * 0.5)
+
+        // Hard difficulty (2.0x)
+        const hardResult = calculateReward(50, 50, 100, 2.0);
+        assert.deepStrictEqual(hardResult, { reward: 500, difference: 0 }); // 100 * (2.5 * 2.0)
+
+        // Close prediction on Hard difficulty (2.0x)
+        const hardCloseResult = calculateReward(55, 50, 100, 2.0);
+        assert.deepStrictEqual(hardCloseResult, { reward: 360, difference: 5 }); // 100 * (1.8 * 2.0)
     });
 
 });
