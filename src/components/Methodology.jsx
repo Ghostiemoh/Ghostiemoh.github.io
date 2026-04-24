@@ -37,16 +37,9 @@ const StatCounter = ({ value, suffix = "" }) => {
   );
 };
 
-const Methodology = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
-
-  const steps = [
+// ⚡ Bolt Optimization: Extracted static 'steps' array outside of the render function
+// This prevents unnecessary reallocation on every re-render.
+const steps = [
     {
       icon: <Database size={24} />,
       title: "Gathering",
@@ -72,6 +65,17 @@ const Methodology = () => {
       tag: "04"
     }
   ];
+
+const Methodology = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+
+
 
   return (
     <section 
