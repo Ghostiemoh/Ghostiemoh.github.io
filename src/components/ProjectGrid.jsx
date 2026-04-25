@@ -3,6 +3,119 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ExternalLink, Github, Database, Search, ArrowRight, BarChart4 } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
+const caseFiles = [
+  {
+    id: "SD-01",
+    title: "Solana Fraud Detection",
+    category: "Blockchain Forensics",
+    description: "Forensic analysis of fraudulent activities on the Solana network, identifying malicious patterns and protective protocols.",
+    tags: ["Forensics", "Solana", "Blockchain"],
+    icon: <Search size={24} />,
+    link: "https://docs.google.com/document/d/1pxf4EtWhSU6DWerlkD1fG8HMcj1QWlvBH3YYWmuYbec/edit?usp=sharing",
+    github: "https://github.com/Ghostiemoh"
+  },
+  {
+    id: "MA-02",
+    title: "MarginFi Protocol Analytics",
+    category: "Protocol Intelligence",
+    description: "In-depth research into borrowing, lending, and yield strategies within the MarginFi ecosystem.",
+    tags: ["DeFi", "Analytics", "MarginFi"],
+    icon: <BarChart4 size={24} />,
+    link: "https://docs.google.com/document/d/1HTd4yvNuGfzq1s_K62YRKFgCPEta__THQPxuwPHXSCg/edit?usp=sharing",
+    github: "https://github.com/Ghostiemoh"
+  },
+  {
+    id: "KV-03",
+    title: "Kelsier Ventures Analysis",
+    category: "Venture Analytics",
+    description: "Analyzing wallet movements and venture capital flow within private investment networks.",
+    tags: ["VC", "On-chain", "Data"],
+    icon: <Database size={24} />,
+    link: "https://docs.google.com/document/d/1SDxOn-GqTk7od60YsqBVENOSMm_nVDR9oxxDlDWfzKY/edit?usp=sharing",
+    github: "https://github.com/Ghostiemoh"
+  },
+  {
+    id: "NH-04",
+    title: "Nashville Housing Data",
+    category: "SQL Engineering",
+    description: "Cleaning and transforming messy Nashville housing data for predictive real estate modeling.",
+    tags: ["SQL", "Data Cleaning", "Analytics"],
+    icon: <Database size={24} />,
+    link: "/legacy/projects/2.txt",
+    github: "https://github.com/Ghostiemoh"
+  },
+  {
+    id: "CO-05",
+    title: "COVID-19 Exploration",
+    category: "Epidemiological Data",
+    description: "Global data exploration of COVID-19 trends, mortality rates, and vaccination impact using SQL.",
+    tags: ["SQL", "EDA", "Healthcare"],
+    icon: <BarChart4 size={24} />,
+    link: "/legacy/projects/1.txt",
+    github: "https://github.com/Ghostiemoh"
+  },
+  {
+    id: "BS-06",
+    title: "Bicycle Sales Performance",
+    category: "Business Intelligence",
+    description: "Visualizing sales performance and customer demographics to optimize supply chain decisions.",
+    tags: ["Excel", "Tableau", "Sales"],
+    icon: <BarChart4 size={24} />,
+    link: "https://1drv.ms/b/c/708714f1f76dc85e/IQO-Ssc_TzW_TIC_xI9-rX8HARz8v1R_7L8C_W-YQ",
+    github: "https://github.com/Ghostiemoh"
+  },
+  {
+    id: "TR-07",
+    title: "Trepa Prediction",
+    category: "Predictive Analytics",
+    description: "A precision prediction platform focusing on data accuracy and market sentiment analysis.",
+    tags: ["Analytics", "Prediction", "Web3"],
+    icon: <Search size={24} />,
+    link: "/legacy/projects/Trepa.html",
+    github: "https://github.com/Ghostiemoh"
+  },
+  {
+    id: "ML-08",
+    title: "MetaDao Analysis",
+    category: "Governance Data",
+    description: "Analyzing governance participation and vote weight distribution within MetaDao.",
+    tags: ["DAO", "Governance", "Solana"],
+    icon: <Database size={24} />,
+    link: "/legacy/projects/Metadao.html",
+    github: "https://github.com/Ghostiemoh"
+  },
+  {
+    id: "SE-09",
+    title: "Sanafi Ethical Infographic",
+    category: "Data Ethics",
+    description: "An ethical exploration into data privacy and infographic systems.",
+    tags: ["Ethics", "Design", "Data"],
+    icon: <Search size={24} />,
+    link: "/legacy/projects/sana.html",
+    github: "https://github.com/Ghostiemoh"
+  },
+  {
+    id: "SR-10",
+    title: "Switchboard Research",
+    category: "Oracle Intelligence",
+    description: "Deep research into decentralized oracle networks and data feed reliability.",
+    tags: ["Oracles", "Research", "Web3"],
+    icon: <Search size={24} />,
+    link: "/legacy/projects/index.html",
+    github: "https://github.com/Ghostiemoh"
+  },
+  {
+    id: "CL-11",
+    title: "Call List Analysis",
+    category: "Excel Operations",
+    description: "Advanced Excel operations for managing and analyzing large-scale call list datasets.",
+    tags: ["Excel", "Operations", "Data Management"],
+    icon: <BarChart4 size={24} />,
+    link: "https://1drv.ms/x/c/708714f1f76dc85e/IQO-Ssc_TzW_TIC_xI9-rX8HAQ8kC58E4hA9o1S_u_W8-YQ",
+    github: "https://github.com/Ghostiemoh"
+  }
+];
+
 const ProjectGrid = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -11,125 +124,15 @@ const ProjectGrid = () => {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [0, -150]);
-  const caseFiles = [
-    {
-      id: "SD-01",
-      title: "Solana Fraud Detection",
-      category: "Blockchain Forensics",
-      description: "Forensic analysis of fraudulent activities on the Solana network, identifying malicious patterns and protective protocols.",
-      tags: ["Forensics", "Solana", "Blockchain"],
-      icon: <Search size={24} />,
-      link: "https://docs.google.com/document/d/1pxf4EtWhSU6DWerlkD1fG8HMcj1QWlvBH3YYWmuYbec/edit?usp=sharing",
-      github: "https://github.com/Ghostiemoh"
-    },
-    {
-      id: "MA-02",
-      title: "MarginFi Protocol Analytics",
-      category: "Protocol Intelligence",
-      description: "In-depth research into borrowing, lending, and yield strategies within the MarginFi ecosystem.",
-      tags: ["DeFi", "Analytics", "MarginFi"],
-      icon: <BarChart4 size={24} />,
-      link: "https://docs.google.com/document/d/1HTd4yvNuGfzq1s_K62YRKFgCPEta__THQPxuwPHXSCg/edit?usp=sharing",
-      github: "https://github.com/Ghostiemoh"
-    },
-    {
-      id: "KV-03",
-      title: "Kelsier Ventures Analysis",
-      category: "Venture Analytics",
-      description: "Analyzing wallet movements and venture capital flow within private investment networks.",
-      tags: ["VC", "On-chain", "Data"],
-      icon: <Database size={24} />,
-      link: "https://docs.google.com/document/d/1SDxOn-GqTk7od60YsqBVENOSMm_nVDR9oxxDlDWfzKY/edit?usp=sharing",
-      github: "https://github.com/Ghostiemoh"
-    },
-    {
-      id: "NH-04",
-      title: "Nashville Housing Data",
-      category: "SQL Engineering",
-      description: "Cleaning and transforming messy Nashville housing data for predictive real estate modeling.",
-      tags: ["SQL", "Data Cleaning", "Analytics"],
-      icon: <Database size={24} />,
-      link: "/legacy/projects/2.txt",
-      github: "https://github.com/Ghostiemoh"
-    },
-    {
-      id: "CO-05",
-      title: "COVID-19 Exploration",
-      category: "Epidemiological Data",
-      description: "Global data exploration of COVID-19 trends, mortality rates, and vaccination impact using SQL.",
-      tags: ["SQL", "EDA", "Healthcare"],
-      icon: <BarChart4 size={24} />,
-      link: "/legacy/projects/1.txt",
-      github: "https://github.com/Ghostiemoh"
-    },
-    {
-      id: "BS-06",
-      title: "Bicycle Sales Performance",
-      category: "Business Intelligence",
-      description: "Visualizing sales performance and customer demographics to optimize supply chain decisions.",
-      tags: ["Excel", "Tableau", "Sales"],
-      icon: <BarChart4 size={24} />,
-      link: "https://1drv.ms/b/c/708714f1f76dc85e/IQO-Ssc_TzW_TIC_xI9-rX8HARz8v1R_7L8C_W-YQ",
-      github: "https://github.com/Ghostiemoh"
-    },
-    {
-      id: "TR-07",
-      title: "Trepa Prediction",
-      category: "Predictive Analytics",
-      description: "A precision prediction platform focusing on data accuracy and market sentiment analysis.",
-      tags: ["Analytics", "Prediction", "Web3"],
-      icon: <Search size={24} />,
-      link: "/legacy/projects/Trepa.html",
-      github: "https://github.com/Ghostiemoh"
-    },
-    {
-      id: "ML-08",
-      title: "MetaDao Analysis",
-      category: "Governance Data",
-      description: "Analyzing governance participation and vote weight distribution within MetaDao.",
-      tags: ["DAO", "Governance", "Solana"],
-      icon: <Database size={24} />,
-      link: "/legacy/projects/Metadao.html",
-      github: "https://github.com/Ghostiemoh"
-    },
-    {
-      id: "SE-09",
-      title: "Sanafi Ethical Infographic",
-      category: "Data Ethics",
-      description: "An ethical exploration into data privacy and infographic systems.",
-      tags: ["Ethics", "Design", "Data"],
-      icon: <Search size={24} />,
-      link: "/legacy/projects/sana.html",
-      github: "https://github.com/Ghostiemoh"
-    },
-    {
-      id: "SR-10",
-      title: "Switchboard Research",
-      category: "Oracle Intelligence",
-      description: "Deep research into decentralized oracle networks and data feed reliability.",
-      tags: ["Oracles", "Research", "Web3"],
-      icon: <Search size={24} />,
-      link: "/legacy/projects/index.html",
-      github: "https://github.com/Ghostiemoh"
-    },
-    {
-      id: "CL-11",
-      title: "Call List Analysis",
-      category: "Excel Operations",
-      description: "Advanced Excel operations for managing and analyzing large-scale call list datasets.",
-      tags: ["Excel", "Operations", "Data Management"],
-      icon: <BarChart4 size={24} />,
-      link: "https://1drv.ms/x/c/708714f1f76dc85e/IQO-Ssc_TzW_TIC_xI9-rX8HAQ8kC58E4hA9o1S_u_W8-YQ",
-      github: "https://github.com/Ghostiemoh"
-    }
-  ];
 
   const [selectedCategory, setSelectedCategory] = React.useState("All Cases");
 
-  const categories = ["All Cases", ...new Set(caseFiles.map(f => f.category))];
-  const filteredProjects = selectedCategory === "All Cases" 
+  // Bolt Optimization: Extract static configurations outside the render loop and
+  // use memoization to prevent O(N) recalculations on unrelated re-renders.
+  const categories = React.useMemo(() => ["All Cases", ...new Set(caseFiles.map(f => f.category))], []);
+  const filteredProjects = React.useMemo(() => selectedCategory === "All Cases"
     ? caseFiles 
-    : caseFiles.filter(p => p.category === selectedCategory);
+    : caseFiles.filter(p => p.category === selectedCategory), [selectedCategory]);
 
   return (
     <section 
