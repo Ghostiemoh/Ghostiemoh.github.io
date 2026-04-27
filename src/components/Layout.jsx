@@ -87,7 +87,7 @@ const Layout = ({ children }) => {
             </div>
             <div className="flex flex-col">
                <span className="text-[11px] xl:text-sm font-black tracking-tighter uppercase whitespace-nowrap">Muhammad Auwal Abdulaziz</span>
-               <span className="text-[8px] xl:text-[10px] font-bold opacity-40 uppercase tracking-[0.2em] whitespace-nowrap">Onchain & Data Analyst</span>
+               <span className="text-[8px] xl:text-[10px] font-bold text-secondary uppercase tracking-[0.2em] whitespace-nowrap">"Ghostly Shadow"</span>
             </div>
           </motion.a>
 
@@ -190,8 +190,8 @@ const Layout = ({ children }) => {
       <footer className="py-20 bg-surface border-t border-on-surface/5">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-10">
           <div className="flex flex-col items-center md:items-start gap-3">
-            <span className="text-xs sm:text-sm font-black tracking-tighter uppercase text-center sm:text-left">Muhammad Auwal Abdulaziz</span>
-            <span className="text-[8px] sm:text-[10px] font-bold opacity-30 uppercase tracking-[0.4em] text-center sm:text-left">Onchain & Data Analyst • 2026 Archive</span>
+            <span className="text-xs sm:text-sm font-black tracking-tighter uppercase text-center sm:text-left text-white">Muhammad Auwal Abdulaziz</span>
+            <span className="text-[8px] sm:text-[10px] font-bold text-secondary uppercase tracking-[0.4em] text-center sm:text-left">"Ghostly Shadow" • Protocol Specialist</span>
           </div>
           <div className="flex gap-10">
             {navLinks.map(link => (
