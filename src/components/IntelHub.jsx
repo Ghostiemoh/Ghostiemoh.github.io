@@ -3,6 +3,59 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Award, GraduationCap, FileText, ChevronRight, CheckCircle2, BarChart4, Search } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
+// ⚡ Bolt: Extracted static credentials array outside the component to prevent
+// O(N) reallocation and recalculation on every render
+const credentials = [
+  {
+    type: "Academic",
+    title: "B.Sc Ed Mathematics",
+    org: "Yusuf Maitama Sule University, Kano",
+    status: "Lower Second Class Honors",
+    link: "#",
+    icon: <GraduationCap size={20} />
+  },
+  {
+    type: "Certification",
+    title: "No Long Ting Web3 Bootcamp",
+    org: "Unboxed Software/Solana Foundation",
+    status: "Verified Proof",
+    link: "/legacy/Certificates/5.jpg",
+    icon: <Award size={20} />
+  },
+  {
+    type: "Certification",
+    title: "Digital Literacy for All",
+    org: "NITDA",
+    status: "Federal Certification",
+    link: "/legacy/Certificates/4.html",
+    icon: <FileText size={20} />
+  },
+  {
+    type: "Certification",
+    title: "Blockchain Professional",
+    org: "Metana",
+    status: "Advanced Analysis",
+    link: "/legacy/Certificates/3.png",
+    icon: <CheckCircle2 size={20} />
+  },
+  {
+    type: "Certification",
+    title: "Intro to Data Analytics",
+    org: "CFI",
+    status: "Verified Data Analyst",
+    link: "/legacy/Certificates/2.jpg",
+    icon: <BarChart4 size={20} />
+  },
+  {
+    type: "Certification",
+    title: "Cyber Security Fundamentals",
+    org: "CFI",
+    status: "Security Certified",
+    link: "/legacy/Certificates/1.jpg",
+    icon: <Search size={20} />
+  }
+];
+
 const IntelHub = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -11,57 +64,6 @@ const IntelHub = () => {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
-
-  const credentials = [
-    {
-      type: "Academic",
-      title: "B.Sc Ed Mathematics",
-      org: "Yusuf Maitama Sule University, Kano",
-      status: "Lower Second Class Honors",
-      link: "#",
-      icon: <GraduationCap size={20} />
-    },
-    {
-      type: "Certification",
-      title: "No Long Ting Web3 Bootcamp",
-      org: "Unboxed Software/Solana Foundation",
-      status: "Verified Proof",
-      link: "/legacy/Certificates/5.jpg",
-      icon: <Award size={20} />
-    },
-    {
-      type: "Certification",
-      title: "Digital Literacy for All",
-      org: "NITDA",
-      status: "Federal Certification",
-      link: "/legacy/Certificates/4.html",
-      icon: <FileText size={20} />
-    },
-    {
-      type: "Certification",
-      title: "Blockchain Professional",
-      org: "Metana",
-      status: "Advanced Analysis",
-      link: "/legacy/Certificates/3.png",
-      icon: <CheckCircle2 size={20} />
-    },
-    {
-      type: "Certification",
-      title: "Intro to Data Analytics",
-      org: "CFI",
-      status: "Verified Data Analyst",
-      link: "/legacy/Certificates/2.jpg",
-      icon: <BarChart4 size={20} />
-    },
-    {
-      type: "Certification",
-      title: "Cyber Security Fundamentals",
-      org: "CFI",
-      status: "Security Certified",
-      link: "/legacy/Certificates/1.jpg",
-      icon: <Search size={20} />
-    }
-  ];
 
   return (
     <section 
