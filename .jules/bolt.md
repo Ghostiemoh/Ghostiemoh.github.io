@@ -1,3 +1,7 @@
 ## 2024-11-20 - Optimize Font Loading in Vite Projects
 **Learning:** Using `@import` inside a CSS file (like `index.css`) for loading external fonts in a Vite/React project creates a serial request chain. The browser must first download and parse the CSS before it can initiate the font download. This blocks rendering and negatively impacts First Contentful Paint (FCP).
 **Action:** Always define external font requests (e.g., Google Fonts) using `<link rel="stylesheet">` tags, along with `<link rel="preconnect">` for the font domain, directly in `index.html`. This allows the browser to discover and download the fonts in parallel with other assets.
+
+## 2024-04-28 - Optimize Array Reallocation in Functional Components
+**Learning:** Defining static arrays containing objects and/or JSX elements directly inside a functional component's render function (like `caseFiles` in `ProjectGrid.jsx`) causes full re-allocation of those data structures on every render loop, severely impacting computational performance. Additionally, performing static derived computations (like extracting categories into a Set) synchronously inside the loop incurs unnecessary O(N) operations.
+**Action:** Always extract strictly static data arrays outside the functional component definition to maintain a single instance in memory. For dynamic derived states (e.g., filtered data), always wrap the derivation logic in `React.useMemo()` to reuse the computed value across renders when dependencies haven't changed.
