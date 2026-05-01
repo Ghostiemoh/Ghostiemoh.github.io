@@ -3,16 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Briefcase, Calendar, MapPin, ExternalLink } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
-const Experience = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const pathLength = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
-
-  const experiences = [
+const experiences = [
     {
       company: "MetaDao",
       role: "On-chain Governance Analyst",
@@ -46,6 +37,15 @@ const Experience = () => {
       tags: ["Excel", "SQL", "Reporting"]
     }
   ];
+
+const Experience = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const pathLength = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
 
   return (
     <section 
