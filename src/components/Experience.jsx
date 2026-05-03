@@ -3,15 +3,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Briefcase, Calendar, MapPin, ExternalLink } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
-const Experience = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const pathLength = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
-
   const experiences = [
     {
       company: "MetaDao",
@@ -46,6 +37,16 @@ const Experience = () => {
       tags: ["Excel", "SQL", "Reporting"]
     }
   ];
+// ⚡ Bolt Performance Optimization: Static array extracted outside the render function to prevent unnecessary O(N) reallocation on every render cycle. Expected impact: Improved memory stability and minor reduction in render time.
+const Experience = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const pathLength = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
+
 
   return (
     <section 

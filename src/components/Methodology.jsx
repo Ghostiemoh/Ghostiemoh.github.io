@@ -37,15 +37,6 @@ const StatCounter = ({ value, suffix = "" }) => {
   );
 };
 
-const Methodology = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
-
   const steps = [
     {
       icon: <Database size={24} />,
@@ -72,6 +63,16 @@ const Methodology = () => {
       tag: "04"
     }
   ];
+// ⚡ Bolt Performance Optimization: Static array extracted outside the render function to prevent unnecessary O(N) reallocation on every render cycle. Expected impact: Improved memory stability and minor reduction in render time.
+const Methodology = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
+
 
   return (
     <section 

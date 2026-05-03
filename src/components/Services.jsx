@@ -3,15 +3,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ShieldCheck, Database, LayoutPanelLeft, SearchCode, ChevronRight } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
-const Services = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [0, -150]);
-
   const services = [
     {
       title: "Blockchain Forensics",
@@ -38,6 +29,16 @@ const Services = () => {
       specialty: "Verified Specs"
     }
   ];
+// ⚡ Bolt Performance Optimization: Static array extracted outside the render function to prevent unnecessary O(N) reallocation on every render cycle. Expected impact: Improved memory stability and minor reduction in render time.
+const Services = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, -150]);
+
 
   return (
     <section 

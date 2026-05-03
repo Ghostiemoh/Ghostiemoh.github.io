@@ -19,12 +19,6 @@ const iconMap = {
   Code
 };
 
-const BentoHub = ({ activeMode }) => {
-  // Defensive check for activeMode
-  const modeData = CONTENT_MATRIX[activeMode] || CONTENT_MATRIX[MODES.ON_CHAIN];
-  const projects = modeData.projects || [];
-
-  // Global Cards - Elevated to "System Components"
   const globalCards = [
     {
       id: "GL-01",
@@ -46,6 +40,13 @@ const BentoHub = ({ activeMode }) => {
       colSpan: "md:col-span-4"
     }
   ];
+// ⚡ Bolt Performance Optimization: Static array extracted outside the render function to prevent unnecessary O(N) reallocation on every render cycle. Expected impact: Improved memory stability and minor reduction in render time.
+const BentoHub = ({ activeMode }) => {
+  // Defensive check for activeMode
+  const modeData = CONTENT_MATRIX[activeMode] || CONTENT_MATRIX[MODES.ON_CHAIN];
+  const projects = modeData.projects || [];
+
+  // Global Cards - Elevated to "System Components"
 
   return (
     <section id="projects" className="py-32 bg-[#050505] relative min-h-screen overflow-hidden">

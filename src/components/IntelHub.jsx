@@ -3,15 +3,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Award, GraduationCap, FileText, ChevronRight, CheckCircle2, BarChart4, Search } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
-const IntelHub = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
-
   const credentials = [
     {
       type: "Academic",
@@ -62,6 +53,16 @@ const IntelHub = () => {
       icon: <Search size={20} />
     }
   ];
+// ⚡ Bolt Performance Optimization: Static array extracted outside the render function to prevent unnecessary O(N) reallocation on every render cycle. Expected impact: Improved memory stability and minor reduction in render time.
+const IntelHub = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
+
 
   return (
     <section 
