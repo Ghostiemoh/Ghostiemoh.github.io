@@ -16,7 +16,7 @@ const NexusToggle = ({ activeMode, setActiveMode }) => {
         {/* Glow Layer */}
         <div className="absolute -inset-1 bg-gradient-to-r from-secondary/20 via-white/5 to-secondary/20 rounded-[2rem] blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-1000" />
         
-        <nav className="relative flex items-center justify-between p-2 rounded-[2rem] bg-black/40 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden">
+        <nav className="relative flex items-center justify-between p-2 rounded-[2rem] bg-black/40 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden" role="group" aria-label="Operation Modes">
           {modes.map((mode) => {
             const Icon = mode.icon;
             const isActive = activeMode === mode.id;
@@ -25,6 +25,7 @@ const NexusToggle = ({ activeMode, setActiveMode }) => {
               <button
                 key={mode.id}
                 onClick={() => setActiveMode(mode.id)}
+                aria-pressed={isActive}
                 className="relative flex-1 group/btn"
               >
                 <div className={`relative flex flex-col items-center gap-1.5 py-4 px-2 rounded-2xl transition-all duration-500 ${
