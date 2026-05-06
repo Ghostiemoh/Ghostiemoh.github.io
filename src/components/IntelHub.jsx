@@ -3,16 +3,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Award, GraduationCap, FileText, ChevronRight, CheckCircle2, BarChart4, Search } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
-const IntelHub = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
-
-  const credentials = [
+// Bolt: Extracted static data array outside component to prevent reallocation on every render
+const credentials = [
     {
       type: "Academic",
       title: "B.Sc Ed Mathematics",
@@ -62,6 +54,16 @@ const IntelHub = () => {
       icon: <Search size={20} />
     }
   ];
+
+const IntelHub = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
+
 
   return (
     <section 
