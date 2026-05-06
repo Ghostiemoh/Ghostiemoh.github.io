@@ -11,17 +11,20 @@ This repository hosts my professional portfolio, designed as a high-integrity in
 ### 🔍 Strategic Case Files (Showcase)
 Below are selected "Case Files" extracted from my work, demonstrating specialized capabilities for clients:
 
+#### `FILE: SB-25` // [Sunboard 🌅](https://sunboard.vercel.app)
+Advanced Sunrise Intelligence Terminal for Solana. Momentum scoring, holder distribution, and real-time liquidity tracking for high-conviction assets.
+
+#### `FILE: VX-25` // [Vertex ⚡](https://vertex-pay.vercel.app)
+Institutional-grade invoicing tool for the Solana freelance economy. Generate smart agreements and get paid in USDC/SOL instantly.
+
+#### `FILE: DA-30` // [30-Day Data Architect Challenge](https://github.com/Ghostiemoh/Excel_SQL_Mastery_Template)
+Intensive masterclass transitioning from manual data cleaning to building scalable data systems and on-chain intelligence.
+
+#### `FILE: LS-25` // [LedgerSnap](https://ledgersnap-one.vercel.app)
+High-fidelity financial archival system. Transforming chaotic spending into a streamlined digital ledger with deep analytical insights.
+
 #### `FILE: SD-01` // [Solana Fraud Detection](https://docs.google.com/document/d/1pxf4EtWhSU6DWerlkD1fG8HMcj1QWlvBH3YYWmuYbec/edit?usp=sharing)
 Forensic investigation of fraudulent activities on the Solana network. Identifies malicious patterns and protective protocols for on-chain integrity.
-
-#### `FILE: MA-02` // [MarginFi Protocol Analytics](https://docs.google.com/document/d/1HTd4yvNuGfzq1s_K62YRKFgCPEta__THQPxuwPHXSCg/edit?usp=sharing)
-Deep research into borrowing, lending, and yield strategies within the MarginFi ecosystem. Translates protocol mechanics into actionable analytical reports.
-
-#### `FILE: KV-03` // [Kelsier Ventures Analysis](https://docs.google.com/document/d/1SDxOn-GqTk7od60YsqBVENOSMm_nVDR9oxxDlDWfzKY/edit?usp=sharing)
-Venture analytics focusing on wallet movements and venture capital flows within private investment networks.
-
-#### `FILE: NH-04` // Nashville Housing Data
-Operational SQL engineering focused on cleaning and transforming messy datasets for predictive modeling.
 
 ---
 
