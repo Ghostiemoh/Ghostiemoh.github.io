@@ -1,6 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert');
-const { calculateReward } = require('./utils');
+const { calculateReward } = require('./utils.cjs');
 
 test('calculateReward correctly calculates potential reward and difference', async (t) => {
 
