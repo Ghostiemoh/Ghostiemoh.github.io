@@ -162,11 +162,16 @@ const ProjectGrid = () => {
               </motion.p>
            </motion.div>
            
-           <div className="flex flex-wrap gap-3 mt-10">
+           <div
+             className="flex flex-wrap gap-3 mt-10"
+             role="group"
+             aria-label="Filter cases by category"
+           >
               {categories.map(cat => (
                 <button 
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
+                  aria-pressed={selectedCategory === cat}
                   className={`px-6 py-3 rounded-full text-[9px] font-black uppercase tracking-widest transition-all duration-500 border ${
                     selectedCategory === cat 
                     ? "bg-secondary text-white border-secondary shadow-lg shadow-secondary/20" 
