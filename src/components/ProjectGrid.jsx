@@ -3,14 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ExternalLink, Github, Database, Search, ArrowRight, BarChart4 } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
-const ProjectGrid = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [0, -150]);
+// ⚡ BOLT OPTIMIZATION: Extracted static array outside component to prevent recreation on every render
   const caseFiles = [
     {
       id: "SD-01",
@@ -123,13 +116,26 @@ const ProjectGrid = () => {
       github: "https://github.com/Ghostiemoh"
     }
   ];
+const ProjectGrid = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, -150]);
+
 
   const [selectedCategory, setSelectedCategory] = React.useState("All Cases");
 
-  const categories = ["All Cases", ...new Set(caseFiles.map(f => f.category))];
-  const filteredProjects = selectedCategory === "All Cases" 
-    ? caseFiles 
-    : caseFiles.filter(p => p.category === selectedCategory);
+  // ⚡ BOLT OPTIMIZATION: Memoize derived state to prevent recalculation on unnecessary re-renders
+  const categories = React.useMemo(() => ["All Cases", ...new Set(caseFiles.map(f => f.category))], []);
+
+  const filteredProjects = React.useMemo(() => {
+    return selectedCategory === "All Cases"
+      ? caseFiles
+      : caseFiles.filter(p => p.category === selectedCategory);
+  }, [selectedCategory]);
 
   return (
     <section 
