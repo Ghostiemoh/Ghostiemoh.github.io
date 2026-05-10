@@ -3,6 +3,41 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Briefcase, Calendar, MapPin, ExternalLink } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
+const experiences = [
+  {
+    company: "MetaDao",
+    role: "On-chain Governance Analyst",
+    period: "Aug 2024 - Present",
+    location: "Remote / Protocol",
+    description: "Analyzing on-chain metadata and governance proposals. Monitoring treasury flows and voting distributions to ensure protocol integrity and decentralization metrics.",
+    tags: ["Governance", "Treasury", "Snapshot"]
+  },
+  {
+    company: "Flipside Crypto",
+    role: "Analytics Contributor",
+    period: "2023 - 2024",
+    location: "Remote",
+    description: "Leveraged SQL to conduct deep-dive analytics on various blockchain protocols. Created comprehensive dashboards for the community to track active users and TVL movement.",
+    tags: ["SQL", "Data Viz", "Protocols"]
+  },
+  {
+    company: "Kelsier",
+    role: "Blockchain Researcher",
+    period: "2022 - 2023",
+    location: "United Arab Emirates (Remote)",
+    description: "Focused on forensic-level blockchain research and ecosystem mapping. Documenting protocol vulnerabilities and tracing transaction origin shards.",
+    tags: ["Forensics", "Research", "Security"]
+  },
+  {
+    company: "Sanafi",
+    role: "Data Analyst",
+    period: "2021 - 2022",
+    location: "Abuja, Nigeria",
+    description: "Extracted and processed organizational data to streamline reporting workflows. Built automated Excel models and SQL queries to reduce manual audit time by 40%.",
+    tags: ["Excel", "SQL", "Reporting"]
+  }
+];
+
 const Experience = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -11,41 +46,6 @@ const Experience = () => {
   });
 
   const pathLength = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
-
-  const experiences = [
-    {
-      company: "MetaDao",
-      role: "On-chain Governance Analyst",
-      period: "Aug 2024 - Present",
-      location: "Remote / Protocol",
-      description: "Analyzing on-chain metadata and governance proposals. Monitoring treasury flows and voting distributions to ensure protocol integrity and decentralization metrics.",
-      tags: ["Governance", "Treasury", "Snapshot"]
-    },
-    {
-      company: "Flipside Crypto",
-      role: "Analytics Contributor",
-      period: "2023 - 2024",
-      location: "Remote",
-      description: "Leveraged SQL to conduct deep-dive analytics on various blockchain protocols. Created comprehensive dashboards for the community to track active users and TVL movement.",
-      tags: ["SQL", "Data Viz", "Protocols"]
-    },
-    {
-      company: "Kelsier",
-      role: "Blockchain Researcher",
-      period: "2022 - 2023",
-      location: "United Arab Emirates (Remote)",
-      description: "Focused on forensic-level blockchain research and ecosystem mapping. Documenting protocol vulnerabilities and tracing transaction origin shards.",
-      tags: ["Forensics", "Research", "Security"]
-    },
-    {
-      company: "Sanafi",
-      role: "Data Analyst",
-      period: "2021 - 2022",
-      location: "Abuja, Nigeria",
-      description: "Extracted and processed organizational data to streamline reporting workflows. Built automated Excel models and SQL queries to reduce manual audit time by 40%.",
-      tags: ["Excel", "SQL", "Reporting"]
-    }
-  ];
 
   return (
     <section 
