@@ -1,3 +1,7 @@
-## 2026-04-16 - Add ARIA Labels and Roles in Layout.jsx
-**Learning:** Icon-only social links and mobile menu toggle buttons lacked screen reader context in the existing `Layout.jsx` design.
-**Action:** Always verify that mapped arrays of icon components include an accessible name property to be used as an `aria-label`, and ensure mobile toggles use `aria-expanded` and `aria-controls`.
+## 2025-01-01 - Initial Setup
+**Learning:** Initial Palette journal setup
+**Action:** Ready to record critical UX insights
+
+## 2025-01-01 - Form Associations and Icon Labels
+**Learning:** Implicit label wrapping isn't always reliable or used (as seen in SecureDirective). Explicit `htmlFor`/`id` bindings are necessary for form accessibility. Furthermore, icon-only interactive elements (like ExternalLink and GitHub links) require both `aria-label` for screen readers and `title` attributes for helpful visual hover states.
+**Action:** Always map the label's `htmlFor` to the input's `id`. For icon-only links mapped from arrays, inject contextual ARIA labels and titles.
