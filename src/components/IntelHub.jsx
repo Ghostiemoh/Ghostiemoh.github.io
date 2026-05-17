@@ -3,16 +3,9 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Award, GraduationCap, FileText, ChevronRight, CheckCircle2, BarChart4, Search } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
-const IntelHub = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
-
-  const credentials = [
+// Extracted static array outside component to prevent recreation on every render,
+// reducing CPU overhead and memory allocations.
+const CREDENTIALS = [
     {
       type: "Academic",
       title: "B.Sc Ed Mathematics",
@@ -62,6 +55,15 @@ const IntelHub = () => {
       icon: <Search size={20} />
     }
   ];
+
+const IntelHub = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
   return (
     <section 
@@ -135,7 +137,7 @@ const IntelHub = () => {
             viewport={{ once: true }}
             className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6"
           >
-              {credentials.map((cred, i) => (
+              {CREDENTIALS.map((cred, i) => (
                 <motion.a 
                    key={cred.title}
                    href={cred.link}
