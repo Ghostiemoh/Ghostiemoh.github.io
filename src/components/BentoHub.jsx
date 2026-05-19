@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, GraduationCap, ShieldCheck, Heart, Terminal, Cpu, Search, BarChart4, Database, Award, FileText, Briefcase, Code } from 'lucide-react';
+import { ExternalLink, Github, GraduationCap, ShieldCheck, Heart, Terminal, Cpu, Search, BarChart4, Database, Award, FileText, Briefcase, Code, Activity } from 'lucide-react';
 import { CONTENT_MATRIX, MODES } from '../utils/content';
 
 // Map icon strings to components directly to avoid 'import * as' issues
@@ -16,7 +16,8 @@ const iconMap = {
   GraduationCap,
   Heart,
   Terminal,
-  Code
+  Code,
+  Activity
 };
 
 const BentoHub = ({ activeMode }) => {

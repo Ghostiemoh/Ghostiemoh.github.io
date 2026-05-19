@@ -11,6 +11,9 @@ This repository hosts my professional portfolio, designed as a high-integrity in
 ### 🔍 Strategic Case Files (Showcase)
 Below are selected "Case Files" extracted from my work, demonstrating specialized capabilities for clients:
 
+#### `FILE: WF-25` // [Wavefront 📡](https://wavefront-gray.vercel.app)
+Onchain market intelligence for Solana — narrative clustering, risk scoring, and AI-powered token analysis in one terminal. Powered by Birdeye data and Gemini AI.
+
 #### `FILE: SB-25` // [Sunboard 🌅](https://sunboard.vercel.app)
 Advanced Sunrise Intelligence Terminal for Solana. Momentum scoring, holder distribution, and real-time liquidity tracking for high-conviction assets.
 

@@ -1,4 +1,4 @@
-import { Search, BarChart4, Database, Cpu, Award, FileText, Briefcase, ShieldCheck, GraduationCap, Heart, Terminal } from 'lucide-react';
+import { Search, BarChart4, Database, Cpu, Award, FileText, Briefcase, ShieldCheck, GraduationCap, Heart, Terminal, Activity } from 'lucide-react';
 
 export const MODES = {
   ON_CHAIN: 'ON-CHAIN',
@@ -10,6 +10,7 @@ export const CONTENT_MATRIX = {
   [MODES.ON_CHAIN]: {
     hero: "Interrogating on-chain shards for governance integrity.",
     projects: [
+      { id: "WF-25", title: "Wavefront", category: "Market Intelligence", description: "Onchain market intelligence for Solana — narrative clustering, risk scoring, and AI-powered token analysis in one terminal. Powered by Birdeye data and Gemini AI.", tags: ["Solana", "AI", "Intelligence", "Birdeye"], icon: 'Activity', link: 'https://wavefront-gray.vercel.app' },
       { id: "SB-25", title: "Sunboard 🌅", category: "DeFi Intelligence", description: "Advanced Sunrise Intelligence Terminal for Solana. Momentum scoring, holder distribution, and real-time liquidity tracking for high-conviction assets.", tags: ["Solana", "DeFi", "Analytics"], icon: 'Terminal', link: 'https://sunboard.vercel.app' },
       { id: "VX-25", title: "Vertex ⚡", category: "Solana Invoicing", description: "Institutional-grade invoicing tool for the Solana freelance economy. Generate smart agreements and get paid in USDC/SOL instantly.", tags: ["Solana", "Invoicing", "Fintech"], icon: 'ShieldCheck', link: 'https://vertex-pay.vercel.app' },
       { id: "ST-01", title: "Superteam Earn Wins", category: "Proof of Work", description: "8 Competitive Bounty Wins in technical research and on-chain analysis.", tags: ["Superteam", "Wins"], icon: 'Award', link: 'https://superteam.fun/earn/t/Ghostiemoh' },
