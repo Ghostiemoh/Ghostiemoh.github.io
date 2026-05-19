@@ -102,8 +102,9 @@ const SecureDirective = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40 ml-4">Authorized Name</label>
+                      <label htmlFor="authorized-name" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40 ml-4">Authorized Name</label>
                       <input 
+                        id="authorized-name"
                         type="text" 
                         required
                         placeholder="IDENTIFY YOURSELF"
@@ -113,8 +114,9 @@ const SecureDirective = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40 ml-4">Return Frequency</label>
+                      <label htmlFor="return-frequency" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40 ml-4">Return Frequency</label>
                       <input 
+                        id="return-frequency"
                         type="email" 
                         required
                         placeholder="COMMUNICATION_ENDPOINT"
@@ -126,8 +128,9 @@ const SecureDirective = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40 ml-4">The Mission</label>
+                    <label htmlFor="the-mission" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40 ml-4">The Mission</label>
                     <textarea 
+                      id="the-mission"
                       required
                       placeholder="ENTER DIRECTIVE..."
                       rows={4}
