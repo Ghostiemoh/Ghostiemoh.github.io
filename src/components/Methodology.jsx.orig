@@ -1,30 +1,39 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
 import { Database, Filter, PenTool, BarChart3, Binary, ScanSearch } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
 const StatCounter = ({ value, suffix = "" }) => {
+  const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const endValue = parseInt(value.replace(/\D/g, '')) || 0;
-  
-  // Optimization: useSpring bypasses React re-renders, updating the DOM directly for complex number counting
-  const springValue = useSpring(0, { duration: 2, bounce: 0 });
 
   useEffect(() => {
     if (isInView) {
-      springValue.set(endValue);
-    }
-  }, [isInView, endValue, springValue]);
+      let start = 0;
+      const end = parseInt(value.replace(/\D/g, ''));
+      if (start === end) return;
 
-  const displayValue = useTransform(springValue, (current) => {
-    return Math.floor(current).toLocaleString() + suffix;
-  });
+      let totalDuration = 2000;
+      let increment = end / (totalDuration / 16);
+
+      let timer = setInterval(() => {
+        start += increment;
+        if (start >= end) {
+          setCount(end);
+          clearInterval(timer);
+        } else {
+          setCount(Math.floor(start));
+        }
+      }, 16);
+      return () => clearInterval(timer);
+    }
+  }, [isInView, value]);
 
   return (
-    <motion.span ref={ref} className="tabular-nums">
-      {displayValue}
-    </motion.span>
+    <span ref={ref} className="tabular-nums">
+      {count.toLocaleString()}{suffix}
+    </span>
   );
 };
 
@@ -65,9 +74,9 @@ const Methodology = () => {
   ];
 
   return (
-    <section 
+    <section
       ref={containerRef}
-      id="methodology" 
+      id="methodology"
       className="py-32 bg-on-surface text-white relative overflow-hidden"
     >
       {/* Narrative grid background - Parallax */}
@@ -80,7 +89,7 @@ const Methodology = () => {
       </motion.div>
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
-        <motion.div 
+        <motion.div
           variants={variants.staggerContainer}
           initial="initial"
           whileInView="whileInView"
@@ -98,7 +107,7 @@ const Methodology = () => {
            </motion.p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           variants={variants.staggerContainer}
           initial="initial"
           whileInView="whileInView"
@@ -106,7 +115,7 @@ const Methodology = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
         >
            {steps.map((step, i) => (
-             <motion.div 
+             <motion.div
                 key={step.title}
                 variants={variants.springIn}
                 className="space-y-6 group"
@@ -126,7 +135,7 @@ const Methodology = () => {
         </motion.div>
 
         {/* Story Focus Callout */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

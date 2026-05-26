@@ -1,0 +1,10 @@
+--- src/components/Methodology.jsx
++++ src/components/Methodology.jsx
+@@ -8,6 +8,7 @@
+   const isInView = useInView(ref, { once: true });
+   const endValue = parseInt(value.replace(/\D/g, '')) || 0;
+
++  // Optimization: useSpring bypasses React re-renders, updating the DOM directly for complex number counting
+   const springValue = useSpring(0, { duration: 2, bounce: 0 });
+
+   useEffect(() => {
