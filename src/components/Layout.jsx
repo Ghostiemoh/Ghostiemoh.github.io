@@ -116,6 +116,7 @@ const Layout = ({ children }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
+                  title={social.name}
                   className="text-on-surface/40 hover:text-secondary transition-all duration-500 hover:scale-110"
                 >
                   {social.icon}
@@ -175,7 +176,7 @@ const Layout = ({ children }) => {
             <div className="flex justify-between items-center pb-10">
                <div className="flex gap-8">
                   {socialLinks.map((social, i) => (
-                    <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name} className="text-on-surface/40">{social.icon}</a>
+                    <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name} title={social.name} className="text-on-surface/40">{social.icon}</a>
                   ))}
                </div>
                <span className="text-[10px] font-bold opacity-30 uppercase tracking-[0.5em]">v1.0.24</span>
