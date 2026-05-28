@@ -1,0 +1,4 @@
+1. I noticed in `src/components/SecureDirective.jsx` there is a form with inputs, but they lack `id` attributes and their `<label>` elements are missing `htmlFor` attributes to properly associate them. This is an accessibility issue.
+2. I will update `src/components/SecureDirective.jsx` to add proper `htmlFor` and `id` to the form fields (Name, Email, Message).
+3. I'll also add `htmlFor` and `id` matching.
+4. Review changes visually.
