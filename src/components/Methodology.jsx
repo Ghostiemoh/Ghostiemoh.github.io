@@ -1,39 +1,36 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
 import { Database, Filter, PenTool, BarChart3, Binary, ScanSearch } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
 const StatCounter = ({ value, suffix = "" }) => {
-  const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   
+  const end = parseInt(value.replace(/\D/g, '')) || 0;
+
+  // Create a spring animation that goes from 0 to 'end'
+  const springValue = useSpring(0, {
+    bounce: 0,
+    duration: 2000
+  });
+
+  // Start the animation when in view
   useEffect(() => {
     if (isInView) {
-      let start = 0;
-      const end = parseInt(value.replace(/\D/g, ''));
-      if (start === end) return;
-      
-      let totalDuration = 2000;
-      let increment = end / (totalDuration / 16);
-      
-      let timer = setInterval(() => {
-        start += increment;
-        if (start >= end) {
-          setCount(end);
-          clearInterval(timer);
-        } else {
-          setCount(Math.floor(start));
-        }
-      }, 16);
-      return () => clearInterval(timer);
+      springValue.set(end);
     }
-  }, [isInView, value]);
+  }, [isInView, end, springValue]);
+
+  // Transform the raw numeric value into a formatted string with suffix
+  const displayValue = useTransform(springValue, (latest) => {
+    return Math.floor(latest).toLocaleString() + suffix;
+  });
 
   return (
-    <span ref={ref} className="tabular-nums">
-      {count.toLocaleString()}{suffix}
-    </span>
+    <motion.span ref={ref} className="tabular-nums">
+      {displayValue}
+    </motion.span>
   );
 };
 
