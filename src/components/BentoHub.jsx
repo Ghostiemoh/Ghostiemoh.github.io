@@ -90,7 +90,7 @@ const BentoHub = ({ activeMode }) => {
                        <div className="flex flex-col items-end gap-2">
                           <span className="text-[9px] font-black tracking-[0.2em] text-white/10 group-hover:text-secondary/50 transition-all uppercase">Source: {project.id}</span>
                           <div className="flex gap-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-                             <a href={project.link} target="_blank" rel="noopener noreferrer" className="p-3 bg-secondary/10 border border-secondary/20 rounded-xl text-secondary hover:bg-secondary hover:text-white transition-all">
+                             <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label="View Project" title="View Project" className="p-3 bg-secondary/10 border border-secondary/20 rounded-xl text-secondary hover:bg-secondary hover:text-white transition-all">
                                 <ExternalLink size={16} />
                              </a>
                           </div>
