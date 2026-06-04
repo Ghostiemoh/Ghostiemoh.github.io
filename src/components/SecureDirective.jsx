@@ -102,8 +102,9 @@ const SecureDirective = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40 ml-4">Authorized Name</label>
+                      <label htmlFor="sender-name" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40 ml-4">Authorized Name</label>
                       <input 
+                        id="sender-name"
                         type="text" 
                         required
                         placeholder="IDENTIFY YOURSELF"
@@ -113,8 +114,9 @@ const SecureDirective = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40 ml-4">Return Frequency</label>
+                      <label htmlFor="sender-email" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40 ml-4">Return Frequency</label>
                       <input 
+                        id="sender-email"
                         type="email" 
                         required
                         placeholder="COMMUNICATION_ENDPOINT"
@@ -126,8 +128,9 @@ const SecureDirective = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40 ml-4">The Mission</label>
+                    <label htmlFor="sender-mission" className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40 ml-4">The Mission</label>
                     <textarea 
+                      id="sender-mission"
                       required
                       placeholder="ENTER DIRECTIVE..."
                       rows={4}
@@ -169,7 +172,7 @@ const SecureDirective = () => {
              &copy; {new Date().getFullYear()} MUHAMMAD AUWAL ABDULAZIZ // GHOSTLY_SHADOW_V2.0
            </p>
            <div className="flex gap-8">
-              <a href="https://github.com/Ghostiemoh" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors">
+              <a href="https://github.com/Ghostiemoh" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors" aria-label="GitHub Profile" title="GitHub Profile">
                 <Github size={16} />
               </a>
            </div>
