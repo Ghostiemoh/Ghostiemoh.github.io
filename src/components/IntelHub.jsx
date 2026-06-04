@@ -22,15 +22,31 @@ const IntelHub = () => {
       icon: <GraduationCap size={20} />
     },
     {
-      type: "Certification",
-      title: "No Long Ting Web3 Bootcamp",
-      org: "Unboxed Software/Solana Foundation",
+      type: "Certification · 2026",
+      title: "Anthropic Technical Certifications",
+      org: "Anthropic",
+      status: "Claude Code 101 · Claude 101 · Agent Skills",
+      link: "#",
+      icon: <Award size={20} />
+    },
+    {
+      type: "Certification · 2025",
+      title: "Advanced Data Analytics",
+      org: "3MTT · DeepTech · NITDA",
+      status: "Data Analysis & Visualization",
+      link: "https://app.3mtt.training/verify?id=FE/24/4155597910",
+      icon: <BarChart4 size={20} />
+    },
+    {
+      type: "Certification · 2025",
+      title: "No Long Ting Web3 & Tech Bootcamp",
+      org: "BlockchainLex Group x CryptoMondays",
       status: "Verified Proof",
       link: "/legacy/Certificates/5.jpg",
       icon: <Award size={20} />
     },
     {
-      type: "Certification",
+      type: "Certification · 2025",
       title: "Digital Literacy for All",
       org: "NITDA",
       status: "Federal Certification",
@@ -38,25 +54,25 @@ const IntelHub = () => {
       icon: <FileText size={20} />
     },
     {
-      type: "Certification",
-      title: "Blockchain Professional",
-      org: "Metana",
-      status: "Advanced Analysis",
+      type: "Certification · 2023",
+      title: "Blockchain Professional (BIP)",
+      org: "Dominium Academy x NITDA x BSV",
+      status: "Cohort #1",
       link: "/legacy/Certificates/3.png",
       icon: <CheckCircle2 size={20} />
     },
     {
-      type: "Certification",
-      title: "Intro to Data Analytics",
-      org: "CFI",
+      type: "Certification · 2023",
+      title: "Introduction to Data Analytics",
+      org: "SkillUp by SimpliLearn",
       status: "Verified Data Analyst",
       link: "/legacy/Certificates/2.jpg",
       icon: <BarChart4 size={20} />
     },
     {
-      type: "Certification",
-      title: "Cyber Security Fundamentals",
-      org: "CFI",
+      type: "Certification · 2022",
+      title: "Introduction to Cyber Security",
+      org: "Academy Halogen",
       status: "Security Certified",
       link: "/legacy/Certificates/1.jpg",
       icon: <Search size={20} />
@@ -99,7 +115,7 @@ const IntelHub = () => {
             <motion.div variants={variants.fadeIn} className="p-10 rounded-[2.5rem] bg-on-surface/5 border border-on-surface/5 space-y-6">
                <h4 className="text-[11px] font-black uppercase tracking-[0.3em]">Technical Core</h4>
                <div className="flex flex-wrap gap-3">
-                  {["Python", "SQL", "Excel", "Tableau", "Power BI", "Data Forensics"].map(skill => (
+                  {["SQL", "Excel", "Power BI", "Python", "MATLAB", "Data Visualization"].map(skill => (
                     <motion.span 
                       key={skill}
                       whileHover={{ scale: 1.05, borderColor: "var(--secondary)" }}

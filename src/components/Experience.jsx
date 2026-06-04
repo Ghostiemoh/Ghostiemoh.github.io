@@ -44,6 +44,30 @@ const Experience = () => {
       location: "Abuja, Nigeria",
       description: "Extracted and processed organizational data to streamline reporting workflows. Built automated Excel models and SQL queries to reduce manual audit time by 40%.",
       tags: ["Excel", "SQL", "Reporting"]
+    },
+    {
+      company: "Bahago Services Limited",
+      role: "IT Personnel (NYSC → Full-time)",
+      period: "2023 - Present",
+      location: "Abuja, Nigeria",
+      description: "Prepare official correspondence and complete tender documents for project bids. Format and calculate Bill of Engineering Measurement & Evaluation (BEME) documents — ensuring precise, reliable data for engineering project planning and financial management.",
+      tags: ["BEME", "Tenders", "Documentation"]
+    },
+    {
+      company: "Lakrims Services Limited",
+      role: "Internship",
+      period: "2021 - 2023",
+      location: "Kano, Nigeria",
+      description: "Drafted and formatted official corporate documents — letters of request, payment notices, and acceptance letters — ensuring clarity and professionalism. Supported administrative and project workflows, improving document-handling efficiency.",
+      tags: ["Admin", "Project Support", "Workflow"]
+    },
+    {
+      company: "Govt. Girls Senior Secondary, Darmanawa",
+      role: "Teaching Practice",
+      period: "Aug 2021 - Nov 2021",
+      location: "Kano, Nigeria",
+      description: "Conducted mathematics lessons, breaking down complex concepts through clear, engaging methods. Developed lesson plans, graded assignments, and provided feedback to improve students' mathematical skills.",
+      tags: ["Mathematics", "Teaching", "Education"]
     }
   ];
 

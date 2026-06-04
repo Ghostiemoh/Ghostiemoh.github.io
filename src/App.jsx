@@ -11,7 +11,7 @@ import Services from './components/Services';
 import { MODES } from './utils/content';
 
 function App() {
-  const [activeMode, setActiveMode] = useState(MODES.ON_CHAIN);
+  const [activeMode, setActiveMode] = useState(MODES.ANALYTICS);
 
   return (
     <Layout>

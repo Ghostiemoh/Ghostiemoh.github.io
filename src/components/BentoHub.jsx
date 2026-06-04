@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, GraduationCap, ShieldCheck, Heart, Terminal, Cpu, Search, BarChart4, Database, Award, FileText, Briefcase, Code, Activity } from 'lucide-react';
+import { ExternalLink, Download, Eye, Github, GraduationCap, ShieldCheck, Heart, Terminal, Cpu, Search, BarChart4, Database, Award, FileText, Briefcase, Code, Activity } from 'lucide-react';
 import { CONTENT_MATRIX, MODES } from '../utils/content';
+import ProjectViewer from './ProjectViewer';
 
 // Map icon strings to components directly to avoid 'import * as' issues
 const iconMap = {
@@ -24,6 +25,7 @@ const BentoHub = ({ activeMode }) => {
   // Defensive check for activeMode
   const modeData = CONTENT_MATRIX[activeMode] || CONTENT_MATRIX[MODES.ON_CHAIN];
   const projects = modeData.projects || [];
+  const [viewerFile, setViewerFile] = useState(null);
 
   // Global Cards - Elevated to "System Components"
   const globalCards = [
@@ -89,10 +91,22 @@ const BentoHub = ({ activeMode }) => {
                        </div>
                        <div className="flex flex-col items-end gap-2">
                           <span className="text-[9px] font-black tracking-[0.2em] text-white/10 group-hover:text-secondary/50 transition-all uppercase">Source: {project.id}</span>
-                          <div className="flex gap-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
-                             <a href={project.link} target="_blank" rel="noopener noreferrer" className="p-3 bg-secondary/10 border border-secondary/20 rounded-xl text-secondary hover:bg-secondary hover:text-white transition-all">
-                                <ExternalLink size={16} />
-                             </a>
+                          <div className="flex gap-2 transition-all duration-500">
+                             {project.view && (
+                               <button onClick={() => setViewerFile(project)} title="Click to view" className="p-3 bg-secondary/10 border border-secondary/20 rounded-xl text-secondary hover:bg-secondary hover:text-white transition-all cursor-pointer">
+                                  <Eye size={16} />
+                               </button>
+                             )}
+                             {project.link && (
+                               <a href={project.link} target="_blank" rel="noopener noreferrer" title="Open" className="p-3 bg-secondary/10 border border-secondary/20 rounded-xl text-secondary hover:bg-secondary hover:text-white transition-all">
+                                  <ExternalLink size={16} />
+                               </a>
+                             )}
+                             {project.download && (
+                               <a href={project.download} download title="Download source file" className="p-3 bg-white/5 border border-white/10 rounded-xl text-white/60 hover:bg-white hover:text-black transition-all">
+                                  <Download size={16} />
+                               </a>
+                             )}
                           </div>
                        </div>
                     </div>
@@ -108,6 +122,14 @@ const BentoHub = ({ activeMode }) => {
                        <p className={`font-medium text-white/50 leading-relaxed group-hover:text-white/80 transition-colors ${isLarge ? "text-xl max-w-xl" : "text-base max-w-sm"}`}>
                           {project.description}
                        </p>
+                       {project.view && (
+                         <button
+                           onClick={() => setViewerFile(project)}
+                           className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.25em] text-secondary hover:gap-3 transition-all cursor-pointer"
+                         >
+                           <Eye size={14} /> Click to view
+                         </button>
+                       )}
                     </div>
                   </div>
 
@@ -178,6 +200,8 @@ const BentoHub = ({ activeMode }) => {
           </AnimatePresence>
         </div>
       </div>
+
+      <ProjectViewer project={viewerFile} onClose={() => setViewerFile(null)} />
     </section>
   );
 };

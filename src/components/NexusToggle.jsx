@@ -5,8 +5,8 @@ import { MODES } from '../utils/content';
 
 const NexusToggle = ({ activeMode, setActiveMode }) => {
   const modes = [
-    { id: MODES.ON_CHAIN, label: 'ON-CHAIN', icon: Search, sector: 'SEC-01' },
-    { id: MODES.ANALYTICS, label: 'ANALYTICS', icon: BarChart4, sector: 'SEC-02' },
+    { id: MODES.ANALYTICS, label: 'ANALYTICS', icon: BarChart4, sector: 'SEC-01' },
+    { id: MODES.ON_CHAIN, label: 'ON-CHAIN', icon: Search, sector: 'SEC-02' },
     { id: MODES.AGENTIC, label: 'AGENTIC', icon: Cpu, sector: 'SEC-03' }
   ];
 
