@@ -1,39 +1,34 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
 import { Database, Filter, PenTool, BarChart3, Binary, ScanSearch } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
+// ⚡ Bolt: Refactored StatCounter to use Framer Motion's useSpring instead of React's useState.
+// This reduces re-renders and CPU overhead significantly for high-frequency value updates.
 const StatCounter = ({ value, suffix = "" }) => {
-  const [count, setCount] = useState(0);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const end = parseInt(value.replace(/\D/g, ''));
   
+  const springValue = useSpring(0, {
+    bounce: 0,
+    duration: 2000
+  });
+
   useEffect(() => {
     if (isInView) {
-      let start = 0;
-      const end = parseInt(value.replace(/\D/g, ''));
-      if (start === end) return;
-      
-      let totalDuration = 2000;
-      let increment = end / (totalDuration / 16);
-      
-      let timer = setInterval(() => {
-        start += increment;
-        if (start >= end) {
-          setCount(end);
-          clearInterval(timer);
-        } else {
-          setCount(Math.floor(start));
-        }
-      }, 16);
-      return () => clearInterval(timer);
+      springValue.set(end);
     }
-  }, [isInView, value]);
+  }, [isInView, end, springValue]);
+
+  const displayValue = useTransform(springValue, (current) =>
+    `${Math.floor(current).toLocaleString()}${suffix}`
+  );
 
   return (
-    <span ref={ref} className="tabular-nums">
-      {count.toLocaleString()}{suffix}
-    </span>
+    <motion.span ref={ref} className="tabular-nums">
+      {displayValue}
+    </motion.span>
   );
 };
 
