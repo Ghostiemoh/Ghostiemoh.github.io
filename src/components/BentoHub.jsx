@@ -98,12 +98,12 @@ const BentoHub = ({ activeMode }) => {
                                </button>
                              )}
                              {project.link && (
-                               <a href={project.link} target="_blank" rel="noopener noreferrer" title="Open" className="p-3 bg-secondary/10 border border-secondary/20 rounded-xl text-secondary hover:bg-secondary hover:text-white transition-all">
+                               <a href={project.link} target="_blank" rel="noopener noreferrer" title="Open" aria-label="Open project link" className="p-3 bg-secondary/10 border border-secondary/20 rounded-xl text-secondary hover:bg-secondary hover:text-white transition-all">
                                   <ExternalLink size={16} />
                                </a>
                              )}
                              {project.download && (
-                               <a href={project.download} download title="Download source file" className="p-3 bg-white/5 border border-white/10 rounded-xl text-white/60 hover:bg-white hover:text-black transition-all">
+                               <a href={project.download} download title="Download source file" aria-label="Download project source file" className="p-3 bg-white/5 border border-white/10 rounded-xl text-white/60 hover:bg-white hover:text-black transition-all">
                                   <Download size={16} />
                                </a>
                              )}
