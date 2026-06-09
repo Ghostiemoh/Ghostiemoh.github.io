@@ -93,17 +93,17 @@ const BentoHub = ({ activeMode }) => {
                           <span className="text-[9px] font-black tracking-[0.2em] text-white/10 group-hover:text-secondary/50 transition-all uppercase">Source: {project.id}</span>
                           <div className="flex gap-2 transition-all duration-500">
                              {project.view && (
-                               <button onClick={() => setViewerFile(project)} title="Click to view" className="p-3 bg-secondary/10 border border-secondary/20 rounded-xl text-secondary hover:bg-secondary hover:text-white transition-all cursor-pointer">
+                               <button onClick={() => setViewerFile(project)} title="Click to view" aria-label="Click to view" className="p-3 bg-secondary/10 border border-secondary/20 rounded-xl text-secondary hover:bg-secondary hover:text-white transition-all cursor-pointer">
                                   <Eye size={16} />
                                </button>
                              )}
                              {project.link && (
-                               <a href={project.link} target="_blank" rel="noopener noreferrer" title="Open" className="p-3 bg-secondary/10 border border-secondary/20 rounded-xl text-secondary hover:bg-secondary hover:text-white transition-all">
+                               <a href={project.link} target="_blank" rel="noopener noreferrer" title="Open project link" aria-label="Open project link" className="p-3 bg-secondary/10 border border-secondary/20 rounded-xl text-secondary hover:bg-secondary hover:text-white transition-all">
                                   <ExternalLink size={16} />
                                </a>
                              )}
                              {project.download && (
-                               <a href={project.download} download title="Download source file" className="p-3 bg-white/5 border border-white/10 rounded-xl text-white/60 hover:bg-white hover:text-black transition-all">
+                               <a href={project.download} download title="Download source file" aria-label="Download source file" className="p-3 bg-white/5 border border-white/10 rounded-xl text-white/60 hover:bg-white hover:text-black transition-all">
                                   <Download size={16} />
                                </a>
                              )}
