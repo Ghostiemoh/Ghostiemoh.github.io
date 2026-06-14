@@ -166,6 +166,7 @@ const ProjectGrid = () => {
               {categories.map(cat => (
                 <button 
                   key={cat}
+                  aria-label={`Filter by ${cat}`}
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-6 py-3 rounded-full text-[9px] font-black uppercase tracking-widest transition-all duration-500 border ${
                     selectedCategory === cat 
@@ -221,10 +222,10 @@ const ProjectGrid = () => {
 
                   {/* Hover Actions */}
                   <div className="absolute bottom-10 right-10 flex gap-4 translate-y-20 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700">
-                    <a href={file.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center bg-surface hover:bg-on-surface hover:text-white transition-all">
+                    <a href={file.github} target="_blank" rel="noopener noreferrer" aria-label="View on GitHub" className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center bg-surface hover:bg-on-surface hover:text-white transition-all">
                       <Github size={18} />
                     </a>
-                    <a href={file.link} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white hover:scale-110 transition-all">
+                    <a href={file.link} target="_blank" rel="noopener noreferrer" aria-label="Open external link" className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white hover:scale-110 transition-all">
                       <ExternalLink size={18} />
                     </a>
                   </div>

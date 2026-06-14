@@ -24,6 +24,7 @@ const NexusToggle = ({ activeMode, setActiveMode }) => {
             return (
               <button
                 key={mode.id}
+                aria-label={`Switch to ${mode.label} mode`}
                 onClick={() => setActiveMode(mode.id)}
                 className="relative flex-1 group/btn"
               >

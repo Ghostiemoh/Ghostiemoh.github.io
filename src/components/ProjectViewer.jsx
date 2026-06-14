@@ -66,6 +66,7 @@ const ProjectViewer = ({ project, onClose }) => {
                   href={src}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Open in new tab"
                   title="Open in new tab"
                   className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10 transition-all cursor-pointer"
                 >
@@ -75,6 +76,7 @@ const ProjectViewer = ({ project, onClose }) => {
                   <a
                     href={project.download}
                     download
+                    aria-label="Download file"
                     title="Download file"
                     className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10 transition-all cursor-pointer"
                   >
@@ -83,6 +85,7 @@ const ProjectViewer = ({ project, onClose }) => {
                 )}
                 <button
                   onClick={onClose}
+                  aria-label="Close viewer"
                   title="Close"
                   className="p-2.5 rounded-xl bg-secondary/10 border border-secondary/20 text-secondary hover:bg-secondary hover:text-white transition-all cursor-pointer"
                 >
