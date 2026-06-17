@@ -31,9 +31,9 @@ const SecureDirective = () => {
   };
 
   return (
-    <footer id="directives" className="bg-surface pt-40 pb-20 relative overflow-hidden transition-colors duration-700">
+    <footer id="directives" className="bg-surface pt-40 pb-20 relative overflow-hidden transition-colors duration-200 ease-out">
       {/* Background Elements */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-on-surface/5 to-transparent transition-colors duration-700" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-on-surface/5 to-transparent transition-colors duration-200 ease-out" />
       
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         
@@ -80,9 +80,9 @@ const SecureDirective = () => {
           {/* Secure Contact Terminal */}
           <div className="lg:col-span-7">
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-secondary/20 to-on-surface/5 rounded-[3rem] blur-xl opacity-20 group-hover:opacity-40 transition-all duration-700" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-secondary/20 to-on-surface/5 rounded-[3rem] blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-200 ease-out" />
               
-              <div className="relative p-12 rounded-[3rem] bg-on-surface/[0.02] border border-on-surface/10 backdrop-blur-xl transition-all duration-700">
+              <div className="relative p-12 rounded-[3rem] bg-on-surface/[0.02] border border-on-surface/10 backdrop-blur-xl transition-[border-color,background-color] duration-200 ease-out">
                 <div className="flex items-center justify-between mb-12">
                    <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
@@ -107,18 +107,18 @@ const SecureDirective = () => {
                         type="text" 
                         required
                         placeholder="IDENTIFY YOURSELF"
-                        className="w-full px-8 py-5 rounded-2xl bg-on-surface/[0.03] border border-on-surface/5 text-on-surface placeholder:text-on-surface/20 focus:border-secondary/50 focus:bg-on-surface/[0.05] transition-all outline-none font-bold"
+                        className="w-full px-8 py-5 rounded-2xl bg-on-surface/[0.03] border border-on-surface/5 text-on-surface placeholder:text-on-surface/20 focus:border-secondary/50 focus:bg-on-surface/[0.05] transition-[border-color,background-color] duration-200 ease-out outline-none font-bold"
                         value={formData.name}
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[9px] font-black uppercase tracking-[0.3em] text-on-surface/40 ml-4 transition-colors duration-700">Return Frequency</label>
+                      <label className="text-[9px] font-black uppercase tracking-[0.3em] text-on-surface/40 ml-4 transition-colors duration-200 ease-out">Return Frequency</label>
                       <input 
                         type="email" 
                         required
                         placeholder="COMMUNICATION_ENDPOINT"
-                        className="w-full px-8 py-5 rounded-2xl bg-on-surface/[0.03] border border-on-surface/5 text-on-surface placeholder:text-on-surface/20 focus:border-secondary/50 focus:bg-on-surface/[0.05] transition-all outline-none font-bold"
+                        className="w-full px-8 py-5 rounded-2xl bg-on-surface/[0.03] border border-on-surface/5 text-on-surface placeholder:text-on-surface/20 focus:border-secondary/50 focus:bg-on-surface/[0.05] transition-[border-color,background-color] duration-200 ease-out outline-none font-bold"
                         value={formData.email}
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                       />
@@ -131,7 +131,7 @@ const SecureDirective = () => {
                       required
                       placeholder="ENTER DIRECTIVE..."
                       rows={4}
-                      className="w-full px-8 py-6 rounded-2xl bg-on-surface/[0.03] border border-on-surface/5 text-on-surface placeholder:text-on-surface/20 focus:border-secondary/50 focus:bg-on-surface/[0.05] transition-all outline-none font-bold resize-none"
+                      className="w-full px-8 py-6 rounded-2xl bg-on-surface/[0.03] border border-on-surface/5 text-on-surface placeholder:text-on-surface/20 focus:border-secondary/50 focus:bg-on-surface/[0.05] transition-[border-color,background-color] duration-200 ease-out outline-none font-bold resize-none"
                       value={formData.message}
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
                     />
@@ -140,8 +140,8 @@ const SecureDirective = () => {
                   <button 
                     type="submit" 
                     disabled={status !== 'IDLE'}
-                    className={`w-full group relative flex items-center justify-center gap-4 py-6 rounded-2xl font-black uppercase tracking-[0.4em] transition-all overflow-hidden cursor-pointer ${
-                      status === 'SUCCESS' ? 'bg-green-500 text-white' : 'bg-secondary text-white hover:scale-[1.02] active:scale-95'
+                    className={`w-full group relative flex items-center justify-center gap-4 py-6 rounded-2xl font-black uppercase tracking-[0.4em] transition-[transform,background-color] duration-200 ease-out overflow-hidden cursor-pointer ${
+                      status === 'SUCCESS' ? 'bg-green-500 text-white' : 'bg-secondary text-white hover:scale-[1.01] active:scale-[0.97]'
                     }`}
                   >
                     {status === 'IDLE' && (

@@ -34,7 +34,6 @@ const Layout = ({ children }) => {
 
   // Narrative Progress Tracking
   const { scrollYProgress } = useScroll();
-  const progressPercent = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
   const scaleY = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -92,7 +91,7 @@ const Layout = ({ children }) => {
 
       {/* Jobs-Inspired Header */}
       <header className={cn(
-        "fixed top-0 w-full z-[100] transition-all duration-700 h-24 flex items-center px-6 md:px-12",
+        "fixed top-0 w-full z-[100] transition-[background-color,border-color,height] duration-200 ease-out h-24 flex items-center px-6 md:px-12",
         isScrolled ? "bg-surface/80 backdrop-blur-2xl border-b border-on-surface/5" : "bg-transparent"
       )}>
         <div className="max-w-[1400px] w-full mx-auto flex justify-between items-center gap-4">
@@ -100,7 +99,8 @@ const Layout = ({ children }) => {
             href="#"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-4 group shrink-0"
+            whileTap={{ scale: 0.97 }}
+            className="flex items-center gap-4 group shrink-0 active:scale-[0.97] transition-transform duration-100 ease-out"
           >
             <div className="w-10 h-10 rounded-xl bg-on-surface flex items-center justify-center text-surface group-hover:bg-secondary transition-all duration-500 shadow-xl">
                <Terminal size={18} />
@@ -121,8 +121,10 @@ const Layout = ({ children }) => {
                 rel={link.external ? "noopener noreferrer" : undefined}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="text-[9px] xl:text-[10px] font-black uppercase tracking-[0.1em] xl:tracking-[0.2em] text-on-surface/60 hover:text-secondary transition-colors whitespace-nowrap"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ delay: i * 0.05 }}
+                className="text-[9px] xl:text-[10px] font-black uppercase tracking-[0.1em] xl:tracking-[0.2em] text-on-surface/60 hover:text-secondary transition-[color,transform] duration-200 ease-out whitespace-nowrap"
               >
                 {link.name}
               </motion.a>
@@ -150,7 +152,9 @@ const Layout = ({ children }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className="text-on-surface/40 hover:text-secondary transition-all duration-500 hover:scale-110"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="text-on-surface/40 hover:text-secondary transition-colors duration-200"
                 >
                   {social.icon}
                 </motion.a>
@@ -160,7 +164,7 @@ const Layout = ({ children }) => {
 
           {/* Mobile Toggle */}
           <button 
-            className="lg:hidden w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center text-on-surface"
+            className="lg:hidden w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center text-on-surface active:scale-[0.95] transition-transform duration-100 ease-out"
             onClick={() => setMobileMenuOpen(true)}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"
@@ -190,14 +194,14 @@ const Layout = ({ children }) => {
                {/* Mobile Theme Toggle */}
                <button
                  onClick={toggleTheme}
-                 className="p-2 border border-on-surface/10 rounded-xl text-on-surface/60 hover:text-secondary ml-auto mr-4 cursor-pointer flex items-center justify-center"
+                 className="p-2 border border-on-surface/10 rounded-xl text-on-surface/60 hover:text-secondary ml-auto mr-4 cursor-pointer flex items-center justify-center active:scale-[0.95] transition-transform duration-100 ease-out"
                  aria-label="Toggle theme"
                >
                  {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
                </button>
-
+ 
                <button 
-                 className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center"
+                 className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center active:scale-[0.95] transition-transform duration-100 ease-out"
                  onClick={() => setMobileMenuOpen(false)}
                  aria-label="Close mobile menu"
                >
@@ -210,7 +214,7 @@ const Layout = ({ children }) => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-4xl md:text-6xl font-black tracking-tighter hover:text-secondary transition-colors"
+                  className="text-4xl md:text-6xl font-black tracking-tighter hover:text-secondary active:scale-[0.98] transition-[color,transform] duration-200 ease-out"
                 >
                   {link.name}
                 </a>

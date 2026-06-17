@@ -43,7 +43,7 @@ const Services = () => {
     <section 
       ref={containerRef}
       id="services" 
-      className="py-32 bg-surface text-on-surface relative overflow-hidden transition-colors duration-700"
+      className="py-32 bg-surface text-on-surface relative overflow-hidden transition-colors duration-200 ease-out"
     >
       {/* Abstract Parallax background */}
       <motion.div style={{ y }} className="absolute inset-0 opacity-[0.03] pointer-events-none">
@@ -92,9 +92,9 @@ const Services = () => {
               key={svc.title}
               variants={variants.springIn}
               whileHover={{ y: -10, borderColor: "var(--secondary)" }}
-              className="group p-10 rounded-[3rem] bg-on-surface/5 border border-on-surface/10 hover:bg-on-surface/10 transition-all duration-700 h-full flex flex-col"
+              className="group p-10 rounded-[3rem] bg-on-surface/5 border border-on-surface/10 hover:bg-on-surface/10 transition-[transform,border-color,background-color] duration-200 ease-out h-full flex flex-col"
             >
-              <div className="mb-8 p-4 bg-on-surface/5 rounded-2xl w-fit text-secondary group-hover:bg-secondary group-hover:text-surface transition-colors duration-500">
+              <div className="mb-8 p-4 bg-on-surface/5 rounded-2xl w-fit text-secondary group-hover:bg-secondary group-hover:text-surface transition-colors duration-200 ease-out">
                 {svc.icon}
               </div>
               <p className="text-[9px] font-black uppercase tracking-[0.4em] opacity-40 mb-3">{svc.specialty}</p>

@@ -51,7 +51,7 @@ const BentoHub = ({ activeMode }) => {
   ];
 
   return (
-    <section id="projects" className="py-32 bg-surface relative min-h-screen overflow-hidden transition-colors duration-700">
+    <section id="projects" className="py-32 bg-surface relative min-h-screen overflow-hidden transition-colors duration-300 ease-out">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1000px] bg-secondary/5 blur-[120px] rounded-full pointer-events-none" />
       
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
@@ -80,30 +80,30 @@ const BentoHub = ({ activeMode }) => {
                     stiffness: 100,
                     damping: 20
                   }}
-                  className={`group relative p-12 rounded-[3.5rem] bg-on-surface/[0.02] border border-on-surface/5 hover:border-secondary/40 transition-all duration-700 flex flex-col justify-between ${
+                  className={`group relative p-12 rounded-[3.5rem] bg-on-surface/[0.02] border border-on-surface/5 hover:border-secondary/40 transition-[transform,border-color,box-shadow] duration-200 ease-out flex flex-col justify-between ${
                     isLarge ? "md:col-span-8 md:row-span-2" : "md:col-span-4"
                   }`}
                 >
                   <div className="space-y-8">
                     <div className="flex justify-between items-start">
-                       <div className="w-16 h-16 rounded-2xl bg-on-surface/5 border border-on-surface/10 flex items-center justify-center text-on-surface/20 group-hover:bg-secondary group-hover:text-white group-hover:border-transparent transition-all duration-700">
+                       <div className="w-16 h-16 rounded-2xl bg-on-surface/5 border border-on-surface/10 flex items-center justify-center text-on-surface/20 group-hover:bg-secondary group-hover:text-white group-hover:border-transparent transition-[background-color,color,border-color] duration-200 ease-out">
                           <Icon size={28} />
                        </div>
                        <div className="flex flex-col items-end gap-2">
-                          <span className="text-[9px] font-black tracking-[0.2em] text-on-surface/10 group-hover:text-secondary/50 transition-all uppercase">Source: {project.id}</span>
-                          <div className="flex gap-2 transition-all duration-500">
+                          <span className="text-[9px] font-black tracking-[0.2em] text-on-surface/10 group-hover:text-secondary/50 transition-colors duration-200 ease-out uppercase">Source: {project.id}</span>
+                          <div className="flex gap-2 transition-transform duration-200">
                              {project.view && (
-                               <button onClick={() => setViewerFile(project)} title="Click to view" className="p-3 bg-secondary/10 border border-secondary/20 rounded-xl text-secondary hover:bg-secondary hover:text-white transition-all cursor-pointer">
+                               <button onClick={() => setViewerFile(project)} title="Click to view" className="p-3 bg-secondary/10 border border-secondary/20 rounded-xl text-secondary hover:bg-secondary hover:text-white active:scale-[0.95] transition-[transform,background-color,color] duration-100 ease-out cursor-pointer">
                                   <Eye size={16} />
                                </button>
                              )}
                              {project.link && (
-                               <a href={project.link} target="_blank" rel="noopener noreferrer" title="Open" className="p-3 bg-secondary/10 border border-secondary/20 rounded-xl text-secondary hover:bg-secondary hover:text-white transition-all">
+                               <a href={project.link} target="_blank" rel="noopener noreferrer" title="Open" className="p-3 bg-secondary/10 border border-secondary/20 rounded-xl text-secondary hover:bg-secondary hover:text-white active:scale-[0.95] transition-[transform,background-color,color] duration-100 ease-out">
                                   <ExternalLink size={16} />
                                 </a>
                              )}
                              {project.download && (
-                               <a href={project.download} download title="Download source file" className="p-3 bg-on-surface/5 border border-on-surface/10 rounded-xl text-on-surface/60 hover:bg-on-surface hover:text-surface transition-all">
+                               <a href={project.download} download title="Download source file" className="p-3 bg-on-surface/5 border border-on-surface/10 rounded-xl text-on-surface/60 hover:bg-on-surface hover:text-surface active:scale-[0.95] transition-[transform,background-color,color] duration-100 ease-out">
                                   <Download size={16} />
                                </a>
                              )}
@@ -125,7 +125,7 @@ const BentoHub = ({ activeMode }) => {
                        {project.view && (
                          <button
                            onClick={() => setViewerFile(project)}
-                           className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.25em] text-secondary hover:gap-3 transition-all cursor-pointer"
+                           className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.25em] text-secondary hover:gap-3 active:scale-[0.97] transition-[transform,color,gap] duration-150 ease-out cursor-pointer"
                          >
                            <Eye size={14} /> Click to view
                          </button>
@@ -157,7 +157,7 @@ const BentoHub = ({ activeMode }) => {
                 <motion.div
                   key={card.id}
                   layout
-                  className={`group relative p-12 rounded-[3.5rem] transition-all duration-1000 flex flex-col justify-between border ${
+                  className={`group relative p-12 rounded-[3.5rem] transition-[transform,border-color] duration-200 ease-out flex flex-col justify-between border ${
                     isCore 
                     ? "bg-gradient-to-br from-secondary/10 to-transparent border-secondary/20 hover:border-secondary/50" 
                     : "bg-on-surface/[0.01] border-on-surface/5 hover:border-on-surface/20"
@@ -169,8 +169,8 @@ const BentoHub = ({ activeMode }) => {
  
                   <div className="space-y-8 relative z-10">
                     <div className="flex justify-between items-start">
-                       <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-700 ${
-                         isCore ? "bg-secondary/20 text-secondary" : "bg-on-surface/5 text-on-surface/20 group-hover:text-on-surface"
+                       <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-[background-color,color] duration-200 ease-out ${
+                          isCore ? "bg-secondary/20 text-secondary" : "bg-on-surface/5 text-on-surface/20 group-hover:text-on-surface"
                        }`}>
                           <Icon size={24} className={isCore ? "animate-pulse" : ""} />
                        </div>
