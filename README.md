@@ -11,6 +11,15 @@ This repository hosts my professional portfolio, designed as a high-integrity in
 ### 🔍 Strategic Case Files (Showcase)
 Below are selected "Case Files" extracted from my work, demonstrating specialized capabilities for clients:
 
+#### `FILE: DL-01` // [DecodeLabs Project 1: Data Cleaning](https://github.com/Ghostiemoh/decodelabs-internship-project-1)
+Rigorous data cleaning pipeline on 1,200 transactional records in Excel. Standardized date formats, formatted pricing to currency, handled 309 missing coupon codes, and built structured, filterable named Excel tables.
+
+#### `FILE: DL-02` // [DecodeLabs Project 2: Executive Dashboard](https://github.com/Ghostiemoh/decodelabs-internship-project-2)
+Dynamic, formula-driven financial dashboard. Used AVERAGE, SUMIF, and COUNTIFS to aggregate sales metrics, yearly trends, acquisition performance, and coupon code return rates.
+
+#### `FILE: DL-03` // [DecodeLabs Project 3: Database Insights](https://github.com/Ghostiemoh/decodelabs-internship-project-3)
+Constructed database schemas and wrote query scripts to profile sales metrics. Aggregated monthly seasonality, mapped the logistics funnel, ran YoY H1 trends, and audited coupon return rates.
+
 #### `FILE: WF-25` // [Wavefront 📡](https://wavefront-gray.vercel.app)
 Onchain market intelligence for Solana — narrative clustering, risk scoring, and AI-powered token analysis in one terminal. Powered by Birdeye data and Gemini AI.
 
