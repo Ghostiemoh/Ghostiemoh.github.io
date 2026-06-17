@@ -14,11 +14,11 @@ I'm **Muhammad Auwal Abdulaziz**, an Education Mathematics graduate passionate a
 
 ## 📁 Sections on This Website
 
-- **About Me** – A brief introduction and background
-- **Education & Certifications** – Highlights of academic and professional training
-- **Projects & Initiatives** – Community-based work, proposals, and project highlights
-- **Blog** – Coming soon! Tech insights and thought leadership articles
-- **Contact Links** – GitHub, Twitter, and LinkedIn
+- **About Me**: A brief introduction and background
+- **Education & Certifications**: Highlights of academic and professional training
+- **Projects & Initiatives**: Community-based work, proposals, and project highlights
+- **Blog**: Coming soon! Tech insights and thought leadership articles
+- **Contact Links**: GitHub, Twitter, and LinkedIn
 
 ---
 

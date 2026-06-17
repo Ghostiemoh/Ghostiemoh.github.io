@@ -21,7 +21,7 @@ Dynamic, formula-driven financial dashboard. Used AVERAGE, SUMIF, and COUNTIFS t
 Constructed database schemas and wrote query scripts to profile sales metrics. Aggregated monthly seasonality, mapped the logistics funnel, ran YoY H1 trends, and audited coupon return rates.
 
 #### `FILE: WF-25` // [Wavefront 📡](https://wavefront-gray.vercel.app)
-Onchain market intelligence for Solana — narrative clustering, risk scoring, and AI-powered token analysis in one terminal. Powered by Birdeye data and Gemini AI.
+Onchain market intelligence for Solana, featuring narrative clustering, risk scoring, and AI-powered token analysis in one terminal. Powered by Birdeye data and Gemini AI.
 
 #### `FILE: SB-25` // [Sunboard 🌅](https://sunboard.vercel.app)
 Advanced Sunrise Intelligence Terminal for Solana. Momentum scoring, holder distribution, and real-time liquidity tracking for high-conviction assets.

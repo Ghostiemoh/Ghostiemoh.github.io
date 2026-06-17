@@ -50,7 +50,7 @@ const Experience = () => {
       role: "IT Personnel (NYSC → Full-time)",
       period: "2023 - Present",
       location: "Abuja, Nigeria",
-      description: "Prepare official correspondence and complete tender documents for project bids. Format and calculate Bill of Engineering Measurement & Evaluation (BEME) documents — ensuring precise, reliable data for engineering project planning and financial management.",
+      description: "Prepare official correspondence and complete tender documents for project bids. Format and calculate Bill of Engineering Measurement & Evaluation (BEME) documents to ensure precise, reliable data for engineering project planning and financial management.",
       tags: ["BEME", "Tenders", "Documentation"]
     },
     {
@@ -58,7 +58,7 @@ const Experience = () => {
       role: "Internship",
       period: "2021 - 2023",
       location: "Kano, Nigeria",
-      description: "Drafted and formatted official corporate documents — letters of request, payment notices, and acceptance letters — ensuring clarity and professionalism. Supported administrative and project workflows, improving document-handling efficiency.",
+      description: "Drafted and formatted official corporate documents, including letters of request, payment notices, and acceptance letters, to ensure clarity and professionalism. Supported administrative and project workflows, improving document-handling efficiency.",
       tags: ["Admin", "Project Support", "Workflow"]
     },
     {
