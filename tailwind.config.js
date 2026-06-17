@@ -9,24 +9,24 @@ export default {
     extend: {
       colors: {
         surface: {
-          DEFAULT: '#FFFFFF',
-          bright: '#F8F9FA',
-          container: '#F0F2F5',
-          'container-low': '#F3F4F6',
-          'container-high': '#E5E7EB',
-          'container-highest': '#D1D5DB',
+          DEFAULT: 'rgb(var(--surface-color) / <alpha-value>)',
+          bright: 'rgb(var(--surface-bright-color) / <alpha-value>)',
+          container: 'rgb(var(--surface-container-color) / <alpha-value>)',
+          'container-low': 'rgb(var(--surface-container-low-color) / <alpha-value>)',
+          'container-high': 'rgb(var(--surface-container-high-color) / <alpha-value>)',
+          'container-highest': 'rgb(var(--surface-container-highest-color) / <alpha-value>)',
         },
         'on-surface': {
-          DEFAULT: '#000000',
-          variant: '#4B5563',
-          outline: '#9CA3AF',
+          DEFAULT: 'rgb(var(--on-surface-color) / <alpha-value>)',
+          variant: 'rgb(var(--on-surface-variant-color) / <alpha-value>)',
+          outline: 'rgb(var(--on-surface-outline-color) / <alpha-value>)',
         },
         primary: {
-          DEFAULT: '#000000',
-          variant: '#333333',
+          DEFAULT: 'rgb(var(--primary-color) / <alpha-value>)',
+          variant: 'rgb(var(--primary-variant-color) / <alpha-value>)',
         },
         secondary: {
-          DEFAULT: '#D4AF37', // Gold for the Altman "High Impact" feel
+          DEFAULT: 'rgb(var(--secondary-color) / <alpha-value>)',
           variant: '#B8860B',
         },
         accent: {

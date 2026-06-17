@@ -31,9 +31,9 @@ const SecureDirective = () => {
   };
 
   return (
-    <footer id="directives" className="bg-[#050505] pt-40 pb-20 relative overflow-hidden">
+    <footer id="directives" className="bg-surface pt-40 pb-20 relative overflow-hidden transition-colors duration-700">
       {/* Background Elements */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-on-surface/5 to-transparent transition-colors duration-700" />
       
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         
@@ -48,49 +48,49 @@ const SecureDirective = () => {
               </div>
               
               <div className="space-y-2">
-                 <h2 className="text-6xl md:text-7xl font-black tracking-tighter text-white leading-[0.9]">
+                 <h2 className="text-6xl md:text-7xl font-black tracking-tighter text-on-surface leading-[0.9] transition-colors duration-700">
                    MUHAMMAD AUWAL<br/>
                    <span className="text-secondary">ABDULAZIZ</span>
                  </h2>
                  <div className="flex items-center gap-4 pt-4">
-                    <div className="h-px w-8 bg-white/20" />
-                    <span className="text-[11px] font-black uppercase tracking-[0.6em] text-white/40">Tactical Callsign: Ghostly Shadow</span>
+                    <div className="h-px w-8 bg-on-surface/20 transition-colors duration-700" />
+                    <span className="text-[11px] font-black uppercase tracking-[0.6em] text-on-surface/40 transition-colors duration-700">Tactical Callsign: Ghostly Shadow</span>
                  </div>
               </div>
               
-              <p className="text-xl font-medium text-white/50 leading-relaxed max-w-md">
+              <p className="text-xl font-medium text-on-surface/50 leading-relaxed max-w-md transition-colors duration-700">
                 Synthesizing mathematical rigor with on-chain forensics to secure the next generation of decentralized protocols.
               </p>
             </div>
-
-            <div className="grid grid-cols-2 gap-8 pt-8 border-t border-white/5">
+ 
+            <div className="grid grid-cols-2 gap-8 pt-8 border-t border-on-surface/5 transition-colors duration-700">
               <div className="space-y-2">
                 <p className="text-[9px] font-black uppercase tracking-[0.3em] text-secondary">Expertise</p>
-                <p className="text-sm font-bold text-white/80">On-chain Forensics</p>
-                <p className="text-sm font-bold text-white/80">Data Analytics</p>
+                <p className="text-sm font-bold text-on-surface/80 transition-colors duration-700">On-chain Forensics</p>
+                <p className="text-sm font-bold text-on-surface/80 transition-colors duration-700">Data Analytics</p>
               </div>
               <div className="space-y-2">
                 <p className="text-[9px] font-black uppercase tracking-[0.3em] text-secondary">Location</p>
-                <p className="text-sm font-bold text-white/80">Kano, Nigeria</p>
-                <p className="text-sm font-bold text-white/80">Global Operational</p>
+                <p className="text-sm font-bold text-on-surface/80 transition-colors duration-700">Kano, Nigeria</p>
+                <p className="text-sm font-bold text-on-surface/80 transition-colors duration-700">Global Operational</p>
               </div>
             </div>
           </div>
-
+ 
           {/* Secure Contact Terminal */}
           <div className="lg:col-span-7">
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-secondary/20 to-white/5 rounded-[3rem] blur-xl opacity-20 group-hover:opacity-40 transition-opacity" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-secondary/20 to-on-surface/5 rounded-[3rem] blur-xl opacity-20 group-hover:opacity-40 transition-all duration-700" />
               
-              <div className="relative p-12 rounded-[3rem] bg-white/[0.02] border border-white/10 backdrop-blur-xl">
+              <div className="relative p-12 rounded-[3rem] bg-on-surface/[0.02] border border-on-surface/10 backdrop-blur-xl transition-all duration-700">
                 <div className="flex items-center justify-between mb-12">
                    <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
                          <Terminal size={20} />
                       </div>
                       <div>
-                         <h3 className="text-xl font-black tracking-tight text-white uppercase">Secure Directive</h3>
-                         <p className="text-[9px] font-black uppercase tracking-[0.3em] text-white/30">End-to-End Encrypted Communication</p>
+                         <h3 className="text-xl font-black tracking-tight text-on-surface uppercase transition-colors duration-700">Secure Directive</h3>
+                         <p className="text-[9px] font-black uppercase tracking-[0.3em] text-on-surface/30 transition-colors duration-700">End-to-End Encrypted Communication</p>
                       </div>
                    </div>
                    <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-green-500/10 border border-green-500/20">
@@ -98,49 +98,49 @@ const SecureDirective = () => {
                       <span className="text-[8px] font-black uppercase tracking-widest text-green-500">Live Connection</span>
                    </div>
                 </div>
-
+ 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40 ml-4">Authorized Name</label>
+                      <label className="text-[9px] font-black uppercase tracking-[0.3em] text-on-surface/40 ml-4 transition-colors duration-700">Authorized Name</label>
                       <input 
                         type="text" 
                         required
                         placeholder="IDENTIFY YOURSELF"
-                        className="w-full px-8 py-5 rounded-2xl bg-white/[0.03] border border-white/5 text-white placeholder:text-white/10 focus:border-secondary/50 focus:bg-white/[0.05] transition-all outline-none font-bold"
+                        className="w-full px-8 py-5 rounded-2xl bg-on-surface/[0.03] border border-on-surface/5 text-on-surface placeholder:text-on-surface/20 focus:border-secondary/50 focus:bg-on-surface/[0.05] transition-all outline-none font-bold"
                         value={formData.name}
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40 ml-4">Return Frequency</label>
+                      <label className="text-[9px] font-black uppercase tracking-[0.3em] text-on-surface/40 ml-4 transition-colors duration-700">Return Frequency</label>
                       <input 
                         type="email" 
                         required
                         placeholder="COMMUNICATION_ENDPOINT"
-                        className="w-full px-8 py-5 rounded-2xl bg-white/[0.03] border border-white/5 text-white placeholder:text-white/10 focus:border-secondary/50 focus:bg-white/[0.05] transition-all outline-none font-bold"
+                        className="w-full px-8 py-5 rounded-2xl bg-on-surface/[0.03] border border-on-surface/5 text-on-surface placeholder:text-on-surface/20 focus:border-secondary/50 focus:bg-on-surface/[0.05] transition-all outline-none font-bold"
                         value={formData.email}
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                       />
                     </div>
                   </div>
-
+ 
                   <div className="space-y-2">
-                    <label className="text-[9px] font-black uppercase tracking-[0.3em] text-white/40 ml-4">The Mission</label>
+                    <label className="text-[9px] font-black uppercase tracking-[0.3em] text-on-surface/40 ml-4 transition-colors duration-700">The Mission</label>
                     <textarea 
                       required
                       placeholder="ENTER DIRECTIVE..."
                       rows={4}
-                      className="w-full px-8 py-6 rounded-2xl bg-white/[0.03] border border-white/5 text-white placeholder:text-white/10 focus:border-secondary/50 focus:bg-white/[0.05] transition-all outline-none font-bold resize-none"
+                      className="w-full px-8 py-6 rounded-2xl bg-on-surface/[0.03] border border-on-surface/5 text-on-surface placeholder:text-on-surface/20 focus:border-secondary/50 focus:bg-on-surface/[0.05] transition-all outline-none font-bold resize-none"
                       value={formData.message}
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
                     />
                   </div>
-
+ 
                   <button 
                     type="submit" 
                     disabled={status !== 'IDLE'}
-                    className={`w-full group relative flex items-center justify-center gap-4 py-6 rounded-2xl font-black uppercase tracking-[0.4em] transition-all overflow-hidden ${
+                    className={`w-full group relative flex items-center justify-center gap-4 py-6 rounded-2xl font-black uppercase tracking-[0.4em] transition-all overflow-hidden cursor-pointer ${
                       status === 'SUCCESS' ? 'bg-green-500 text-white' : 'bg-secondary text-white hover:scale-[1.02] active:scale-95'
                     }`}
                   >
@@ -158,18 +158,18 @@ const SecureDirective = () => {
             </div>
           </div>
         </div>
-
+ 
         {/* Footer Base */}
-        <div className="mt-40 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8 opacity-40">
+        <div className="mt-40 pt-10 border-t border-on-surface/5 flex flex-col md:flex-row justify-between items-center gap-8 opacity-40 transition-colors duration-700">
            <div className="flex items-center gap-4">
               <Lock size={12} />
-              <span className="text-[9px] font-black uppercase tracking-[0.5em]">System Protected by RSA-4096</span>
+              <span className="text-[9px] font-black uppercase tracking-[0.5em] text-on-surface transition-colors duration-700">System Protected by RSA-4096</span>
            </div>
-           <p className="text-[9px] font-black uppercase tracking-[0.5em]">
+           <p className="text-[9px] font-black uppercase tracking-[0.5em] text-on-surface transition-colors duration-700">
              &copy; {new Date().getFullYear()} MUHAMMAD AUWAL ABDULAZIZ // GHOSTLY_SHADOW_V2.0
            </p>
            <div className="flex gap-8">
-              <a href="https://github.com/Ghostiemoh" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors">
+              <a href="https://github.com/Ghostiemoh" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors text-on-surface">
                 <Github size={16} />
               </a>
            </div>

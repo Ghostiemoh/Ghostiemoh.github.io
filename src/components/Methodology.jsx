@@ -77,17 +77,17 @@ const Methodology = () => {
     <section 
       ref={containerRef}
       id="methodology" 
-      className="py-32 bg-on-surface text-white relative overflow-hidden"
+      className="py-32 bg-surface text-on-surface relative overflow-hidden transition-colors duration-700"
     >
       {/* Narrative grid background - Parallax */}
       <motion.div style={{ y: y1 }} className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="grid grid-cols-6 h-full">
            {[...Array(6)].map((_, i) => (
-             <div key={i} className="border-r border-white/10"></div>
+             <div key={i} className="border-r border-on-surface/10"></div>
            ))}
         </div>
       </motion.div>
-
+ 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         <motion.div 
           variants={variants.staggerContainer}
@@ -98,15 +98,15 @@ const Methodology = () => {
         >
            <motion.div variants={variants.scanReveal} className="flex items-center gap-3 justify-center md:justify-start">
               <span className="text-[10px] font-black uppercase tracking-[0.5em] text-secondary">Chapter II</span>
-              <div className="w-12 h-px bg-white/20"></div>
+              <div className="w-12 h-px bg-on-surface/20"></div>
               <span className="text-[10px] font-bold opacity-40 uppercase tracking-[0.3em]">The Analytical Lens</span>
            </motion.div>
-           <motion.h2 variants={variants.fadeIn} className="text-5xl md:text-8xl font-black tracking-tighter">The Methodology.</motion.h2>
+           <motion.h2 variants={variants.fadeIn} className="text-5xl md:text-8xl font-black tracking-tighter text-on-surface transition-colors duration-700">The Methodology.</motion.h2>
            <motion.p variants={variants.fadeIn} className="text-xl opacity-60 max-w-2xl font-medium">
              Data is just a library of scattered shards until it's interrogated through a structured forensic framework.
            </motion.p>
         </motion.div>
-
+ 
         <motion.div 
           variants={variants.staggerContainer}
           initial="initial"
@@ -120,12 +120,12 @@ const Methodology = () => {
                 variants={variants.springIn}
                 className="space-y-6 group"
              >
-                <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-500 shadow-xl">
+                <div className="w-16 h-16 rounded-2xl bg-on-surface/5 border border-on-surface/10 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-500 shadow-xl">
                    {step.icon}
                 </div>
                 <div className="space-y-2">
                    <p className="text-[9px] font-black uppercase tracking-[0.4em] opacity-30">Process {step.tag}</p>
-                   <h4 className="text-xl font-black uppercase tracking-widest">{step.title}</h4>
+                   <h4 className="text-xl font-black uppercase tracking-widest text-on-surface transition-colors duration-700">{step.title}</h4>
                    <p className="text-sm opacity-50 font-medium leading-relaxed">
                       {step.desc}
                    </p>
@@ -133,23 +133,23 @@ const Methodology = () => {
              </motion.div>
            ))}
         </motion.div>
-
+ 
         {/* Story Focus Callout */}
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={transitions.slowSpring}
-          className="mt-32 p-12 rounded-[3.5rem] bg-white/5 border border-white/10 backdrop-blur-xl flex flex-col md:flex-row items-center justify-between gap-10"
+          className="mt-32 p-12 rounded-[3.5rem] bg-on-surface/5 border border-on-surface/10 backdrop-blur-xl flex flex-col md:flex-row items-center justify-between gap-10"
         >
            <div className="space-y-4 max-w-xl text-center md:text-left">
-              <h3 className="text-3xl font-black tracking-tight">Focus: On-Chain Forensics</h3>
+              <h3 className="text-3xl font-black tracking-tight text-on-surface transition-colors duration-700">Focus: On-Chain Forensics</h3>
               <p className="text-lg opacity-60 font-medium">
                 My specialization lies at the intersection of Decentralized Finance (DeFi) and rigorous Data Auditing. I track the flows others miss.
               </p>
            </div>
            <div className="flex gap-4">
-              <div className="text-center px-8 border-r border-white/10">
+              <div className="text-center px-8 border-r border-on-surface/10">
                  <p className="text-4xl md:text-6xl font-black text-secondary tracking-tighter">
                    <StatCounter value="8" suffix="+" />
                  </p>

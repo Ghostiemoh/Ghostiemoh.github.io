@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
-import { Menu, X, Github, Twitter, Linkedin, Terminal, ShieldCheck } from 'lucide-react';
+import { Menu, X, Github, Twitter, Linkedin, Terminal, ShieldCheck, Sun, Moon } from 'lucide-react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -11,6 +11,26 @@ function cn(...inputs) {
 const Layout = ({ children }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('theme') || 'dark';
+    }
+    return 'dark';
+  });
+
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
 
   // Narrative Progress Tracking
   const { scrollYProgress } = useScroll();
@@ -107,6 +127,20 @@ const Layout = ({ children }) => {
                 {link.name}
               </motion.a>
             ))}
+            
+            {/* Theme Toggle Button */}
+            <motion.button
+              onClick={toggleTheme}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="p-2 rounded-xl border border-on-surface/10 hover:border-secondary/40 text-on-surface/60 hover:text-secondary transition-all cursor-pointer flex items-center justify-center shrink-0"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
+            </motion.button>
+
             <div className="hidden xl:block w-px h-6 bg-on-surface/10 mx-2"></div>
             <div className="flex gap-6">
               {socialLinks.map((social, i) => (
@@ -152,6 +186,16 @@ const Layout = ({ children }) => {
                   <Terminal size={20} />
                   <span className="text-[11px] font-black uppercase tracking-[0.4em]">Protocol Menu</span>
                </div>
+               
+               {/* Mobile Theme Toggle */}
+               <button
+                 onClick={toggleTheme}
+                 className="p-2 border border-on-surface/10 rounded-xl text-on-surface/60 hover:text-secondary ml-auto mr-4 cursor-pointer flex items-center justify-center"
+                 aria-label="Toggle theme"
+               >
+                 {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+               </button>
+
                <button 
                  className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center"
                  onClick={() => setMobileMenuOpen(false)}

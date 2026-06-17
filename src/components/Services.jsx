@@ -43,11 +43,11 @@ const Services = () => {
     <section 
       ref={containerRef}
       id="services" 
-      className="py-32 bg-on-surface text-surface relative overflow-hidden"
+      className="py-32 bg-surface text-on-surface relative overflow-hidden transition-colors duration-700"
     >
       {/* Abstract Parallax background */}
       <motion.div style={{ y }} className="absolute inset-0 opacity-[0.03] pointer-events-none">
-        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '60px 60px' }}></div>
+        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgb(var(--on-surface-color)) 1px, transparent 0)', backgroundSize: '60px 60px' }}></div>
       </motion.div>
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
@@ -61,9 +61,9 @@ const Services = () => {
           >
             <motion.div variants={variants.scanReveal} className="flex items-center gap-3">
                <span className="text-[10px] font-black uppercase tracking-[0.5em] text-secondary">Chapter VII</span>
-               <div className="w-12 h-px bg-surface/20"></div>
+               <div className="w-12 h-px bg-on-surface/20"></div>
             </motion.div>
-            <motion.h2 variants={variants.fadeIn} className="text-5xl md:text-7xl font-black tracking-tighter">Technical Services.</motion.h2>
+            <motion.h2 variants={variants.fadeIn} className="text-5xl md:text-7xl font-black tracking-tighter text-on-surface transition-colors duration-700">Technical Services.</motion.h2>
             <motion.p variants={variants.fadeIn} className="text-xl font-medium opacity-60">
               Specialized infrastructure for the Web3 and Data age. Reliable, forensic, and human-centric.
             </motion.p>
@@ -73,7 +73,7 @@ const Services = () => {
              whileInView={{ opacity: 1, scale: 1 }}
              className="hidden lg:block pb-4"
           >
-             <div className="px-6 py-3 rounded-full border border-surface/20 text-[10px] font-black uppercase tracking-widest bg-surface/5">
+             <div className="px-6 py-3 rounded-full border border-on-surface/20 text-[10px] font-black uppercase tracking-widest bg-on-surface/5 text-on-surface transition-colors duration-700">
                 Current Availability: High Priority Sync
              </div>
           </motion.div>
@@ -92,13 +92,13 @@ const Services = () => {
               key={svc.title}
               variants={variants.springIn}
               whileHover={{ y: -10, borderColor: "var(--secondary)" }}
-              className="group p-10 rounded-[3rem] bg-surface/5 border border-surface/10 hover:bg-surface/10 transition-all duration-700 h-full flex flex-col"
+              className="group p-10 rounded-[3rem] bg-on-surface/5 border border-on-surface/10 hover:bg-on-surface/10 transition-all duration-700 h-full flex flex-col"
             >
-              <div className="mb-8 p-4 bg-surface/5 rounded-2xl w-fit text-secondary group-hover:bg-secondary group-hover:text-surface transition-colors duration-500">
+              <div className="mb-8 p-4 bg-on-surface/5 rounded-2xl w-fit text-secondary group-hover:bg-secondary group-hover:text-surface transition-colors duration-500">
                 {svc.icon}
               </div>
               <p className="text-[9px] font-black uppercase tracking-[0.4em] opacity-40 mb-3">{svc.specialty}</p>
-              <h3 className="text-2xl font-black tracking-tight mb-4">{svc.title}</h3>
+              <h3 className="text-2xl font-black tracking-tight mb-4 text-on-surface transition-colors duration-700">{svc.title}</h3>
               <p className="text-sm font-medium opacity-50 leading-relaxed mb-8">
                 {svc.desc}
               </p>

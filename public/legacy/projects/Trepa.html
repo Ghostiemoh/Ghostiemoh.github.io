@@ -83,7 +83,7 @@
         <button class="bg-green-500 hover:bg-green-600 text-black font-bold px-6 py-2 rounded-full transition">
             Join Beta
         </button>
-        <button id="mobile-menu-button" class="md:hidden text-2xl">
+        <button id="mobile-menu-button" aria-label="Toggle mobile menu" title="Toggle mobile menu" class="md:hidden text-2xl">
             <i class="fas fa-bars"></i>
         </button>
     </nav>
@@ -118,7 +118,7 @@
                             <span>0%</span>
                             <span>100%</span>
                         </div>
-                        <input type="range" min="0" max="100" value="65" id="btcPredictionSlider" class="slide-track w-full">
+                        <input type="range" min="0" max="100" value="65" id="btcPredictionSlider" class="slide-track w-full" aria-label="BTC prediction confidence slider" title="BTC prediction confidence slider">
                         <div class="flex justify-between mt-2">
                             <span class="text-xs text-gray-500">No chance</span>
                             <span class="text-xs text-gray-500">Certain</span>
@@ -391,9 +391,9 @@
                 <div>
                     <h4 class="text-lg font-bold mb-4">Connect</h4>
                     <div class="flex space-x-4 text-2xl">
-                        <a href="#" class="hover:text-green-400 transition"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="hover:text-green-400 transition"><i class="fab fa-discord"></i></a>
-                        <a href="#" class="hover:text-green-400 transition"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Trepa Twitter profile" title="Trepa Twitter profile" class="hover:text-green-400 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Trepa Discord server" title="Trepa Discord server" class="hover:text-green-400 transition"><i class="fab fa-discord"></i></a>
+                        <a href="#" aria-label="Trepa LinkedIn page" title="Trepa LinkedIn page" class="hover:text-green-400 transition"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>

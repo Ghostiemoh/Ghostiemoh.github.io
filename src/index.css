@@ -3,17 +3,33 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: 0, 0, 0;
-  --secondary-color: 212, 175, 55;
-  --surface-color: 255, 255, 255;
-  --on-surface-color: 0, 0, 0;
+  --primary-color: 0 0 0;
+  --primary-variant-color: 51 51 51;
+  --secondary-color: 212 175 55;
+  --surface-color: 255 255 255;
+  --surface-bright-color: 248 249 250;
+  --surface-container-color: 240 242 245;
+  --surface-container-low-color: 243 244 246;
+  --surface-container-high-color: 229 231 235;
+  --surface-container-highest-color: 209 213 219;
+  --on-surface-color: 0 0 0;
+  --on-surface-variant-color: 75 85 99;
+  --on-surface-outline-color: 156 163 175;
 }
 
 .dark {
-  --primary-color: 255, 255, 255;
-  --secondary-color: 212, 175, 55;
-  --surface-color: 10, 10, 10;
-  --on-surface-color: 255, 255, 255;
+  --primary-color: 255 255 255;
+  --primary-variant-color: 220 220 220;
+  --secondary-color: 212 175 55;
+  --surface-color: 10 10 10;
+  --surface-bright-color: 15 15 15;
+  --surface-container-color: 20 20 20;
+  --surface-container-low-color: 15 15 15;
+  --surface-container-high-color: 30 30 30;
+  --surface-container-highest-color: 45 45 45;
+  --on-surface-color: 255 255 255;
+  --on-surface-variant-color: 156 163 175;
+  --on-surface-outline-color: 75 85 99;
 }
 
 @layer base {
