@@ -169,7 +169,7 @@ const SecureDirective = () => {
              &copy; {new Date().getFullYear()} MUHAMMAD AUWAL ABDULAZIZ // GHOSTLY_SHADOW_V2.0
            </p>
            <div className="flex gap-8">
-              <a href="https://github.com/Ghostiemoh" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors text-on-surface">
+              <a href="https://github.com/Ghostiemoh" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" className="hover:text-secondary transition-colors text-on-surface">
                 <Github size={16} />
               </a>
            </div>
