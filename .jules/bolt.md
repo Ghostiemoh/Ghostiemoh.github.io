@@ -1,3 +1,6 @@
 ## 2024-11-20 - Optimize Font Loading in Vite Projects
 **Learning:** Using `@import` inside a CSS file (like `index.css`) for loading external fonts in a Vite/React project creates a serial request chain. The browser must first download and parse the CSS before it can initiate the font download. This blocks rendering and negatively impacts First Contentful Paint (FCP).
 **Action:** Always define external font requests (e.g., Google Fonts) using `<link rel="stylesheet">` tags, along with `<link rel="preconnect">` for the font domain, directly in `index.html`. This allows the browser to discover and download the fonts in parallel with other assets.
+## 2024-06-18 - Optimize Framer Motion scroll progress re-renders
+**Learning:** Passing a continuous animation value (like Framer Motion's `useScroll` progress) into React state (via `useState`) triggers a re-render of the component (and potentially its children) on every single scroll frame. This causes significant main thread blocking and jank.
+**Action:** Always use Framer Motion's `useTransform` to derive values from scroll progress, and render the output directly inside a `<motion.*>` component (e.g., `<motion.span>`). This bypasses the React render cycle completely and applies updates directly to the DOM for 60fps performance.
