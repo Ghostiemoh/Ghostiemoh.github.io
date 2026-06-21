@@ -102,6 +102,7 @@ const BentoHub = ({ activeMode }) => {
                       {project.view && (
                         <button
                           onClick={() => setViewerFile(project)}
+                          aria-label={`View ${project.title}`}
                           title="Click to view"
                           className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-secondary hover:bg-secondary hover:text-white active:scale-[0.95] transition-[transform,background-color,color] duration-100 ease-out cursor-pointer"
                         >
@@ -113,6 +114,7 @@ const BentoHub = ({ activeMode }) => {
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label={`Open ${project.title}`}
                           title="Open project"
                           className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-secondary hover:bg-secondary hover:text-white active:scale-[0.95] transition-[transform,background-color,color] duration-100 ease-out"
                         >
@@ -123,6 +125,7 @@ const BentoHub = ({ activeMode }) => {
                         <a
                           href={project.download}
                           download
+                          aria-label={`Download ${project.title}`}
                           title="Download file"
                           className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-on-surface/60 hover:bg-on-surface hover:text-surface active:scale-[0.95] transition-[transform,background-color,color] duration-100 ease-out"
                         >
