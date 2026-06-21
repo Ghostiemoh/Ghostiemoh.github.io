@@ -121,6 +121,16 @@ const ProjectGrid = () => {
       icon: <BarChart4 size={24} />,
       link: "https://1drv.ms/x/c/708714f1f76dc85e/IQO-Ssc_TzW_TIC_xI9-rX8HAQ8kC58E4hA9o1S_u_W8-YQ",
       github: "https://github.com/Ghostiemoh"
+    },
+    {
+      id: "EP-12",
+      title: "Excel Beginners Practice Lab",
+      category: "Excel Education",
+      description: "12 interactive, self-correcting Excel workbooks for MS Office beginners — each with 80 rows of real practice data and live formula validation.",
+      tags: ["Excel", "Education", "Data Validation"],
+      icon: <BarChart4 size={24} />,
+      link: "https://github.com/Ghostiemoh/excel-beginners-practice-lab",
+      github: "https://github.com/Ghostiemoh/excel-beginners-practice-lab"
     }
   ];
 
