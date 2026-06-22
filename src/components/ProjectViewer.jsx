@@ -67,6 +67,7 @@ const ProjectViewer = ({ project, onClose }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Open in new tab"
+                  aria-label={"Open " + project.title + " in new tab"}
                   className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10 transition-all cursor-pointer"
                 >
                   <ExternalLink size={16} />
@@ -76,6 +77,7 @@ const ProjectViewer = ({ project, onClose }) => {
                     href={project.download}
                     download
                     title="Download file"
+                    aria-label={"Download " + project.title}
                     className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10 transition-all cursor-pointer"
                   >
                     <Download size={16} />
@@ -84,6 +86,7 @@ const ProjectViewer = ({ project, onClose }) => {
                 <button
                   onClick={onClose}
                   title="Close"
+                  aria-label="Close viewer"
                   className="p-2.5 rounded-xl bg-secondary/10 border border-secondary/20 text-secondary hover:bg-secondary hover:text-white transition-all cursor-pointer"
                 >
                   <X size={16} />
