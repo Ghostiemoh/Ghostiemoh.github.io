@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { transitions, variants } from './motion';
+import { transitions, variants } from './motion.js';
 
 describe('Motion configuration parameters', () => {
   it('should utilize natural Apple-style spring parameters', () => {
