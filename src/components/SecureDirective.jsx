@@ -102,8 +102,9 @@ const SecureDirective = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-[9px] font-black uppercase tracking-[0.3em] text-on-surface/40 ml-4 transition-colors duration-700">Authorized Name</label>
+                      <label htmlFor="directive-name" className="text-[9px] font-black uppercase tracking-[0.3em] text-on-surface/40 ml-4 transition-colors duration-700">Authorized Name</label>
                       <input 
+                        id="directive-name"
                         type="text" 
                         required
                         placeholder="IDENTIFY YOURSELF"
@@ -113,8 +114,9 @@ const SecureDirective = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[9px] font-black uppercase tracking-[0.3em] text-on-surface/40 ml-4 transition-colors duration-200 ease-out">Return Frequency</label>
+                      <label htmlFor="directive-email" className="text-[9px] font-black uppercase tracking-[0.3em] text-on-surface/40 ml-4 transition-colors duration-200 ease-out">Return Frequency</label>
                       <input 
+                        id="directive-email"
                         type="email" 
                         required
                         placeholder="COMMUNICATION_ENDPOINT"
@@ -126,8 +128,9 @@ const SecureDirective = () => {
                   </div>
  
                   <div className="space-y-2">
-                    <label className="text-[9px] font-black uppercase tracking-[0.3em] text-on-surface/40 ml-4 transition-colors duration-700">The Mission</label>
+                    <label htmlFor="directive-message" className="text-[9px] font-black uppercase tracking-[0.3em] text-on-surface/40 ml-4 transition-colors duration-700">The Mission</label>
                     <textarea 
+                      id="directive-message"
                       required
                       placeholder="ENTER DIRECTIVE..."
                       rows={4}
