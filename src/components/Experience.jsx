@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Briefcase, Calendar, MapPin, ExternalLink } from 'lucide-react';
-import { transitions, variants } from '../utils/motion';
+import { variants } from '../utils/motion';
 
 const Experience = () => {
   const containerRef = useRef(null);
