@@ -6,7 +6,7 @@ const SecureDirective = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState('IDLE'); // IDLE, SENDING, SUCCESS, ERROR
 
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwqnS9VfX0-IUnB-KjZ0C4-15hN_x7f2P8E0zZ9_vVz-V_Vz-V_Vz/exec";
+  const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
