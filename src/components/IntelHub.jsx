@@ -182,4 +182,5 @@ const IntelHub = () => {
   );
 };
 
-export default IntelHub;
+// ⚡ Bolt Performance Optimization: Wrapped component in React.memo() to prevent unnecessary re-renders when the global activeMode state changes in App.jsx. This saves measurable CPU cycles and ensures a stable FCP footprint during global state updates.
+export default React.memo(IntelHub);
