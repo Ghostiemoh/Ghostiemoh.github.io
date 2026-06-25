@@ -3,16 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Briefcase, Calendar, MapPin, ExternalLink } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
-const Experience = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const pathLength = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
-
-  const experiences = [
+const EXPERIENCES = [
     {
       company: "MetaDao",
       role: "On-chain Governance Analyst",
@@ -71,6 +62,66 @@ const Experience = () => {
     }
   ];
 
+const ExperienceCard = ({ exp }) => {
+  return (
+    <motion.div
+      variants={variants.fadeIn}
+      className="group relative"
+    >
+      <div className="p-10 rounded-[2.5rem] bg-surface border border-on-surface/5 hover:border-secondary transition-all duration-700 card-low shadow-sm">
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
+          <div className="space-y-4">
+            <div>
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-2">
+                 <h3 className="text-3xl font-black tracking-tighter">{exp.company}</h3>
+                 <div className="hidden md:block w-1.5 h-1.5 rounded-full bg-on-surface/10" />
+                 <p className="text-lg font-bold text-secondary">{exp.role}</p>
+              </div>
+              <div className="flex flex-wrap gap-4 text-[10px] font-black uppercase tracking-widest opacity-40">
+                 <span className="flex items-center gap-1.5">
+                   <Calendar size={12} strokeWidth={3} />
+                   {exp.period}
+                 </span>
+                 <span className="flex items-center gap-1.5">
+                   <MapPin size={12} strokeWidth={3} />
+                   {exp.location}
+                 </span>
+              </div>
+            </div>
+
+            <p className="text-base font-medium opacity-60 leading-relaxed max-w-2xl">
+              {exp.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2 pt-2">
+               {exp.tags.map(tag => (
+                 <span key={tag} className="px-4 py-1.5 rounded-full bg-on-surface/5 text-[9px] font-bold uppercase tracking-widest border border-on-surface/5">
+                   {tag}
+                 </span>
+               ))}
+            </div>
+          </div>
+
+          <div className="flex-shrink-0">
+             <div className="w-14 h-14 rounded-2xl bg-on-surface/5 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-secondary group-hover:text-surface transition-all duration-500">
+                <ExternalLink size={24} />
+             </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+const Experience = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const pathLength = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
+
   return (
     <section 
       ref={containerRef}
@@ -128,54 +179,8 @@ const Experience = () => {
                />
             </div>
 
-            {experiences.map((exp, i) => (
-              <motion.div 
-                key={exp.company}
-                variants={variants.fadeIn}
-                className="group relative"
-              >
-                <div className="p-10 rounded-[2.5rem] bg-surface border border-on-surface/5 hover:border-secondary transition-all duration-700 card-low shadow-sm">
-                  <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
-                    <div className="space-y-4">
-                      <div>
-                        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-2">
-                           <h3 className="text-3xl font-black tracking-tighter">{exp.company}</h3>
-                           <div className="hidden md:block w-1.5 h-1.5 rounded-full bg-on-surface/10" />
-                           <p className="text-lg font-bold text-secondary">{exp.role}</p>
-                        </div>
-                        <div className="flex flex-wrap gap-4 text-[10px] font-black uppercase tracking-widest opacity-40">
-                           <span className="flex items-center gap-1.5">
-                             <Calendar size={12} strokeWidth={3} />
-                             {exp.period}
-                           </span>
-                           <span className="flex items-center gap-1.5">
-                             <MapPin size={12} strokeWidth={3} />
-                             {exp.location}
-                           </span>
-                        </div>
-                      </div>
-                      
-                      <p className="text-base font-medium opacity-60 leading-relaxed max-w-2xl">
-                        {exp.description}
-                      </p>
-
-                      <div className="flex flex-wrap gap-2 pt-2">
-                         {exp.tags.map(tag => (
-                           <span key={tag} className="px-4 py-1.5 rounded-full bg-on-surface/5 text-[9px] font-bold uppercase tracking-widest border border-on-surface/5">
-                             {tag}
-                           </span>
-                         ))}
-                      </div>
-                    </div>
-
-                    <div className="flex-shrink-0">
-                       <div className="w-14 h-14 rounded-2xl bg-on-surface/5 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-secondary group-hover:text-surface transition-all duration-500">
-                          <ExternalLink size={24} />
-                       </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+            {EXPERIENCES.map((exp) => (
+              <ExperienceCard key={exp.company} exp={exp} />
             ))}
           </motion.div>
 
