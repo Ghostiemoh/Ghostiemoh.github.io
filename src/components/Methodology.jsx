@@ -37,6 +37,9 @@ const StatCounter = ({ value, suffix = "" }) => {
   );
 };
 
+// ⚡ Performance Optimization: Extracting array to prevent allocation and garbage collection on every render
+const gridColumns = Array.from({ length: 6 });
+
 const Methodology = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -82,7 +85,7 @@ const Methodology = () => {
       {/* Narrative grid background - Parallax */}
       <motion.div style={{ y: y1 }} className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="grid grid-cols-6 h-full">
-           {[...Array(6)].map((_, i) => (
+           {gridColumns.map((_, i) => (
              <div key={i} className="border-r border-on-surface/10"></div>
            ))}
         </div>
