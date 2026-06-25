@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useSpring, useMotionValueEvent } from 'framer-motion';
 import { Menu, X, Github, Twitter, Linkedin, Terminal, ShieldCheck, Sun, Moon } from 'lucide-react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
   };
 
   // Narrative Progress Tracking
-  const { scrollYProgress } = useScroll();
+  const { scrollYProgress, scrollY } = useScroll();
   const scaleY = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -47,11 +47,12 @@ const Layout = ({ children }) => {
   }, [scrollYProgress]);
 
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // Performance optimization: Replace un-debounced window scroll listener
+  // with Framer Motion's useMotionValueEvent which runs outside the React render cycle
+  // and batches updates to prevent main thread lag.
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setIsScrolled(latest > 20);
+  });
 
   const navLinks = [
     { name: 'Narrative', href: '#about' },

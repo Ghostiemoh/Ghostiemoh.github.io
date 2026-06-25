@@ -1,3 +1,6 @@
 ## 2024-11-20 - Optimize Font Loading in Vite Projects
 **Learning:** Using `@import` inside a CSS file (like `index.css`) for loading external fonts in a Vite/React project creates a serial request chain. The browser must first download and parse the CSS before it can initiate the font download. This blocks rendering and negatively impacts First Contentful Paint (FCP).
 **Action:** Always define external font requests (e.g., Google Fonts) using `<link rel="stylesheet">` tags, along with `<link rel="preconnect">` for the font domain, directly in `index.html`. This allows the browser to discover and download the fonts in parallel with other assets.
+## 2024-05-19 - Scroll Event Listener Optimization
+**Learning:** Attaching standard un-debounced event listeners (`window.addEventListener('scroll')`) in a React component directly connected to state updates can cause rapid render cycles and main thread lag due to the high frequency of scroll events.
+**Action:** Replaced the manual scroll event listener with Framer Motion's `useMotionValueEvent` and `scrollY` hook, which batches updates outside of the React render cycle resulting in fewer renders and roughly a ~17% decrease in ScriptDuration during heavy scrolling.
