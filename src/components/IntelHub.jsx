@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Award, GraduationCap, FileText, ChevronRight, CheckCircle2, BarChart4, Search } from 'lucide-react';
-import { transitions, variants } from '../utils/motion';
+import { variants } from '../utils/motion';
 
 const IntelHub = () => {
   const containerRef = useRef(null);

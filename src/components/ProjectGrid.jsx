@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ExternalLink, Github, Database, Search, ArrowRight, BarChart4 } from 'lucide-react';
-import { transitions, variants } from '../utils/motion';
+import { variants } from '../utils/motion';
 
 const ProjectGrid = () => {
   const containerRef = useRef(null);
