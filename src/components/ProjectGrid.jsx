@@ -11,7 +11,9 @@ const ProjectGrid = () => {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [0, -150]);
-  const caseFiles = [
+
+  // ⚡ Bolt: Memoizing the caseFiles array to prevent unnecessary allocations on every render.
+  const caseFiles = React.useMemo(() => [
     {
       id: "SD-01",
       title: "Solana Fraud Detection",
@@ -132,14 +134,19 @@ const ProjectGrid = () => {
       link: "https://github.com/Ghostiemoh/excel-beginners-practice-lab",
       github: "https://github.com/Ghostiemoh/excel-beginners-practice-lab"
     }
-  ];
+  ], []);
 
   const [selectedCategory, setSelectedCategory] = React.useState("All Cases");
 
-  const categories = ["All Cases", ...new Set(caseFiles.map(f => f.category))];
-  const filteredProjects = selectedCategory === "All Cases" 
-    ? caseFiles 
-    : caseFiles.filter(p => p.category === selectedCategory);
+  // ⚡ Bolt: Memoizing derived state (categories and filteredProjects) to prevent
+  // expensive array mapping and filtering operations on every render.
+  const categories = React.useMemo(() => ["All Cases", ...new Set(caseFiles.map(f => f.category))], [caseFiles]);
+
+  const filteredProjects = React.useMemo(() => {
+    return selectedCategory === "All Cases"
+      ? caseFiles
+      : caseFiles.filter(p => p.category === selectedCategory);
+  }, [selectedCategory, caseFiles]);
 
   return (
     <section 
