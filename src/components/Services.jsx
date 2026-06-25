@@ -3,6 +3,55 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ShieldCheck, Database, LayoutPanelLeft, SearchCode, ChevronRight } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
+const services = [
+  {
+    title: "Blockchain Forensics",
+    desc: "Deep-dive investigation of on-chain transactions, fund tracing, and protocol vulnerability mapping.",
+    icon: <SearchCode size={32} />,
+    specialty: "Forensic Extraction"
+  },
+  {
+    title: "Data Wrangling",
+    desc: "Transforming raw, messy datasets into structured formats ready for high-level statistical analysis.",
+    icon: <Database size={32} />,
+    specialty: "High Integrity"
+  },
+  {
+    title: "BI Architecture",
+    desc: "Building intuitive dashboards in Tableau and Power BI that turn complex data into human narratives.",
+    icon: <LayoutPanelLeft size={32} />,
+    specialty: "Decision Ready"
+  },
+  {
+    title: "Governance Data",
+    desc: "On-chain governance monitoring, voter distribution analysis, and treasury flow visualization.",
+    icon: <ShieldCheck size={32} />,
+    specialty: "Verified Specs"
+  }
+];
+
+const ServiceCard = ({ svc }) => (
+  <motion.div
+    layout
+    variants={variants.springIn}
+    whileHover={{ y: -10, borderColor: "var(--secondary)" }}
+    className="group p-10 rounded-[3rem] bg-on-surface/5 border border-on-surface/10 hover:bg-on-surface/10 transition-[transform,border-color,background-color] duration-200 ease-out h-full flex flex-col"
+  >
+    <div className="mb-8 p-4 bg-on-surface/5 rounded-2xl w-fit text-secondary group-hover:bg-secondary group-hover:text-surface transition-colors duration-200 ease-out">
+      {svc.icon}
+    </div>
+    <p className="text-[9px] font-black uppercase tracking-[0.4em] opacity-40 mb-3">{svc.specialty}</p>
+    <h3 className="text-2xl font-black tracking-tight mb-4 text-on-surface transition-colors duration-700">{svc.title}</h3>
+    <p className="text-sm font-medium opacity-50 leading-relaxed mb-8">
+      {svc.desc}
+    </p>
+    <div className="mt-auto flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-secondary opacity-0 group-hover:opacity-100 transition-opacity">
+      <span>Deploy Protocol</span>
+      <ChevronRight size={14} />
+    </div>
+  </motion.div>
+);
+
 const Services = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -11,33 +60,6 @@ const Services = () => {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [0, -150]);
-
-  const services = [
-    {
-      title: "Blockchain Forensics",
-      desc: "Deep-dive investigation of on-chain transactions, fund tracing, and protocol vulnerability mapping.",
-      icon: <SearchCode size={32} />,
-      specialty: "Forensic Extraction"
-    },
-    {
-      title: "Data Wrangling",
-      desc: "Transforming raw, messy datasets into structured formats ready for high-level statistical analysis.",
-      icon: <Database size={32} />,
-      specialty: "High Integrity"
-    },
-    {
-      title: "BI Architecture",
-      desc: "Building intuitive dashboards in Tableau and Power BI that turn complex data into human narratives.",
-      icon: <LayoutPanelLeft size={32} />,
-      specialty: "Decision Ready"
-    },
-    {
-      title: "Governance Data",
-      desc: "On-chain governance monitoring, voter distribution analysis, and treasury flow visualization.",
-      icon: <ShieldCheck size={32} />,
-      specialty: "Verified Specs"
-    }
-  ];
 
   return (
     <section 
@@ -86,27 +108,8 @@ const Services = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
-          {services.map((svc, i) => (
-            <motion.div
-              layout
-              key={svc.title}
-              variants={variants.springIn}
-              whileHover={{ y: -10, borderColor: "var(--secondary)" }}
-              className="group p-10 rounded-[3rem] bg-on-surface/5 border border-on-surface/10 hover:bg-on-surface/10 transition-[transform,border-color,background-color] duration-200 ease-out h-full flex flex-col"
-            >
-              <div className="mb-8 p-4 bg-on-surface/5 rounded-2xl w-fit text-secondary group-hover:bg-secondary group-hover:text-surface transition-colors duration-200 ease-out">
-                {svc.icon}
-              </div>
-              <p className="text-[9px] font-black uppercase tracking-[0.4em] opacity-40 mb-3">{svc.specialty}</p>
-              <h3 className="text-2xl font-black tracking-tight mb-4 text-on-surface transition-colors duration-700">{svc.title}</h3>
-              <p className="text-sm font-medium opacity-50 leading-relaxed mb-8">
-                {svc.desc}
-              </p>
-              <div className="mt-auto flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-secondary opacity-0 group-hover:opacity-100 transition-opacity">
-                <span>Deploy Protocol</span>
-                <ChevronRight size={14} />
-              </div>
-            </motion.div>
+          {services.map((svc) => (
+            <ServiceCard key={svc.title} svc={svc} />
           ))}
         </motion.div>
       </div>
