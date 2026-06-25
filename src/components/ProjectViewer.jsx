@@ -18,6 +18,70 @@ function buildSrc(path) {
   return path; // pdf, txt, html render natively
 }
 
+const ProjectViewerHeader = ({ project, src, onClose }) => (
+  <div className="flex items-center justify-between gap-4 px-5 md:px-7 py-4 border-b border-white/10 bg-white/[0.02]">
+    <div className="flex items-center gap-3 min-w-0">
+      <span className="text-[9px] font-black uppercase tracking-[0.3em] text-secondary whitespace-nowrap">{project.category}</span>
+      <span className="text-white/20">/</span>
+      <h3 className="text-sm font-bold text-white truncate">{project.title}</h3>
+    </div>
+    <div className="flex items-center gap-2 flex-shrink-0">
+      <a
+        href={src}
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Open in new tab"
+        className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10 transition-all cursor-pointer"
+      >
+        <ExternalLink size={16} />
+      </a>
+      {project.download && (
+        <a
+          href={project.download}
+          download
+          title="Download file"
+          className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10 transition-all cursor-pointer"
+        >
+          <Download size={16} />
+        </a>
+      )}
+      <button
+        onClick={onClose}
+        title="Close"
+        className="p-2.5 rounded-xl bg-secondary/10 border border-secondary/20 text-secondary hover:bg-secondary hover:text-white transition-all cursor-pointer"
+      >
+        <X size={16} />
+      </button>
+    </div>
+  </div>
+);
+
+const ProjectViewerIframe = ({ project, src, loading, setLoading }) => (
+  <div className="relative flex-1 bg-white">
+    {loading && (
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#0A0A0A] text-white/40">
+        <Loader2 size={28} className="animate-spin text-secondary" />
+        <span className="text-[10px] font-black uppercase tracking-[0.3em]">Rendering dashboard…</span>
+      </div>
+    )}
+    <iframe
+      key={project.view}
+      src={src}
+      title={project.title}
+      onLoad={() => setLoading(false)}
+      className="w-full h-full border-0"
+    />
+  </div>
+);
+
+const ProjectViewerFootnote = () => (
+  <div className="px-5 md:px-7 py-2.5 border-t border-white/10 bg-white/[0.02]">
+    <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/30">
+      Live Excel render via Microsoft Office viewer · use Download for the editable file
+    </p>
+  </div>
+);
+
 const ProjectViewer = ({ project, onClose }) => {
   const [loading, setLoading] = React.useState(true);
 
@@ -54,68 +118,9 @@ const ProjectViewer = ({ project, onClose }) => {
             onClick={(e) => e.stopPropagation()}
             className="relative w-full max-w-6xl h-[88vh] rounded-[2rem] overflow-hidden bg-[#0A0A0A] border border-white/10 shadow-2xl flex flex-col"
           >
-            {/* Header */}
-            <div className="flex items-center justify-between gap-4 px-5 md:px-7 py-4 border-b border-white/10 bg-white/[0.02]">
-              <div className="flex items-center gap-3 min-w-0">
-                <span className="text-[9px] font-black uppercase tracking-[0.3em] text-secondary whitespace-nowrap">{project.category}</span>
-                <span className="text-white/20">/</span>
-                <h3 className="text-sm font-bold text-white truncate">{project.title}</h3>
-              </div>
-              <div className="flex items-center gap-2 flex-shrink-0">
-                <a
-                  href={src}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Open in new tab"
-                  className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10 transition-all cursor-pointer"
-                >
-                  <ExternalLink size={16} />
-                </a>
-                {project.download && (
-                  <a
-                    href={project.download}
-                    download
-                    title="Download file"
-                    className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10 transition-all cursor-pointer"
-                  >
-                    <Download size={16} />
-                  </a>
-                )}
-                <button
-                  onClick={onClose}
-                  title="Close"
-                  className="p-2.5 rounded-xl bg-secondary/10 border border-secondary/20 text-secondary hover:bg-secondary hover:text-white transition-all cursor-pointer"
-                >
-                  <X size={16} />
-                </button>
-              </div>
-            </div>
-
-            {/* Viewer */}
-            <div className="relative flex-1 bg-white">
-              {loading && (
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#0A0A0A] text-white/40">
-                  <Loader2 size={28} className="animate-spin text-secondary" />
-                  <span className="text-[10px] font-black uppercase tracking-[0.3em]">Rendering dashboard…</span>
-                </div>
-              )}
-              <iframe
-                key={project.view}
-                src={src}
-                title={project.title}
-                onLoad={() => setLoading(false)}
-                className="w-full h-full border-0"
-              />
-            </div>
-
-            {/* Footnote for Office files (depends on public hosting) */}
-            {office && (
-              <div className="px-5 md:px-7 py-2.5 border-t border-white/10 bg-white/[0.02]">
-                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/30">
-                  Live Excel render via Microsoft Office viewer · use Download for the editable file
-                </p>
-              </div>
-            )}
+            <ProjectViewerHeader project={project} src={src} onClose={onClose} />
+            <ProjectViewerIframe project={project} src={src} loading={loading} setLoading={setLoading} />
+            {office && <ProjectViewerFootnote />}
           </motion.div>
         </motion.div>
       )}
