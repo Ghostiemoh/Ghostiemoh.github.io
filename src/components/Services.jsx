@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ShieldCheck, Database, LayoutPanelLeft, SearchCode, ChevronRight } from 'lucide-react';
-import { transitions, variants } from '../utils/motion';
+import { variants } from '../utils/motion';
 
 const Services = () => {
   const containerRef = useRef(null);
