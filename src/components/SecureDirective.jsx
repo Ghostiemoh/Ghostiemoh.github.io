@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Send, Terminal, ChevronRight, Lock, User, Github } from 'lucide-react';
+import { Send, Terminal, ChevronRight, Lock, User, Github } from 'lucide-react';
 
 const SecureDirective = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
