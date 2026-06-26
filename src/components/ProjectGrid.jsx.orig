@@ -137,14 +137,14 @@ const ProjectGrid = () => {
   const [selectedCategory, setSelectedCategory] = React.useState("All Cases");
 
   const categories = ["All Cases", ...new Set(caseFiles.map(f => f.category))];
-  const filteredProjects = selectedCategory === "All Cases" 
-    ? caseFiles 
+  const filteredProjects = selectedCategory === "All Cases"
+    ? caseFiles
     : caseFiles.filter(p => p.category === selectedCategory);
 
   return (
-    <section 
+    <section
       ref={containerRef}
-      id="projects" 
+      id="projects"
       className="py-32 bg-surface relative overflow-hidden"
     >
       {/* Background Parallax Layer */}
@@ -154,7 +154,7 @@ const ProjectGrid = () => {
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col xl:flex-row justify-between items-end gap-10 mb-20">
-           <motion.div 
+           <motion.div
              variants={variants.staggerContainer}
              initial="initial"
              whileInView="whileInView"
@@ -171,15 +171,15 @@ const ProjectGrid = () => {
                  Real-world interrogation of data shards. From protocol audits to integrated financial systems.
               </motion.p>
            </motion.div>
-           
+
            <div className="flex flex-wrap gap-3 mt-10">
               {categories.map(cat => (
-                <button 
+                <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-6 py-3 rounded-full text-[9px] font-black uppercase tracking-widest transition-all duration-500 border ${
-                    selectedCategory === cat 
-                    ? "bg-secondary text-white border-secondary shadow-lg shadow-secondary/20" 
+                    selectedCategory === cat
+                    ? "bg-secondary text-white border-secondary shadow-lg shadow-secondary/20"
                     : "bg-surface border-on-surface/10 hover:border-secondary/40 hover:bg-on-surface/5"
                   }`}
                 >
@@ -189,7 +189,7 @@ const ProjectGrid = () => {
            </div>
         </div>
 
-        <motion.div 
+        <motion.div
           layout
           variants={variants.staggerContainer}
           initial="initial"
@@ -199,7 +199,7 @@ const ProjectGrid = () => {
         >
            {filteredProjects.length > 0 ? (
              filteredProjects.map((file, i) => (
-               <motion.div 
+               <motion.div
                   layout
                   key={file.id}
                   variants={variants.scanReveal}
@@ -230,11 +230,11 @@ const ProjectGrid = () => {
                   </div>
 
                   {/* Hover Actions */}
-                  <div className="absolute bottom-10 right-10 flex gap-4 translate-y-20 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 focus-within:translate-y-0 focus-within:opacity-100 transition-all duration-700">
-                    <a href={file.github} target="_blank" rel="noopener noreferrer" aria-label={`View ${file.title} source code on GitHub`} className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center bg-surface hover:bg-on-surface hover:text-white focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none transition-all">
+                  <div className="absolute bottom-10 right-10 flex gap-4 translate-y-20 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700">
+                    <a href={file.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center bg-surface hover:bg-on-surface hover:text-white transition-all">
                       <Github size={18} />
                     </a>
-                    <a href={file.link} target="_blank" rel="noopener noreferrer" aria-label={`View ${file.title} live project`} className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white hover:scale-110 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-surface focus-visible:ring-secondary focus-visible:outline-none transition-all">
+                    <a href={file.link} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white hover:scale-110 transition-all">
                       <ExternalLink size={18} />
                     </a>
                   </div>
