@@ -98,12 +98,13 @@ const BentoHub = ({ activeMode }) => {
                     </div>
 
                     {/* Action buttons top-right */}
-                    <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-out">
+                    <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-200 ease-out">
                       {project.view && (
                         <button
                           onClick={() => setViewerFile(project)}
-                          title="Click to view"
-                          className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-secondary hover:bg-secondary hover:text-white active:scale-[0.95] transition-[transform,background-color,color] duration-100 ease-out cursor-pointer"
+                          title={`Click to view ${project.title}`}
+                          aria-label={`Click to view ${project.title}`}
+                          className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-secondary hover:bg-secondary hover:text-white active:scale-[0.95] focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none transition-[transform,background-color,color] duration-100 ease-out cursor-pointer"
                         >
                           <Eye size={14} />
                         </button>
@@ -113,8 +114,9 @@ const BentoHub = ({ activeMode }) => {
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          title="Open project"
-                          className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-secondary hover:bg-secondary hover:text-white active:scale-[0.95] transition-[transform,background-color,color] duration-100 ease-out"
+                          title={`Open project ${project.title}`}
+                          aria-label={`Open project ${project.title}`}
+                          className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-secondary hover:bg-secondary hover:text-white active:scale-[0.95] focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none transition-[transform,background-color,color] duration-100 ease-out"
                         >
                           <ExternalLink size={14} />
                         </a>
@@ -123,8 +125,9 @@ const BentoHub = ({ activeMode }) => {
                         <a
                           href={project.download}
                           download
-                          title="Download file"
-                          className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-on-surface/60 hover:bg-on-surface hover:text-surface active:scale-[0.95] transition-[transform,background-color,color] duration-100 ease-out"
+                          title={`Download file ${project.title}`}
+                          aria-label={`Download file ${project.title}`}
+                          className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-on-surface/60 hover:bg-on-surface hover:text-surface active:scale-[0.95] focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none transition-[transform,background-color,color] duration-100 ease-out"
                         >
                           <Download size={14} />
                         </a>
@@ -153,7 +156,8 @@ const BentoHub = ({ activeMode }) => {
                     {project.view && (
                       <button
                         onClick={() => setViewerFile(project)}
-                        className="self-start inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.25em] text-secondary hover:gap-3 active:scale-[0.97] transition-[transform,gap] duration-150 ease-out cursor-pointer"
+                        aria-label={`View file ${project.title}`}
+                        className="self-start inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.25em] text-secondary hover:gap-3 active:scale-[0.97] focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none focus-visible:rounded transition-[transform,gap] duration-150 ease-out cursor-pointer"
                       >
                         <Eye size={13} /> View file
                       </button>
