@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useSpring, useTransform } from 'framer-motion';
 import { Menu, X, Github, Twitter, Linkedin, Terminal, ShieldCheck, Sun, Moon } from 'lucide-react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -40,11 +40,8 @@ const Layout = ({ children }) => {
     restDelta: 0.001
   });
 
-  const [displayPercent, setDisplayPercent] = useState(0);
-
-  useEffect(() => {
-    return scrollYProgress.onChange((v) => setDisplayPercent(Math.round(v * 100)));
-  }, [scrollYProgress]);
+  // ⚡ Bolt: Use useTransform instead of useState for scrollYProgress to prevent re-rendering the entire Layout (and app) on every scroll frame
+  const displayPercent = useTransform(scrollYProgress, (v) => Math.round(v * 100));
 
 
   useEffect(() => {
@@ -82,8 +79,8 @@ const Layout = ({ children }) => {
         </div>
         <div className="rotate-90 flex items-center gap-3 w-max">
            <span className="text-[9px] font-black uppercase tracking-[0.4em] text-white/20 whitespace-nowrap">System Analysis</span>
-           <span className="text-[10px] font-black tabular-nums text-secondary min-w-[3ch]">
-             {displayPercent}%
+           <span className="text-[10px] font-black tabular-nums text-secondary min-w-[3ch] flex">
+             <motion.span>{displayPercent}</motion.span>%
            </span>
         </div>
       </div>
