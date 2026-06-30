@@ -1,3 +1,3 @@
-## 2026-04-16 - Add ARIA Labels and Roles in Layout.jsx
-**Learning:** Icon-only social links and mobile menu toggle buttons lacked screen reader context in the existing `Layout.jsx` design.
-**Action:** Always verify that mapped arrays of icon components include an accessible name property to be used as an `aria-label`, and ensure mobile toggles use `aria-expanded` and `aria-controls`.
+## 2024-06-30 - Keyboard Accessibility for Hover-Revealed Actions
+**Learning:** In Tailwind UI patterns where interactive elements are hidden within containers and revealed on hover (e.g., `group-hover:opacity-100`), keyboard users cannot access them without pairing with `focus-within:opacity-100`. Also, in map loops, `aria-label` attributes on icon-only buttons must include dynamic, item-specific context (like `${project.title}`) so screen readers can distinguish between similar actions.
+**Action:** Always pair hover-revealed classes with their focus-within equivalents (`focus-within:opacity-100`, `focus-within:translate-y-0`) and add `focus-visible:ring-2 focus-visible:outline-none` to the interactive children. Always use dynamic text for `aria-label` attributes in mapped arrays.
