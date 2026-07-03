@@ -3,16 +3,12 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ShieldCheck, Database, LayoutPanelLeft, SearchCode, ChevronRight } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
-const Services = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [0, -150]);
-
-  const services = [
+/*
+ * Bolt Performance Optimization:
+ * Extracted static array outside component scope
+ * to prevent memory allocations and garbage collection on every render.
+ */
+const services = [
     {
       title: "Blockchain Forensics",
       desc: "Deep-dive investigation of on-chain transactions, fund tracing, and protocol vulnerability mapping.",
@@ -38,6 +34,15 @@ const Services = () => {
       specialty: "Verified Specs"
     }
   ];
+
+const Services = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, -150]);
 
   return (
     <section 

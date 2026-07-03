@@ -3,16 +3,12 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Briefcase, Calendar, MapPin, ExternalLink } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
-const Experience = () => {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const pathLength = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
-
-  const experiences = [
+/*
+ * Bolt Performance Optimization:
+ * Extracted static array outside component scope
+ * to prevent memory allocations and garbage collection on every render.
+ */
+const experiences = [
     {
       company: "MetaDao",
       role: "On-chain Governance Analyst",
@@ -70,6 +66,15 @@ const Experience = () => {
       tags: ["Mathematics", "Teaching", "Education"]
     }
   ];
+
+const Experience = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const pathLength = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
 
   return (
     <section 
