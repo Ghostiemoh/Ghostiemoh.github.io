@@ -3,6 +3,9 @@ import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-mo
 import { Database, Filter, PenTool, BarChart3, Binary, ScanSearch } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
+// ⚡ Bolt: Extracted static inline arrays to prevent unnecessary memory allocations on every render
+const GRID_CELLS = [...Array(6)];
+
 const StatCounter = ({ value, suffix = "" }) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
@@ -82,7 +85,7 @@ const Methodology = () => {
       {/* Narrative grid background - Parallax */}
       <motion.div style={{ y: y1 }} className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="grid grid-cols-6 h-full">
-           {[...Array(6)].map((_, i) => (
+           {GRID_CELLS.map((_, i) => (
              <div key={i} className="border-r border-on-surface/10"></div>
            ))}
         </div>
