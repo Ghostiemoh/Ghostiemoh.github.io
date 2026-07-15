@@ -3,6 +3,11 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Award, GraduationCap, FileText, ChevronRight, CheckCircle2, BarChart4, Search } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
+// ⚡ Bolt Performance Optimization: Extracted static arrays outside the component
+// to prevent unnecessary memory allocations and garbage collection on every render.
+const TECHNICAL_SKILLS = ["SQL", "Excel", "Power BI", "Python", "MATLAB", "Data Visualization"];
+const IN_PROGRESS_COURSES = ["Advanced SQL for Blockchains", "Deep Python for Data Science", "On-chain Governance Research"];
+
 const IntelHub = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -115,7 +120,7 @@ const IntelHub = () => {
             <motion.div variants={variants.fadeIn} className="p-10 rounded-[2.5rem] bg-on-surface/5 border border-on-surface/5 space-y-6">
                <h4 className="text-[11px] font-black uppercase tracking-[0.3em]">Technical Core</h4>
                <div className="flex flex-wrap gap-3">
-                  {["SQL", "Excel", "Power BI", "Python", "MATLAB", "Data Visualization"].map(skill => (
+                  {TECHNICAL_SKILLS.map(skill => (
                     <motion.span 
                       key={skill}
                       whileHover={{ scale: 1.05, borderColor: "var(--secondary)" }}
@@ -134,7 +139,7 @@ const IntelHub = () => {
                </div>
                <h4 className="text-2xl font-black tracking-tight">Currently In-Progress.</h4>
                <ul className="space-y-2">
-                  {["Advanced SQL for Blockchains", "Deep Python for Data Science", "On-chain Governance Research"].map(item => (
+                  {IN_PROGRESS_COURSES.map(item => (
                     <li key={item} className="flex items-center gap-3 text-sm font-medium opacity-60">
                        <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
                        {item}
