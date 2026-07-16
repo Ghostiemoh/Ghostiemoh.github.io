@@ -67,26 +67,29 @@ const ProjectViewer = ({ project, onClose }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Open in new tab"
-                  className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10 transition-all cursor-pointer"
+                  aria-label="Open in new tab"
+                  className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none transition-all cursor-pointer"
                 >
-                  <ExternalLink size={16} />
+                  <ExternalLink size={16} aria-hidden="true" />
                 </a>
                 {project.download && (
                   <a
                     href={project.download}
                     download
                     title="Download file"
-                    className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10 transition-all cursor-pointer"
+                    aria-label="Download file"
+                    className="p-2.5 rounded-xl bg-white/5 border border-white/10 text-white/60 hover:text-white hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none transition-all cursor-pointer"
                   >
-                    <Download size={16} />
+                    <Download size={16} aria-hidden="true" />
                   </a>
                 )}
                 <button
                   onClick={onClose}
                   title="Close"
-                  className="p-2.5 rounded-xl bg-secondary/10 border border-secondary/20 text-secondary hover:bg-secondary hover:text-white transition-all cursor-pointer"
+                  aria-label="Close viewer"
+                  className="p-2.5 rounded-xl bg-secondary/10 border border-secondary/20 text-secondary hover:bg-secondary hover:text-white focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none transition-all cursor-pointer"
                 >
-                  <X size={16} />
+                  <X size={16} aria-hidden="true" />
                 </button>
               </div>
             </div>

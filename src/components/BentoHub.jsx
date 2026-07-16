@@ -98,14 +98,15 @@ const BentoHub = ({ activeMode }) => {
                     </div>
 
                     {/* Action buttons top-right */}
-                    <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-out">
+                    <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-200 ease-out">
                       {project.view && (
                         <button
                           onClick={() => setViewerFile(project)}
                           title="Click to view"
-                          className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-secondary hover:bg-secondary hover:text-white active:scale-[0.95] transition-[transform,background-color,color] duration-100 ease-out cursor-pointer"
+                          aria-label={`View ${project.title}`}
+                          className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-secondary hover:bg-secondary hover:text-white focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none active:scale-[0.95] transition-all duration-100 ease-out cursor-pointer"
                         >
-                          <Eye size={14} />
+                          <Eye size={14} aria-hidden="true" />
                         </button>
                       )}
                       {project.link && (
@@ -114,9 +115,10 @@ const BentoHub = ({ activeMode }) => {
                           target="_blank"
                           rel="noopener noreferrer"
                           title="Open project"
-                          className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-secondary hover:bg-secondary hover:text-white active:scale-[0.95] transition-[transform,background-color,color] duration-100 ease-out"
+                          aria-label={`Open ${project.title} external link`}
+                          className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-secondary hover:bg-secondary hover:text-white focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none active:scale-[0.95] transition-all duration-100 ease-out"
                         >
-                          <ExternalLink size={14} />
+                          <ExternalLink size={14} aria-hidden="true" />
                         </a>
                       )}
                       {project.download && (
@@ -124,9 +126,10 @@ const BentoHub = ({ activeMode }) => {
                           href={project.download}
                           download
                           title="Download file"
-                          className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-on-surface/60 hover:bg-on-surface hover:text-surface active:scale-[0.95] transition-[transform,background-color,color] duration-100 ease-out"
+                          aria-label={`Download ${project.title}`}
+                          className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-on-surface/60 hover:bg-on-surface hover:text-surface focus-visible:ring-2 focus-visible:ring-on-surface focus-visible:outline-none active:scale-[0.95] transition-all duration-100 ease-out"
                         >
-                          <Download size={14} />
+                          <Download size={14} aria-hidden="true" />
                         </a>
                       )}
                     </div>
@@ -153,9 +156,9 @@ const BentoHub = ({ activeMode }) => {
                     {project.view && (
                       <button
                         onClick={() => setViewerFile(project)}
-                        className="self-start inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.25em] text-secondary hover:gap-3 active:scale-[0.97] transition-[transform,gap] duration-150 ease-out cursor-pointer"
+                        className="self-start inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.25em] text-secondary hover:gap-3 focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-surface focus-visible:outline-none rounded active:scale-[0.97] transition-all duration-150 ease-out cursor-pointer"
                       >
-                        <Eye size={13} /> View file
+                        <Eye size={13} aria-hidden="true" /> View file
                       </button>
                     )}
 
