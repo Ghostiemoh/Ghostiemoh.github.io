@@ -1,39 +1,34 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, useInView, useMotionValue, animate } from 'framer-motion';
 import { Database, Filter, PenTool, BarChart3, Binary, ScanSearch } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
 const StatCounter = ({ value, suffix = "" }) => {
-  const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   
+  // ⚡ Bolt: Use motion values instead of React state for continuous animation
+  // This bypasses React's render phase entirely during the animation,
+  // reducing re-renders from ~60fps down to 0 while maintaining 60fps visual updates.
+  const count = useMotionValue(0);
+  const displayValue = useTransform(count, (latest) =>
+    `${Math.floor(latest).toLocaleString()}${suffix}`
+  );
+
   useEffect(() => {
     if (isInView) {
-      let start = 0;
       const end = parseInt(value.replace(/\D/g, ''));
-      if (start === end) return;
-      
-      let totalDuration = 2000;
-      let increment = end / (totalDuration / 16);
-      
-      let timer = setInterval(() => {
-        start += increment;
-        if (start >= end) {
-          setCount(end);
-          clearInterval(timer);
-        } else {
-          setCount(Math.floor(start));
-        }
-      }, 16);
-      return () => clearInterval(timer);
+      const controls = animate(count, end, {
+        duration: 2,
+      });
+      return () => controls.stop();
     }
-  }, [isInView, value]);
+  }, [isInView, value, count]);
 
   return (
-    <span ref={ref} className="tabular-nums">
-      {count.toLocaleString()}{suffix}
-    </span>
+    <motion.span ref={ref} className="tabular-nums">
+      {displayValue}
+    </motion.span>
   );
 };
 
