@@ -98,12 +98,13 @@ const BentoHub = ({ activeMode }) => {
                     </div>
 
                     {/* Action buttons top-right */}
-                    <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-out">
+                    <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-200 ease-out">
                       {project.view && (
                         <button
                           onClick={() => setViewerFile(project)}
+                          aria-label="Click to view"
                           title="Click to view"
-                          className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-secondary hover:bg-secondary hover:text-white active:scale-[0.95] transition-[transform,background-color,color] duration-100 ease-out cursor-pointer"
+                          className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-secondary hover:bg-secondary hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary active:scale-[0.95] transition-[transform,background-color,color] duration-100 ease-out cursor-pointer"
                         >
                           <Eye size={14} />
                         </button>
@@ -113,8 +114,9 @@ const BentoHub = ({ activeMode }) => {
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label="Open project"
                           title="Open project"
-                          className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-secondary hover:bg-secondary hover:text-white active:scale-[0.95] transition-[transform,background-color,color] duration-100 ease-out"
+                          className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-secondary hover:bg-secondary hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary active:scale-[0.95] transition-[transform,background-color,color] duration-100 ease-out"
                         >
                           <ExternalLink size={14} />
                         </a>
@@ -123,8 +125,9 @@ const BentoHub = ({ activeMode }) => {
                         <a
                           href={project.download}
                           download
+                          aria-label="Download file"
                           title="Download file"
-                          className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-on-surface/60 hover:bg-on-surface hover:text-surface active:scale-[0.95] transition-[transform,background-color,color] duration-100 ease-out"
+                          className="p-2.5 bg-surface/90 backdrop-blur-sm border border-on-surface/10 rounded-xl text-on-surface/60 hover:bg-on-surface hover:text-surface focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary active:scale-[0.95] transition-[transform,background-color,color] duration-100 ease-out"
                         >
                           <Download size={14} />
                         </a>
