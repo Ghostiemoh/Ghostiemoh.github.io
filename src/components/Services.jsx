@@ -3,6 +3,34 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ShieldCheck, Database, LayoutPanelLeft, SearchCode, ChevronRight } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
+// ⚡ Bolt: Extracted static array outside component to prevent memory allocation on every render
+const services = [
+  {
+    title: "Blockchain Forensics",
+    desc: "Deep-dive investigation of on-chain transactions, fund tracing, and protocol vulnerability mapping.",
+    icon: <SearchCode size={32} />,
+    specialty: "Forensic Extraction"
+  },
+  {
+    title: "Data Wrangling",
+    desc: "Transforming raw, messy datasets into structured formats ready for high-level statistical analysis.",
+    icon: <Database size={32} />,
+    specialty: "High Integrity"
+  },
+  {
+    title: "BI Architecture",
+    desc: "Building intuitive dashboards in Tableau and Power BI that turn complex data into human narratives.",
+    icon: <LayoutPanelLeft size={32} />,
+    specialty: "Decision Ready"
+  },
+  {
+    title: "Governance Data",
+    desc: "On-chain governance monitoring, voter distribution analysis, and treasury flow visualization.",
+    icon: <ShieldCheck size={32} />,
+    specialty: "Verified Specs"
+  }
+];
+
 const Services = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -11,33 +39,6 @@ const Services = () => {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [0, -150]);
-
-  const services = [
-    {
-      title: "Blockchain Forensics",
-      desc: "Deep-dive investigation of on-chain transactions, fund tracing, and protocol vulnerability mapping.",
-      icon: <SearchCode size={32} />,
-      specialty: "Forensic Extraction"
-    },
-    {
-      title: "Data Wrangling",
-      desc: "Transforming raw, messy datasets into structured formats ready for high-level statistical analysis.",
-      icon: <Database size={32} />,
-      specialty: "High Integrity"
-    },
-    {
-      title: "BI Architecture",
-      desc: "Building intuitive dashboards in Tableau and Power BI that turn complex data into human narratives.",
-      icon: <LayoutPanelLeft size={32} />,
-      specialty: "Decision Ready"
-    },
-    {
-      title: "Governance Data",
-      desc: "On-chain governance monitoring, voter distribution analysis, and treasury flow visualization.",
-      icon: <ShieldCheck size={32} />,
-      specialty: "Verified Specs"
-    }
-  ];
 
   return (
     <section 
