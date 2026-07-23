@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useScroll, useSpring, useTransform } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import { Menu, X, Github, Twitter, Linkedin, Terminal, ShieldCheck, Sun, Moon } from 'lucide-react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -40,8 +40,12 @@ const Layout = ({ children }) => {
     restDelta: 0.001
   });
 
-  // ⚡ Bolt: Prevent layout re-renders on scroll by rendering MotionValue directly
-  const displayPercentStr = useTransform(scrollYProgress, (v) => `${Math.round(v * 100)}%`);
+  const [displayPercent, setDisplayPercent] = useState(0);
+
+  useEffect(() => {
+    return scrollYProgress.onChange((v) => setDisplayPercent(Math.round(v * 100)));
+  }, [scrollYProgress]);
+
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -71,16 +75,16 @@ const Layout = ({ children }) => {
       {/* Narrative Progress HUD - Desktop Only */}
       <div className="fixed right-8 top-1/2 -translate-y-1/2 z-[101] hidden lg:flex flex-col items-center gap-6 mix-blend-difference">
         <div className="h-40 w-[1px] bg-white/10 relative">
-           <motion.div 
+           <motion.div
              className="absolute top-0 left-0 w-full bg-secondary origin-top"
              style={{ scaleY }}
            />
         </div>
         <div className="rotate-90 flex items-center gap-3 w-max">
            <span className="text-[9px] font-black uppercase tracking-[0.4em] text-white/20 whitespace-nowrap">System Analysis</span>
-           <motion.span className="text-[10px] font-black tabular-nums text-secondary min-w-[3ch]">
-             {displayPercentStr}
-           </motion.span>
+           <span className="text-[10px] font-black tabular-nums text-secondary min-w-[3ch]">
+             {displayPercent}%
+           </span>
         </div>
       </div>
 
@@ -91,7 +95,7 @@ const Layout = ({ children }) => {
         isScrolled ? "bg-surface/80 backdrop-blur-2xl border-b border-on-surface/5" : "bg-transparent"
       )}>
         <div className="max-w-[1400px] w-full mx-auto flex justify-between items-center gap-4">
-          <motion.a 
+          <motion.a
             href="#"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -125,7 +129,7 @@ const Layout = ({ children }) => {
                 {link.name}
               </motion.a>
             ))}
-            
+
             {/* Theme Toggle Button */}
             <motion.button
               onClick={toggleTheme}
@@ -159,7 +163,7 @@ const Layout = ({ children }) => {
           </nav>
 
           {/* Mobile Toggle */}
-          <button 
+          <button
             className="lg:hidden w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center text-on-surface active:scale-[0.95] transition-transform duration-100 ease-out"
             onClick={() => setMobileMenuOpen(true)}
             aria-expanded={mobileMenuOpen}
@@ -174,7 +178,7 @@ const Layout = ({ children }) => {
       {/* Mobile Menu Shard */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div 
+          <motion.div
             id="mobile-menu"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -186,7 +190,7 @@ const Layout = ({ children }) => {
                   <Terminal size={20} />
                   <span className="text-[11px] font-black uppercase tracking-[0.4em]">Protocol Menu</span>
                </div>
-               
+
                {/* Mobile Theme Toggle */}
                <button
                  onClick={toggleTheme}
@@ -195,8 +199,8 @@ const Layout = ({ children }) => {
                >
                  {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
                </button>
- 
-               <button 
+
+               <button
                  className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center active:scale-[0.95] transition-transform duration-100 ease-out"
                  onClick={() => setMobileMenuOpen(false)}
                  aria-label="Close mobile menu"
@@ -206,7 +210,7 @@ const Layout = ({ children }) => {
             </div>
             <nav className="flex flex-col gap-8 py-20">
               {navLinks.map((link, i) => (
-                <a 
+                <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
