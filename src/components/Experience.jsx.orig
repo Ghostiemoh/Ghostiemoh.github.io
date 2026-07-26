@@ -72,17 +72,17 @@ const Experience = () => {
   ];
 
   return (
-    <section 
+    <section
       ref={containerRef}
-      id="experience" 
+      id="experience"
       className="py-32 bg-surface relative overflow-hidden"
     >
       <div className="absolute top-0 left-0 w-full h-px bg-on-surface/5"></div>
-      
+
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
-          
-          <motion.div 
+
+          <motion.div
              variants={variants.staggerContainer}
              initial="initial"
              whileInView="whileInView"
@@ -113,7 +113,7 @@ const Experience = () => {
             </motion.div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             variants={variants.staggerContainer}
             initial="initial"
             whileInView="whileInView"
@@ -122,14 +122,14 @@ const Experience = () => {
           >
             {/* Connecting Baseline */}
             <div className="absolute left-[5%] md:left-[-40px] top-4 bottom-4 w-px bg-on-surface/5 lg:block hidden">
-               <motion.div 
-                 className="w-full bg-secondary origin-top" 
+               <motion.div
+                 className="w-full bg-secondary origin-top"
                  style={{ scaleY: pathLength }}
                />
             </div>
 
             {experiences.map((exp, i) => (
-              <motion.div 
+              <motion.div
                 key={exp.company}
                 variants={variants.fadeIn}
                 className="group relative"
@@ -154,7 +154,7 @@ const Experience = () => {
                            </span>
                         </div>
                       </div>
-                      
+
                       <p className="text-base font-medium opacity-60 leading-relaxed max-w-2xl">
                         {exp.description}
                       </p>
@@ -169,9 +169,9 @@ const Experience = () => {
                     </div>
 
                     <div className="flex-shrink-0">
-                       <button type="button" aria-label={`View details for ${exp.company}`} className="w-14 h-14 rounded-2xl bg-on-surface/5 flex items-center justify-center opacity-0 group-hover:opacity-100 focus-within:opacity-100 group-hover:bg-secondary group-hover:text-surface focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none transition-all duration-500">
+                       <a href="#" aria-label={`View details for ${exp.company}`} className="w-14 h-14 rounded-2xl bg-on-surface/5 flex items-center justify-center opacity-0 group-hover:opacity-100 focus-within:opacity-100 group-hover:bg-secondary group-hover:text-surface focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none transition-all duration-500">
                           <ExternalLink size={24} />
-                       </button>
+                       </a>
                     </div>
                   </div>
                 </div>
