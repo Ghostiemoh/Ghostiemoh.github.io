@@ -3,6 +3,79 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Award, GraduationCap, FileText, ChevronRight, CheckCircle2, BarChart4, Search } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
+
+// ⚡ Bolt Performance Optimization: Extracted static arrays outside the component scope
+// to prevent unnecessary memory allocations and garbage collection on every render.
+const CORE_SKILLS = ["SQL", "Excel", "Power BI", "Python", "MATLAB", "Data Visualization"];
+const IN_PROGRESS_COURSES = ["Advanced SQL for Blockchains", "Deep Python for Data Science", "On-chain Governance Research"];
+
+const CREDENTIALS = [
+  {
+    type: "Academic",
+    title: "B.Sc Ed Mathematics",
+    org: "Yusuf Maitama Sule University, Kano",
+    status: "Lower Second Class Honors",
+    link: "#",
+    icon: <GraduationCap size={20} />
+  },
+  {
+    type: "Certification · 2026",
+    title: "Anthropic Technical Certifications",
+    org: "Anthropic",
+    status: "Claude Code 101 · Claude 101 · Agent Skills",
+    link: "#",
+    icon: <Award size={20} />
+  },
+  {
+    type: "Certification · 2025",
+    title: "Advanced Data Analytics",
+    org: "3MTT · DeepTech · NITDA",
+    status: "Data Analysis & Visualization",
+    link: "https://app.3mtt.training/verify?id=FE/24/4155597910",
+    icon: <BarChart4 size={20} />
+  },
+  {
+    type: "Certification · 2025",
+    title: "No Long Ting Web3 & Tech Bootcamp",
+    org: "BlockchainLex Group x CryptoMondays",
+    status: "Verified Proof",
+    link: "/legacy/Certificates/5.jpg",
+    icon: <Award size={20} />
+  },
+  {
+    type: "Certification · 2025",
+    title: "Digital Literacy for All",
+    org: "NITDA",
+    status: "Federal Certification",
+    link: "/legacy/Certificates/4.html",
+    icon: <FileText size={20} />
+  },
+  {
+    type: "Certification · 2023",
+    title: "Blockchain Professional (BIP)",
+    org: "Dominium Academy x NITDA x BSV",
+    status: "Cohort #1",
+    link: "/legacy/Certificates/3.png",
+    icon: <CheckCircle2 size={20} />
+  },
+  {
+    type: "Certification · 2023",
+    title: "Introduction to Data Analytics",
+    org: "SkillUp by SimpliLearn",
+    status: "Verified Data Analyst",
+    link: "/legacy/Certificates/2.jpg",
+    icon: <BarChart4 size={20} />
+  },
+  {
+    type: "Certification · 2022",
+    title: "Introduction to Cyber Security",
+    org: "Academy Halogen",
+    status: "Security Certified",
+    link: "/legacy/Certificates/1.jpg",
+    icon: <Search size={20} />
+  }
+];
+
 const IntelHub = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -11,73 +84,6 @@ const IntelHub = () => {
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
-
-  const credentials = [
-    {
-      type: "Academic",
-      title: "B.Sc Ed Mathematics",
-      org: "Yusuf Maitama Sule University, Kano",
-      status: "Lower Second Class Honors",
-      link: "#",
-      icon: <GraduationCap size={20} />
-    },
-    {
-      type: "Certification · 2026",
-      title: "Anthropic Technical Certifications",
-      org: "Anthropic",
-      status: "Claude Code 101 · Claude 101 · Agent Skills",
-      link: "#",
-      icon: <Award size={20} />
-    },
-    {
-      type: "Certification · 2025",
-      title: "Advanced Data Analytics",
-      org: "3MTT · DeepTech · NITDA",
-      status: "Data Analysis & Visualization",
-      link: "https://app.3mtt.training/verify?id=FE/24/4155597910",
-      icon: <BarChart4 size={20} />
-    },
-    {
-      type: "Certification · 2025",
-      title: "No Long Ting Web3 & Tech Bootcamp",
-      org: "BlockchainLex Group x CryptoMondays",
-      status: "Verified Proof",
-      link: "/legacy/Certificates/5.jpg",
-      icon: <Award size={20} />
-    },
-    {
-      type: "Certification · 2025",
-      title: "Digital Literacy for All",
-      org: "NITDA",
-      status: "Federal Certification",
-      link: "/legacy/Certificates/4.html",
-      icon: <FileText size={20} />
-    },
-    {
-      type: "Certification · 2023",
-      title: "Blockchain Professional (BIP)",
-      org: "Dominium Academy x NITDA x BSV",
-      status: "Cohort #1",
-      link: "/legacy/Certificates/3.png",
-      icon: <CheckCircle2 size={20} />
-    },
-    {
-      type: "Certification · 2023",
-      title: "Introduction to Data Analytics",
-      org: "SkillUp by SimpliLearn",
-      status: "Verified Data Analyst",
-      link: "/legacy/Certificates/2.jpg",
-      icon: <BarChart4 size={20} />
-    },
-    {
-      type: "Certification · 2022",
-      title: "Introduction to Cyber Security",
-      org: "Academy Halogen",
-      status: "Security Certified",
-      link: "/legacy/Certificates/1.jpg",
-      icon: <Search size={20} />
-    }
-  ];
 
   return (
     <section 
@@ -115,7 +121,7 @@ const IntelHub = () => {
             <motion.div variants={variants.fadeIn} className="p-10 rounded-[2.5rem] bg-on-surface/5 border border-on-surface/5 space-y-6">
                <h4 className="text-[11px] font-black uppercase tracking-[0.3em]">Technical Core</h4>
                <div className="flex flex-wrap gap-3">
-                  {["SQL", "Excel", "Power BI", "Python", "MATLAB", "Data Visualization"].map(skill => (
+                  {CORE_SKILLS.map(skill => (
                     <motion.span 
                       key={skill}
                       whileHover={{ scale: 1.05, borderColor: "var(--secondary)" }}
@@ -134,7 +140,7 @@ const IntelHub = () => {
                </div>
                <h4 className="text-2xl font-black tracking-tight">Currently In-Progress.</h4>
                <ul className="space-y-2">
-                  {["Advanced SQL for Blockchains", "Deep Python for Data Science", "On-chain Governance Research"].map(item => (
+                  {IN_PROGRESS_COURSES.map(item => (
                     <li key={item} className="flex items-center gap-3 text-sm font-medium opacity-60">
                        <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
                        {item}
@@ -151,7 +157,7 @@ const IntelHub = () => {
             viewport={{ once: true }}
             className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6"
           >
-              {credentials.map((cred, i) => (
+              {CREDENTIALS.map((cred, i) => (
                 <motion.a 
                    key={cred.title}
                    href={cred.link}
