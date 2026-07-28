@@ -1,39 +1,34 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
+import { motion, useScroll, useTransform, useSpring, useInView, useMotionValue, animate } from 'framer-motion';
 import { Database, Filter, PenTool, BarChart3, Binary, ScanSearch } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
 const StatCounter = ({ value, suffix = "" }) => {
-  const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   
+  // ⚡ Bolt: Using Framer Motion's useMotionValue and animate to bypass React re-renders
+  const count = useMotionValue(0);
+  const end = parseInt(value.replace(/\D/g, ''));
+  const display = useTransform(count, (latest) => `${Math.floor(latest).toLocaleString()}${suffix}`);
+
   useEffect(() => {
     if (isInView) {
-      let start = 0;
-      const end = parseInt(value.replace(/\D/g, ''));
-      if (start === end) return;
+      if (0 === end) return;
       
-      let totalDuration = 2000;
-      let increment = end / (totalDuration / 16);
+      const controls = animate(count, end, {
+        duration: 2,
+        ease: "easeOut"
+      });
       
-      let timer = setInterval(() => {
-        start += increment;
-        if (start >= end) {
-          setCount(end);
-          clearInterval(timer);
-        } else {
-          setCount(Math.floor(start));
-        }
-      }, 16);
-      return () => clearInterval(timer);
+      return () => controls.stop();
     }
-  }, [isInView, value]);
+  }, [isInView, end, count]);
 
   return (
-    <span ref={ref} className="tabular-nums">
-      {count.toLocaleString()}{suffix}
-    </span>
+    <motion.span ref={ref} className="tabular-nums">
+      {display}
+    </motion.span>
   );
 };
 
