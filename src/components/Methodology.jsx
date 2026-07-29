@@ -1,41 +1,34 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, useInView, useMotionValue, animate } from 'framer-motion';
 import { Database, Filter, PenTool, BarChart3, Binary, ScanSearch } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
 const StatCounter = ({ value, suffix = "" }) => {
-  const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   
+  // ⚡ Bolt: Bypass React re-renders for continuous animations
+  const count = useMotionValue(0);
+  const displayCount = useTransform(count, (latest) => Math.floor(latest).toLocaleString() + suffix);
+
   useEffect(() => {
     if (isInView) {
-      let start = 0;
       const end = parseInt(value.replace(/\D/g, ''));
-      if (start === end) return;
+      if (end === 0) return;
       
-      let totalDuration = 2000;
-      let increment = end / (totalDuration / 16);
-      
-      let timer = setInterval(() => {
-        start += increment;
-        if (start >= end) {
-          setCount(end);
-          clearInterval(timer);
-        } else {
-          setCount(Math.floor(start));
-        }
-      }, 16);
-      return () => clearInterval(timer);
+      const controls = animate(count, end, { duration: 2 });
+      return controls.stop;
     }
-  }, [isInView, value]);
+  }, [isInView, value, count]);
 
   return (
-    <span ref={ref} className="tabular-nums">
-      {count.toLocaleString()}{suffix}
-    </span>
+    <motion.span ref={ref} className="tabular-nums">
+      {displayCount}
+    </motion.span>
   );
 };
+
+const GRID_COLUMNS = [...Array(6)];
 
 const Methodology = () => {
   const containerRef = useRef(null);
@@ -82,7 +75,7 @@ const Methodology = () => {
       {/* Narrative grid background - Parallax */}
       <motion.div style={{ y: y1 }} className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="grid grid-cols-6 h-full">
-           {[...Array(6)].map((_, i) => (
+           {GRID_COLUMNS.map((_, i) => (
              <div key={i} className="border-r border-on-surface/10"></div>
            ))}
         </div>
