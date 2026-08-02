@@ -11,6 +11,15 @@ This repository hosts my professional portfolio, designed as a high-integrity in
 ### 🔍 Strategic Case Files (Showcase)
 Below are selected "Case Files" extracted from my work, demonstrating specialized capabilities for clients:
 
+#### `FILE: NX-25` // [Nexora 📊](https://github.com/Ghostiemoh/nexora)
+NextJS data engineering application to clean, profile, and query spreadsheets. Runs in-browser without database servers or data leaving the sandbox.
+
+#### `FILE: SA-25` // [Solana Analytics Skill 🧠](https://github.com/Ghostiemoh/solana-analytics-skill)
+On-chain data analyst skill for AI coding agents. Automatically generates Dune SQL queries, decodes Anchor program transactions, and builds growth reports.
+
+#### `FILE: IS-25` // [Immunefi Security Skill 🛡️](https://github.com/Ghostiemoh/immunefi-security-skill)
+A Web3 security vulnerability database and audit checklist, built by analyzing audit logs and repositories from Immunefi's team.
+
 #### `FILE: DL-01` // [DecodeLabs Project 1: Data Cleaning](https://github.com/Ghostiemoh/decodelabs-internship-project-1)
 Rigorous data cleaning pipeline on 1,200 transactional records in Excel. Standardized date formats, formatted pricing to currency, handled 309 missing coupon codes, and built structured, filterable named Excel tables.
 
@@ -29,11 +38,26 @@ Advanced Sunrise Intelligence Terminal for Solana. Momentum scoring, holder dist
 #### `FILE: VX-25` // [Vertex ⚡](https://vertex-pay.vercel.app)
 Institutional-grade invoicing tool for the Solana freelance economy. Generate smart agreements and get paid in USDC/SOL instantly.
 
-#### `FILE: DA-30` // [30-Day Data Architect Challenge](https://github.com/Ghostiemoh/Excel_SQL_Mastery_Template)
+#### `FILE: DA-30` // [30-Day Data Architect Challenge](https://github.com/Ghostiemoh/Excel-SQL-Mastery-Template)
 Intensive masterclass transitioning from manual data cleaning to building scalable data systems and on-chain intelligence.
 
 #### `FILE: LS-25` // [LedgerSnap](https://ledgersnap-one.vercel.app)
 High-fidelity financial archival system. Transforming chaotic spending into a streamlined digital ledger with deep analytical insights.
+
+#### `FILE: BS-06` // [Bicycle Sales Performance 🚲](https://github.com/Ghostiemoh/bicycle-sales-performance)
+Interactive PivotTable sales dashboard analyzing demographic and regional datasets to identify performance trends.
+
+#### `FILE: CL-11` // [Call List Analysis 📞](https://github.com/Ghostiemoh/call-center-analysis)
+Call log analytics model with automated pivot reporting driven by macros to trace service gaps.
+
+#### `FILE: CF-07` // [Coffee Shop Sales Dashboard ☕](https://github.com/Ghostiemoh/coffee-shop-sales-dashboard)
+Dynamic retail sales dashboard with slicers and PivotTables analyzing transactions by location and time.
+
+#### `FILE: RS-08` // [Retail Sales Dashboard 🛍️](https://github.com/Ghostiemoh/retail-sales-dashboard)
+Demographic and country-level transaction filtering dashboard using Excel slicers.
+
+#### `FILE: PB-09` // [Apocalypse Food Prep 🛡️](https://github.com/Ghostiemoh/apocalypse-food-prep-power-bi)
+Power BI data model for inventory tracking, using DAX measures and Power Query ETL pipelines.
 
 #### `FILE: SD-01` // [Solana Fraud Detection](https://docs.google.com/document/d/1pxf4EtWhSU6DWerlkD1fG8HMcj1QWlvBH3YYWmuYbec/edit?usp=sharing)
 Forensic investigation of fraudulent activities on the Solana network. Identifies malicious patterns and protective protocols for on-chain integrity.
