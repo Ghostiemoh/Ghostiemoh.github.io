@@ -230,11 +230,11 @@ const ProjectGrid = () => {
                   </div>
 
                   {/* Hover Actions */}
-                  <div className="absolute bottom-10 right-10 flex gap-4 translate-y-20 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700">
-                    <a href={file.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center bg-surface hover:bg-on-surface hover:text-white transition-all">
+                  <div className="absolute bottom-10 right-10 flex gap-4 translate-y-20 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100 transition-all duration-700">
+                    <a href={file.github} aria-label="View Github Repository" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center bg-surface hover:bg-on-surface hover:text-white focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none transition-all">
                       <Github size={18} />
                     </a>
-                    <a href={file.link} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white hover:scale-110 transition-all">
+                    <a href={file.link} aria-label="Open External Link" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white hover:scale-110 focus-visible:ring-2 focus-visible:ring-on-surface focus-visible:ring-offset-2 focus-visible:outline-none transition-all">
                       <ExternalLink size={18} />
                     </a>
                   </div>
