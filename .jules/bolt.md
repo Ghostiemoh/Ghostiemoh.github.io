@@ -1,3 +1,6 @@
 ## 2024-11-20 - Optimize Font Loading in Vite Projects
 **Learning:** Using `@import` inside a CSS file (like `index.css`) for loading external fonts in a Vite/React project creates a serial request chain. The browser must first download and parse the CSS before it can initiate the font download. This blocks rendering and negatively impacts First Contentful Paint (FCP).
 **Action:** Always define external font requests (e.g., Google Fonts) using `<link rel="stylesheet">` tags, along with `<link rel="preconnect">` for the font domain, directly in `index.html`. This allows the browser to discover and download the fonts in parallel with other assets.
+## 2024-08-04 - Bypassing React Renders with Framer Motion
+**Learning:** In Framer Motion v11+, continuous scroll percentage displays that rely on `useState` and `useEffect` cause excessive layout re-renders. We can bypass React's render phase entirely by creating a formatted `MotionValue` string using `useTransform` and passing it directly as the single child to a `motion.span` element.
+**Action:** Always prefer formatting strings inside `useTransform` over string interpolation in JSX when dealing with `MotionValue`s to prevent fatal React crashes and eliminate unnecessary re-renders.
