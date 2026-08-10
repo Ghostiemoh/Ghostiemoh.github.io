@@ -210,7 +210,7 @@ const ProjectGrid = () => {
                      <div className="w-14 h-14 rounded-2xl bg-on-surface/5 flex items-center justify-center text-on-surface/40 group-hover:bg-secondary group-hover:text-white transition-all duration-700">
                         {file.icon}
                      </div>
-                     <span className="text-[10px] font-black tracking-widest opacity-20 group-hover:opacity-100 group-hover:text-secondary transition-all">FILE: {file.id}</span>
+                     <span className="text-[10px] font-black tracking-widest opacity-20 group-hover:opacity-100 focus-within:opacity-100 group-hover:text-secondary transition-all">FILE: {file.id}</span>
                   </div>
 
                   <div className="space-y-4 relative z-10">
@@ -230,11 +230,11 @@ const ProjectGrid = () => {
                   </div>
 
                   {/* Hover Actions */}
-                  <div className="absolute bottom-10 right-10 flex gap-4 translate-y-20 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700">
-                    <a href={file.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center bg-surface hover:bg-on-surface hover:text-white transition-all">
+                  <div className="absolute bottom-10 right-10 flex gap-4 translate-y-20 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 focus-within:translate-y-0 focus-within:opacity-100 transition-all duration-700">
+                    <a href={file.github} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center bg-surface hover:bg-on-surface hover:text-white focus-visible:ring-2 focus-visible:ring-secondary focus-visible:outline-none transition-all">
                       <Github size={18} />
                     </a>
-                    <a href={file.link} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white hover:scale-110 transition-all">
+                    <a href={file.link} target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white hover:scale-110 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none transition-all">
                       <ExternalLink size={18} />
                     </a>
                   </div>

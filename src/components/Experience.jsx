@@ -169,7 +169,7 @@ const Experience = () => {
                     </div>
 
                     <div className="flex-shrink-0">
-                       <div className="w-14 h-14 rounded-2xl bg-on-surface/5 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-secondary group-hover:text-surface transition-all duration-500">
+                       <div className="w-14 h-14 rounded-2xl bg-on-surface/5 flex items-center justify-center opacity-0 group-hover:opacity-100 focus-within:opacity-100 group-hover:bg-secondary group-hover:text-surface transition-all duration-500">
                           <ExternalLink size={24} />
                        </div>
                     </div>
