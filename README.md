@@ -48,7 +48,7 @@ High-fidelity financial archival system. Transforming chaotic spending into a st
 Interactive PivotTable sales dashboard analyzing demographic and regional datasets to identify performance trends.
 
 #### `FILE: CL-11` // [Call List Analysis 📞](https://github.com/Ghostiemoh/call-center-analysis)
-Call log analytics model with automated pivot reporting driven by macros to trace service gaps.
+Call log analytics model with pivot reporting to trace customer service performance gaps.
 
 #### `FILE: CF-07` // [Coffee Shop Sales Dashboard ☕](https://github.com/Ghostiemoh/coffee-shop-sales-dashboard)
 Dynamic retail sales dashboard with slicers and PivotTables analyzing transactions by location and time.
@@ -59,7 +59,7 @@ Demographic and country-level transaction filtering dashboard using Excel slicer
 #### `FILE: PB-09` // [Apocalypse Food Prep 🛡️](https://github.com/Ghostiemoh/apocalypse-food-prep-power-bi)
 Power BI data model for inventory tracking, using DAX measures and Power Query ETL pipelines.
 
-#### `FILE: SD-01` // [Solana Fraud Detection](https://docs.google.com/document/d/1pxf4EtWhSU6DWerlkD1fG8HMcj1QWlvBH3YYWmuYbec/edit?usp=sharing)
+#### `FILE: SD-01` // [Solana Fraud Detection](https://github.com/Ghostiemoh/Blockchain-Analysis/blob/main/Detecting%20Suspicious%20Activity%20on%20Solana%20using%20On-Chain%20Analytics.docx)
 Forensic investigation of fraudulent activities on the Solana network. Identifies malicious patterns and protective protocols for on-chain integrity.
 
 ---
