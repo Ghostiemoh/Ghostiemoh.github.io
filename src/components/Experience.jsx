@@ -169,8 +169,8 @@ const Experience = () => {
                     </div>
 
                     <div className="flex-shrink-0">
-                       <div className="w-14 h-14 rounded-2xl bg-on-surface/5 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-secondary group-hover:text-surface transition-all duration-500">
-                          <ExternalLink size={24} />
+                       <div className="w-14 h-14 rounded-2xl bg-on-surface/5 flex items-center justify-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 group-hover:bg-secondary group-hover:text-surface group-focus-within:bg-secondary group-focus-within:text-surface transition-all duration-500">
+                          <ExternalLink size={24} className="focus-visible:ring-2 focus-visible:ring-secondary rounded-lg focus-visible:outline-none" tabIndex={0} />
                        </div>
                     </div>
                   </div>

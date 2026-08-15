@@ -168,9 +168,9 @@ const IntelHub = () => {
                      <h4 className="text-xl font-black tracking-tight leading-tight">{cred.title}</h4>
                      <p className="text-sm font-bold opacity-60 mt-1">{cred.org}</p>
                    </div>
-                   <div className="mt-auto pt-6 border-t border-on-surface/5 flex justify-between items-center text-[9px] font-black uppercase tracking-widest opacity-30 group-hover:opacity-100 transition-opacity">
+                   <div className="mt-auto pt-6 border-t border-on-surface/5 flex justify-between items-center text-[9px] font-black uppercase tracking-widest opacity-30 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity">
                      <span>{cred.status}</span>
-                     <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                     <ChevronRight size={14} className="group-hover:translate-x-1 group-focus-within:translate-x-1 transition-transform" />
                    </div>
                 </motion.a>
               ))}
