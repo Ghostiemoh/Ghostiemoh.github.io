@@ -10,6 +10,14 @@ import IntelHub from './components/IntelHub';
 import Services from './components/Services';
 import { MODES } from './utils/content';
 
+// Bolt Optimization: Memoize static sections to prevent unnecessary expensive
+// re-renders of large component trees when the global activeMode changes.
+const MemoizedMethodology = React.memo(Methodology);
+const MemoizedIntelHub = React.memo(IntelHub);
+const MemoizedExperience = React.memo(Experience);
+const MemoizedServices = React.memo(Services);
+const MemoizedSecureDirective = React.memo(SecureDirective);
+
 function App() {
   const [activeMode, setActiveMode] = useState(MODES.ANALYTICS);
 
@@ -19,14 +27,14 @@ function App() {
       <Hero activeMode={activeMode} />
       
       <div id="main-content" className="relative z-10">
-        <Methodology />
+        <MemoizedMethodology />
         <BentoHub activeMode={activeMode} />
-        <IntelHub />
-        <Experience />
-        <Services />
+        <MemoizedIntelHub />
+        <MemoizedExperience />
+        <MemoizedServices />
       </div>
 
-      <SecureDirective />
+      <MemoizedSecureDirective />
     </Layout>
   );
 }
