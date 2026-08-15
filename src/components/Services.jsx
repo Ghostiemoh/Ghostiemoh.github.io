@@ -102,7 +102,7 @@ const Services = () => {
               <p className="text-sm font-medium opacity-50 leading-relaxed mb-8">
                 {svc.desc}
               </p>
-              <div className="mt-auto flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-secondary opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="mt-auto flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-secondary opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity">
                 <span>Deploy Protocol</span>
                 <ChevronRight size={14} />
               </div>
