@@ -185,4 +185,6 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+// Bolt Optimization: Added React.memo to prevent unnecessary re-renders
+// when parent state (like activeMode) changes.
+export default React.memo(Experience);
