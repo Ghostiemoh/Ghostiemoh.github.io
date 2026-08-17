@@ -179,4 +179,6 @@ const SecureDirective = () => {
   );
 };
 
-export default SecureDirective;
+// Bolt Optimization: Added React.memo to prevent unnecessary re-renders of this static
+// component when the parent (App) re-renders due to activeMode state changes.
+export default React.memo(SecureDirective);
