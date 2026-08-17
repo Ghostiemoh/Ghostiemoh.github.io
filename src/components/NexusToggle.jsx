@@ -24,8 +24,9 @@ const NexusToggle = ({ activeMode, setActiveMode }) => {
             return (
               <button
                 key={mode.id}
+                type="button"
                 onClick={() => setActiveMode(mode.id)}
-                className="relative flex-1 group/btn"
+                className="relative flex-1 group/btn focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:rounded-2xl"
               >
                 <div className={`relative flex flex-col items-center gap-1.5 py-4 px-2 rounded-2xl transition-all duration-500 ${
                   isActive ? 'text-white' : 'text-white/20 hover:text-white/40'
@@ -44,7 +45,7 @@ const NexusToggle = ({ activeMode, setActiveMode }) => {
                     <span className="text-[10px] font-black tracking-[0.2em] mt-2 uppercase">
                       {mode.label}
                     </span>
-                    <span className={`text-[7px] font-bold tracking-[0.3em] opacity-0 group-hover/btn:opacity-30 transition-opacity mt-1 ${isActive ? 'text-secondary opacity-40' : ''}`}>
+                    <span className={`text-[7px] font-bold tracking-[0.3em] opacity-0 group-hover/btn:opacity-30 group-focus-visible/btn:opacity-30 transition-opacity mt-1 ${isActive ? 'text-secondary opacity-40' : ''}`}>
                       {mode.sector}
                     </span>
                   </div>
