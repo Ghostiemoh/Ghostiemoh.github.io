@@ -92,21 +92,22 @@ const Layout = ({ children }) => {
         isScrolled ? "bg-surface/80 backdrop-blur-2xl border-b border-on-surface/5" : "bg-transparent"
       )}>
         <div className="max-w-[1400px] w-full mx-auto flex justify-between items-center gap-4">
-          <motion.a 
-            href="#"
+          <motion.button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             whileTap={{ scale: 0.97 }}
-            className="flex items-center gap-4 group shrink-0 active:scale-[0.97] transition-transform duration-100 ease-out"
+            className="flex items-center gap-4 group shrink-0 active:scale-[0.97] transition-transform duration-100 ease-out text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded-xl"
           >
-            <div className="w-10 h-10 rounded-xl bg-on-surface flex items-center justify-center text-surface group-hover:bg-secondary transition-all duration-500 shadow-xl">
+            <div className="w-10 h-10 rounded-xl bg-on-surface flex items-center justify-center text-surface group-hover:bg-secondary group-focus-visible:bg-secondary transition-all duration-500 shadow-xl">
                <Terminal size={18} />
             </div>
             <div className="flex flex-col">
-               <span className="text-[11px] xl:text-sm font-black tracking-tighter uppercase whitespace-nowrap">Muhammad Auwal Abdulaziz</span>
+               <span className="text-[11px] xl:text-sm font-black tracking-tighter uppercase whitespace-nowrap text-on-surface">Muhammad Auwal Abdulaziz</span>
                <span className="text-[8px] xl:text-[10px] font-bold text-secondary uppercase tracking-[0.2em] whitespace-nowrap">"Ghostly Shadow"</span>
             </div>
-          </motion.a>
+          </motion.button>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center justify-end gap-3 xl:gap-6 ml-auto shrink">
@@ -121,7 +122,7 @@ const Layout = ({ children }) => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ delay: i * 0.05 }}
-                className="text-[9px] xl:text-[10px] font-black uppercase tracking-[0.1em] xl:tracking-[0.2em] text-on-surface/60 hover:text-secondary transition-[color,transform] duration-200 ease-out whitespace-nowrap"
+                className="text-[9px] xl:text-[10px] font-black uppercase tracking-[0.1em] xl:tracking-[0.2em] text-on-surface/60 hover:text-secondary focus-visible:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded px-1 transition-[color,transform] duration-200 ease-out whitespace-nowrap"
               >
                 {link.name}
               </motion.a>
@@ -134,7 +135,7 @@ const Layout = ({ children }) => {
               animate={{ opacity: 1, scale: 1 }}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="p-2 rounded-xl border border-on-surface/10 hover:border-secondary/40 text-on-surface/60 hover:text-secondary transition-all cursor-pointer flex items-center justify-center shrink-0"
+              className="p-2 rounded-xl border border-on-surface/10 hover:border-secondary/40 text-on-surface/60 hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary transition-all cursor-pointer flex items-center justify-center shrink-0"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
@@ -151,7 +152,7 @@ const Layout = ({ children }) => {
                   aria-label={social.name}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="text-on-surface/40 hover:text-secondary transition-colors duration-200"
+                  className="text-on-surface/40 hover:text-secondary focus-visible:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded-lg p-1 -m-1 transition-colors duration-200"
                 >
                   {social.icon}
                 </motion.a>
@@ -161,7 +162,7 @@ const Layout = ({ children }) => {
 
           {/* Mobile Toggle */}
           <button 
-            className="lg:hidden w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center text-on-surface active:scale-[0.95] transition-transform duration-100 ease-out"
+            className="lg:hidden w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center text-on-surface active:scale-[0.95] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary transition-transform duration-100 ease-out"
             onClick={() => setMobileMenuOpen(true)}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"
@@ -191,14 +192,14 @@ const Layout = ({ children }) => {
                {/* Mobile Theme Toggle */}
                <button
                  onClick={toggleTheme}
-                 className="p-2 border border-on-surface/10 rounded-xl text-on-surface/60 hover:text-secondary ml-auto mr-4 cursor-pointer flex items-center justify-center active:scale-[0.95] transition-transform duration-100 ease-out"
+                 className="p-2 border border-on-surface/10 rounded-xl text-on-surface/60 hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary ml-auto mr-4 cursor-pointer flex items-center justify-center active:scale-[0.95] transition-transform duration-100 ease-out"
                  aria-label="Toggle theme"
                >
                  {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
                </button>
  
                <button 
-                 className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center active:scale-[0.95] transition-transform duration-100 ease-out"
+                 className="w-12 h-12 rounded-full border border-on-surface/10 flex items-center justify-center active:scale-[0.95] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary transition-transform duration-100 ease-out"
                  onClick={() => setMobileMenuOpen(false)}
                  aria-label="Close mobile menu"
                >
@@ -211,7 +212,7 @@ const Layout = ({ children }) => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-4xl md:text-6xl font-black tracking-tighter hover:text-secondary active:scale-[0.98] transition-[color,transform] duration-200 ease-out"
+                  className="text-4xl md:text-6xl font-black tracking-tighter hover:text-secondary focus-visible:text-secondary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-secondary rounded-xl px-2 -mx-2 w-max active:scale-[0.98] transition-[color,transform] duration-200 ease-out"
                 >
                   {link.name}
                 </a>
@@ -220,7 +221,7 @@ const Layout = ({ children }) => {
             <div className="flex justify-between items-center pb-10">
                <div className="flex gap-8">
                   {socialLinks.map((social, i) => (
-                    <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name} className="text-on-surface/40">{social.icon}</a>
+                    <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name} className="text-on-surface/40 hover:text-secondary focus-visible:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded-lg p-2 -m-2 transition-colors">{social.icon}</a>
                   ))}
                </div>
                <span className="text-[10px] font-bold opacity-30 uppercase tracking-[0.5em]">v1.0.24</span>
@@ -240,7 +241,7 @@ const Layout = ({ children }) => {
           </div>
           <div className="flex gap-10">
             {navLinks.map(link => (
-              <a key={link.name} href={link.href} className="text-[9px] font-black uppercase tracking-[0.3em] opacity-40 hover:opacity-100 transition-opacity">{link.name}</a>
+              <a key={link.name} href={link.href} className="text-[9px] font-black uppercase tracking-[0.3em] opacity-40 hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded px-1 -mx-1 transition-all">{link.name}</a>
             ))}
           </div>
         </div>
