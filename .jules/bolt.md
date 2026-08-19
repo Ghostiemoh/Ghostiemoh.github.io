@@ -4,3 +4,6 @@
 ## 2026-08-13 - Optimizing React Animations in Framer Motion apps
 **Learning:** The `StatCounter` component in `Methodology.jsx` uses `setInterval` combined with React state (`useState`) to animate numbers, causing unnecessary re-renders ~60 times a second for multiple elements at once (125 times per element based on 2000ms duration and 16ms interval).
 **Action:** When animating numbers with Framer Motion, bypass React state entirely by using `useMotionValue`, `animate`, and `useTransform`. Ensure the `MotionValue` is rendered as the *single, direct child* of a `<motion.span>` component to avoid fatal React crashes during formatting.
+## 2026-08-19 - Prevent Global Re-renders in State Holder Components
+**Learning:** The `App` component acts as a central state holder for `activeMode`, causing the entire application tree (including heavy, static framer-motion sections like Methodology, Experience, etc.) to re-render whenever the mode is toggled.
+**Action:** Always wrap heavy, static page sections in `React.memo()` when they are siblings of state-dependent components within a global layout to prevent cascading, expensive re-renders.
