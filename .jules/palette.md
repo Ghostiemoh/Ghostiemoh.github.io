@@ -1,3 +1,3 @@
-## 2026-08-13 - Focus states for hidden actions
-**Learning:** Tailwind UI hover-revealed containers require focus-within for keyboard accessibility.
-**Action:** Pair `group-hover` with `group-focus-within`, and ensure interactive children have `focus-visible` rings.
+## 2024-05-14 - Custom Toggle Group Accessibility
+**Learning:** Custom toggle groups (like NexusToggle) lack semantic association with their active state, context for screen readers, and focus indicators for keyboard navigation.
+**Action:** Implement `aria-pressed={isActive}`, `aria-label`, and `focus-visible:ring-2` to custom toggle buttons to ensure accessibility.
