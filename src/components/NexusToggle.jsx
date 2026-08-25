@@ -14,7 +14,7 @@ const NexusToggle = ({ activeMode, setActiveMode }) => {
     <div className="fixed bottom-12 left-1/2 -translate-x-1/2 z-[100] px-4 w-full max-w-xl">
       <div className="relative group">
         {/* Glow Layer */}
-        <div className="absolute -inset-1 bg-gradient-to-r from-secondary/20 via-white/5 to-secondary/20 rounded-[2rem] blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-1000" />
+        <div className="absolute -inset-1 bg-gradient-to-r from-secondary/20 via-white/5 to-secondary/20 rounded-[2rem] blur-xl opacity-50 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-1000" />
         
         <nav className="relative flex items-center justify-between p-2 rounded-[2rem] bg-black/40 backdrop-blur-3xl border border-white/10 shadow-2xl overflow-hidden">
           {modes.map((mode) => {
@@ -25,7 +25,9 @@ const NexusToggle = ({ activeMode, setActiveMode }) => {
               <button
                 key={mode.id}
                 onClick={() => setActiveMode(mode.id)}
-                className="relative flex-1 group/btn"
+                aria-pressed={isActive}
+                aria-label={`Switch to ${mode.label} mode`}
+                className="relative flex-1 group/btn focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded-2xl"
               >
                 <div className={`relative flex flex-col items-center gap-1.5 py-4 px-2 rounded-2xl transition-all duration-500 ${
                   isActive ? 'text-white' : 'text-white/20 hover:text-white/40'
@@ -44,7 +46,7 @@ const NexusToggle = ({ activeMode, setActiveMode }) => {
                     <span className="text-[10px] font-black tracking-[0.2em] mt-2 uppercase">
                       {mode.label}
                     </span>
-                    <span className={`text-[7px] font-bold tracking-[0.3em] opacity-0 group-hover/btn:opacity-30 transition-opacity mt-1 ${isActive ? 'text-secondary opacity-40' : ''}`}>
+                    <span className={`text-[7px] font-bold tracking-[0.3em] opacity-0 group-hover/btn:opacity-30 group-focus-visible/btn:opacity-30 transition-opacity mt-1 ${isActive ? 'text-secondary opacity-40' : ''}`}>
                       {mode.sector}
                     </span>
                   </div>
@@ -63,7 +65,7 @@ const NexusToggle = ({ activeMode, setActiveMode }) => {
         </nav>
 
         {/* System Status readout */}
-        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3 whitespace-nowrap opacity-20 group-hover:opacity-40 transition-opacity duration-700">
+        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-3 whitespace-nowrap opacity-20 group-hover:opacity-40 group-focus-within:opacity-40 transition-opacity duration-700">
            <div className="w-1 h-1 rounded-full bg-secondary animate-pulse" />
            <span className="text-[7px] font-black uppercase tracking-[0.5em] text-white">System Status: Nominal // Authorized Access Only</span>
         </div>
