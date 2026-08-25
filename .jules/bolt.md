@@ -4,3 +4,6 @@
 ## 2026-08-13 - Optimizing React Animations in Framer Motion apps
 **Learning:** The `StatCounter` component in `Methodology.jsx` uses `setInterval` combined with React state (`useState`) to animate numbers, causing unnecessary re-renders ~60 times a second for multiple elements at once (125 times per element based on 2000ms duration and 16ms interval).
 **Action:** When animating numbers with Framer Motion, bypass React state entirely by using `useMotionValue`, `animate`, and `useTransform`. Ensure the `MotionValue` is rendered as the *single, direct child* of a `<motion.span>` component to avoid fatal React crashes during formatting.
+## 2026-08-25 - Extract static data arrays outside React components
+**Learning:** Defining static arrays (like list configurations or constant data) directly inside a React component's body forces the JavaScript engine to reallocate memory for them on every render. While this is often fine for simple components, it becomes a noticeable overhead in complex, scroll-animated components that re-render frequently (like those tied to Framer Motion's `useScroll`).
+**Action:** Always declare static, immutable arrays and objects outside the React component function definition so they are only allocated once when the module loads, reducing garbage collection and allocation overhead during frequent re-renders.
