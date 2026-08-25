@@ -3,6 +3,66 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Briefcase, Calendar, MapPin, ExternalLink } from 'lucide-react';
 import { transitions, variants } from '../utils/motion';
 
+// Bolt Optimization: Moved static array outside component to prevent memory reallocation on every render.
+const experiences = [
+  {
+    company: "MetaDao",
+    role: "On-chain Governance Analyst",
+    period: "Aug 2024 - Present",
+    location: "Remote / Protocol",
+    description: "Analyzing on-chain metadata and governance proposals. Monitoring treasury flows and voting distributions to ensure protocol integrity and decentralization metrics.",
+    tags: ["Governance", "Treasury", "Snapshot"]
+  },
+  {
+    company: "Flipside Crypto",
+    role: "Analytics Contributor",
+    period: "2023 - 2024",
+    location: "Remote",
+    description: "Leveraged SQL to conduct deep-dive analytics on various blockchain protocols. Created comprehensive dashboards for the community to track active users and TVL movement.",
+    tags: ["SQL", "Data Viz", "Protocols"]
+  },
+  {
+    company: "Kelsier",
+    role: "Blockchain Researcher",
+    period: "2022 - 2023",
+    location: "United Arab Emirates (Remote)",
+    description: "Focused on forensic-level blockchain research and ecosystem mapping. Documenting protocol vulnerabilities and tracing transaction origin shards.",
+    tags: ["Forensics", "Research", "Security"]
+  },
+  {
+    company: "Sanafi",
+    role: "Data Analyst",
+    period: "2021 - 2022",
+    location: "Abuja, Nigeria",
+    description: "Extracted and processed organizational data to streamline reporting workflows. Built automated Excel models and SQL queries to reduce manual audit time by 40%.",
+    tags: ["Excel", "SQL", "Reporting"]
+  },
+  {
+    company: "Bahago Services Limited",
+    role: "IT Personnel (NYSC → Full-time)",
+    period: "2023 - Present",
+    location: "Abuja, Nigeria",
+    description: "Prepare official correspondence and complete tender documents for project bids. Format and calculate Bill of Engineering Measurement & Evaluation (BEME) documents to ensure precise, reliable data for engineering project planning and financial management.",
+    tags: ["BEME", "Tenders", "Documentation"]
+  },
+  {
+    company: "Lakrims Services Limited",
+    role: "Internship",
+    period: "2021 - 2023",
+    location: "Kano, Nigeria",
+    description: "Drafted and formatted official corporate documents, including letters of request, payment notices, and acceptance letters, to ensure clarity and professionalism. Supported administrative and project workflows, improving document-handling efficiency.",
+    tags: ["Admin", "Project Support", "Workflow"]
+  },
+  {
+    company: "Govt. Girls Senior Secondary, Darmanawa",
+    role: "Teaching Practice",
+    period: "Aug 2021 - Nov 2021",
+    location: "Kano, Nigeria",
+    description: "Conducted mathematics lessons, breaking down complex concepts through clear, engaging methods. Developed lesson plans, graded assignments, and provided feedback to improve students' mathematical skills.",
+    tags: ["Mathematics", "Teaching", "Education"]
+  }
+];
+
 const Experience = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -11,65 +71,6 @@ const Experience = () => {
   });
 
   const pathLength = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
-
-  const experiences = [
-    {
-      company: "MetaDao",
-      role: "On-chain Governance Analyst",
-      period: "Aug 2024 - Present",
-      location: "Remote / Protocol",
-      description: "Analyzing on-chain metadata and governance proposals. Monitoring treasury flows and voting distributions to ensure protocol integrity and decentralization metrics.",
-      tags: ["Governance", "Treasury", "Snapshot"]
-    },
-    {
-      company: "Flipside Crypto",
-      role: "Analytics Contributor",
-      period: "2023 - 2024",
-      location: "Remote",
-      description: "Leveraged SQL to conduct deep-dive analytics on various blockchain protocols. Created comprehensive dashboards for the community to track active users and TVL movement.",
-      tags: ["SQL", "Data Viz", "Protocols"]
-    },
-    {
-      company: "Kelsier",
-      role: "Blockchain Researcher",
-      period: "2022 - 2023",
-      location: "United Arab Emirates (Remote)",
-      description: "Focused on forensic-level blockchain research and ecosystem mapping. Documenting protocol vulnerabilities and tracing transaction origin shards.",
-      tags: ["Forensics", "Research", "Security"]
-    },
-    {
-      company: "Sanafi",
-      role: "Data Analyst",
-      period: "2021 - 2022",
-      location: "Abuja, Nigeria",
-      description: "Extracted and processed organizational data to streamline reporting workflows. Built automated Excel models and SQL queries to reduce manual audit time by 40%.",
-      tags: ["Excel", "SQL", "Reporting"]
-    },
-    {
-      company: "Bahago Services Limited",
-      role: "IT Personnel (NYSC → Full-time)",
-      period: "2023 - Present",
-      location: "Abuja, Nigeria",
-      description: "Prepare official correspondence and complete tender documents for project bids. Format and calculate Bill of Engineering Measurement & Evaluation (BEME) documents to ensure precise, reliable data for engineering project planning and financial management.",
-      tags: ["BEME", "Tenders", "Documentation"]
-    },
-    {
-      company: "Lakrims Services Limited",
-      role: "Internship",
-      period: "2021 - 2023",
-      location: "Kano, Nigeria",
-      description: "Drafted and formatted official corporate documents, including letters of request, payment notices, and acceptance letters, to ensure clarity and professionalism. Supported administrative and project workflows, improving document-handling efficiency.",
-      tags: ["Admin", "Project Support", "Workflow"]
-    },
-    {
-      company: "Govt. Girls Senior Secondary, Darmanawa",
-      role: "Teaching Practice",
-      period: "Aug 2021 - Nov 2021",
-      location: "Kano, Nigeria",
-      description: "Conducted mathematics lessons, breaking down complex concepts through clear, engaging methods. Developed lesson plans, graded assignments, and provided feedback to improve students' mathematical skills.",
-      tags: ["Mathematics", "Teaching", "Education"]
-    }
-  ];
 
   return (
     <section 
