@@ -4,3 +4,6 @@
 ## 2026-08-13 - Optimizing React Animations in Framer Motion apps
 **Learning:** The `StatCounter` component in `Methodology.jsx` uses `setInterval` combined with React state (`useState`) to animate numbers, causing unnecessary re-renders ~60 times a second for multiple elements at once (125 times per element based on 2000ms duration and 16ms interval).
 **Action:** When animating numbers with Framer Motion, bypass React state entirely by using `useMotionValue`, `animate`, and `useTransform`. Ensure the `MotionValue` is rendered as the *single, direct child* of a `<motion.span>` component to avoid fatal React crashes during formatting.
+## 2026-08-27 - Optimize Static Component Re-renders in App
+**Learning:** The `App` component manages `activeMode` state which changes frequently via `NexusToggle`. Because React re-renders all children by default when a parent's state changes, heavy static sections like `Methodology`, `IntelHub`, `Experience`, `Services`, and `SecureDirective` were re-rendering unnecessarily, causing wasted reconciliation on complex Framer Motion trees.
+**Action:** Use `React.memo()` on purely static sections or components that do not depend on the parent's changing state to bypass unnecessary re-renders. Always verify `React` is imported before applying `React.memo()`.

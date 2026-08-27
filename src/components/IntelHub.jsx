@@ -182,4 +182,5 @@ const IntelHub = () => {
   );
 };
 
-export default IntelHub;
+// Bolt Optimization: Added React.memo to prevent unnecessary re-renders when parent App state (activeMode) changes.
+export default React.memo(IntelHub);
