@@ -158,4 +158,5 @@ const Methodology = () => {
   );
 };
 
-export default Methodology;
+// Bolt Optimization: Memoized static component to prevent re-renders when activeMode toggles in App.jsx
+export default React.memo(Methodology);

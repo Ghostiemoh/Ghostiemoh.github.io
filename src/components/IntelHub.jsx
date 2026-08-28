@@ -182,4 +182,5 @@ const IntelHub = () => {
   );
 };
 
-export default IntelHub;
+// Bolt Optimization: Memoized static component to prevent re-renders when activeMode toggles in App.jsx
+export default React.memo(IntelHub);

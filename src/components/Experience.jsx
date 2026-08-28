@@ -185,4 +185,5 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+// Bolt Optimization: Memoized static component to prevent re-renders when activeMode toggles in App.jsx
+export default React.memo(Experience);
