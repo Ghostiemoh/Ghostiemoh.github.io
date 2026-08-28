@@ -179,4 +179,5 @@ const SecureDirective = () => {
   );
 };
 
-export default SecureDirective;
+// Bolt Optimization: Memoized static component to prevent re-renders when activeMode toggles in App.jsx
+export default React.memo(SecureDirective);

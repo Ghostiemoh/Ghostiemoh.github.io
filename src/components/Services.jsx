@@ -114,4 +114,5 @@ const Services = () => {
   );
 };
 
-export default Services;
+// Bolt Optimization: Memoized static component to prevent re-renders when activeMode toggles in App.jsx
+export default React.memo(Services);
