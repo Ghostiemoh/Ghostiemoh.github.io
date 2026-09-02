@@ -8,7 +8,7 @@ export const profile = {
   title: 'Data Analyst',
   location: 'Abuja, Nigeria',
   timezone: 'UTC+1',
-  email: 'Ghostiemoh@gmail.com',
+  email: 'hello@ghostiemoh.com',
   availability: 'Available for new work now. Based in Abuja, Nigeria (UTC+1), with good overlap into European and US morning hours.',
   confidentialityNote:
     'Some recent work is covered by client confidentiality and is not shown here. I can walk through the shape of it on a call.',
