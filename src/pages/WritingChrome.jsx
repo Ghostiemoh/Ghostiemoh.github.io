@@ -49,11 +49,54 @@ export function WritingFooter() {
 
 export function setMeta(name, content) {
   if (typeof document === 'undefined') return;
-  let el = document.querySelector(`meta[name="${name}"]`);
-  if (!el) {
-    el = document.createElement('meta');
+  setContentTag(`meta[name="${name}"]`, () => {
+    const el = document.createElement('meta');
     el.setAttribute('name', name);
+    return el;
+  }, content);
+}
+
+function setContentTag(selector, make, content) {
+  let el = document.querySelector(selector);
+  if (!el) {
+    el = make();
     document.head.appendChild(el);
   }
   el.setAttribute('content', content || '');
+}
+
+// Point the canonical link, and the Open Graph URL, at this page rather than
+// letting them inherit the homepage value baked into index.html.
+export function setCanonical(url) {
+  if (typeof document === 'undefined') return;
+  let link = document.querySelector('link[rel="canonical"]');
+  if (!link) {
+    link = document.createElement('link');
+    link.setAttribute('rel', 'canonical');
+    document.head.appendChild(link);
+  }
+  link.setAttribute('href', url);
+  setContentTag('meta[property="og:url"]', () => {
+    const el = document.createElement('meta');
+    el.setAttribute('property', 'og:url');
+    return el;
+  }, url);
+}
+
+export function setSocial(title, description) {
+  if (typeof document === 'undefined') return;
+  for (const prop of ['og:title', 'twitter:title']) {
+    setContentTag(`meta[property="${prop}"], meta[name="${prop}"]`, () => {
+      const el = document.createElement('meta');
+      el.setAttribute('property', prop);
+      return el;
+    }, title);
+  }
+  for (const prop of ['og:description', 'twitter:description']) {
+    setContentTag(`meta[property="${prop}"], meta[name="${prop}"]`, () => {
+      const el = document.createElement('meta');
+      el.setAttribute('property', prop);
+      return el;
+    }, description);
+  }
 }

@@ -2,7 +2,13 @@ import React, { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { profile } from '../utils/portfolioData';
 import { getPost } from './writingData';
-import { WritingHeader, WritingFooter, setMeta } from './WritingChrome';
+import {
+  WritingHeader,
+  WritingFooter,
+  setMeta,
+  setCanonical,
+  setSocial
+} from './WritingChrome';
 
 export default function WritingPost({ slug }) {
   const post = getPost(slug);
@@ -11,8 +17,11 @@ export default function WritingPost({ slug }) {
     if (post) {
       document.title = `${post.title} | ${profile.name}`;
       setMeta('description', post.description);
+      setCanonical(`https://ghostiemoh.com/writing/${post.slug}`);
+      setSocial(post.title, post.description);
     } else {
       document.title = `Not found | ${profile.name}`;
+      setCanonical('https://ghostiemoh.com/writing');
     }
   }, [post]);
 

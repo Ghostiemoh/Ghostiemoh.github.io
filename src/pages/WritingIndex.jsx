@@ -2,15 +2,24 @@ import React, { useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import { profile } from '../utils/portfolioData';
 import { posts } from './writingData';
-import { WritingHeader, WritingFooter, setMeta } from './WritingChrome';
+import {
+  WritingHeader,
+  WritingFooter,
+  setMeta,
+  setCanonical,
+  setSocial
+} from './WritingChrome';
+
+const TITLE = `Writing | ${profile.name}`;
+const DESC =
+  'Long-form write-ups of data analysis work: the question, the first reading that turned out wrong, and the number a decision could rest on.';
 
 export default function WritingIndex() {
   useEffect(() => {
-    document.title = `Writing | ${profile.name}`;
-    setMeta(
-      'description',
-      'Long-form write-ups of data analysis work: the question, the first reading that turned out wrong, and the number a decision could rest on.'
-    );
+    document.title = TITLE;
+    setMeta('description', DESC);
+    setCanonical('https://ghostiemoh.com/writing');
+    setSocial('Writing', DESC);
   }, []);
 
   return (
