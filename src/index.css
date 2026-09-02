@@ -293,6 +293,8 @@ svg {
   background: rgb(var(--paper));
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .mobile-menu-top {

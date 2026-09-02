@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import {
   ArrowRight,
   ArrowUpRight,
@@ -151,7 +152,10 @@ function MobileMenu({ onClose }) {
     };
   }, [onClose]);
 
-  return (
+  // Rendered through a portal to <body> so it escapes the sticky header, whose
+  // backdrop-filter would otherwise make it the containing block for this
+  // position: fixed panel and clip it to the header's height.
+  return createPortal(
     <div
       id="mobile-menu"
       className="mobile-menu"
@@ -176,7 +180,8 @@ function MobileMenu({ onClose }) {
           Resume
         </a>
       </nav>
-    </div>
+    </div>,
+    document.body
   );
 }
 
