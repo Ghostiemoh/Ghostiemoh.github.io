@@ -1,57 +1,62 @@
-export const transitions = {
-  spring: { type: "spring", duration: 0.4, bounce: 0.15 },
-  slowSpring: { type: "spring", stiffness: 50, damping: 15 },
-  smooth: { duration: 0.3, ease: [0.23, 1, 0.32, 1] },
-  stagger: (delay = 0.1) => ({
-    staggerChildren: delay,
-    delayChildren: 0.2
-  })
+import { useEffect, useRef, useState } from 'react';
+
+// Motion is deliberately small: a single fade-and-rise as a section enters view,
+// nothing that loops or parallaxes. Timings are short and are neutralised entirely
+// by the prefers-reduced-motion block in index.css.
+
+export const timing = {
+  revealMs: 200,
+  ease: 'cubic-bezier(0.23, 1, 0.32, 1)',
+  staggerMs: 60
 };
 
-export const variants = {
-  fadeIn: {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: transitions.smooth
-  },
-  
-  textReveal: {
-    initial: { opacity: 0, y: "100%" },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: "-10%" },
-    transition: transitions.smooth
-  },
+// Class string for a reveal target. `base` stays applied; the transform/opacity
+// only differ while hidden. Pure and DOM-free so it can be unit tested.
+export function revealClass(visible) {
+  return visible ? 'reveal is-visible' : 'reveal';
+}
 
-  staggerContainer: {
-    initial: {},
-    whileInView: {
-      transition: transitions.stagger()
+export function prefersReducedMotion() {
+  return (
+    typeof window !== 'undefined' &&
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  );
+}
+
+// Adds `is-visible` once the element scrolls into view. Returns { ref, visible }.
+// Safe on the server and when IntersectionObserver is missing (starts visible).
+export function useReveal(options = {}) {
+  const { threshold = 0.15, rootMargin = '0px 0px -10% 0px', once = true } = options;
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return undefined;
+
+    if (prefersReducedMotion() || typeof IntersectionObserver === 'undefined') {
+      setVisible(true);
+      return undefined;
     }
-  },
 
-  scanReveal: {
-    initial: { 
-      clipPath: "inset(0 100% 0 0)",
-      opacity: 0
-    },
-    whileInView: { 
-      clipPath: "inset(0 0 0 0)",
-      opacity: 1
-    },
-    viewport: { once: true },
-    transition: { duration: 0.6, ease: [0.23, 1, 0.32, 1] }
-  },
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            if (once) observer.unobserve(entry.target);
+          } else if (!once) {
+            setVisible(false);
+          }
+        });
+      },
+      { threshold, rootMargin }
+    );
 
-  springIn: {
-    initial: { scale: 0.9, opacity: 0 },
-    whileInView: { scale: 1, opacity: 1 },
-    viewport: { once: true },
-    transition: transitions.spring
-  },
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [threshold, rootMargin, once]);
 
-  parallax: (amount = 20) => ({
-    initial: { y: 0 },
-    whileInView: { y: -amount },
-    transition: { type: "tween", ease: "linear" }
-  })
-};
+  return { ref, visible };
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting</title>
+    <meta name="robots" content="noindex" />
+    <script>
+      // Single-page redirect for GitHub Pages. Turns /writing/foo into
+      // /?/writing/foo so index.html can restore the real path. This is a
+      // root user page, so no path segments are kept.
+      (function () {
+        var l = window.location;
+        var repo = '';
+        l.replace(
+          l.protocol +
+            '//' +
+            l.hostname +
+            (l.port ? ':' + l.port : '') +
+            repo +
+            '/?/' +
+            l.pathname.replace(/^\//, '').replace(/&/g, '~and~') +
+            (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+            l.hash
+        );
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

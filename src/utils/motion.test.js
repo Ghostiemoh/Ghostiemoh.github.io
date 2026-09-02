@@ -1,26 +1,28 @@
 import { describe, it, expect } from 'vitest';
-import { transitions, variants } from './motion';
+import { timing, revealClass, prefersReducedMotion } from './motion';
 
-describe('Motion configuration parameters', () => {
-  it('should utilize natural Apple-style spring parameters', () => {
-    expect(transitions.spring).toEqual({
-      type: 'spring',
-      duration: 0.4,
-      bounce: 0.15
-    });
+describe('motion timing tokens', () => {
+  it('keeps the reveal short and non-looping', () => {
+    expect(timing.revealMs).toBeLessThanOrEqual(250);
+    expect(timing.staggerMs).toBeLessThanOrEqual(100);
+    expect(timing.ease).toMatch(/cubic-bezier/);
+  });
+});
+
+describe('revealClass', () => {
+  it('always carries the base reveal class', () => {
+    expect(revealClass(false)).toBe('reveal');
+    expect(revealClass(true)).toContain('reveal');
   });
 
-  it('should utilize a fast, premium ease-out curve for smooth transitions', () => {
-    expect(transitions.smooth).toEqual({
-      duration: 0.3,
-      ease: [0.23, 1, 0.32, 1]
-    });
+  it('adds is-visible only once visible', () => {
+    expect(revealClass(false)).not.toContain('is-visible');
+    expect(revealClass(true)).toContain('is-visible');
   });
+});
 
-  it('should utilize a snappy scan reveal transition', () => {
-    expect(variants.scanReveal.transition).toEqual({
-      duration: 0.6,
-      ease: [0.23, 1, 0.32, 1]
-    });
+describe('prefersReducedMotion', () => {
+  it('is false when window is undefined (server render)', () => {
+    expect(prefersReducedMotion()).toBe(false);
   });
 });
