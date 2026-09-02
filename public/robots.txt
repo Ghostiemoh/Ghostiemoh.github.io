@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ghostiemoh.github.io/sitemap.xml
+Sitemap: https://ghostiemoh.com/sitemap.xml

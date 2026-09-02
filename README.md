@@ -1,7 +1,7 @@
-# ghostiemoh.github.io
+# ghostiemoh.com
 
 Portfolio for **Muhammad Auwal Abdulaziz**, Data Analyst.
-Live at [ghostiemoh.github.io](https://ghostiemoh.github.io).
+Live at [ghostiemoh.com](https://ghostiemoh.com).
 
 Case studies where messy data becomes a clear finding and a recommendation,
 in Excel, SQL, and Power BI, plus a second track in Solana on-chain analysis.
