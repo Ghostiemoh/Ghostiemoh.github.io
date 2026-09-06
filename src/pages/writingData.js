@@ -53,7 +53,14 @@ function parseFrontmatter(raw) {
 }
 
 function readingMinutes(text) {
-  const words = text.trim().split(/\s+/).filter(Boolean).length;
+  // Count words a reader actually reads: drop style/script/svg blocks and any
+  // other HTML tags before counting, so a post that embeds a chart or a styled
+  // block is not credited with the markup as reading time.
+  const plain = text
+    .replace(/<(script|style|svg)[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ');
+  const words = plain.trim().split(' ').filter(Boolean).length;
   return Math.max(1, Math.round(words / 210));
 }
 

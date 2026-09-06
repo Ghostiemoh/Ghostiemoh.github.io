@@ -4,123 +4,109 @@ date: 2026-09-06
 description: Nigeria sends about 2.2 million air travellers abroad a year, but only around 440,000 carry a phone that can run an eSIM. The opening for a travel eSIM is real, concentrated, and best reached through the businesses travellers already book with.
 ---
 
-I took a simple brief and ran it as an analyst would: if you sell a travel eSIM
-to Nigerians, where do the customers actually come from? The worked example is
-WakaGo, ntel's travel eSIM, but none of what follows uses company data. Every
-figure traces to a public source, and the ones I had to estimate are marked as
-estimates.
-
-The useful reframe is to stop asking how to sell more eSIMs and ask instead
-where Nigerians are already travelling and when they most need data. An eSIM
-solves one problem: you land abroad and need internet before you find a shop or
-a working network. So demand appears wherever a trip is being planned and paid
-for, not as a cold approach.
-
-## The market is smaller than the headline
-
-Nigeria's outbound air travel runs near 2.2 million origin to destination
-departures a year. IATA measured 2.10 million in 2023, which was 23 percent of
-all departures from the country, and the ten year trend is down about 7 percent.
-Nigeria ranks 91st in the world by passenger departures. This is not a booming
-leisure market. It is led by migration, study, work and religious travel, and it
-is concentrated.
-
-| Destination | 2023 departures | Share |
-| --- | --- | --- |
-| London | 421,300 | 20.3% |
-| Accra | 122,300 | 5.9% |
-| Jeddah | 92,100 | 4.4% |
-| Toronto | 60,300 | 2.9% |
-| Manchester | 59,800 | 2.9% |
-| New York | 47,200 | 2.3% |
-| Madinah | 45,500 | 2.2% |
-
-London alone is one departure in five. Europe took 38 percent of international
-departures, Africa 23 percent, North America 18 percent. Source: IATA, The Value
-of Air Transport to Nigeria, Direct Data Solutions 2023.
-
-## The phone is the real filter
-
-An eSIM needs an eSIM-capable phone, and Nigeria's device base does not
-cooperate. The national smartphone rate is about 56.5 percent, and Transsion
-brands (Tecno, Infinix, itel) are roughly half of the installed base with almost
-no eSIM support. Travellers skew richer and more iPhone-heavy than the country,
-so I lift the eSIM-capable share to 35 percent for that group. The market still
-narrows fast.
-
-| Stage | People | How |
-| --- | --- | --- |
-| Outbound travellers | 2,234,280 | FAAN 2024, times a 51.6% departure share |
-| Carry an eSIM-capable phone | 441,829 | times 56.5% smartphone, times 35% eSIM-capable (modelled) |
-| Reachable in the first two years | 53,019 | times an assumed 12% channel reach (modelled) |
-
-Four in five people in the outbound market cannot use the product today. That
-single fact should shape where any selling effort goes: toward the segments and
-the phones where the addressable share is highest.
-
-## Not every traveller is the same lead
-
-I scored six travel segments on five factors: market size, eSIM compatibility,
-how concentrated the route to them is, how acutely they need data on arrival,
-and how fast a partnership closes. The scores land close together, which is the
-point. No segment is a runaway, so the order of attack matters.
-
-| Segment | Opportunity score | Estimated travellers a year |
-| --- | --- | --- |
-| Students | 68 | 45,000 to 60,000 |
-| Business travellers | 64 | 250,000 to 400,000 (estimate) |
-| Tourism | 63 | 150,000 to 300,000 (estimate) |
-| Hajj pilgrims | 60 | 39,000 to 50,000 |
-| Diaspora visits | 57 | 500,000 to 800,000 (estimate) |
-| Umrah pilgrims | 55 | 80,000 to 150,000 (estimate) |
-
-Students score highest: young, iPhone-heavy, one-way trips to the UK and Canada,
-and reachable through a handful of study agencies. Hajj scores lower because it
-is smaller and the pilgrims carry older phones, but it is the cleanest first win
-because the whole market sits behind about ten operators.
-
-## Sell the business, not the traveller
-
-A travel eSIM does not have to find two million people. It has to sign the
-businesses those people already pass through, and for the pilgrimage segments
-the entire market sits behind a short, regulated list.
-
-- **Hajj**: about 10 principal NAHCON tour operators plus about 37 state
-  pilgrims boards organise every government pilgrim. One agreement per board
-  covers thousands.
-- **Students**: IDP Education, with seven Nigerian offices, plus a few peers,
-  place first-arrival students into the UK and Canada.
-- **Online bookings**: Wakanow and Travelstart already sell insurance and visa
-  add-ons, so a connectivity line is a small addition.
-- **Umrah**: about 239 NAHCON-licensed operators cover year-round, Ramadan-led
-  demand for which no official Nigerian traveller count exists.
-
-The larger platform ideas, airline booking sites, Booking.com, retargeting ads
-that fire on travel intent, are a second phase. They carry more reach and more
-commercial work, so they follow the direct deals rather than lead them.
-
-## What the numbers say to do
-
-Applying conservative, moderate and aggressive conversion rates to the reachable
-audience gives a planning band of 8,000 to 16,000 customers in the first two
-years, with a central figure around 12,000. It is a band, not a forecast. Every
-conversion rate in it is a labelled assumption, because there is no first-party
-sales data to calibrate against yet. Real activation data would replace most of
-those assumptions within a month of launch.
-
-The recommendation is to work the channel list in score order, sign the ten Hajj
-operators and a few study agencies first, and keep the segment scorecard live,
-refreshed each quarter with FAAN, NAHCON and visa data.
-
-## The general point
-
-"Nigeria has a 2 million person travel market" is true and misleading in the
-same breath. The market is shrinking, it is concentrated in a few
-destinations, and four in five of those travellers hold a phone that cannot run
-the product. The real opportunity is the slice with the right device and a real
-roaming problem, and the efficient way to reach it is through the businesses
-that already have the traveller's attention.
-
-The full analysis, with every source, every workbook and every assumption laid
-out, is published as an interactive report at
-[claude.ai/code/artifact/6191b4ac-078b-4e64-8195-3876eaee5b96](https://claude.ai/code/artifact/6191b4ac-078b-4e64-8195-3876eaee5b96).
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
+.nti{--m:#e5087d;--mi:#c2076a;--md:#8f0a53;--wash:#fce4f1;--ink:#141019;--body:#3a3340;--mut:#6b6472;--faint:#9a929f;--ln:#eadfe6;--lns:#dcccd6;--warn:#b0741a;--warnw:#f6ecdc;--surf:#fff;font-family:"Nunito","Segoe UI",Corbel,system-ui,sans-serif;color:var(--body);line-height:1.62;margin:2.2rem 0 0}
+.nti *{box-sizing:border-box}
+.nti .band{display:flex;align-items:center;gap:.7rem;background:var(--m);color:#fff;padding:.55rem .9rem;border-radius:8px}
+.nti .nti-logo{height:24px;width:auto;display:block;flex:none}
+.nti .band .k{font-family:"Roboto Mono",ui-monospace,monospace;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.88)}
+.nti .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--ln);border:1px solid var(--ln);border-radius:10px;overflow:hidden;margin:1.4rem 0 .4rem}
+.nti .kpi{background:var(--surf);padding:1rem .95rem}
+.nti .kpi .v{font-family:"Nunito",sans-serif;font-weight:800;font-size:1.7rem;line-height:1;color:var(--mi);font-variant-numeric:tabular-nums}
+.nti .kpi .l{font-family:"Roboto Mono",monospace;font-size:.6rem;letter-spacing:.09em;text-transform:uppercase;color:var(--mut);margin-top:.5rem;line-height:1.35}
+.nti .kpi .s{font-size:.72rem;color:var(--faint);margin-top:.2rem}
+.nti .sec{padding:1.9rem 0 .3rem;border-top:1px solid var(--ln);margin-top:1.6rem}
+.nti .sec:first-of-type{border-top:0;margin-top:1.2rem}
+.nti .fids{display:flex;align-items:center;gap:.75rem;margin:0 0 1rem;font-family:"Roboto Mono",monospace;font-size:.7rem;letter-spacing:.11em;text-transform:uppercase}
+.nti .fids .n{color:var(--mi);font-weight:500}
+.nti .fids .t{color:var(--ink);font-weight:500}
+.nti .fids .r{flex:1;height:2px;background:var(--m);opacity:.25}
+.nti h3.nh{font-family:"Nunito",sans-serif;font-weight:800;font-size:1.45rem;line-height:1.18;color:var(--ink);margin:0 0 .7rem;letter-spacing:-.01em}
+.nti p{margin:0 0 .95rem;color:var(--body)}
+.nti p.lede{font-size:1.08rem;color:var(--ink)}
+.nti p.note{color:var(--mut);font-size:.92rem}
+.nti b,.nti strong{font-weight:700;color:var(--ink)}
+.nti .flag{color:var(--warn);font-weight:700}
+.nti .fig{background:var(--surf);border:1px solid var(--ln);border-radius:12px;padding:1.05rem 1rem .8rem;margin:1.3rem 0;box-shadow:0 1px 2px rgba(20,16,25,.04),0 10px 30px -16px rgba(143,10,83,.16)}
+.nti .fig .ft{font-family:"Roboto Mono",monospace;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:var(--mut);margin:0 0 .05rem}
+.nti .fig .fs{font-size:.8rem;color:var(--faint);margin:0 0 .55rem}
+.nti .fig .fw{width:100%;overflow-x:auto}
+.nti .nti-chart{display:block;width:100%;height:auto;font-family:"Roboto Mono",monospace}
+.nti .fig .fc{font-size:.78rem;color:var(--mut);margin-top:.6rem;line-height:1.5}
+.nti .fig .fc .sr{color:var(--faint)}
+.nti details.nd{margin-top:.6rem;border-top:1px dashed var(--lns);padding-top:.45rem}
+.nti details.nd summary{font-family:"Roboto Mono",monospace;font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;color:var(--mut);cursor:pointer}
+.nti table.ndt{border-collapse:collapse;width:100%;margin:.5rem 0 0;font-family:"Roboto Mono",monospace;font-size:.78rem;font-variant-numeric:tabular-nums}
+.nti table.ndt th,.nti table.ndt td{text-align:left;padding:.32rem .55rem;border-bottom:1px solid var(--ln)}
+.nti table.ndt th{color:var(--mut);font-weight:500;letter-spacing:.03em;text-transform:uppercase;font-size:.66rem}
+.nti table.ndt td.n{text-align:right}
+.nti .chan{display:grid;grid-template-columns:1fr;gap:1px;background:var(--ln);border:1px solid var(--ln);border-radius:12px;overflow:hidden;margin:1.3rem 0}
+.nti .chan>div{background:var(--surf);padding:.9rem 1rem}
+.nti .chan .ct{font-family:"Roboto Mono",monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--mi);margin-bottom:.22rem}
+.nti .chan .cd{font-size:.9rem;color:var(--body)}
+.nti .chan .cd b{font-weight:700}
+.nti .chan .p2{border-left:3px solid var(--m);background:var(--wash)}
+.nti .edge{margin:1.3rem 0;padding:1rem 1.1rem;background:var(--wash);border:1px solid var(--lns);border-radius:12px}
+.nti .edge p{margin:0;font-size:.94rem;color:var(--body)}
+.nti .edge b{color:var(--mi)}
+.nti .closer{margin:1.5rem 0 .3rem;padding:1.1rem 1.15rem;border:1px solid var(--m);border-radius:12px;background:var(--surf)}
+.nti .closer p{margin:0;color:var(--ink);font-size:.98rem}
+.nti .closer .q{font-family:"Roboto Mono",monospace;font-size:.66rem;letter-spacing:.11em;text-transform:uppercase;color:var(--mi);margin-bottom:.4rem}
+.nti .srcs{font-family:"Roboto Mono",monospace;font-size:.78rem;color:var(--mut);line-height:1.7}
+.nti .srcs b{color:var(--ink);font-weight:500}
+.nti .tag{display:inline-block;font-family:"Roboto Mono",monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;padding:.1rem .42rem;border-radius:4px;background:var(--warnw);color:var(--warn);border:1px solid rgba(176,116,26,.3)}
+@media (max-width:560px){.nti .kpis{grid-template-columns:repeat(2,1fr)}}
+</style>
+<div class="nti">
+<div class="band"><svg class="nti-logo" viewBox="10 52 143 56" role="img" aria-label="WakaGo by ntel" xmlns="http://www.w3.org/2000/svg"><rect x=".12" y="50" width="159.75" height="59.75" fill="#e6097d"/><g fill="#fff"><path d="M15.16,63.94h1.41c.69,0,1.19,0,1.56.06.51.06.9.19,1.12.37.33.22.47.62.47,1.21,0,.43-.11,1.34-.36,2.7l-.9,5.56c0,.22-.04.37-.07.47,0,.16.04.28.04.37.04.12.15.19.29.25.14,0,.47.03.98.03l.8-5.03,1.01-5.99c1.55,0,2.57,0,3.04.06.69.06,1.16.25,1.37.56.22.22.29.59.29,1.15,0,.19,0,.4-.04.65-.04.34-.11.96-.25,1.89l-.9,5.53c-.04.31-.07.5-.07.62,0,.16,0,.28.04.37.07.06.18.09.33.16.14,0,.47.03.94.03l.8-4.81,1.01-5.99c1.48,0,2.46,0,2.93.06.65.03,1.12.16,1.37.37.33.22.47.62.47,1.24,0,.4-.11,1.3-.33,2.67l-1.08,6.68c-.18,1.15-.33,1.93-.43,2.33-.14.65-.4,1.12-.72,1.43-.36.31-1.01.5-1.99.56-.43.03-1.34.06-2.71.06h-7.99c-1.59,0-2.64-.03-3.15-.09-.69-.12-1.16-.31-1.37-.62-.14-.25-.22-.56-.22-.99,0-.16.04-.31.04-.47.04-.37.14-1.12.29-2.2l.8-4.81.65-3.94c.04-.25.04-.4.04-.47,0-.16,0-.28-.07-.4-.04-.12-.15-.31-.33-.5-.11-.19-.36-.47-.72-.9h1.66Z"/><path d="M51.87,64.03c.51.06.87.16,1.08.31.36.22.54.65.54,1.3,0,.12,0,.25-.04.43,0,.37-.11,1.12-.29,2.24l-.58,3.48-.51,3.17c-.22,1.49-.43,2.42-.61,2.86-.15.43-.4.78-.72.99-.29.19-.69.31-1.19.4-.51.06-1.66.12-3.47.12h-7.85c-1.74,0-2.86-.06-3.36-.12-.51-.09-.87-.25-1.08-.47-.22-.25-.29-.59-.29-1.09v-.19c.04-.43.14-1.27.33-2.52l.22-1.15c.18-1.12.33-1.86.4-2.24.18-.75.43-1.24.72-1.49.33-.28.8-.47,1.41-.53.51-.06,1.45-.09,2.78-.09h7.56c.29,0,.51-.03.58-.03.14-.03.25-.09.33-.16.07-.06.11-.16.11-.28.04-.12.07-.34.11-.68h-7.96c-1.3,0-2.21-.03-2.64-.06-.65-.09-1.08-.28-1.34-.56-.22-.28-.36-.75-.43-1.43,0-.37-.04-.99-.04-1.8v-.53h14c1.05,0,1.81.03,2.24.09ZM39.46,73.85c-.11,0-.18.06-.25.12-.07.06-.11.22-.15.47,0,.09-.04.28-.11.53h7.09c.29,0,.51-.03.58-.03.15-.03.22-.06.25-.12.07-.06.11-.19.14-.31.04-.12.07-.34.11-.68h-7.12c-.29,0-.47,0-.54.03Z"/><path d="M60.98,57.7c.65.06,1.05.25,1.23.53.22.22.29.56.29,1.06,0,.22,0,.5-.07.87-.04.31-.11.93-.25,1.8l-.33,1.99-.72,4.38-.18,1.12h7.96l.18-1.15c.22-1.27.36-2.11.47-2.52.22-.68.51-1.12.87-1.37.36-.22.83-.34,1.48-.4.51-.06,1.52-.09,3.04-.09l-.9,5.53c-.04.25-.11.5-.22.71-.07.25-.22.47-.4.65-.14.19-.29.34-.51.47-.22.12-.51.25-.83.34.29.06.51.16.65.28.22.12.36.31.47.56.11.22.14.47.14.78,0,.19,0,.37-.04.59l-.18,1.15c-.14,1.02-.29,1.74-.4,2.11-.11.59-.29,1.02-.51,1.33-.25.37-.69.62-1.3.75-.51.09-1.74.16-3.65.16l.72-4.35.18-1.15h-7.96l-.18,1.15c-.18,1.12-.33,1.86-.43,2.27-.14.62-.33,1.06-.61,1.37-.33.31-.87.53-1.66.65-.51.03-1.56.06-3.15.06l.72-4.35.18-1.15.72-4.38.18-1.12.72-4.38.33-1.99.69-4.38c1.7,0,2.78.03,3.25.12Z"/><path d="M93.46,64.03c.51.06.87.16,1.08.31.36.22.54.65.54,1.3,0,.12,0,.25-.04.43,0,.37-.11,1.12-.29,2.24l-.58,3.48-.51,3.17c-.22,1.49-.43,2.42-.61,2.86-.14.43-.4.78-.72.99-.29.19-.69.31-1.19.4-.51.06-1.66.12-3.47.12h-7.85c-1.74,0-2.86-.06-3.36-.12-.51-.09-.87-.25-1.08-.47-.22-.25-.29-.59-.29-1.09v-.19c.04-.43.14-1.27.33-2.52l.22-1.15c.18-1.12.33-1.86.4-2.24.18-.75.43-1.24.72-1.49.33-.28.8-.47,1.41-.53.51-.06,1.45-.09,2.78-.09h7.56c.29,0,.51-.03.58-.03.15-.03.25-.09.33-.16.07-.06.11-.16.11-.28.04-.12.07-.34.11-.68h-7.96c-1.3,0-2.21-.03-2.64-.06-.65-.09-1.08-.28-1.34-.56-.22-.28-.36-.75-.43-1.43,0-.37-.04-.99-.04-1.8v-.53h14c1.05,0,1.81.03,2.24.09ZM81.06,73.85c-.11,0-.18.06-.25.12-.07.06-.11.22-.14.47,0,.09-.04.28-.11.53h7.09c.29,0,.51-.03.58-.03.14-.03.22-.06.25-.12.07-.06.11-.19.14-.31.04-.12.07-.34.11-.68h-7.12c-.29,0-.47,0-.54.03Z"/><path d="M56.06,82.23c.22-.65.47-1.12.76-1.37.36-.28.9-.47,1.7-.53.51-.06,1.48-.06,2.93-.06h7.96c1.27,0,2.1,0,2.5.06.4,0,.72.06.94.12.33.06.58.16.72.31.29.19.43.5.47.96v1.24c0,.31-.07.87-.18,1.68l-.65,3.88-.43,2.76-.72,4.35-.33,2.02c-.14,1.09-.29,1.83-.4,2.27-.14.65-.4,1.12-.72,1.43-.29.28-.72.47-1.37.56-.51.06-1.63.12-3.36.12h-13.09c.33-1.33.58-2.2.72-2.61.25-.68.61-1.15,1.05-1.37.33-.19.8-.28,1.41-.34.47-.06,1.27-.06,2.35-.06h6.26c.65,0,1.08-.03,1.3-.03.25-.06.43-.12.54-.22.14-.12.22-.31.29-.56.07-.19.14-.59.22-1.21h-8.32c-1.37,0-2.28-.03-2.78-.06-.72-.12-1.19-.34-1.41-.68-.14-.22-.22-.53-.22-.93,0-.19.04-.4.04-.62.07-.37.14-1.06.29-2.05.07-.4.18-.99.29-1.74.14-.78.22-1.33.29-1.71.36-2.11.51-3.17.51-3.2.22-1.24.4-2.05.47-2.42ZM61.2,84.68c-.15,0-.29.06-.36.16-.07.06-.11.19-.18.37,0,.09-.04.28-.11.59l-.43,2.64-.43,2.86h6.58c.4,0,.65-.03.8-.03.18-.03.33-.06.4-.12.11-.06.14-.12.18-.25.07-.12.11-.37.18-.71l.9-5.53h-6.69c-.43,0-.69,0-.83.03Z"/><path d="M76.5,82.75c.22-.96.51-1.58.87-1.89.33-.31.83-.5,1.56-.56.51-.06,1.48-.06,2.93-.06h8.32c1.77,0,2.89.03,3.4.15.43.06.76.25.94.5.18.22.25.56.25,1.02v.31c0,.37-.11,1.18-.33,2.36l-1.08,6.65c-.18,1.12-.33,1.86-.43,2.27-.14.56-.33.99-.54,1.27-.29.37-.76.59-1.45.71-.51.06-1.56.12-3.18.12h-8.5c-1.55,0-2.57-.06-3.07-.12-.58-.09-.94-.28-1.16-.53-.14-.25-.25-.59-.25-1.02v-.37c.04-.4.14-1.18.33-2.33.14-.65.51-2.86,1.08-6.65.14-.9.25-1.52.33-1.83ZM81.92,84.62c-.22.03-.4.09-.51.19-.07.06-.15.25-.22.53,0,.06-.04.22-.07.4l-.9,5.5h7.52c.14-.03.25-.06.33-.12.07-.06.14-.16.14-.28.07-.12.11-.34.18-.71l.9-5.53h-6.22c-.58,0-.98,0-1.16.03Z"/><path d="M74.46,98.02c0-.14.1-.24.22-.24h1.49c.46,0,.82.14,1.05.38.17.19.26.42.26.68h0c0,.57-.32.85-.64,1,.48.15.86.45.86,1.03h0c0,.74-.58,1.17-1.46,1.17h-1.56c-.12,0-.22-.1-.22-.24v-3.78ZM76.1,99.67c.55,0,.93-.26.93-.76h0c0-.43-.32-.71-.89-.71h-1.23v1.47h1.19ZM76.26,101.6c.62,0,.99-.28.99-.76h0c0-.47-.36-.74-1.07-.74h-1.27v1.5h1.35Z"/><path d="M81.25,100.36l-1.5-2.22c-.03-.05-.05-.11-.05-.16,0-.13.1-.24.24-.24.1,0,.16.05.22.15l1.33,2.03,1.34-2.03c.06-.09.12-.15.21-.15.13,0,.22.11.22.24,0,.07-.03.13-.06.18l-1.49,2.19v1.47c0,.14-.1.24-.23.24s-.23-.1-.23-.24v-1.46Z"/><path d="M88.96,97.99c0-.13.1-.24.22-.24h.06c.11,0,.17.05.23.14l2.45,3.3v-3.21c0-.13.09-.24.22-.24.12,0,.22.11.22.24v3.85c0,.13-.09.23-.21.23h-.02c-.1,0-.17-.05-.24-.15l-2.5-3.38v3.3c0,.13-.09.24-.22.24-.12,0-.22-.11-.22-.24v-3.84Z"/><path d="M96.13,98.22h-1.17c-.12,0-.21-.1-.21-.22s.1-.23.21-.23h2.8c.12,0,.21.1.21.23s-.1.22-.21.22h-1.17v3.6c0,.14-.1.24-.23.24s-.23-.1-.23-.24v-3.6Z"/><path d="M100.59,102.04c-.12,0-.22-.1-.22-.24v-3.78c0-.14.1-.24.22-.24h2.5c.12,0,.21.1.21.22s-.09.22-.21.22h-2.27v1.46h2.01c.12,0,.21.1.21.22,0,.12-.09.22-.21.22h-2.01v1.49h2.3c.12,0,.21.1.21.22s-.09.22-.21.22h-2.53Z"/><path d="M105.79,97.99c0-.14.1-.24.22-.24.13,0,.23.1.23.24v3.6h2.09c.12,0,.21.1.21.23s-.09.22-.21.22h-2.32c-.12,0-.22-.1-.22-.24v-3.81Z"/></g></svg><span class="k">Growth intelligence</span></div>
+<div class="kpis">
+<div class="kpi"><div class="v">2.2M</div><div class="l">Outbound air travellers / year</div><div class="s">IATA measured 2.10M in 2023</div></div>
+<div class="kpi"><div class="v">442K</div><div class="l">Carry an eSIM-capable phone</div><div class="s">the serviceable market</div></div>
+<div class="kpi"><div class="v">~53K</div><div class="l">Reachable in year 1-2</div><div class="s">range 19K to 126K</div></div>
+<div class="kpi"><div class="v">~12K</div><div class="l">Planning-case customers</div><div class="s">band 8K to 16K, <span class="flag">modelled</span></div></div>
+</div>
+<section class="sec"><div class="fids"><span class="n">01</span><span class="t">The reframe</span><span class="r"></span></div>
+<h3 class="nh">Stop asking how to sell more. Ask where the travellers are.</h3>
+<p class="lede">A travel eSIM solves one problem: you land abroad and need internet before you find a shop or a working network.</p>
+<p>If the need is created by a trip, demand appears wherever trips are planned and paid for, not as a cold approach. Acquisition becomes travel-triggered: catch the traveller at the Hajj operator, the study-abroad consultant, the travel agency, the moment the ticket is booked. The rest of this is an attempt to say, with numbers, which of those moments are worth a sales team's time first. The worked example is WakaGo, ntel's travel eSIM. None of the figures use company data.</p></section>
+<section class="sec"><div class="fids"><span class="n">02</span><span class="t">The market</span><span class="r"></span></div>
+<h3 class="nh">Around 2.2 million air trips a year, and it is shrinking</h3>
+<p>Nigeria's outbound air travel runs near 2.2 million origin-to-destination departures a year. IATA measured 2.10 million in 2023, which was 23% of all departures from the country, and the ten-year trend is <strong>down 7.2%</strong>. This is not a booming leisure market. It is led by migration, study, work and religious travel, and it is concentrated: London alone is one departure in five.</p>
+<figure class="fig"><p class="ft">Outbound international passengers</p><p class="fs">Nigeria, 2018 to 2025. NBS basis to 2021, FAAN basis from 2022.</p><div class="fw"><svg class="nti-chart" viewBox="0 0 640 320" role="img" aria-label="Line chart of Nigeria outbound international passengers 2018 to 2025" xmlns="http://www.w3.org/2000/svg"><line x1="54" y1="22" x2="622" y2="22" stroke="#eadfe6" stroke-width="1"/><text x="46" y="25" fill="#6b6472" font-size="10" text-anchor="end">5M</text><line x1="54" y1="74.8" x2="622" y2="74.8" stroke="#eadfe6" stroke-width="1"/><text x="46" y="77.8" fill="#6b6472" font-size="10" text-anchor="end">4M</text><line x1="54" y1="127.6" x2="622" y2="127.6" stroke="#eadfe6" stroke-width="1"/><text x="46" y="130.6" fill="#6b6472" font-size="10" text-anchor="end">3M</text><line x1="54" y1="180.4" x2="622" y2="180.4" stroke="#eadfe6" stroke-width="1"/><text x="46" y="183.4" fill="#6b6472" font-size="10" text-anchor="end">2M</text><line x1="54" y1="233.2" x2="622" y2="233.2" stroke="#eadfe6" stroke-width="1"/><text x="46" y="236.2" fill="#6b6472" font-size="10" text-anchor="end">1M</text><line x1="54" y1="286" x2="622" y2="286" stroke="#eadfe6" stroke-width="1"/><text x="46" y="289" fill="#6b6472" font-size="10" text-anchor="end">0</text><text x="54" y="306" fill="#6b6472" font-size="10" text-anchor="middle">2018</text><text x="135.14285714285714" y="306" fill="#6b6472" font-size="10" text-anchor="middle">2019</text><text x="216.28571428571428" y="306" fill="#6b6472" font-size="10" text-anchor="middle">2020</text><text x="297.42857142857144" y="306" fill="#6b6472" font-size="10" text-anchor="middle">2021</text><text x="378.57142857142856" y="306" fill="#6b6472" font-size="10" text-anchor="middle">2022</text><text x="459.7142857142857" y="306" fill="#6b6472" font-size="10" text-anchor="middle">2023</text><text x="540.8571428571429" y="306" fill="#6b6472" font-size="10" text-anchor="middle">2024</text><text x="622" y="306" fill="#6b6472" font-size="10" text-anchor="middle">2025</text><path d="M54.0,46.9 L135.1,51.6 L216.3,211.7 L297.4,168.8 L378.6,90.1 L459.7,71.1 L540.9,57.4" fill="none" stroke="#e5087d" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M540.9,57.4 L622.0,29.9" fill="none" stroke="#e5087d" stroke-width="2.5" stroke-dasharray="4 4" stroke-linecap="round" opacity="0.55"/><circle cx="54" cy="46.86072159999999" r="3" fill="#e5087d" stroke="#e5087d" stroke-width="2"/><circle cx="135.14285714285714" cy="51.63141280000001" r="3" fill="#e5087d" stroke="#e5087d" stroke-width="2"/><circle cx="216.28571428571428" cy="211.6562272" r="3" fill="#e5087d" stroke="#e5087d" stroke-width="2"/><circle cx="297.42857142857144" cy="168.82909120000002" r="3" fill="#e5087d" stroke="#e5087d" stroke-width="2"/><circle cx="378.57142857142856" cy="90.06384639999999" r="3" fill="#e5087d" stroke="#e5087d" stroke-width="2"/><circle cx="459.7142857142857" cy="71.10400000000001" r="3" fill="#e5087d" stroke="#e5087d" stroke-width="2"/><circle cx="540.8571428571429" cy="57.376000000000005" r="3" fill="#e5087d" stroke="#e5087d" stroke-width="2"/><circle cx="622" cy="29.92000000000001" r="4" fill="#ffffff" stroke="#e5087d" stroke-width="2" stroke-dasharray="2 2"/><text x="216.28571428571428" y="227.6562272" fill="#141019" font-size="10.5" text-anchor="middle" font-weight="700">1.41M</text><text x="540.8571428571429" y="47.376000000000005" fill="#141019" font-size="10.5" text-anchor="middle" font-weight="700">4.33M</text><text x="622" y="19.92000000000001" fill="#b0741a" font-size="10.5" text-anchor="end" font-weight="700">4.85M</text></svg></div><figcaption class="fc">The COVID trough (2020: 1.41M) and the recovery are both real. <span class="sr">2025 is <span class="flag">modelled</span> from FAAN 2025 totals. Source: NBS Air Transportation Data; FAAN Aviation Sector Performance.</span></figcaption><details class="nd"><summary>Data</summary><table class="ndt"><thead><tr><th>Year</th><th class="n">Intl passengers</th><th>Basis</th></tr></thead><tbody><tr><td>2018</td><td class="n">4,529,153</td><td>NBS</td></tr><tr><td>2019</td><td class="n">4,438,799</td><td>NBS</td></tr><tr><td>2020</td><td class="n">1,408,026</td><td>NBS</td></tr><tr><td>2021</td><td class="n">2,219,146</td><td>NBS</td></tr><tr><td>2022</td><td class="n">3,710,912</td><td>FAAN</td></tr><tr><td>2023</td><td class="n">4,070,000</td><td>FAAN</td></tr><tr><td>2024</td><td class="n">4,330,000</td><td>FAAN</td></tr><tr><td>2025</td><td class="n">4,850,000 <span class="flag">modelled</span></td><td>FAAN totals</td></tr></tbody></table></details></figure>
+<figure class="fig"><p class="ft">Where Nigerians fly</p><p class="fs">Top destination cities by 2023 origin-to-destination departures</p><div class="fw"><svg class="nti-chart" viewBox="0 0 640 360" role="img" aria-label="Top destination cities from Nigeria in 2023" xmlns="http://www.w3.org/2000/svg"><text x="90" y="28.7" fill="#6b6472" font-size="11" text-anchor="end">London</text><rect x="100" y="14.536" width="476" height="21.328" rx="3" fill="#e5087d"/><text x="568" y="28.7" fill="#ffffff" font-size="10.5" font-weight="700" text-anchor="end">421,300</text><text x="90" y="63.099999999999994" fill="#6b6472" font-size="11" text-anchor="end">Accra</text><rect x="100" y="48.93599999999999" width="138.17896985521006" height="21.328" rx="3" fill="#e5087d"/><text x="246.17896985521006" y="63.099999999999994" fill="#141019" font-size="10.5" font-weight="700" text-anchor="start">122,300</text><text x="90" y="97.5" fill="#6b6472" font-size="11" text-anchor="end">Jeddah</text><rect x="100" y="83.336" width="104.05791597436506" height="21.328" rx="3" fill="#e5087d"/><text x="212.05791597436507" y="97.5" fill="#141019" font-size="10.5" font-weight="700" text-anchor="start">92,100</text><text x="90" y="131.89999999999998" fill="#6b6472" font-size="11" text-anchor="end">Toronto</text><rect x="100" y="117.73599999999998" width="68.129124139568" height="21.328" rx="3" fill="#e5087d"/><text x="176.129124139568" y="131.89999999999998" fill="#141019" font-size="10.5" font-weight="700" text-anchor="start">60,300</text><text x="90" y="166.29999999999998" fill="#6b6472" font-size="11" text-anchor="end">Manchester</text><rect x="100" y="152.136" width="67.56420602895798" height="21.328" rx="3" fill="#e5087d"/><text x="175.56420602895798" y="166.29999999999998" fill="#141019" font-size="10.5" font-weight="700" text-anchor="start">59,800</text><text x="90" y="200.7" fill="#6b6472" font-size="11" text-anchor="end">New York</text><rect x="100" y="186.536" width="53.32826964158557" height="21.328" rx="3" fill="#e5087d"/><text x="161.32826964158556" y="200.7" fill="#141019" font-size="10.5" font-weight="700" text-anchor="start">47,200</text><text x="90" y="235.09999999999997" fill="#6b6472" font-size="11" text-anchor="end">Madinah</text><rect x="100" y="220.93599999999998" width="51.40754806551151" height="21.328" rx="3" fill="#e5087d"/><text x="159.40754806551152" y="235.09999999999997" fill="#141019" font-size="10.5" font-weight="700" text-anchor="start">45,500</text><text x="90" y="269.5" fill="#6b6472" font-size="11" text-anchor="end">Johannesburg</text><rect x="100" y="255.336" width="51.0685971991455" height="21.328" rx="3" fill="#e5087d"/><text x="159.0685971991455" y="269.5" fill="#141019" font-size="10.5" font-weight="700" text-anchor="start">45,200</text><text x="90" y="303.9" fill="#6b6472" font-size="11" text-anchor="end">Washington</text><rect x="100" y="289.736" width="48.58295751246143" height="21.328" rx="3" fill="#e5087d"/><text x="156.58295751246143" y="303.9" fill="#141019" font-size="10.5" font-weight="700" text-anchor="start">43,000</text><text x="90" y="338.29999999999995" fill="#6b6472" font-size="11" text-anchor="end">Cairo</text><rect x="100" y="324.13599999999997" width="42.25587467362924" height="21.328" rx="3" fill="#e5087d"/><text x="150.25587467362925" y="338.29999999999995" fill="#141019" font-size="10.5" font-weight="700" text-anchor="start">37,400</text></svg></div><figcaption class="fc">Europe took 38% of international departures, Africa 23%, North America 18%. <span class="sr">Source: IATA, The Value of Air Transport to Nigeria, DDS 2023.</span></figcaption><details class="nd"><summary>Data</summary><table class="ndt"><thead><tr><th>City</th><th class="n">Departures</th><th class="n">Share</th></tr></thead><tbody><tr><td>London</td><td class="n">421,300</td><td class="n">20.3%</td></tr><tr><td>Accra</td><td class="n">122,300</td><td class="n">5.9%</td></tr><tr><td>Jeddah</td><td class="n">92,100</td><td class="n">4.4%</td></tr><tr><td>Toronto</td><td class="n">60,300</td><td class="n">2.9%</td></tr><tr><td>Manchester</td><td class="n">59,800</td><td class="n">2.9%</td></tr><tr><td>New York</td><td class="n">47,200</td><td class="n">2.3%</td></tr><tr><td>Madinah</td><td class="n">45,500</td><td class="n">2.2%</td></tr><tr><td>Johannesburg</td><td class="n">45,200</td><td class="n">2.2%</td></tr><tr><td>Washington</td><td class="n">43,000</td><td class="n">2.1%</td></tr><tr><td>Cairo</td><td class="n">37,400</td><td class="n">1.8%</td></tr></tbody></table></details></figure>
+</section>
+<section class="sec"><div class="fids"><span class="n">03</span><span class="t">The constraint</span><span class="r"></span></div>
+<h3 class="nh">The phone in the traveller's hand is the bottleneck</h3>
+<p>An eSIM needs an eSIM-capable phone, and Nigeria's device base does not cooperate. The national smartphone rate is about 56.5%, and Transsion brands (Tecno, Infinix, itel) are roughly half of the installed base with almost no eSIM support. Travellers skew richer and more iPhone-heavy than the country, so the model lifts the eSIM-capable share to 35% for that group. The shape still holds: a large market narrows fast.</p>
+<figure class="fig"><p class="ft">From market to obtainable</p><p class="fs">Bars on a square-root scale so the smallest stage stays visible</p><div class="fw"><svg class="nti-chart" viewBox="0 0 640 300" role="img" aria-label="Funnel from 2.23 million travellers to 442 thousand to about 53 thousand" xmlns="http://www.w3.org/2000/svg"><text x="188" y="51.5" fill="#6b6472" font-size="11" text-anchor="end">Outbound travellers (TAM)</text><rect x="200" y="26" width="370.00000000000006" height="44" rx="3" fill="#e5087d" fill-opacity="1.00"/><text x="580" y="52.5" fill="#141019" font-size="13" font-weight="700">2.23M</text><text x="188" y="125.5" fill="#6b6472" font-size="11" text-anchor="end">eSIM-serviceable (SAM)</text><rect x="200" y="100" width="164.53565864404464" height="44" rx="3" fill="#e5087d" fill-opacity="0.82"/><text x="374.53565864404464" y="126.5" fill="#141019" font-size="13" font-weight="700">442K</text><text x="188" y="199.5" fill="#6b6472" font-size="11" text-anchor="end">Reachable yr 1-2 (SOM)</text><rect x="200" y="174" width="56.99656608107757" height="44" rx="3" fill="#e5087d" fill-opacity="0.64"/><text x="266.99656608107756" y="200.5" fill="#141019" font-size="13" font-weight="700">53K</text><line x1="234.1200552352078" y1="226" x2="287.86546214644454" y2="226" stroke="#b0741a" stroke-width="2"/><line x1="234.1200552352078" y1="222" x2="234.1200552352078" y2="230" stroke="#b0741a" stroke-width="2"/><line x1="287.86546214644454" y1="222" x2="287.86546214644454" y2="230" stroke="#b0741a" stroke-width="2"/><text x="297.86546214644454" y="230" fill="#b0741a" font-size="10">19K to 126K</text></svg></div><figcaption class="fc">SOM assumes partial channel reach in the first two years; the whisker is the sensitivity range. <span class="sr">Rates for eSIM share and channel reach are <span class="flag">modelled</span>.</span></figcaption><details class="nd"><summary>Data</summary><table class="ndt"><thead><tr><th>Stage</th><th class="n">People</th><th>How</th></tr></thead><tbody><tr><td>Outbound travellers (TAM)</td><td class="n">2,234,280</td><td>FAAN 2024 x 51.6% departure share</td></tr><tr><td>eSIM-serviceable (SAM)</td><td class="n">441,829</td><td>x 56.5% smartphone x 35% eSIM-capable</td></tr><tr><td>Reachable, yr 1-2 (SOM)</td><td class="n">53,019</td><td>x 12% channel reach <span class="flag">modelled</span></td></tr><tr><td>SOM range</td><td class="n">19,000 to 126,000</td><td>sensitivity on the two assumptions</td></tr></tbody></table></details></figure>
+<p class="note">Four in five people in the outbound market cannot use the product today. That is the reason to target the segments and the phones where the addressable share is highest.</p></section>
+<section class="sec"><div class="fids"><span class="n">04</span><span class="t">The segments</span><span class="r"></span></div>
+<h3 class="nh">Score the segments, do not treat them alike</h3>
+<p>Six travel segments, scored on five factors: market size, eSIM compatibility, how concentrated the route to them is, how acutely they need data on arrival, and how fast a deal closes. The scores are close, which is the point: no segment is a runaway, so the order of attack matters.</p>
+<figure class="fig"><p class="ft">Segment opportunity score</p><p class="fs">0 to 100, weighted across five factors</p><div class="fw"><svg class="nti-chart" viewBox="0 0 640 300" role="img" aria-label="Segment opportunity scores" xmlns="http://www.w3.org/2000/svg"><text x="118" y="35.16666666666667" fill="#6b6472" font-size="11" text-anchor="end">Students</text><rect x="128" y="18.666666666666668" width="380.8" height="26" rx="3" fill="#e5087d"/><text x="516.8" y="35.16666666666667" fill="#141019" font-size="10.5" font-weight="700" text-anchor="start">68</text><text x="118" y="82.5" fill="#6b6472" font-size="11" text-anchor="end">Business travellers</text><rect x="128" y="66" width="358.4" height="26" rx="3" fill="#e5087d" fill-opacity="0.45"/><text x="494.4" y="82.5" fill="#141019" font-size="10.5" font-weight="700" text-anchor="start">64</text><text x="118" y="129.83333333333334" fill="#6b6472" font-size="11" text-anchor="end">Tourism / leisure</text><rect x="128" y="113.33333333333334" width="352.8" height="26" rx="3" fill="#e5087d" fill-opacity="0.45"/><text x="488.8" y="129.83333333333334" fill="#141019" font-size="10.5" font-weight="700" text-anchor="start">63</text><text x="118" y="177.16666666666666" fill="#6b6472" font-size="11" text-anchor="end">Hajj pilgrims</text><rect x="128" y="160.66666666666666" width="336" height="26" rx="3" fill="#e5087d" fill-opacity="0.45"/><text x="472" y="177.16666666666666" fill="#141019" font-size="10.5" font-weight="700" text-anchor="start">60</text><text x="118" y="224.5" fill="#6b6472" font-size="11" text-anchor="end">Diaspora visits</text><rect x="128" y="208" width="319.2" height="26" rx="3" fill="#e5087d" fill-opacity="0.45"/><text x="455.2" y="224.5" fill="#141019" font-size="10.5" font-weight="700" text-anchor="start">57</text><text x="118" y="271.83333333333337" fill="#6b6472" font-size="11" text-anchor="end">Umrah pilgrims</text><rect x="128" y="255.33333333333337" width="308" height="26" rx="3" fill="#e5087d" fill-opacity="0.45"/><text x="444" y="271.83333333333337" fill="#141019" font-size="10.5" font-weight="700" text-anchor="start">55</text></svg></div><figcaption class="fc">Students top the list: young, iPhone-heavy, one-way to the UK and Canada, reachable through a handful of consultants. Hajj scores lower on size and device fit but is the cleanest first win. <span class="sr">Modelled score; weights documented.</span></figcaption><details class="nd"><summary>Data</summary><table class="ndt"><thead><tr><th>Segment</th><th class="n">Score</th><th class="n">Est. travellers / yr</th></tr></thead><tbody><tr><td>Students</td><td class="n">68</td><td class="n">45,000 to 60,000</td></tr><tr><td>Business travellers</td><td class="n">64</td><td class="n">250,000 to 400,000 <span class="flag">est</span></td></tr><tr><td>Tourism / leisure</td><td class="n">63</td><td class="n">150,000 to 300,000 <span class="flag">est</span></td></tr><tr><td>Hajj pilgrims</td><td class="n">60</td><td class="n">39,000 to 50,000</td></tr><tr><td>Diaspora visits</td><td class="n">57</td><td class="n">500,000 to 800,000 <span class="flag">est</span></td></tr><tr><td>Umrah pilgrims</td><td class="n">55</td><td class="n">80,000 to 150,000 <span class="flag">est</span></td></tr></tbody></table></details></figure>
+</section>
+<section class="sec"><div class="fids"><span class="n">05</span><span class="t">The channel play</span><span class="r"></span></div>
+<h3 class="nh">Acquire the business, not the traveller</h3>
+<p>A travel eSIM does not have to find two million people. It has to sign the businesses those people already pass through. One agreement can carry hundreds to thousands of travellers, and for the two pilgrimage segments the entire market sits behind a short, regulated list.</p>
+<div class="chan">
+<div><div class="ct">Hajj, whole market behind ~47 counterparties</div><div class="cd">About <b>10 principal NAHCON tour operators</b> plus <b>~37 state pilgrims boards</b> organise every government pilgrim. One agreement per board covers thousands.</div></div>
+<div><div class="ct">Students, first-arrival and motivated</div><div class="cd"><b>IDP Education</b> (7 Nigerian offices, including Kano), <b>BCIE</b> and peers place students into the UK and Canada. An eSIM in the pre-departure pack is a natural fit.</div></div>
+<div><div class="ct">Online bookers, add-on at checkout</div><div class="cd"><b>Wakanow</b> and <b>Travelstart</b> already sell insurance and visa add-ons. A connectivity line is a small addition, revenue-shared per activation.</div></div>
+<div><div class="ct">Umrah, continuous and more fragmented</div><div class="cd"><b>~239 NAHCON-licensed operators</b>. Year-round demand, no official Nigerian count, best served by a simple reseller tier.</div></div>
+<div class="p2"><div class="ct">Phase two, platform and travel-intent partnerships</div><div class="cd">Once the direct channel is proven: airline booking sites, <b>Booking.com</b> and other OTAs, and search or social retargeting that surfaces a prompt the moment a Nigerian shows travel intent to a supported country. Higher reach, more commercial work, so it follows the operator deals.</div></div>
+</div>
+<p class="note">Business travel desks and diaspora channels are bigger pools but slower to close. They sit alongside phase two.</p></section>
+<section class="sec"><div class="fids"><span class="n">06</span><span class="t">The numbers</span><span class="r"></span></div>
+<h3 class="nh">A defensible year 1-2 target: around 12,000 customers</h3>
+<p>Applying scenario conversion rates to the reachable audience gives a planning band, not a forecast. There is no first-party sales data to calibrate against, so the rates are stated openly and can be argued with.</p>
+<figure class="fig"><p class="ft">Customers, year 1-2, by scenario</p><p class="fs">Conversion applied to the bottom-up reachable audience (~110K)</p><div class="fw"><svg class="nti-chart" viewBox="0 0 640 300" role="img" aria-label="Bar chart of modelled WakaGo customers by scenario with an 8 to 16 thousand planning band" xmlns="http://www.w3.org/2000/svg"><line x1="44" y1="24" x2="620" y2="24" stroke="#eadfe6" stroke-width="1"/><text x="36" y="27" fill="#6b6472" font-size="10" text-anchor="end">36K</text><line x1="44" y1="81.5" x2="620" y2="81.5" stroke="#eadfe6" stroke-width="1"/><text x="36" y="84.5" fill="#6b6472" font-size="10" text-anchor="end">27K</text><line x1="44" y1="139" x2="620" y2="139" stroke="#eadfe6" stroke-width="1"/><text x="36" y="142" fill="#6b6472" font-size="10" text-anchor="end">18K</text><line x1="44" y1="196.5" x2="620" y2="196.5" stroke="#eadfe6" stroke-width="1"/><text x="36" y="199.5" fill="#6b6472" font-size="10" text-anchor="end">9K</text><line x1="44" y1="254" x2="620" y2="254" stroke="#eadfe6" stroke-width="1"/><text x="36" y="257" fill="#6b6472" font-size="10" text-anchor="end">0</text><rect x="44" y="151.77777777777777" width="576" height="51.111111111111114" fill="#b0741a" fill-opacity="0.12"/><line x1="44" y1="151.77777777777777" x2="620" y2="151.77777777777777" stroke="#b0741a" stroke-width="1" stroke-dasharray="3 3"/><line x1="44" y1="202.88888888888889" x2="620" y2="202.88888888888889" stroke="#b0741a" stroke-width="1" stroke-dasharray="3 3"/><text x="620" y="147.77777777777777" fill="#b0741a" font-size="10" text-anchor="end">planning band 8K to 16K</text><rect x="96" y="218.86111111111111" width="88" height="35.138888888888886" rx="3" fill="#e5087d" fill-opacity="0.50"/><text x="140" y="210.86111111111111" fill="#141019" font-size="12" font-weight="700" text-anchor="middle">~5.5K</text><text x="140" y="276" fill="#6b6472" font-size="11" text-anchor="middle">Conservative</text><text x="140" y="290" fill="#9a929f" font-size="9.5" text-anchor="middle">5% conversion</text><rect x="288" y="148.58333333333337" width="88" height="105.41666666666663" rx="3" fill="#e5087d" fill-opacity="0.75"/><text x="332" y="140.58333333333337" fill="#141019" font-size="12" font-weight="700" text-anchor="middle">~16.5K</text><text x="332" y="276" fill="#6b6472" font-size="11" text-anchor="middle">Moderate</text><text x="332" y="290" fill="#9a929f" font-size="9.5" text-anchor="middle">15% conversion</text><rect x="480" y="43.16666666666667" width="88" height="210.83333333333331" rx="3" fill="#e5087d" fill-opacity="1.00"/><text x="524" y="35.16666666666667" fill="#141019" font-size="12" font-weight="700" text-anchor="middle">~33K</text><text x="524" y="276" fill="#6b6472" font-size="11" text-anchor="middle">Aggressive</text><text x="524" y="290" fill="#9a929f" font-size="9.5" text-anchor="middle">30% conversion</text></svg></div><figcaption class="fc">The shaded band (8K to 16K) is the recommended planning range, near where the bottom-up and top-down methods overlap. <span class="sr">All conversion rates <span class="flag">modelled</span>.</span></figcaption><details class="nd"><summary>Data</summary><table class="ndt"><thead><tr><th>Scenario</th><th class="n">Conversion</th><th class="n">Customers</th></tr></thead><tbody><tr><td>Conservative</td><td class="n">5%</td><td class="n">~5,500</td></tr><tr><td>Moderate</td><td class="n">15%</td><td class="n">~16,500</td></tr><tr><td>Aggressive</td><td class="n">30%</td><td class="n">~33,000</td></tr><tr><td>Planning band</td><td class="n">-</td><td class="n">8,000 to 16,000</td></tr></tbody></table></details></figure>
+<div class="edge"><p><b>Why WakaGo can run this play.</b> It is the only travel eSIM with first-party Naira billing and a Nigerian support entity, and it is the price leader on the UK route (1GB pass at $1.50 versus Airalo $4.00, Saily $4.49, Nomad $4.50). A Nigerian agent can resell it at a local price on the spot. USD-billed rivals cannot. The gaps are maturity signals, no app yet, no reviews, a July 2026 launch, which a partner SLA and a named counterparty answer.</p></div>
+<p class="note">Illustrative only: at the moderate scenario and a $6 revenue-per-activation assumption, the segment is on the order of $100,000 of incremental revenue in the ramp period. ARPU here is a placeholder, not a company figure.</p></section>
+<section class="sec"><div class="fids"><span class="n">07</span><span class="t">Method and sources</span><span class="r"></span></div>
+<h3 class="nh">What is measured, what is modelled</h3>
+<p class="note">Measured, from public sources: passenger volumes (FAAN, NBS), destination mix (IATA DDS 2023), Hajj airlift (NAHCON), global Umrah (GASTAT), visa grants (UK Home Office, IRCC, US State, EU), device and mobile base (NCC, GSMA, NBS Telecoms, MTN).</p>
+<p class="note"><span class="tag">modelled</span> and flagged throughout: the 51.6% departure share, the 35% eSIM-capable share for travellers, the 12% year 1-2 channel reach, all segment volume estimates, the Nigerian Umrah band (80,000 to 150,000, no official figure exists), the 5 / 15 / 30% conversion rates and the $6 ARPU. Each is a stated assumption that can be replaced with better data.</p>
+<div class="closer"><div class="q">A note on where this goes next</div><p>This was built from the outside. Once a travel eSIM's own sales data accumulates, per channel and per activation, the same method becomes a live view of what is working and where to move budget. Building and running that view is the analyst's job, and the one I would want to grow into.</p></div>
+</section>
+</div>
