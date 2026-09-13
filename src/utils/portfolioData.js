@@ -294,6 +294,62 @@ export const caseStudies = [
     }
   },
   {
+    id: 'NT-09',
+    slug: 'nigeria-telecoms-subscriptions',
+    featured: true,
+    title: 'Nigeria’s telecoms market is not two billion subscriptions',
+    outcome:
+      'The 2 billion headline on the report is seven quarters added together. Any one quarter runs 290 to 330 million, and the market has grown for three straight quarters after a 2024 disconnection exercise.',
+    category: 'Power BI',
+    role: 'Self-directed, on public regulator data',
+    tools: ['Power BI', 'Power Query', 'DAX', 'NBS data'],
+    problem:
+      'The telecoms regulator in Nigeria publishes quarterly subscriber counts by operator and by state, across 13 reporting operators. Turned into a report, the raw total reads 2 billion subscriptions, a number that needs unpacking before anyone repeats it.',
+    dataset:
+      'NBS quarterly telecoms statistics, Q2 2024 through Q4 2025, for 13 reporting operators across 36 states, the FCT, and the six geopolitical zones.',
+    process:
+      'Modelled the quarterly extracts into Power BI, built measures for subscriptions, market share, and quarter-on-quarter change, then split the report into a market overview, an operator landscape, geographic coverage, and a growth page, checking each page total against the source rows before publishing.',
+    finding:
+      'The total card on the overview page reads 2 billion subscriptions. That figure sums all seven quarters together; a single quarter runs 290 to 330 million, in line with the real scale of the market. Read one quarter at a time, subscriptions fell into a contraction the report itself flags at Q3 2024 as the NIN-SIM disconnection exercise, not a data error, then grew for three straight quarters after: 3.5%, 0.5%, and 4.2% quarter on quarter, reaching 327.5 million active subscriptions by Q4 2025. MTN holds just over half the market at 52.1%, Airtel a third at 34.3%, and Lagos state alone accounts for more subscriptions than Kano and Ogun combined, the next two largest.',
+    implication:
+      'Quote the per-quarter figure, not the summed one, and say so explicitly whenever a report totals a time series instead of taking its latest point. On this data the story is recovery after a regulatory disconnection event, not decline.',
+    chart: {
+      kind: 'bars',
+      orientation: 'vertical',
+      axisMax: 350,
+      unit: 'M',
+      bars: [
+        { label: 'Q1 2025', value: 314.5, display: '314.5M' },
+        { label: 'Q3 2025', value: 314.2, display: '314.2M' },
+        { label: 'Q4 2025', value: 327.5, display: '327.5M', highlight: true, tag: '+4.2% QoQ' }
+      ],
+      caption:
+        'Three straight quarters of growth after the Q3 2024 contraction. The 2 billion figure elsewhere in the report is these and four more quarters added together, not a subscriber count.'
+    },
+    links: [
+      { label: 'PDF', href: '/projects/nigeria-telecoms-dashboard.pdf' },
+      { label: 'PBIX file', href: '/projects/nigeria-telecoms-dashboard.pbix' }
+    ],
+    image: '/images/telecom-dashboard.webp',
+    imageAlt:
+      'Power BI report page titled Growth and Momentum: a subscriptions trend line, quarter-on-quarter growth bars, an internet attach rate trend, and a quarterly summary table, with a note that the Q3 2024 contraction is the NIN-SIM disconnection exercise, not a data error.',
+    imageCaption:
+      'The analyst note is written directly into the report: the Q3 2024 dip is a regulatory event, not a data problem.',
+    deeper: {
+      checked: [
+        'The total-subscriptions card on the overview page against the sum of the seven quarterly rows in the underlying table, to confirm the 2 billion figure is a rollup, not a snapshot.',
+        'Each operator share in a single quarter (MTN 52.1%, Airtel 34.3%, Glo 11.7%) against the same shares in the cumulative total, to check the mix does not shift when read correctly.',
+        'The quarter-on-quarter growth rate for the three most recent quarters against the note the report itself carries on the Q3 2024 NIN-SIM disconnection exercise, to see whether the recovery is a real trend or a rebound off one bad quarter.',
+        'State and zone splits, Lagos, Kano, and Ogun leading, the South West the largest zone at 28.3%, against the national total, to see where coverage actually concentrates.'
+      ],
+      recommend: [
+        'Report the latest single quarter as the headline figure, and label any summed total explicitly as a total across periods.',
+        'Keep the analyst note on the Q3 2024 contraction attached to the chart itself, not only in a caption, since a reader who only sees the trend line would otherwise read it as a crash.',
+        'Fix the quarter axis to sort by calendar order rather than by value; on two of the four pages it currently sorts out of sequence, which would mislead anyone scanning quickly.'
+      ]
+    }
+  },
+  {
     id: 'CW-08',
     slug: 'x-account-enrichment',
     featured: false,
@@ -361,31 +417,28 @@ export const caseStudies = [
     id: 'PB-06',
     slug: 'apocalypse-sales-power-bi',
     featured: false,
-    title: 'A sales dashboard built in Power BI, end to end',
-    outcome: 'A supplied sales export turned into a Power BI report: KPIs, a customer ranking, and demand by age band in one drillable view.',
+    title: 'A four-page Power BI model, rebuilt from one flat export',
+    outcome:
+      'Revenue fell every month while margin held flat, and the best-margin product was not the best seller.',
     category: 'Power BI',
     role: 'Build from a supplied dataset',
     tools: ['Power BI', 'Power Query', 'DAX', 'Star schema'],
     problem:
-      'A raw sales export needed to become a report where units sold, profit, the top customers, and buyer age could all be read at a glance and drilled into.',
+      'A raw sales export needed to become a report that reads on its own: revenue, margin, the customer base, and the trend, each readable at a glance and drillable into.',
     dataset:
-      'A supplied training dataset covering 3,001 units sold across a set of retail customers, with profit, order date, and buyer age group on each record.',
+      'A supplied training dataset covering 3,001 units sold to 4 customers across January to March 2022, with cost, price, order date, and buyer age group on each underlying record.',
     process:
-      'Shaped the export into a star schema with Power Query, wrote DAX measures for the totals, then laid KPI cards over a customer ranking, an age-group breakdown, and a purchase-date distribution, each with drill-down.',
+      'Shaped the export into a star schema with Power Query, wrote DAX measures for revenue, cost, profit, and margin, then built four pages: an executive overview, product profitability, customer and buyer insights, and a monthly trend, each with drill-down.',
     finding:
-      'Units sold concentrate in a few accounts: one customer alone is 951 of the 3,001, and the top four cover more than two thirds. Demand skews to the older age band. The dataset is a training one, so this is a Power BI workflow proof, not a client result.',
+      'Revenue fell every month: 39,426.89 dollars in January, 30,938.89 in February, 17,579.31 in March. Margin barely moved over the same stretch, 49.3% to 49.4% to 48.2%, so the drop is a volume problem, not a pricing or cost one. At the product level, the Weatherproof Jacket sold the fewest units of the top six, 265, but earned the most revenue and profit: a 61.8% margin against 28.7% for the Stainless Steel Axe on similar revenue. The dataset is a training one, so this is a Power BI workflow proof, not a client result.',
     implication:
-      'It is the Power BI proof point in this set: Power Query, a star schema, DAX measures, and an interactive layout working together.',
-    links: [
-      { label: 'PDF', href: '/projects/apocalypse-dashboard.pdf' },
-      { label: 'PBIX file', href: '/projects/apocalypse-dashboard.pbix' },
-      { label: 'Repository', href: 'https://github.com/Ghostiemoh/apocalypse-food-prep-power-bi' }
-    ],
-    image: '/images/powerbi-apocalypse.png',
+      'When revenue drops and margin does not, look at volume before touching price. Rank products by margin as well as by revenue, since the two point at different items here.',
+    links: [{ label: 'PDF', href: '/projects/apocalypse-dashboard.pdf' }],
+    image: '/images/powerbi-apocalypse.webp',
     imageAlt:
-      'Power BI report titled Apocalypse Sales Dashboard: KPI cards for units sold and profit, a bar chart of units sold by customer, a purchases-by-age-group bar chart, and a purchase-date pie chart.',
+      'Power BI executive overview for Apocalypse Food Prep: KPI cards for revenue, profit, and margin, a declining monthly revenue trend, revenue by product, and a customer revenue share donut.',
     imageCaption:
-      'The finished report. KPI cards over a customer ranking, demand by age band, and a purchase-date split, each one drillable.'
+      'Page one of four. Revenue by product and by customer sit next to the monthly trend that turned out to be a volume story, not a margin one.'
   }
 ];
 
