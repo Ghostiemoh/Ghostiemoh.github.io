@@ -299,7 +299,7 @@ export const caseStudies = [
     featured: true,
     title: 'Nigeria’s telecoms market is not two billion subscriptions',
     outcome:
-      'The 2 billion headline on the report is seven quarters added together. Any one quarter runs 290 to 330 million, and the market has grown for three straight quarters after a 2024 disconnection exercise.',
+      'The 2 billion headline on the report is seven quarters added together. Every quarter on its own runs 287 to 327 million, and the most recent quarter is the highest of the seven, well past its level before a 2024 disconnection exercise briefly cut the market by 6%.',
     category: 'Power BI',
     role: 'Self-directed, on public regulator data',
     tools: ['Power BI', 'Power Query', 'DAX', 'NBS data'],
@@ -310,21 +310,25 @@ export const caseStudies = [
     process:
       'Modelled the quarterly extracts into Power BI, built measures for subscriptions, market share, and quarter-on-quarter change, then split the report into a market overview, an operator landscape, geographic coverage, and a growth page, checking each page total against the source rows before publishing.',
     finding:
-      'The total card on the overview page reads 2 billion subscriptions. That figure sums all seven quarters together; a single quarter runs 290 to 330 million, in line with the real scale of the market. Read one quarter at a time, subscriptions fell into a contraction the report itself flags at Q3 2024 as the NIN-SIM disconnection exercise, not a data error, then grew for three straight quarters after: 3.5%, 0.5%, and 4.2% quarter on quarter, reaching 327.5 million active subscriptions by Q4 2025. MTN holds just over half the market at 52.1%, Airtel a third at 34.3%, and Lagos state alone accounts for more subscriptions than Kano and Ogun combined, the next two largest.',
+      'The total card on the overview page reads 2 billion subscriptions. That figure sums all seven quarters together; each quarter on its own runs 287 to 327 million. Read one quarter at a time, subscriptions dropped 6.4% in Q3 2024, the point the report itself flags as the NIN-SIM disconnection exercise rather than a data error, then climbed in four of the following five quarters, dipping only slightly in Q2 2025, to close at 327.5 million in Q4 2025, the highest quarter in the whole window and 13.9% above the Q3 2024 low. MTN holds just over half the market at 52.1%, Airtel a third at 34.3%, and Lagos state alone accounts for more subscriptions than Kano and Ogun combined, the next two largest.',
     implication:
-      'Quote the per-quarter figure, not the summed one, and say so explicitly whenever a report totals a time series instead of taking its latest point. On this data the story is recovery after a regulatory disconnection event, not decline.',
+      'Quote the per-quarter figure, not the summed one, and say so explicitly whenever a report totals a time series instead of taking its latest point. On this data the story is a full recovery past the pre-disruption level, not a clean straight line back up.',
     chart: {
       kind: 'bars',
       orientation: 'vertical',
       axisMax: 350,
       unit: 'M',
       bars: [
+        { label: 'Q2 2024', value: 307.1, display: '307.1M' },
+        { label: 'Q3 2024', value: 287.5, display: '287.5M', muted: true, tag: 'NIN-SIM dip' },
+        { label: 'Q4 2024', value: 303.9, display: '303.9M' },
         { label: 'Q1 2025', value: 314.5, display: '314.5M' },
+        { label: 'Q2 2025', value: 312.6, display: '312.6M' },
         { label: 'Q3 2025', value: 314.2, display: '314.2M' },
-        { label: 'Q4 2025', value: 327.5, display: '327.5M', highlight: true, tag: '+4.2% QoQ' }
+        { label: 'Q4 2025', value: 327.5, display: '327.5M', highlight: true, tag: 'highest quarter' }
       ],
       caption:
-        'Three straight quarters of growth after the Q3 2024 contraction. The 2 billion figure elsewhere in the report is these and four more quarters added together, not a subscriber count.'
+        'Seven quarters, in the order they actually happened. The 2 billion figure elsewhere in the report is these bars added together, not a subscriber count.'
     },
     links: [
       { label: 'PDF', href: '/projects/nigeria-telecoms-dashboard.pdf' },
@@ -339,7 +343,7 @@ export const caseStudies = [
       checked: [
         'The total-subscriptions card on the overview page against the sum of the seven quarterly rows in the underlying table, to confirm the 2 billion figure is a rollup, not a snapshot.',
         'Each operator share in a single quarter (MTN 52.1%, Airtel 34.3%, Glo 11.7%) against the same shares in the cumulative total, to check the mix does not shift when read correctly.',
-        'The quarter-on-quarter growth rate for the three most recent quarters against the note the report itself carries on the Q3 2024 NIN-SIM disconnection exercise, to see whether the recovery is a real trend or a rebound off one bad quarter.',
+        'The quarter-on-quarter growth rate for all seven quarters against the note the report itself carries on the Q3 2024 NIN-SIM disconnection exercise, to see whether the recovery is a real trend or a rebound off one bad quarter.',
         'State and zone splits, Lagos, Kano, and Ogun leading, the South West the largest zone at 28.3%, against the national total, to see where coverage actually concentrates.'
       ],
       recommend: [
