@@ -2,6 +2,7 @@
 title: Solana DEX volume fell 81%, and almost none of it was Solana
 date: 2026-09-01
 description: One venue drove the entire drop, and inside that venue one pool type drove almost all of it. Everything else on Solana traded flat to up.
+thumbnail: /images/writing-dune-dex-crash-thumb.webp
 ---
 
 Through August 2026 a number kept getting quoted: Solana on-chain trading volume
