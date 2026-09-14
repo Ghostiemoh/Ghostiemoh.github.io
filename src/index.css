@@ -1498,7 +1498,7 @@ svg {
 
 .post-list-thumb {
   flex: none;
-  width: 128px;
+  width: 240px;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border: var(--border);
@@ -1513,7 +1513,7 @@ svg {
 
 @media (max-width: 540px) {
   .post-list-thumb {
-    width: 84px;
+    width: 110px;
   }
 }
 

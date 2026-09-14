@@ -48,8 +48,8 @@ export default function WritingIndex() {
                     alt=""
                     loading="lazy"
                     decoding="async"
-                    width="128"
-                    height="72"
+                    width="240"
+                    height="135"
                   />
                 )}
                 <span className="post-list-text">
