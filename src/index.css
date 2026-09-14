@@ -1488,11 +1488,33 @@ svg {
 }
 
 .post-list li a {
-  display: grid;
-  gap: 0.4rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
   padding: 1.9rem 0;
   text-decoration: none;
   color: inherit;
+}
+
+.post-list-thumb {
+  flex: none;
+  width: 128px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: var(--border);
+  background: rgb(var(--panel));
+}
+
+.post-list-text {
+  display: grid;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+@media (max-width: 540px) {
+  .post-list-thumb {
+    width: 84px;
+  }
 }
 
 .post-list li a:hover .post-list-title {
@@ -1549,6 +1571,15 @@ svg {
   color: rgb(var(--muted));
   font-size: 1.1rem;
   line-height: 1.55;
+}
+
+.post-hero {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: var(--border);
+  background: rgb(var(--panel));
+  margin-bottom: 2.5rem;
 }
 
 .post-body {

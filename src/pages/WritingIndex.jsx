@@ -41,14 +41,27 @@ export default function WritingIndex() {
           {posts.map((post) => (
             <li key={post.slug}>
               <a href={`/writing/${post.slug}`}>
-                <span className="post-list-meta">
-                  {post.dateLabel} <span aria-hidden="true">&middot;</span>{' '}
-                  {post.readingMinutes} min read
-                </span>
-                <span className="post-list-title">{post.title}</span>
-                <span className="post-list-desc">{post.description}</span>
-                <span className="post-list-more">
-                  Read <ArrowUpRight size={13} aria-hidden="true" />
+                {post.thumbnail && (
+                  <img
+                    className="post-list-thumb"
+                    src={post.thumbnail}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    width="128"
+                    height="72"
+                  />
+                )}
+                <span className="post-list-text">
+                  <span className="post-list-meta">
+                    {post.dateLabel} <span aria-hidden="true">&middot;</span>{' '}
+                    {post.readingMinutes} min read
+                  </span>
+                  <span className="post-list-title">{post.title}</span>
+                  <span className="post-list-desc">{post.description}</span>
+                  <span className="post-list-more">
+                    Read <ArrowUpRight size={13} aria-hidden="true" />
+                  </span>
                 </span>
               </a>
             </li>

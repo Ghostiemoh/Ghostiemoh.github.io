@@ -85,6 +85,7 @@ export const posts = Object.entries(modules)
       title: data.title || slug,
       date: data.date || '',
       description: data.description || '',
+      thumbnail: data.thumbnail || '',
       dateLabel: dateLabel(data.date),
       readingMinutes: readingMinutes(body),
       body,

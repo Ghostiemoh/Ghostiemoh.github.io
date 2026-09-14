@@ -332,7 +332,8 @@ export const caseStudies = [
     },
     links: [
       { label: 'PDF', href: '/projects/nigeria-telecoms-dashboard.pdf' },
-      { label: 'PBIX file', href: '/projects/nigeria-telecoms-dashboard.pbix' }
+      { label: 'PBIX file', href: '/projects/nigeria-telecoms-dashboard.pbix' },
+      { label: 'Repository', href: 'https://github.com/Ghostiemoh/nigeria-telecoms-power-bi' }
     ],
     image: '/images/telecom-dashboard.webp',
     imageAlt:
@@ -350,6 +351,61 @@ export const caseStudies = [
         'Report the latest single quarter as the headline figure, and label any summed total explicitly as a total across periods.',
         'Keep the analyst note on the Q3 2024 contraction attached to the chart itself, not only in a caption, since a reader who only sees the trend line would otherwise read it as a crash.',
         'Fix the quarter axis to sort by calendar order rather than by value; on two of the four pages it currently sorts out of sequence, which would mislead anyone scanning quickly.'
+      ]
+    }
+  },
+  {
+    id: 'UM-10',
+    slug: 'umrah-q1-2026-divergence',
+    featured: true,
+    title: 'Ramadan makes one half of Umrah surge and the other half shrink',
+    outcome:
+      'Internal Umrah performers more than tripled into Ramadan while arrivals from abroad fell in every month of the same quarter, the opposite of what one combined total would suggest.',
+    category: 'Power BI',
+    role: 'Self-directed, on public regulator data',
+    tools: ['Power BI', 'Power Query', 'DAX', 'GASTAT data'],
+    problem:
+      'Saudi Arabia’s statistics authority publishes quarterly Umrah performer counts split only into two groups: people already inside the country and people arriving from abroad. Turned into a report, the combined total does not say which half is driving it, or whether Ramadan affects both groups the same way.',
+    dataset:
+      'GASTAT Q1 2026 Umrah statistics: 15,233,767 performers, split into 9,464,496 already inside Saudi Arabia (internal) and 5,769,271 arriving from abroad (external), broken out by month, gender, age band, port of entry, and Saudi region.',
+    process:
+      'Modelled the cross-tab release into Power BI, replacing 30 raw sheets and their duplicated print-area tables with a clean star schema, then built five pages: overall scale, who the external arrivals are, how they enter the country, the Ramadan month-on-month effect, and an explicit gap page for what the data cannot say about Nigeria.',
+    finding:
+      'Ramadan 2026 began 17 February. Internal performers, those already inside Saudi Arabia, rose from 1,301,343 in January to 4,558,570 in February, more than tripling, before easing to 3,604,583 in March. Arrivals from abroad moved the opposite way in every one of the same three months: 2,237,418 in January, 2,141,723 in February, and 1,390,130 in March, a 37.9% fall from the start of the quarter to the end. Of the people who did arrive from abroad, 86.0% came by air against 13.6% by land and 0.4% by sea, and the group skewed slightly female at 51.8%.',
+    implication:
+      'A single "Ramadan brings pilgrims" framing hides that the effect runs in opposite directions depending on whether someone is already in the country. Anyone planning around this data, for capacity, staffing, or connectivity at the point of entry, needs the internal and external series read separately, not folded into one combined trend.',
+    chart: {
+      kind: 'bars',
+      orientation: 'vertical',
+      axisMax: 2.5,
+      unit: 'M',
+      bars: [
+        { label: 'Jan', value: 2.24, display: '2.24M' },
+        { label: 'Feb', value: 2.14, display: '2.14M' },
+        { label: 'Mar', value: 1.39, display: '1.39M', highlight: true, tag: 'Ramadan low' }
+      ],
+      caption:
+        'Arrivals from abroad fell every month through Ramadan (17 February). Internal performers moved the opposite way over the same three months, from 1.30M in January to a 4.56M peak in February.'
+    },
+    links: [
+      { label: 'PDF', href: '/projects/umrah-dashboard.pdf' },
+      { label: 'Repository', href: 'https://github.com/Ghostiemoh/umrah-dashboard-power-bi' }
+    ],
+    image: '/images/umrah-dashboard.webp',
+    imageAlt:
+      'Power BI report page titled The Ramadan Effect: KPI cards for internal and external performers and their month-on-month growth, a divergence line chart showing internal performers rising while external arrivals fall, a trip-type breakdown by month, and a monthly summary table.',
+    imageCaption:
+      'The report’s own line chart shows the divergence directly: internal performers curve up toward Ramadan while the external line bends down over the same three months.',
+    deeper: {
+      checked: [
+        'The internal and external monthly totals against the report’s own Monthly Summary table, since the two series move in opposite directions across the same three months rather than tracking together.',
+        'The external gender and port-of-entry splits (51.8% female, 86.0% by air) against the underlying age-band and month cuts, to see whether those shares held steady across the quarter rather than being driven by one month.',
+        'Whether GASTAT’s release supports splitting the 5,769,271 external arrivals by country of origin. It does not, so a Nigeria-specific volume is not something this dataset can answer directly.',
+        'NAHCON’s licensed-operator register and 2023 IATA route-level air travel data as two independent ways to estimate a Nigeria figure anyway, and whether they agreed with each other.'
+      ],
+      recommend: [
+        'Report internal and external Umrah performers as two separate series. A single combined total or a single combined trend line hides that Ramadan moves them in opposite directions.',
+        'Where a public dataset cannot answer a question, for instance Nigeria’s actual pilgrim volume, state the honest range (80,000 to 150,000 a year) and the method behind it, not a single invented point figure.'
       ]
     }
   },
@@ -437,7 +493,10 @@ export const caseStudies = [
       'Revenue fell every month: 39,426.89 dollars in January, 30,938.89 in February, 17,579.31 in March. Margin barely moved over the same stretch, 49.3% to 49.4% to 48.2%, so the drop is a volume problem, not a pricing or cost one. At the product level, the Weatherproof Jacket sold the fewest units of the top six, 265, but earned the most revenue and profit: a 61.8% margin against 28.7% for the Stainless Steel Axe on similar revenue. The dataset is a training one, so this is a Power BI workflow proof, not a client result.',
     implication:
       'When revenue drops and margin does not, look at volume before touching price. Rank products by margin as well as by revenue, since the two point at different items here.',
-    links: [{ label: 'PDF', href: '/projects/apocalypse-dashboard.pdf' }],
+    links: [
+      { label: 'PDF', href: '/projects/apocalypse-dashboard.pdf' },
+      { label: 'Repository', href: 'https://github.com/Ghostiemoh/apocalypse-food-prep-power-bi' }
+    ],
     image: '/images/powerbi-apocalypse.webp',
     imageAlt:
       'Power BI executive overview for Apocalypse Food Prep: KPI cards for revenue, profit, and margin, a declining monthly revenue trend, revenue by product, and a customer revenue share donut.',

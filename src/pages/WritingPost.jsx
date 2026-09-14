@@ -41,6 +41,16 @@ export default function WritingPost({ slug }) {
               {post.description && <p className="post-standfirst">{post.description}</p>}
             </header>
 
+            {post.thumbnail && (
+              <img
+                className="post-hero"
+                src={post.thumbnail}
+                alt=""
+                loading="eager"
+                decoding="async"
+              />
+            )}
+
             <div
               className="post-body"
               dangerouslySetInnerHTML={{ __html: post.html }}
