@@ -294,6 +294,65 @@ export const caseStudies = [
     }
   },
   {
+    id: 'NG-11',
+    slug: 'nigeria-gdp-monitor',
+    featured: true,
+    title: 'Nigeria’s 4.43% growth hides a year of sectors trading places',
+    outcome:
+      'Real GDP growth barely moved, from 4.23% to 4.43%, while electricity swung 22 points, oil’s contribution more than halved, and farming and telecoms, about a third of the economy, delivered half of all growth.',
+    category: 'Power BI',
+    role: 'Self-directed, on public statistics data',
+    tools: ['Power BI', 'DAX', 'TypeScript', 'D3', 'Python', 'NBS data'],
+    problem:
+      'The National Bureau of Statistics reports one headline growth rate each quarter, and most coverage stops there. The question was what that steady number is made of, sector by sector, and whether the published tables still hold together when every figure is rebuilt from the underlying levels.',
+    dataset:
+      'NBS Q2 2026 GDP workbook: nominal and 2019 constant price levels for 46 economic activities in 19 sectors, ten quarters from Q1 2024 to Q2 2026.',
+    process:
+      'Extracted the level tables into a star schema with a Python script that recomputes 312 published growth rates and refuses to write the model if any of them disagree. Derived every growth rate, share, deflator and contribution in DAX across 36 measures, generated a three page report in Nigerian flag green, and wrote a custom dumbbell visual in TypeScript and D3 because Power BI does not ship one.',
+    finding:
+      'Headline real growth rose only 0.20 points. Underneath it, the four fastest sectors of 2025 all slowed hard: electricity and gas went from 11.5% growth to a 10.6% contraction, transport fell from 22.1% to 5.7%, and mining from 20.9% to 6.4%. Oil’s contribution to growth fell from 0.72 to 0.30 points while the non-oil economy’s rose from 3.52 to 4.14. Agriculture (1.15 points) and information and communication (1.08) together delivered just over half of the 4.43 from about a third of the economy. Nominal GDP grew 18.43%, and 13.40 points of that is the GDP deflator.',
+    implication:
+      'Read the headline next to sector contributions, not instead of them. This year’s steady rate is the net of a power sector in contraction and an oil sector cooling sharply, covered by non-oil growth, and that mix matters more for planning than the 0.20 point change. Rebuilding the tables also surfaced a ₦10.16 billion gap in the NBS Q4 2024 nominal total, worth flagging to anyone who uses the published sums directly.',
+    chart: {
+      kind: 'bars',
+      orientation: 'vertical',
+      axisMax: 1.2,
+      unit: '',
+      bars: [
+        { label: 'Agriculture', value: 1.15, display: '1.15', highlight: true, tag: 'largest' },
+        { label: 'ICT', value: 1.08, display: '1.08', highlight: true },
+        { label: 'Real estate', value: 0.48, display: '0.48' },
+        { label: 'Trade', value: 0.44, display: '0.44' },
+        { label: 'Finance', value: 0.3, display: '0.30' }
+      ],
+      caption:
+        'Contribution to Q2 2026 real growth, in percentage points. Agriculture and ICT account for 2.22 of the 4.43 point headline between them; electricity and gas, not shown, took 0.13 off it.'
+    },
+    links: [
+      { label: 'Full write-up', href: 'https://ghostiemoh.com/writing/nigeria-gdp-power-bi' },
+      { label: 'PDF', href: '/projects/nigeria-gdp-dashboard.pdf' },
+      { label: 'Custom visual (.pbiviz)', href: '/projects/shift-dumbbell.pbiviz' }
+    ],
+    image: '/images/gdp-dashboard-2.webp',
+    imageAlt:
+      'Power BI page titled Sector Shifts: a custom dumbbell chart comparing each sector’s real growth a year apart, sorted by the size of the change, three tiles naming the fastest growing sector, the biggest contributor and the biggest drag, and a bar chart of contribution to growth by sector.',
+    imageCaption:
+      'The custom dumbbell visual on the live model. Electricity and gas leads the page with a 22.1 point swing from growth to contraction.',
+    deeper: {
+      checked: [
+        'All 312 sector and activity growth rates derived from the levels against the rates NBS printed. The largest gap across all 312 is zero to five decimal places.',
+        'The 46 activity levels against the published GDP totals for every quarter. They match everywhere except Q4 2024 nominal, where the printed total sits ₦10.16 billion above its own components and above what the 2024 annual total implies.',
+        'The nineteen sector contributions against the headline, to confirm they add back to 4.43 exactly, and the report scorecard totals (₦119.29 trillion, 4.43%) against the NBS release.',
+        'Oil against non-oil using the single NBS activity Crude Petroleum and Natural Gas, with refining left inside manufacturing, which is how NBS classifies it.'
+      ],
+      recommend: [
+        'Quote sector contributions next to the headline rate each quarter, since the rate alone hides which parts of the economy are carrying it.',
+        'Report nominal and real growth together: 13.40 of the 18.43 points of naira growth this quarter is price change.',
+        'Watch electricity and gas as the leading drag. It is about 1% of GDP but moved 22 points in a year, the largest swing of any sector.'
+      ]
+    }
+  },
+  {
     id: 'NT-09',
     slug: 'nigeria-telecoms-subscriptions',
     featured: true,
