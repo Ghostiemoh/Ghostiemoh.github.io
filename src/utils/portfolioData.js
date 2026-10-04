@@ -19,6 +19,8 @@ export const profile = {
   twitterUser: 'Ghostieemoh',
   telegram: 'https://t.me/Ghostiemoh',
   telegramUser: 'Ghostiemoh',
+  whatsapp: 'https://wa.me/2349030754145',
+  whatsappDisplay: '+234 903 075 4145',
   resume: '/resume.html',
   headline: 'I turn messy data into findings people can act on.',
   summary:

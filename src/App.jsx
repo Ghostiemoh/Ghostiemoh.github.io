@@ -7,6 +7,7 @@ import {
   Github,
   Linkedin,
   Mail,
+  MessageCircle,
   Menu,
   Send,
   X
@@ -914,8 +915,14 @@ function Contact() {
             <Mail size={16} aria-hidden="true" />
             Start a project
           </a>
-          <p className="contact-email">{profile.email}</p>
+          <p className="contact-email">
+            {profile.email} <span aria-hidden="true">&middot;</span> {profile.whatsappDisplay}
+          </p>
           <div className="contact-elsewhere">
+            <a href={profile.whatsapp} target="_blank" rel="noreferrer">
+              <MessageCircle size={14} aria-hidden="true" />
+              WhatsApp
+            </a>
             <a href={profile.telegram} target="_blank" rel="noreferrer">
               <Send size={14} aria-hidden="true" />
               Telegram
