@@ -1825,33 +1825,73 @@ svg {
 
 /* contact extras */
 
-.contact-email {
-  margin-top: 0.85rem;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: rgb(var(--paper) / 0.6);
-}
-
-.contact-elsewhere {
+.contact-details {
   margin-top: 1.5rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.9rem 1.5rem;
+  gap: 0.6rem;
+}
+
+.contact-detail {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid rgb(var(--paper) / 0.25);
+  text-decoration: none;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.contact-detail svg {
+  color: rgb(234 180 93);
+  flex: none;
+}
+
+.contact-detail > span {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: rgb(var(--paper) / 0.92);
+}
+
+.contact-detail-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(var(--paper) / 0.5);
+}
+
+.contact-detail:hover {
+  border-color: rgb(234 180 93);
+  background: rgb(var(--paper) / 0.06);
+}
+
+.contact-elsewhere {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .contact-elsewhere a {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid rgb(var(--paper) / 0.14);
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgb(var(--paper) / 0.8);
+  color: rgb(var(--paper) / 0.65);
   text-decoration: none;
+  transition: border-color 150ms ease, color 150ms ease;
 }
 
 .contact-elsewhere a:hover {
+  border-color: rgb(var(--paper) / 0.45);
   color: rgb(var(--paper));
 }
 
