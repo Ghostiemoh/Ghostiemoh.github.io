@@ -31,6 +31,7 @@ thumbnail: /images/writing-gdp-thumb.webp
 .ngdp p{margin:0 0 .95rem;color:var(--body)}
 .ngdp p.lede{font-size:1.08rem;color:var(--ink)}
 .ngdp p.note{color:var(--mut);font-size:.92rem}
+.ngdp .note a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 .ngdp b,.ngdp strong{font-weight:700;color:var(--ink)}
 .ngdp code{font-family:"JetBrains Mono",monospace;font-size:.8em;background:var(--wash);padding:.12em .38em;border-radius:4px;color:var(--ad)}
 .ngdp .fig{background:var(--surf);border:1px solid var(--ln);border-radius:14px;padding:1.05rem 1rem .85rem;margin:1.35rem 0;box-shadow:0 1px 2px rgba(0,64,42,.05),0 12px 32px -18px rgba(0,64,42,.22)}
@@ -120,6 +121,6 @@ thumbnail: /images/writing-gdp-thumb.webp
 <section class="sec"><div class="fids"><span class="n">07</span><span class="t">What to take from it</span><span class="r"></span></div>
 <div class="closer"><div class="q">The headline held steady while the sectors under it traded places</div>
 <p>Nigeria's 4.43% is real, and it is an improvement. It is also the net result of a power sector that went into contraction, an oil sector that cooled sharply, and a non-oil economy that did enough to cover both. If you only watch the headline, it looks like nothing happened this year. What actually happened is that the sectors that led in 2025 fell back and a different group, mostly farming and telecoms, took over. I think that is worth more attention than the 0.20 point rise.</p></div>
-<p class="note">Figures come from the NBS Q2 2026 GDP report: real growth at 2019 constant basic prices, nominal at current basic prices. The dashboard reproduces the NBS published growth rates exactly. Screenshots are the report as rendered in Power BI Desktop.</p>
+<p class="note">Figures come from the NBS Q2 2026 GDP report: real growth at 2019 constant basic prices, nominal at current basic prices. The dashboard reproduces the NBS published growth rates exactly. Screenshots are the report as rendered in Power BI Desktop. The Power BI project, data and build scripts are on GitHub at <a href="https://github.com/Ghostiemoh/nigeria-gdp-power-bi">nigeria-gdp-power-bi</a>, and the dumbbell visual's source is in <a href="https://github.com/Ghostiemoh/power-bi-custom-visuals">power-bi-custom-visuals</a>.</p>
 </section>
 </div>
