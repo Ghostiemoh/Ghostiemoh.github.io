@@ -88,5 +88,5 @@ description: A support line was hitting its answer rate and missing its speed ta
 <div class="edge"><p><b>Treat the 21.8-point gap as a scheduling question first.</b> Staff or overflow-route the busiest intervals so the queue never gets deep enough to blow the 20-second target. Only look at individual coaching after that, because the answer rate is already even across the team and there is very little individual variation left to fix.</p></div></section>
 <section class="sec"><div class="fids"><span class="n">06</span><span class="t">The general point</span><span class="r"></span></div>
 <div class="closer"><div class="q">Before you average two metrics in your head</div><p>Check what each one actually counts. "Answered" and "answered in time" share a word and not much else. Here, one was fine and the other was a capacity problem wearing the first one's clothes.</p></div>
-<p class="note">The workbook, with the PivotTable model and the per-agent breakdown, is linked from the <a href="/#work">case study</a>.</p></section>
+<p class="note">The workbook, with the PivotTable model and the per-agent breakdown, is linked from the <a href="/#work">case study</a> and on GitHub at <a href="https://github.com/Ghostiemoh/call-center-analysis">call-center-analysis</a>.</p></section>
 </div>
