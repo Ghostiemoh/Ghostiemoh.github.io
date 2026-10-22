@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { profile } from '../utils/portfolioData';
 import { getPost } from './writingData';
+import { clipDescription } from '../../scripts/prerender-lib.mjs';
 import {
   WritingHeader,
   WritingFooter,
@@ -16,11 +17,19 @@ export default function WritingPost({ slug }) {
   useEffect(() => {
     if (post) {
       document.title = `${post.title} | ${profile.name}`;
-      setMeta('description', post.description);
+      setMeta('description', clipDescription(post.description));
       setCanonical(`https://ghostiemoh.com/writing/${post.slug}`);
-      setSocial(post.title, post.description);
+      // Same JPG card scripts/prerender-heads.mjs bakes into the static page.
+      setSocial(
+        post.title,
+        clipDescription(post.description),
+        post.thumbnail
+          ? `https://ghostiemoh.com/images/og/${post.slug}.jpg`
+          : 'https://ghostiemoh.com/og.png'
+      );
     } else {
       document.title = `Not found | ${profile.name}`;
+      setMeta('robots', 'noindex');
       setCanonical('https://ghostiemoh.com/writing');
     }
   }, [post]);

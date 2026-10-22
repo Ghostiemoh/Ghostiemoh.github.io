@@ -10,6 +10,6 @@ export default defineConfig({
     port: Number(process.env.PORT) || 5173
   },
   test: {
-    include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}']
+    include: ['{src,scripts}/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}']
   }
 });

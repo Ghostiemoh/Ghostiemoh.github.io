@@ -1,5 +1,10 @@
 import { describe, it, expect } from 'vitest';
+import { existsSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, resolve } from 'node:path';
 import { posts, getPost } from './writingData';
+
+const publicDir = resolve(dirname(fileURLToPath(import.meta.url)), '../../public');
 
 describe('writing content', () => {
   it('loads at least one post', () => {
@@ -16,6 +21,13 @@ describe('writing content', () => {
       expect(p.dateLabel, `${p.slug} dateLabel`).toBeTruthy();
       expect(p.readingMinutes).toBeGreaterThanOrEqual(1);
       expect(p.html.length, `${p.slug} html`).toBeGreaterThan(200);
+    }
+  });
+
+  it('has a JPG share image for every post with a thumbnail', () => {
+    // Link previewers get /images/og/<slug>.jpg; WebP thumbnails are not rendered everywhere.
+    for (const p of posts.filter((x) => x.thumbnail)) {
+      expect(existsSync(resolve(publicDir, `images/og/${p.slug}.jpg`)), `${p.slug} og jpg`).toBe(true);
     }
   });
 

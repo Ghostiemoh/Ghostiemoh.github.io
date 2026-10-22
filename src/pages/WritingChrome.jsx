@@ -83,8 +83,15 @@ export function setCanonical(url) {
   }, url);
 }
 
-export function setSocial(title, description) {
+export function setSocial(title, description, image = 'https://ghostiemoh.com/og.png') {
   if (typeof document === 'undefined') return;
+  for (const prop of ['og:image', 'twitter:image']) {
+    setContentTag(`meta[property="${prop}"], meta[name="${prop}"]`, () => {
+      const el = document.createElement('meta');
+      el.setAttribute('property', prop);
+      return el;
+    }, image);
+  }
   for (const prop of ['og:title', 'twitter:title']) {
     setContentTag(`meta[property="${prop}"], meta[name="${prop}"]`, () => {
       const el = document.createElement('meta');
