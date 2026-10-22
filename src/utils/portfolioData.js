@@ -333,7 +333,8 @@ export const caseStudies = [
     links: [
       { label: 'Full write-up', href: 'https://ghostiemoh.com/writing/nigeria-inflation-power-bi' },
       { label: 'PDF', href: '/projects/nigeria-inflation-dashboard.pdf' },
-      { label: 'Hex map visual (.pbiviz)', href: '/projects/nigeria-hex-map.pbiviz' }
+      { label: 'Hex map visual (.pbiviz)', href: '/projects/nigeria-hex-map.pbiviz' },
+      { label: 'Repository', href: 'https://github.com/Ghostiemoh/nigeria-inflation-power-bi' }
     ],
     image: '/images/cpi-dashboard-2.webp',
     imageAlt:
@@ -392,7 +393,8 @@ export const caseStudies = [
     links: [
       { label: 'Full write-up', href: 'https://ghostiemoh.com/writing/nigeria-gdp-power-bi' },
       { label: 'PDF', href: '/projects/nigeria-gdp-dashboard.pdf' },
-      { label: 'Custom visual (.pbiviz)', href: '/projects/shift-dumbbell.pbiviz' }
+      { label: 'Custom visual (.pbiviz)', href: '/projects/shift-dumbbell.pbiviz' },
+      { label: 'Repository', href: 'https://github.com/Ghostiemoh/nigeria-gdp-power-bi' }
     ],
     image: '/images/gdp-dashboard-2.webp',
     imageAlt:
