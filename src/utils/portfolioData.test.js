@@ -29,6 +29,12 @@ describe('portfolio content integrity', () => {
     expect(featured.length).toBeLessThan(caseStudies.length);
   });
 
+  it('lists case studies newest first, by the number in their id', () => {
+    const nums = caseStudies.map((c) => Number(c.id.split('-')[1]));
+    expect(nums).toEqual([...nums].sort((a, b) => b - a));
+    expect(new Set(nums).size).toBe(nums.length);
+  });
+
   it('gives every case study the full narrative arc', () => {
     const required = [
       'id',

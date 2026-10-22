@@ -310,7 +310,7 @@ function Work() {
           num="01"
           eyebrow="Selected work"
           title="Case studies, not a screenshot gallery."
-          lede="Ordered by how much analytical work they show and how close they sit to a real decision. Every figure comes from the linked workbook or repository."
+          lede="Newest first. Every figure comes from the linked workbook or repository."
         />
 
         <div className="featured-list">

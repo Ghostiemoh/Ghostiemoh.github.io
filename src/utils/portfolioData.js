@@ -85,7 +85,7 @@ export const evidence = [
   }
 ];
 
-export const caseStudies = [
+const caseStudyList = [
   {
     id: 'CC-01',
     slug: 'call-centre-service-level',
@@ -626,6 +626,11 @@ export const caseStudies = [
       'Page one of four. Revenue by product and by customer sit next to the monthly trend that turned out to be a volume story, not a margin one.'
   }
 ];
+
+// Newest first: the number in each id is the order the case study was added.
+export const caseStudies = [...caseStudyList].sort(
+  (a, b) => Number(b.id.split('-')[1]) - Number(a.id.split('-')[1])
+);
 
 export const shelf = [
   {
