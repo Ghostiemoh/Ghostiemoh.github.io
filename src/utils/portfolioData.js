@@ -296,6 +296,65 @@ export const caseStudies = [
     }
   },
   {
+    id: 'CP-12',
+    slug: 'nigeria-inflation-monitor',
+    featured: true,
+    title: 'Nigeria’s inflation stopped falling in 2026, and food is why',
+    outcome:
+      'Headline inflation halved from its 34.8% peak and then sat near 15% for nine months. Core cooled by 4.8 points over that stretch while food heated up by 10.7, and food inflation by state ran from 34.4% in Lagos to −7.5% in Taraba.',
+    category: 'Power BI',
+    role: 'Self-directed, on public statistics data',
+    tools: ['Power BI', 'DAX', 'TypeScript', 'D3', 'Python', 'NBS data'],
+    problem:
+      'After the rebase to 2024 prices, Nigeria’s inflation rate fell fast and then stopped moving. A flat headline reads like stability. The question was what was actually holding it there, which categories and which parts of the country, and whether the published rates survive being rebuilt from the indexes underneath them.',
+    dataset:
+      'Nine NBS consumer price index releases, January to September 2026: 24 price series nationally and for urban and rural areas back to 1995 on the 2024 base, plus food and all items inflation for 36 states and the FCT in each release.',
+    process:
+      'Extracted all nine workbooks into a star schema with a Python script that rebuilds 198 published inflation rates from the indexes and refuses to write the model if any disagree. Built 48 DAX measures and a four page dark report generated from code, and wrote a second custom visual in TypeScript and D3, a hex tile map of every state, because Power BI has no map that shows 37 small areas at equal weight.',
+    finding:
+      'Headline inflation was 15.15% in December 2025 and never left a band of 15.06% to 15.93% from January to August 2026, before easing to 14.63% in September. Over those nine months core inflation fell from 17.72% to 12.95% while food rose from 8.89% to 19.59%. Every spending category with a year of history is cooler than a year ago, but food and drinks still contributes 7.27 of the 14.63 points. Food inflation is 25.9% across South West states and 4.1% across the North East.',
+    implication:
+      'The plateau is a food story, and right now a southern one. Anyone reading the national rate as a sign that prices have settled is averaging a cooling core with hot food in Lagos, Imo and Ondo. Watch food inflation, and the gap between zones, in the next releases: if food cools the way core already has, the headline should resume falling.',
+    chart: {
+      kind: 'bars',
+      orientation: 'vertical',
+      axisMax: 8,
+      unit: '',
+      bars: [
+        { label: 'Food and drinks', value: 7.27, display: '7.27', highlight: true, tag: 'largest' },
+        { label: 'Restaurants', value: 2.55, display: '2.55' },
+        { label: 'Housing', value: 1.34, display: '1.34' },
+        { label: 'Transport', value: 1.33, display: '1.33' },
+        { label: 'Health', value: 0.72, display: '0.72' }
+      ],
+      caption:
+        'Contribution to September 2026 headline inflation, in percentage points. Food and drinks alone accounts for half of the 14.63.'
+    },
+    links: [
+      { label: 'Full write-up', href: 'https://ghostiemoh.com/writing/nigeria-inflation-power-bi' },
+      { label: 'PDF', href: '/projects/nigeria-inflation-dashboard.pdf' },
+      { label: 'Hex map visual (.pbiviz)', href: '/projects/nigeria-hex-map.pbiviz' }
+    ],
+    image: '/images/cpi-dashboard-2.webp',
+    imageAlt:
+      'Dark Power BI page titled Across Nigeria: two hex tile maps of the 36 states and the FCT coloured by food and all items inflation, three tiles naming the hottest state, the coolest state and the gap between zones, and a bar chart of food inflation by zone.',
+    imageCaption:
+      'The custom hex map on the live model. Lagos leads at 34.4% food inflation in September 2026; Taraba is the one state below zero.',
+    deeper: {
+      checked: [
+        'All 198 published month on month and year on year rates for headline, food and core, January 2025 to September 2026, rebuilt from the indexes. Every one matches.',
+        'The 13 spending divisions against the headline: their weights sum to 100 and their weighted indexes reproduce the all items index to within 0.005 points every month.',
+        'Every month’s headline, food, core, monthly change, hottest state and coolest state in the live model against that month’s own NBS release: 54 of 54 match.',
+        'All 37 states present in each of the nine state tables, and the series NBS only added with the 2024 rebase held out of any comparison that needs a year of history.'
+      ],
+      recommend: [
+        'Report food and core next to the headline every month, since the headline alone hides that they are moving in opposite directions.',
+        'Track food inflation by zone, not only nationally. The South West and North East are 21.7 points apart.',
+        'Treat the January drops with care. Food prices fell 4.1% and 7.1% month on month in the last two Januaries, so a single soft month says little.'
+      ]
+    }
+  },
+  {
     id: 'NG-11',
     slug: 'nigeria-gdp-monitor',
     featured: true,
